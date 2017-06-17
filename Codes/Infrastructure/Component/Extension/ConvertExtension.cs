@@ -113,8 +113,7 @@ namespace Component.Extension
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="input"></param>
-        /// <param name="defaultValue"></param>
-        public static T Convert<T>(this object input,T defaultValue=default(T))
+        public static T Convert<T>(this object input)
         {
             try
             {
@@ -123,9 +122,7 @@ namespace Component.Extension
             }
             catch (Exception)
             {
-                if (defaultValue == null)
-                    return default(T);
-                return defaultValue;
+                return default(T);
             }
         }
         /// <summary>
