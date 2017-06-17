@@ -1,7 +1,0 @@
-.combo{ height: 20px;width: 145px;}
-.combo .input{position: absolute;top: 0;left: 0; border: 1px solid #BBBBBB; height: 18px; line-height: 18px; width: 135px;}
-.combo .down{position: absolute;top: 0;left: 127px;   height:19px; width:15px;margin-top: 1px; background:url(../Images/down.jpg) no-repeat;}
-.combo .listbody{ top:21px; left:0;border:1px solid #BBBBBB;padding: 0;min-width: 140px; background: #ffffff;background: lightblue;line-height: 25px;z-index: 99999; }
-.combo .listbody .out{ height:25px; }
-.combo .listbody .over{ background:dodgerblue; height:25px;  cursor:pointer;}
-.combo .listbody div{white-space: nowrap; text-overflow: ellipsis; word-break: keep-all;}

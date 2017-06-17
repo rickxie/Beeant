@@ -1,5 +1,0 @@
-.messbox { width:256px; height:160px; border:2px solid #56829d;position:absolute;z-index: 9999; right: 0;bottom: 0;background: #ffffff; }
-.messbox .title {float: left;width: 250px; height:24px; background:#e2f3fb; border-bottom:1px solid #56829d; padding:0 0 0 6px}
-.messbox .title h1 { font-size:12px;  }
-.messbox .title small { display:block; width:12px; height:12px; background:#fff; color:#56829d; border:1px solid #56829d; position:absolute; top:5px; right:7px; font-size:14px; font-weight:bold; line-height:12px; text-align:center }
-.messbox .detail { width:244px; height:248px; padding:6px; overflow:hidden; text-overflow:ellipsis; text-indent:2em }

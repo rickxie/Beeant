@@ -1,6 +1,0 @@
-G:\Program\Beeant\Codes\Infrastructure\Winner\bin\Debug\Winner.dll
-G:\Program\Beeant\Codes\Infrastructure\Winner\bin\Debug\Winner.pdb
-G:\Program\Beeant\Codes\Infrastructure\Winner\bin\Debug\Newtonsoft.Json.dll
-G:\Program\Beeant\Codes\Infrastructure\Winner\bin\Debug\Newtonsoft.Json.xml
-G:\Program\Beeant\Codes\Infrastructure\Winner\obj\Debug\Winner.dll
-G:\Program\Beeant\Codes\Infrastructure\Winner\obj\Debug\Winner.pdb
