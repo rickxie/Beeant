@@ -850,3 +850,4 @@ G:\Program\Beeant\Codes\Distributed\Outside\Beeant.Distributed.Outside.Document\
 G:\Program\Beeant\Codes\Distributed\Outside\Beeant.Distributed.Outside.Document\obj\Debug\Beeant.Distributed.Outside.Document.dll
 G:\Program\Beeant\Codes\Distributed\Outside\Beeant.Distributed.Outside.Document\obj\Debug\Beeant.Distributed.Outside.Document.pdb
 G:\Program\Beeant\Codes\Distributed\Outside\Beeant.Distributed.Outside.Document\bin\AopSdk.dll
+G:\Program\Beeant\Codes\Distributed\Outside\Beeant.Distributed.Outside.Document\obj\Debug\Beeant.Distributed.Outside.Document.csprojResolveAssemblyReference.cache

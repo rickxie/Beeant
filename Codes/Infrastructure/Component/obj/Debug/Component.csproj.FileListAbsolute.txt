@@ -37,4 +37,3 @@ G:\Program\Beeant\Codes\Infrastructure\Component\bin\Debug\zh-Hans\System.Net.Ht
 G:\Program\Beeant\Codes\Infrastructure\Component\bin\Debug\zh-CN\ZedGraph.resources.dll
 G:\Program\Beeant\Codes\Infrastructure\Component\obj\Debug\Component.dll
 G:\Program\Beeant\Codes\Infrastructure\Component\obj\Debug\Component.pdb
-G:\Program\Beeant\Codes\Infrastructure\Component\obj\Debug\Component.csprojResolveAssemblyReference.cache

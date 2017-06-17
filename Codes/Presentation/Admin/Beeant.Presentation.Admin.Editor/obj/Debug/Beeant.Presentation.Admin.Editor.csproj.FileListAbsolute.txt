@@ -403,3 +403,4 @@ G:\Program\Beeant\Codes\Presentation\Admin\Beeant.Presentation.Admin.Editor\bin\
 G:\Program\Beeant\Codes\Presentation\Admin\Beeant.Presentation.Admin.Editor\obj\Debug\Beeant.Presentation.Admin.Editor.dll
 G:\Program\Beeant\Codes\Presentation\Admin\Beeant.Presentation.Admin.Editor\obj\Debug\Beeant.Presentation.Admin.Editor.pdb
 G:\Program\Beeant\Codes\Presentation\Admin\Beeant.Presentation.Admin.Editor\bin\AopSdk.dll
+G:\Program\Beeant\Codes\Presentation\Admin\Beeant.Presentation.Admin.Editor\obj\Debug\Beeant.Presentation.Admin.Editor.csprojResolveAssemblyReference.cache

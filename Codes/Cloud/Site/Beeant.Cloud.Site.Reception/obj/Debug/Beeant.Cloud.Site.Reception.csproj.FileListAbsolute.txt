@@ -423,3 +423,4 @@ G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Reception\bin\zh-Hans\Syste
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Reception\obj\Debug\Beeant.Cloud.Site.Reception.dll
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Reception\obj\Debug\Beeant.Cloud.Site.Reception.pdb
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Reception\bin\AopSdk.dll
+G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Reception\obj\Debug\Beeant.Cloud.Site.Reception.csprojResolveAssemblyReference.cache

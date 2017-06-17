@@ -405,3 +405,4 @@ G:\Program\Beeant\Codes\Presentation\Admin\Beeant.Presentation.Admin.Cloud\bin\z
 G:\Program\Beeant\Codes\Presentation\Admin\Beeant.Presentation.Admin.Cloud\obj\Debug\Beeant.Presentation.Admin.Cloud.dll
 G:\Program\Beeant\Codes\Presentation\Admin\Beeant.Presentation.Admin.Cloud\obj\Debug\Beeant.Presentation.Admin.Cloud.pdb
 G:\Program\Beeant\Codes\Presentation\Admin\Beeant.Presentation.Admin.Cloud\bin\AopSdk.dll
+G:\Program\Beeant\Codes\Presentation\Admin\Beeant.Presentation.Admin.Cloud\obj\Debug\Beeant.Presentation.Admin.Cloud.csprojResolveAssemblyReference.cache

@@ -405,3 +405,4 @@ G:\Program\Beeant\Codes\Presentation\Admin\Beeant.Presentation.Admin.Wms\bin\zh-
 G:\Program\Beeant\Codes\Presentation\Admin\Beeant.Presentation.Admin.Wms\obj\Debug\Beeant.Presentation.Admin.Wms.dll
 G:\Program\Beeant\Codes\Presentation\Admin\Beeant.Presentation.Admin.Wms\obj\Debug\Beeant.Presentation.Admin.Wms.pdb
 G:\Program\Beeant\Codes\Presentation\Admin\Beeant.Presentation.Admin.Wms\bin\AopSdk.dll
+G:\Program\Beeant\Codes\Presentation\Admin\Beeant.Presentation.Admin.Wms\obj\Debug\Beeant.Presentation.Admin.Wms.csprojResolveAssemblyReference.cache

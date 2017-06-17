@@ -852,3 +852,4 @@ G:\Program\Beeant\Codes\Distributed\Outside\Beeant.Distributed.Outside.Reception
 G:\Program\Beeant\Codes\Distributed\Outside\Beeant.Distributed.Outside.Reception\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 G:\Program\Beeant\Codes\Distributed\Outside\Beeant.Distributed.Outside.Reception\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
 G:\Program\Beeant\Codes\Distributed\Outside\Beeant.Distributed.Outside.Reception\bin\AopSdk.dll
+G:\Program\Beeant\Codes\Distributed\Outside\Beeant.Distributed.Outside.Reception\obj\Debug\Beeant.Distributed.Outside.Reception.csprojResolveAssemblyReference.cache

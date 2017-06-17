@@ -421,3 +421,4 @@ G:\Program\Beeant\Codes\Presentation\Mobile\Beeant.Presentation.Mobile.Login\bin
 G:\Program\Beeant\Codes\Presentation\Mobile\Beeant.Presentation.Mobile.Login\obj\Debug\Beeant.Presentation.Mobile.Login.dll
 G:\Program\Beeant\Codes\Presentation\Mobile\Beeant.Presentation.Mobile.Login\obj\Debug\Beeant.Presentation.Mobile.Login.pdb
 G:\Program\Beeant\Codes\Presentation\Mobile\Beeant.Presentation.Mobile.Login\bin\AopSdk.dll
+G:\Program\Beeant\Codes\Presentation\Mobile\Beeant.Presentation.Mobile.Login\obj\Debug\Beeant.Presentation.Mobile.Login.csprojResolveAssemblyReference.cache

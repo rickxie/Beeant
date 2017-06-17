@@ -421,3 +421,4 @@ G:\Program\Beeant\Codes\Presentation\Website\Beeant.Presentation.Website.Login\b
 G:\Program\Beeant\Codes\Presentation\Website\Beeant.Presentation.Website.Login\obj\Debug\Beeant.Presentation.Website.Login.dll
 G:\Program\Beeant\Codes\Presentation\Website\Beeant.Presentation.Website.Login\obj\Debug\Beeant.Presentation.Website.Login.pdb
 G:\Program\Beeant\Codes\Presentation\Website\Beeant.Presentation.Website.Login\bin\AopSdk.dll
+G:\Program\Beeant\Codes\Presentation\Website\Beeant.Presentation.Website.Login\obj\Debug\Beeant.Presentation.Website.Login.csprojResolveAssemblyReference.cache

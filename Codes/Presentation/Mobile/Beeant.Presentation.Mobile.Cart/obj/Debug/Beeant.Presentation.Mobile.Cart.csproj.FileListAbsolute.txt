@@ -421,3 +421,4 @@ G:\Program\Beeant\Codes\Presentation\Mobile\Beeant.Presentation.Mobile.Cart\bin\
 G:\Program\Beeant\Codes\Presentation\Mobile\Beeant.Presentation.Mobile.Cart\obj\Debug\Beeant.Presentation.Mobile.Cart.dll
 G:\Program\Beeant\Codes\Presentation\Mobile\Beeant.Presentation.Mobile.Cart\obj\Debug\Beeant.Presentation.Mobile.Cart.pdb
 G:\Program\Beeant\Codes\Presentation\Mobile\Beeant.Presentation.Mobile.Cart\bin\AopSdk.dll
+G:\Program\Beeant\Codes\Presentation\Mobile\Beeant.Presentation.Mobile.Cart\obj\Debug\Beeant.Presentation.Mobile.Cart.csprojResolveAssemblyReference.cache

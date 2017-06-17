@@ -91,10 +91,8 @@ G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Ent
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Entity\Site.config
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Ioc\Cart.config
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Entity\Market.config
-G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Entity\Welfare.config
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Ioc\Site.config
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Ioc\Market.config
-G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Ioc\Welfare.config
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Language\Purchase.config
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Language\Hr.config
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Language\Basedata.config
@@ -114,16 +112,12 @@ G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Val
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Validation\Cart.config
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Validation\Site.config
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Validation\Market.config
-G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Validation\Welfare.config
-G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\DbRoute\Site.config
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\DbRoute\Account.config
-G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\DbRoute\Operationlog.config
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Entity\Account.config
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Entity\Management.config
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Ioc\Account.config
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Ioc\Management.config
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Language\Editor.config
-G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Language\Welfare.config
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Language\Order.config
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\ThirdParty.config
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\Config\Url.config
@@ -173,3 +167,4 @@ G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\obj\x86\Debug\Beeant
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\obj\x86\Debug\Beeant.Cloud.Site.Client.csproj.GenerateResource.Cache
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\obj\x86\Debug\Beeant.Cloud.Site.Client.exe
 G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\obj\x86\Debug\Beeant.Cloud.Site.Client.pdb
+G:\Program\Beeant\Codes\Cloud\Site\Beeant.Cloud.Site.Client\bin\Debug\AopSdk.dll

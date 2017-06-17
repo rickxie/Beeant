@@ -405,3 +405,4 @@ G:\Program\Beeant\Codes\Presentation\Admin\Beeant.Presentation.Admin.Finance\bin
 G:\Program\Beeant\Codes\Presentation\Admin\Beeant.Presentation.Admin.Finance\obj\Debug\Beeant.Presentation.Admin.Finance.dll
 G:\Program\Beeant\Codes\Presentation\Admin\Beeant.Presentation.Admin.Finance\obj\Debug\Beeant.Presentation.Admin.Finance.pdb
 G:\Program\Beeant\Codes\Presentation\Admin\Beeant.Presentation.Admin.Finance\bin\AopSdk.dll
+G:\Program\Beeant\Codes\Presentation\Admin\Beeant.Presentation.Admin.Finance\obj\Debug\Beeant.Presentation.Admin.Finance.csprojResolveAssemblyReference.cache

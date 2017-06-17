@@ -418,3 +418,4 @@ G:\Program\Beeant\Codes\Presentation\Website\Beeant.Presentation.Website.Search\
 G:\Program\Beeant\Codes\Presentation\Website\Beeant.Presentation.Website.Search\obj\Debug\Beeant.Presentation.Website.Search.dll
 G:\Program\Beeant\Codes\Presentation\Website\Beeant.Presentation.Website.Search\obj\Debug\Beeant.Presentation.Website.Search.pdb
 G:\Program\Beeant\Codes\Presentation\Website\Beeant.Presentation.Website.Search\bin\AopSdk.dll
+G:\Program\Beeant\Codes\Presentation\Website\Beeant.Presentation.Website.Search\obj\Debug\Beeant.Presentation.Website.Search.csprojResolveAssemblyReference.cache
