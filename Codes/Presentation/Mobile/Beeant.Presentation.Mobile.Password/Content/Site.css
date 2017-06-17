@@ -1,0 +1,54 @@
+﻿.pass{float: left;width: 100%;position: relative;font-size: 14px;}
+.pass .top{width: 100%;margin: 20px 0 0 0;text-align: center;}
+.pass .top .num{ float: left;width: 16%;font-size: 18px;text-align: center;line-height: 29px;height: 34px; color: #ffffff;position: relative}
+.pass .top .numbg1{background: url("../Images/findpassnum1.png") no-repeat center;}
+.pass .top .numbg2{background: url("../Images/findpassnum2.png") no-repeat center;}
+.pass .top .bor{float: left;height: 5px;width: 12%;overflow: hidden;margin: 10px 0 0 0;}
+.pass .top .borbg1{ background: url("../Images/findpassbg1.png") repeat-x;}
+.pass .top .borbg2{ background: url("../Images/findpassbg2.png") repeat-x;}
+.pass .top .span{ position: absolute;color: #999999;display: block;width: 100%;font-size: 11px;text-align: center;}
+.pass .top .cur{ color: #ff6824;}
+.pass .dl{ float: left;padding: 50px 0 10px 0;font-size: 14px;font-family: arial,"宋体";width: 100%;}
+.pass .dl dt{ float: left;margin-top: 10px;line-height: 30px;width: 94%;padding: 0 3% 0 3%;}
+.pass .dl dt label{ font-size: 14px;}
+.pass .dl dt select{ font-size: 14px;border:1px solid #00CC00;}
+.pass .dl dt input{ font-size: 14px;}
+.pass .dl dt .til{ float: left; display: block;color: #000;font-size: 14px; min-width: 60px;width: 20%;text-align: left;}
+.pass .dl dt .con{ float: left;display: block;width: 100%;}
+.pass .dl dt .text{float: left;display: block; color: #999999; height: 30px;width: 96%;padding: 2px 2% 2px 2%;}
+.pass .dl dt .code{color: #999999; height: 30px;width: 40%;padding: 2px 2% 2px 2%;}
+.pass .dl dt .codeimg{float: left;height: 30px;margin-left: 5px;}
+.pass .dl dt .codediv{ float: left;padding-left: 10px;}
+.pass .dl dt .codediv a{ font-size: 14px;}
+.pass .dl dt .nor{ color: #000;}
+.pass .dl dt .btn{ display: block;width: 100%;text-align: center;}
+.pass .dl dt .btn input{width: 84px; height: 31px;border: 0;background: url("../Images/findpasswordbtn.png") no-repeat;}
+.pass .dl dt .btn:hover input{background-position: 0 -31px; }
+.pass .dl dt .bor{border: 1px solid #E1E1E1;}
+.pass .dl dt .red{ color: red;font-weight: bold;font-size: 16px;line-height: 24px;padding: 4px 0 4px 0;}
+.pass .dl dt .select{color: #000; }
+.pass .dl dt .btncode{background: #CA9D57;color: white;width: 40%;height: 36px;font-size: 16px;text-align: center;margin-left: 5%;}
+.pass .dl dt .passstrength{margin-left: 3%; width: 105px;height: 13px;background: url("../Images/pwdstrength.gif") no-repeat;}
+.pass .dl dt .mpass{ background-position: 0 -13px;}
+.pass .dl dt .spass{ background-position: 0 -26px;}
+.pass .dl dt .validctrlerror{ border:1px solid #FF0000;color: red;}
+.pass .dl dt .validctrlsucess{ border:1px solid #00CC00;}
+.pass .dl dt .validerrormess{ float: left;display: block; color:Red; background: #FFEBEB;width: 100%; height: 34px;}
+.pass .dl dt .validsucessmess{float: left;display: block; background:url(../Scripts/Winner/Validator/Images/success.gif) no-repeat;width: 100%; height: 34px;display: none;}
+.pass .dl dt .validshowmess{float: left;display: block;color:#333333; width: 100%;  height: 34px;background: #F2F2F2;}
+.pass .failure{float: left;font-size: 1.3em; border: 1px solid #ff0000;margin: 0 0 2px 0; color: #ff0000;display: block;width: 100%;text-align: center;height: 30px;line-height: 30px; }
+.pass .success{float: left;font-size: 1.3em; border: 1px solid #00CC00;margin: 0 0 2px 0; display: block;width: 100%;text-align: center;height: 30px;line-height: 30px; }
+.pass .ful{ width: 100%;text-align: center;}
+.pass .ful h1{font-size: 1.5em;}
+.pass  h3{font-size: 1.2em;}
+.pass  h3 a{font-size: 1em;color: #1491C5;}
+
+
+.wechat{ width: 100%;padding-top: 30px;}
+.wechat .list{margin-bottom: 60px;width: 100%;float: left;margin-bottom: 30px;}
+.wechat .element{float: left; width: 100%;position: relative;border-bottom: 1px solid #c0c0c0;border-top: 1px solid #c0c0c0;font-size: 16px;height: 60px;}
+.wechat .element .input{float: left; border: 0;height: 30px;text-align: center;width: 70%;margin-left: 15%;font-size: 16px;margin-top: 15px;}
+.wechat .element .remove{position: absolute;text-align: center; height: 60px;width: 50px;right:0;background:#ff0000;color: #ffffff;font-size: 16px;font-weight: bold; border: 0;}
+.wechat .addbtn{position: fixed;bottom: 0; text-align: center;height: 30px;left: 45%;font-size: 16px;}
+.wechat .failure{float: left;font-size: 1.3em; border: 1px solid #ff0000;margin: 0 0 2px 0; color: #ff0000;display: block;width: 100%;text-align: center;height: 30px;line-height: 30px; }
+

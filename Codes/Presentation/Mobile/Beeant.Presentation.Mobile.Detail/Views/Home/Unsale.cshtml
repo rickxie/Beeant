@@ -1,0 +1,24 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension
+@section head
+{
+    @Styles.Render("~/Content/site.css")
+}
+<div class="dispoint">
+
+        <img src="~/Images/dispoint.png" alt="停售"/>
+    你需要的商品已经停售<span id="sp"></span>
+    <script type="text/javascript">
+        var times = 4;
+        var func = function () {
+            times = times - 1;
+            document.getElementById("sp").innerHTML = times;
+            if (times == 0)
+                window.location.href = "@Html.GetUrl("PresentationMobileHomeUrl")";
+            else {
+                setTimeout(func, 1000);
+            }
+        }
+        func();
+    </script>
+ 
+</div>

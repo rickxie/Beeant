@@ -1,0 +1,85 @@
+﻿@{
+
+}
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities.Crm
+@using Winner.Persistence
+@model Beeant.Cloud.Crm.Mobile.Models.Customer.CustomerListModel
+<div class="customer">
+    <div class="mainten">
+        <div class="mcp">
+            <a href="/Home/Index">
+                <div class="gohome"></div>
+            </a>
+            <div class="cata">
+                @if (Model != null && Model.CustomerTypes != null)
+                {
+                    <select id="selSearchCustomerType" class="select">
+                        <option value="">所有类别</option>
+                        @foreach (var customerType in Model.CustomerTypes)
+                        {
+                            <option value="@customerType.Id">@customerType.Name</option>
+
+                        }
+                    </select>
+                }
+                &nbsp; &nbsp; &nbsp;
+                @if (Model != null && Model.CustomerChannels != null)
+                {
+                    <select id="selSearchCustomerChannel" class="select">
+                        <option value="">所有渠道</option>
+                        @foreach (var customerChannel in Model.CustomerChannels)
+                        {
+                            <option value="@customerChannel.Id">@customerChannel.Name</option>
+
+                        }
+                    </select>
+                }
+            </div>
+            <div class="searchico"></div>
+            @if (HttpContext.Current.Request["IsReadSelf"] != "true" && ViewBag.IsAssignCustomer)
+            {
+                <div class="selectitem" id="btnSelectItemButton">编辑</div>
+            }
+          
+        </div>
+
+        <div class="search" style="display: none;">
+            <input class="searchinput" placeholder="搜索" />
+            <a href="javascript:void(0)" id="hfCancelSearch">取消</a>
+        </div>
+    </div>
+    <div class="list">
+
+    </div>
+
+    <div class="edit" style="display: none;">
+        <div class="all" id="divSelectAll">全选</div>
+        <div class="move" id="divMoveStaff">更改员工</div>
+
+    </div>
+</div>
+
+@Html.Partial("_Edit")
+<div class="movestaff" style="display: none;">
+    <div class="cancel"><span id="btnCancelMoveStaff">取消</span></div>
+    <ul class="ul">
+
+    </ul>
+</div>
+@if (ViewBag.Staff != null && ViewBag.Staff.Id > 0)
+{
+    <div class="addbtnc">
+        <div class="addbtn" id="btnAdd">+</div>
+    </div>
+}
+
+
+<script type="text/javascript">
+    window.IsReadSelf = "@HttpContext.Current.Request["IsReadSelf"]" == "true";
+    window.StaffId = "@(ViewBag.Staff==null?"": ViewBag.Staff.Id.ToString())";
+</script>
+<script type="text/javascript" src="~/Scripts/plug/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="~/Scripts/winner/validator/winner.Validator.js"></script>
+<script type="text/javascript" src="~/Scripts/Customer.js"></script>
+ 

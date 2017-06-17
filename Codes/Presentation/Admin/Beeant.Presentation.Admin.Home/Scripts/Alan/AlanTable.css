@@ -1,0 +1,200 @@
+﻿/************GridView***************/
+ .GridViewStyle
+{   
+    padding: 0px;
+}
+
+ .ATablePanelBox{
+    text-align: center;
+    background: #DFE8F6;
+    border: solid 1px #99bce8;
+    overflow: visible;
+
+    font-size:12px;
+    line-height:26px;
+    font-weight:bold;
+    color: Black;
+
+    height : 26px;
+}
+
+.GridView
+{
+    border-width:1px;
+    border-style:solid;
+    border-color:#8bb3e5;
+    width:100%;
+    border-collapse:collapse;
+}
+
+.GridViewStyle a
+{
+    color: Black;
+}
+
+.GridViewHeaderStyle th
+{
+    border-top: 1px solid #8bb3e5;
+    border-left: 1px solid #8bb3e5;
+    border-right: 1px solid #8bb3e5;
+    border-bottom: 1px solid #8bb3e5;
+}
+
+.GridViewHeaderStyle
+{
+    background-image: url(./images/gridHeader.png);
+    color: Black;
+    font-size:12px;
+}
+
+.GridViewHeaderStyle a:link,.GridViewHeaderStyle a:visited
+{
+    color:#000000;
+    text-decoration:none;
+    width:60px;
+    height:26px;
+}
+.GridViewHeaderStyle a:hover
+{
+    width:60px;
+    text-decoration:underline;
+    height:26px;
+}
+
+.GridViewFooterStyle
+{
+    background-color: #5D7B9D;
+    color: White;
+}
+
+.GridViewRowStyle
+{
+    background-color: #F7F6F3;
+    color: #333333;
+}
+
+.GridViewAlternatingRowStyle
+{
+    background-color: #FFFFFF;
+    color: #284775;
+}
+
+.GridViewRowStyle td, .GridViewAlternatingRowStyle td
+{
+    border-top: 1px solid #8bb3e5;
+    border-left: 1px solid #8bb3e5;
+    border-right: 1px solid #8bb3e5;
+    border-bottom: 1px solid #8bb3e5;
+    font-size:11px;
+    height:20px;
+}
+
+.GridViewRowStyleContent td
+{
+    border-color: #8bb3e5;
+    font-size:11px;
+    height:20px;
+}
+
+.GridViewSelectedRowStyle
+{
+    background-color: #E2DED6;
+    color: #333333;
+}
+
+.GridViewPagerStyle
+{
+    background-color: #284775;
+    color: #FFFFFF;
+}
+
+.GridViewPagerStyle table /**//* to center the paging links*/
+{
+    margin: 0 auto 0 auto;
+}
+
+.ToolBar
+{
+    font-size:12px;
+    line-height:26px;
+    text-indent : 10px;
+    font-weight:bold;
+    height : 26px;
+    background-image: url(./images/toolbar.png);
+    text-align : left ;
+}
+
+
+.ToolBar ul
+{
+    display:inline;           /*********************/
+    list-style-type:none; /*********************/
+    height:26px;
+    width:60px;
+    text-align:center;
+    font-size:12px;
+    margin:0px;
+    padding:0px;
+    vertical-align:middle;
+}
+
+.ToolBar li
+{
+    float:left;width:auto;margin:0px;display:inline;
+}
+
+.ToolBar img
+{
+    vertical-align:middle;
+    border:0px;
+}
+.ToolBar a:link,.ToolBar a:visited
+{
+    color:#000000;
+    text-decoration:none;
+    width:60px;
+    height:26px;
+}
+.ToolBar a:hover
+{
+    /*border: 1px solid #717171;*/
+    width:60px;
+    height:26px;
+}
+
+.OperationBar img
+{
+    vertical-align:middle;
+    border:0px;
+}
+
+.OperationBar a:link,.OperationBar a:visited,.OperationBar a:hover
+{
+    color:#000000;
+    text-decoration:none;
+}
+
+.panelTitle
+{
+    font-size:12px;
+    line-height:20px;
+    text-indent : 10px;
+    font-weight:bold;
+    height : 20px;
+    background-image: url(./images/panelTitle.png);
+    text-align : left ;
+    border : solid 1px #99bce8;
+    width : 100%;
+}
+
+.borderPanel
+{
+    background : #ffffff;
+    text-align : left ;
+    border : solid 1px #99bce8;
+    width : 100%;
+    overflow:visible;
+}
+
+
+/************GridView***************/

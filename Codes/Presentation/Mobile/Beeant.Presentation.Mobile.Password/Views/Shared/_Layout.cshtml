@@ -1,0 +1,20 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension.Mobile
+<!DOCTYPE html>
+<html>
+<head>
+    @Html.GetTop()
+    <title>@string.Format("蜂蚁窝-{0}", ViewBag.Title ?? "")</title>
+    <meta content="@(string.Format("{0}", ViewBag.Keywords ?? "蜂蚁窝用户安全中"))" name="Keywords">
+    <meta content="@(string.Format("{0}", ViewBag.Description ?? "蜂蚁窝用户安全中"))" name="description">
+    @RenderSection("head", required: false)
+ 
+</head>
+<body>
+    @*@Html.GetHeader()*@
+    <div class="mainer">
+        @RenderBody()
+    </div>
+    @*@Html.GetFooter()*@
+    @Html.GetBottom()
+</body>
+</html>

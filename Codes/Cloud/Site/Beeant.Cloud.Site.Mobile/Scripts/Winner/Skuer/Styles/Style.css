@@ -1,0 +1,4 @@
+.skuer{ width: 100%;background-color:#ffffff;padding: 10px 0 10px 0;}
+.skuer .normal{ float: left;cursor: pointer;display: block;font-size: 1.0rem;min-width:40px;height: 32px;text-align: center;border: 1px solid #D1D1D1;padding: 5px;line-height: 32px;color: #000000;margin-right: 2px;margin-top: 2px; }
+.skuer .select{float: left;cursor: pointer;display: block;font-size: 1.0rem;min-width:40px;height: 32px;text-align: center;border: 1px solid #1cbfda;padding: 5px;line-height: 32px;color: #000000;margin-right: 2px;margin-top: 2px; }
+.skuer .unselect{color: #CCCCCC;cursor:auto; float: left;cursor: pointer;display: block;font-size: 1.0rem;min-width:40px;height: 32px;text-align: center;border: 1px solid #CCCCCC;padding: 5px;line-height: 32px;color: #000000;margin-right: 2px;margin-top: 2px; }

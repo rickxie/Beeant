@@ -1,0 +1,139 @@
+﻿@{
+    ViewBag.Title = "Flash管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Beeant.Basic.Services.Mvc.Paging
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Basic.Services.Mvc.Uploader
+@using Beeant.Domain.Entities.Editor
+@using Configuration
+@using Winner.Persistence
+@model Beeant.Presentation.Website.Editor.Models.Editor.FlashListModel
+ 
+  
+            <div id="finder" class="finder">
+                <div class="top">
+
+                   
+                    <div Finder="UploaderContent" class="uploadercontent" style="height: 250px;">
+                        <form id="fmFile" name="fmFile" method="POST" action="/Flash/Add?path=@Request["Path"]&function=@Request["function"]&FolderId=@Request["FolderId"]" enctype="multipart/form-data">
+                            <table>
+                                <tr>
+                                    <td>
+
+                                        @Html.Uploader().Partial("~/Views/Shared/_Uploader.cshtml", new UploaderModel {Accept = "image/jpg,image/gif,image/png,image/bmp,image/jpeg", FileByteValidateName = "FileByte", FileNameValidateName = "FileName", Id = "upFlashs"})
+                                    </td>
+                                   
+                                </tr>
+                                <tr>
+                                    <td style="padding-top: 10px; ">
+                                        <input id="btnSave" type="button" value="保存" class="button" />
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                        <div class="message">
+                           @(Model!=null?Model.ErrorMessage:"")
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="mainten">
+                    <table>
+                        <tr>
+                            <td><a href="/Folder/index" target="_blank">目录管理</a></td>
+
+
+                            <td>
+                                <input id="Button1" type="button" value="上传" Finder="UploadSwitch" class="button" />
+                                <input type="button" id="btnRemvoe" value="删除" class="button" ConfirmBoxSuccessHanlde="remove" ConfirmBox="Remove" ConfirmMessage="您确定要删除吗" ComfirmCheckBoxMessage="请选择要删除的图片"/>
+
+                                <input id="ckSelectAll" type="checkbox" AllCheckName="selectall"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="content">
+                    <div class="left">
+                        <ul class="sidebar" id="sidebar">
+                            <li><a href='/Flash/Index?path=@Request["path"]&function=@Request["function"]'>所有</a></li>
+                            @if (Model != null && Model.Folders != null)
+                            {
+                                foreach (var folder in Model.Folders)
+                                {
+                                    <li><a href='/Flash/Index?FolderId=@folder.Id&path=@Request["path"]&function=@Request["function"]' value='@folder.Id'>@folder.Name</a></li>
+                                }
+                            }
+                           
+
+                        </ul>
+                    </div> 
+                    <div class="right">
+                        <div class="images" id="divRight">
+                            @if (Model != null && Model.Flashs != null)
+                            {
+                                foreach (var flash in Model.Flashs)
+                                {
+                                    <div class="element long">
+                                        <input value='@flash.Id' id="ckSelect" runat="server" type="checkbox" SubCheckName="selectall" ComfirmValidate="Remove" />
+                                        <div class="out" Finder="Element" Url='@flash.FullFileName'>
+                                            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="300" height="200">
+                                                <param name="movie" value='<%#Eval("FullFileName") %>'/>
+                                                <param name="quality" value="high"/>
+                                                <embed src='@flash.FullFileName' quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="300" height="200"></embed>
+                                            </object>
+
+                                            <div class="font">@flash.Name</div>
+                                        </div>
+                                     </div>
+                                }
+                            }
+                        </div>
+                        @Html.Page(Model).Partial("~/views/Shared/_Pager.cshtml")
+                    </div>
+                </div>
+                <div Finder="RightMenu" class="rightmenu" >
+                    <div Finder="Select" class="selectbtn"><a href="javascript:void(0);">选择</a>
+                    </div>
+                    <div Finder="Browse" class="browsebtn"><a href="javascript:void(0);">浏览</a>
+                    </div>
+                    <div>
+                        <a href="javascript:void(0);" class="browsebtn" style="float: left;" id="hfMoveSwitcher">移动</a>
+                        <ul id="hfMoveContainer" style="float: left; background: #ffe4e1; width: 130px; padding-left: 20px; display: none;">
+                            @if (Model != null && Model.Folders != null)
+                            {
+                                foreach (var folder in Model.Folders)
+                                {
+                                    <li><a href='javascript:void(0);' value='@folder.Id'>@folder.Name</a></li>
+                                }
+                            }
+                        </ul>
+
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    document.domain = '@(ConfigurationManager.GetSetting<string>("Domain"))';
+                
+                </script>
+                <script type="text/javascript" src="/Scripts/Winner/CheckBox/Winner.CheckBox.js"></script>
+                <script type="text/javascript" src="/Scripts/Winner/ConfirmBox/Winner.ConfirmBox.js"></script>
+                <script type="text/javascript" src="/Scripts/Winner/CheckBox/Winner.CheckBox.js"></script>
+                <script type="text/javascript" src="/Scripts/Winner/Editor/Finder/Finder.js"></script>
+                <script type="text/javascript" src="~/Scripts/Editor/FolderSelector.js"></script>
+                <script type="text/javascript" src="~/Scripts/Editor/Flash.js"></script>
+
+                <script type="text/javascript" src="~/Scripts/winner/validator/winner.Validator.js"></script>
+                <!--弹出窗口 end-->
+                <script type="text/javascript">
+                 @{
+                    var pis = new[] {"FileName", "FileByte" };
+                    @(Html.ScriptValidator<FlashEntity>(SaveType.Add, pis).Initialize("divContent", "btnSave"))
+                }
+                    window.Validator = validator;
+                </script>
+
+            </div>
+ 

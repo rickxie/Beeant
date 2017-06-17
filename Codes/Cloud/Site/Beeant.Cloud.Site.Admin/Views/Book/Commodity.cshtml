@@ -1,0 +1,66 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@model Beeant.Cloud.Site.Admin.Models.Book.BookModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <link rel="shortcut icon" href="@(ViewBag.Site==null || string.IsNullOrEmpty(ViewBag.Site.FaviconFileName) ? string.Format("{0}/images/favicon.ico", Html.GetUrl("PresentationMobileSharedUrl")): ViewBag.Site.FaviconFullFileName)" type="image/x-icon" />
+ 
+    <link href="/Content/Book/default/site.css?v=1" rel="stylesheet" />
+    <title></title>
+
+ 
+
+</head>
+<body>
+<div class="page">
+    @if (Model != null)
+    {
+        if (Model.Catalog != null)
+        {
+            <div class="catalog">
+                <div class="name">@Model.Catalog.Name</div>
+                <div class="qr">
+                    <span class="font">本系列更多新品请扫下面二维码</span>
+                    <img src="@(string.Format("{0}/QrCode/CatalogQrCode?id={1}&siteId={2}", Html.GetUrl("CloudSiteMobileUrl"), Model.Catalog.Id, ViewBag.SiteId))" alt=""/>
+                </div>
+            </div>
+        }
+       if (Model.Commodities != null)
+       {
+           var i = 0;
+            <div class="@(Model.Catalog != null?"commodity":"allcommodity")">
+                @foreach (var commodity in Model.Commodities)
+                {
+
+                    <div class="element">
+                        <div class="img">
+                           <img src="@(Model.GetCommodityFileName(commodity))" alt=""/>
+                        </div>
+                        <div class="left">
+                            <div class="name">
+                                @commodity.Name
+                            </div>
+                            <span class="tip">详情请扫右边二维码</span>
+                        </div>
+                      
+                        <div class="qr">
+                            <img src="@(string.Format("{0}/QrCode/CommodityQrCode?id={1}&siteId={2}", Html.GetUrl("CloudSiteMobileUrl"), commodity.Id, ViewBag.SiteId))" alt="" />
+                        </div>
+                    </div>
+                    i = i + 1;
+                }
+            </div>
+        }
+    }
+   
+   
+</div>
+</body>
+</html>
+ 

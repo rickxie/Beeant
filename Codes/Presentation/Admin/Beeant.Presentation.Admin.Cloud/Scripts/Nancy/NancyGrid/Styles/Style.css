@@ -1,0 +1,27 @@
+﻿ul{ padding:0; margin:0;}
+ul li { list-style:none;}
+a{ text-decoration:none;}
+.toolbarPanelbox{  text-align: center; height: 20px; padding-top: 10px; line-height: 20px;color: #38a2d2; font-size: 14px;}
+.toolbarPanelbox a{ color: #38a2d2; }
+.titlePanelbox{ font-size: 16px;height: 24px;line-height: 24px;color: #63CAF9;font-weight: bold;text-align: center;  letter-spacing: 6px;
+  text-align: center;
+  background: #eff3fa;
+  background:-webkit-linear-gradient(#fff,#DBE3F0);
+  background:-moz-linear-gradient(#fff,#DBE3F0);
+  background:linear-gradient(#fff,#DBE3F0);
+  background:-o-linear-gradient(#fff,#DBE3F0);
+  background:-ms-linear-gradient(#fff,#DBE3F0);
+  filter:alpha(opacity=100 finishopacity=50 style=1 startx=0,starty=0,finishx=0,finishy=150) 
+  progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff',endColorstr='#DBE3F0',GradientType='0');
+    }
+.ToolBar{ height: 20px;}
+.ToolBar ul{ padding:0;padding-left:16px; height: 20px;  position: relative; top: 10px;}
+.ToolBar ul li{ float:left; text-align: left; margin-right: 20px;}
+
+.GridView,.GridView th,.GridView td{ border:1px solid #bbd8fa; border-collapse: collapse; table-layout: fixed;color: #404040;text-align: center; }
+.GridView th{ color: #38a2d2;font-size: 14px;}
+.GridView td a{ color: #67757B; margin: 0 4px;}
+.GridView td a:hover{ color: #49839D;}
+.dialog{ border-color: #8FC1E0;width: 840px;}
+.dialog .top .title{ color: #2671A6;width: 820px;}
+

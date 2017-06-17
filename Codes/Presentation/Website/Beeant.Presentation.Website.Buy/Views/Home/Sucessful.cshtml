@@ -1,0 +1,33 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension
+
+@{
+    ViewBag.Title = "下单成功";
+}
+@section  styles{
+     @Styles.Render("~/Content/Settle.css")
+}
+<div class="center">
+    <div class="settle_content">
+         <div class="duce">
+                <div class="logo"><img src="@Url.Content("~/Images/logo.gif")" alt="" /></div>
+                <ul>
+                    <li>1.选中商品</li>
+                    <li class="prev">2.确认订单</li>
+                    <li class="cur">3.付款</li>
+                    <li >4.确认收货</li>
+                    <li class="last">5.评价</li>
+                </ul>
+            </div>
+        <div class="sucessful">
+            <div class="img">
+                <img src="~/Images/successful.png" alt="下单成功"/>
+            </div>
+            <div class="mess">
+                您的订单已经提交成功！<br/>
+                请通过<a href="/Order/List">我的订单</a>进行付款。<br/>
+                您也可以返回<a href="@Html.GetB2CUrl()">首页</a>继续查询预定<br/>
+            </div>
+        </div>
+    </div>
+
+</div>

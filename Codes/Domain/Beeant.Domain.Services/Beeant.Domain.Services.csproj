@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C59D27E-2F1E-4AA9-88BC-789ABF93281D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Beeant.Domain.Services</RootNamespace>
+    <AssemblyName>Beeant.Domain.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\AccountIdentityDomainService.cs" />
+    <Compile Include="Account\CardDomainService.cs" />
+    <Compile Include="Account\IAccountIdentityContract.cs" />
+    <Compile Include="Account\AccountNumberDomainService.cs" />
+    <Compile Include="Agent\AgentDomainService.cs" />
+    <Compile Include="Api\ProtocolDomainService.cs" />
+    <Compile Include="Api\VoucherDomainService.cs" />
+    <Compile Include="Api\VoucherProtocolDomainService.cs" />
+    <Compile Include="Authority\AbilityDomainService.cs" />
+    <Compile Include="Authority\MenuDomainService.cs" />
+    <Compile Include="Authority\SubsystemDomainService.cs" />
+    <Compile Include="Authority\OwnerDomainService.cs" />
+    <Compile Include="Authority\ResourceDomainService.cs" />
+    <Compile Include="Authority\RoleAbilityDomainService.cs" />
+    <Compile Include="Authority\RoleDomainService.cs" />
+    <Compile Include="Authority\OwnerAccountDomainService.cs" />
+    <Compile Include="Authority\RoleAccountDomainService.cs" />
+    <Compile Include="Basedata\AlbumDomainService.cs" />
+    <Compile Include="Basedata\PostageDomainService.cs" />
+    <Compile Include="Basedata\DistrictDomainService.cs" />
+    <Compile Include="Basedata\BrandDomainService.cs" />
+    <Compile Include="Basedata\DeliveryDomainService.cs" />
+    <Compile Include="Basedata\TagDomainService.cs" />
+    <Compile Include="Basedata\TagGroupDomainService.cs" />
+    <Compile Include="Cms\ClassDomainService.cs" />
+    <Compile Include="Cms\ContentDomainService.cs" />
+    <Compile Include="Cms\CmsDomainService.cs" />
+    <Compile Include="Cms\NoticeDomainService.cs" />
+    <Compile Include="Cms\PostcardDomainService.cs" />
+    <Compile Include="Crm\CustomerDomainService.cs" />
+    <Compile Include="Crm\ContractDomainService.cs" />
+    <Compile Include="Crm\CustomerChannelDomainService.cs" />
+    <Compile Include="Crm\CrmDomainService.cs" />
+    <Compile Include="Crm\CustomerTypeDomainService.cs" />
+    <Compile Include="Crm\CustomerNoteDomainService.cs" />
+    <Compile Include="DomainService.cs" />
+    <Compile Include="Editor\FlashDomainService.cs" />
+    <Compile Include="Editor\FolderDomainService.cs" />
+    <Compile Include="Editor\ImageDomainService.cs" />
+    <Compile Include="Editor\TemplateDomainService.cs" />
+    <Compile Include="Account\AccountDomainService.cs" />
+    <Compile Include="Account\AccountItemDomainService.cs" />
+    <Compile Include="Account\AccountLoginDomainService.cs" />
+    <Compile Include="Finance\BankDomainService.cs" />
+    <Compile Include="Finance\PaylineItemDomainService.cs" />
+    <Compile Include="Finance\PaylineDomainService.cs" />
+    <Compile Include="Finance\IPaylineRepository.cs" />
+    <Compile Include="Finance\InvoiceinDomainService.cs" />
+    <Compile Include="Finance\InvoiceoutDomainService.cs" />
+    <Compile Include="Finance\PayoutDomainService.cs" />
+    <Compile Include="Finance\PayinDomainService.cs" />
+    <Compile Include="Finance\IntegralDomainService.cs" />
+    <Compile Include="Gis\AddressDomainService.cs" />
+    <Compile Include="Gis\AreaDomainService.cs" />
+    <Compile Include="Gis\IAreaRepository.cs" />
+    <Compile Include="Hr\OrganizationDomainServic.cs" />
+    <Compile Include="Hr\HrDomainService.cs" />
+    <Compile Include="Hr\FamilyDomainService.cs" />
+    <Compile Include="Hr\StaffDomainService.cs" />
+    <Compile Include="IDomainService.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="Merchant\CatalogueDomainService.cs" />
+    <Compile Include="Merchant\CatalogueGoodsDomainService.cs" />
+    <Compile Include="Merchant\SaleDomainService.cs" />
+    <Compile Include="Merchant\PartnerDomainService.cs" />
+    <Compile Include="Member\AddressDomainService.cs" />
+    <Compile Include="Order\OrderNumberDomainService.cs" />
+    <Compile Include="Order\OrderInsuranceDomainService.cs" />
+    <Compile Include="Order\OrderProductDomainService.cs" />
+    <Compile Include="Product\CommentDomainService.cs" />
+    <Compile Include="Cart\AttentionDomainService.cs" />
+    <Compile Include="Member\CouponDomainService.cs" />
+    <Compile Include="Member\ICouponDomainService.cs" />
+    <Compile Include="Member\MemberDomainService.cs" />
+    <Compile Include="Cart\ShopcartDomainService.cs" />
+    <Compile Include="Member\InvoiceDomainService.cs" />
+    <Compile Include="Member\MessageDomainService.cs" />
+    <Compile Include="Member\BrowseDomainService.cs" />
+    <Compile Include="Cart\ShopcartTagDomainService.cs" />
+    <Compile Include="Product\IProductContract.cs" />
+    <Compile Include="Promotion\CouponerDomainService.cs" />
+    <Compile Include="Basedata\FreightDomainService.cs" />
+    <Compile Include="Basedata\CarryDomainService.cs" />
+    <Compile Include="Order\OrderAttachmentDomainService.cs" />
+    <Compile Include="Order\OrderExpressDomainService.cs" />
+    <Compile Include="Order\OrderNoteDomainService.cs" />
+    <Compile Include="Order\OrderDomainService.cs" />
+    <Compile Include="Order\OrderItemDomainService.cs" />
+    <Compile Include="Order\OrderPayDomainService.cs" />
+    <Compile Include="Order\OrderComplaintDomainService.cs" />
+    <Compile Include="Order\OrderInvoiceDomainService.cs" />
+    <Compile Include="Product\CategoryDomainService.cs" />
+    <Compile Include="Product\InqueryDomainService.cs" />
+    <Compile Include="Product\GoodsDomainService.cs" />
+    <Compile Include="Product\GoodsImageDomainService.cs" />
+    <Compile Include="Product\GoodsPropertyDomainService.cs" />
+    <Compile Include="Product\IGoodsPropertyDomainService.cs" />
+    <Compile Include="Product\IPlatformRepository.cs" />
+    <Compile Include="Product\PlatformDomainService.cs" />
+    <Compile Include="Product\ProductDomainService.cs" />
+    <Compile Include="Promotion\PromotionDomainService.cs" />
+    <Compile Include="Product\PropertyDomainService.cs" />
+    <Compile Include="Product\PropertyRuleDomainService.cs" />
+    <Compile Include="Product\GoodsDetailDomainService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchase\PurchaseAttachmentDomainService.cs" />
+    <Compile Include="Purchase\PurchaseExpressDomainService.cs" />
+    <Compile Include="Purchase\PurchaseDomainService.cs" />
+    <Compile Include="Purchase\PurchaseItemDomainService.cs" />
+    <Compile Include="Purchase\PurchaseInvoiceDomainService.cs" />
+    <Compile Include="Purchase\PurchasePayDomainService.cs" />
+    <Compile Include="RealizeDomainService.cs" />
+    <Compile Include="Site\BookDomainService.cs" />
+    <Compile Include="Site\InqueryDomainService.cs" />
+    <Compile Include="Site\CertificateDomainService.cs" />
+    <Compile Include="Site\CommodityTagDomainService.cs" />
+    <Compile Include="Site\BannerDomainService.cs" />
+    <Compile Include="Site\MessageDomainService.cs" />
+    <Compile Include="Site\TagDomainService.cs" />
+    <Compile Include="Site\CompanyDomainService.cs" />
+    <Compile Include="Site\CatalogDomainService.cs" />
+    <Compile Include="Site\CommodityImageDomainService.cs" />
+    <Compile Include="Site\SiteDomainService.cs" />
+    <Compile Include="Site\CommodityDomainService.cs" />
+    <Compile Include="Security\ITemporaryDomainService.cs" />
+    <Compile Include="Security\TemporaryDomainService.cs" />
+    <Compile Include="Security\LockerDomainService.cs" />
+    <Compile Include="Security\ILockerDomainService.cs" />
+    <Compile Include="Management\UserDomainService.cs" />
+    <Compile Include="Management\UserLoginDomainService.cs" />
+    <Compile Include="Utility\IIpRepository.cs" />
+    <Compile Include="Wms\ShiftDomainService.cs" />
+    <Compile Include="Wms\ShelfDomainService.cs" />
+    <Compile Include="Wms\StockItemDomainService.cs" />
+    <Compile Include="Supplier\ContractDomainService.cs" />
+    <Compile Include="Search\ISearchContract.cs" />
+    <Compile Include="Search\ISearchRepository.cs" />
+    <Compile Include="Search\KeyDomainService.cs" />
+    <Compile Include="Search\RelateKeyDomainService.cs" />
+    <Compile Include="Search\SimilarDomainService.cs" />
+    <Compile Include="Search\WordDomainService.cs" />
+    <Compile Include="Security\CodeDomainService.cs" />
+    <Compile Include="Security\ICodeDomainService.cs" />
+    <Compile Include="Wms\InventoryDomainService.cs" />
+    <Compile Include="Wms\StockDomainService.cs" />
+    <Compile Include="Wms\StorehouseDomainService.cs" />
+    <Compile Include="Supplier\CertificationDomainService.cs" />
+    <Compile Include="Supplier\SupplierDomainService.cs" />
+    <Compile Include="Supplier\QualificationDomainService.cs" />
+    <Compile Include="Utility\IEmailRepository.cs" />
+    <Compile Include="Utility\IFileRepository.cs" />
+    <Compile Include="Utility\IIdentityContract.cs" />
+    <Compile Include="Utility\IIdentityRepository.cs" />
+    <Compile Include="Utility\ILoginDomainService.cs" />
+    <Compile Include="Utility\IMobileRepository.cs" />
+    <Compile Include="Utility\IQueueRepository.cs" />
+    <Compile Include="Utility\LoginDomainService.cs" />
+    <Compile Include="Utility\ICacheRepository.cs" />
+    <Compile Include="Workflow\AuditorDomainService.cs" />
+    <Compile Include="Workflow\GroupFlowDomainService.cs" />
+    <Compile Include="Workflow\ConditionDomainService.cs" />
+    <Compile Include="Workflow\FlowDomainService.cs" />
+    <Compile Include="Workflow\GroupDomainService.cs" />
+    <Compile Include="Workflow\IMessageDomainService.cs" />
+    <Compile Include="Workflow\IWorkflowDomainService.cs" />
+    <Compile Include="Workflow\LevelDomainService.cs" />
+    <Compile Include="Workflow\MessageDomainService.cs" />
+    <Compile Include="Workflow\PropertyDomainService.cs" />
+    <Compile Include="Workflow\NodeDomainService.cs" />
+    <Compile Include="Workflow\AuditorAccountDomainService.cs" />
+    <Compile Include="Workflow\GroupAccountDomainService.cs" />
+    <Compile Include="Workflow\WorkflowDomainService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\Component\Component.csproj">
+      <Project>{1A1BD7ED-0CD2-46B7-B135-88A54FCA33C6}</Project>
+      <Name>Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Configuration\Configuration.csproj">
+      <Project>{EB334C7B-6CF1-4ED8-ABFB-A41D46566F8A}</Project>
+      <Name>Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Winner\Winner.csproj">
+      <Project>{462D6461-F2A0-4058-96E3-64677A31B1E8}</Project>
+      <Name>Winner</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Beeant.Domain.Entities\Beeant.Domain.Entities.csproj">
+      <Project>{C7ED9DE4-7073-4DCF-9513-D9EA6E86E537}</Project>
+      <Name>Beeant.Domain.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

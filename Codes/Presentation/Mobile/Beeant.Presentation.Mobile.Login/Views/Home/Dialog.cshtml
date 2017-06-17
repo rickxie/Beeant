@@ -1,0 +1,26 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@model Beeant.Presentation.Mobile.Login.Models.Home.LoginModel
+@if (Model != null)
+{
+    @:function InitLogin() {
+    @:var html = '<link rel="stylesheet" type="text/css" href="@Html.GetUrl("PresentationMobileLoginUrl")/Content/Site.css" />';
+    @:html += ' <div class="login"><input id="hfUrl" name="Url" value="@Model.Url" type="hidden"/> <dl class="dl"> <dt><div class="in bor"><div class="tc">'
+    @:+ '<input name="Name" class="text" id="loginName" value="@(Model == null || string.IsNullOrEmpty(Model.Name) ? "用户名/已验证邮箱/已验证手机" : Model.Name)" DefaultValue = "用户名/已验证邮箱/已验证手机" />'
+    @:+ '</div><i class="iname"></i></div> </dt><dt><div class="in bor"><div class="tc"><input name="Password" class="text" id="loginPass" Value="登录密码" />'
+    @:+ '</div><i class="ipass"></i> </div></dt>';
+    @:html += '<dt style="@(Model.IsShowCode?"":"display:none;")"><input name="Code" IsShowCode="@(Model.IsShowCode.ToString().ToLower())" class="code bor" id="loginCode" maxlength="4" value="验证码"/>'
+    @:+ '<img id="imgCode" src="@Html.GetUrl("PresentationMobileLoginUrl")/Home/Code" alt="" class="codeimg"/>'
+    @:+ '<div class="codediv"><a href="javascript:void(0);" id="aCode">看不清楚?</a></div></dt>';
+    @:html += '<dt><a href="@Html.GetUrl("PresentationMobilePasswordUrl")">忘记密码?</a><a href="@Html.GetUrl("PresentationMobileRegisterUrl")">注册</a></dt>'
+    @:html += '<dt>';
+    @:html += '<span class="failure" style="display:none;"></span>';
+    @:html += '<a href="javascript:void(0);" class="sub"><input id="loginSubimt" type="button" value="登录" class="input" IsSubmit="true" /></a>';
+    @:html += '</dt></dl></div>';
+    @:html += '<script type="text/javascript"> window.LoginUrl="@Html.GetUrl("PresentationMobileLoginUrl")"</script>';
+    @:html += '<script type="text/javascript" src="@Html.GetUrl("PresentationMobileLoginUrl")/Scripts/home.js"></script>';
+    @:return html;
+    }
+}

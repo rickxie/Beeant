@@ -1,0 +1,46 @@
+* { margin:0; padding:0}
+body { font-size:12px; line-height:24px; font-family:Arial, 宋体; color:#474747; background:#FFF; height:100%}
+
+/* clear float */
+.cf { zoom: 1;  border-bottom: 1px solid #ccc;} /* for IE */
+.cf:after { content:"."; display: block; clear:both; font-size:0; height:0; visibility:hidden; overflow:hidden} /* for other */
+/* end of clear float */
+
+/* link */
+a { color:#317bac; outline-style:none; text-decoration:none}
+a:hover { text-decoration:none; color:#f60}
+
+.p-main {   width: 600px; padding: 12px;padding-top: 4px;padding-left: 34px;color: #666;  }
+.p-main p {  }
+.p-bftxt { padding:0 12px }
+.p-del { float:right }
+
+.p-input .textarea { width:100%; border:1px solid #b8b8b8}
+
+.p-inputbut { text-align: center;width: 500px;margin-bottom: 18px; }
+.p-but {   width: 44px;border: 1px solid #a6adb7; background: #eef;height: 18px; color: #333;border-radius: 3px;}
+.p-but:hover {  background:#eff1f4}
+.p-main .message{ width: 100%;text-align: center;font-size: 16px;color: #ff0000;}
+
+.pager{ width: 100%;font-size: 12px;height: 50px;}
+.pager .link{ font-size:12px;  padding-top:8px;  text-decoration:none; margin-left:10px; display:inline; }
+.pager .disable{ color: lightgray; }
+.pager .text{ margin:2px 5px 0 2px; display:inline-block;}
+.pager .text big{color:Red; font-size:14px;}
+.pager .box{  margin-top: 2px;margin-left: 2px;display: inline;width: 30px;background: none;border: 1px solid #ccc; text-align: center;color: #999;}
+.pager .btngo{background:url(../Images/pagego.png) no-repeat;  width: 44px;height: 18px;border: none;position: relative;top: 3px;margin: 0 5px;}
+#Pager1_divPanel select{ color: #666;outline: none;}
+.checkline{ vertical-align: top;margin-bottom: 12px;}
+.checkline input,.checkline label{ float: left;}
+.checkline input{ position: relative;top: 10px;}
+.checkline label{ line-height: 32px;}
+.checkline textarea{ margin-left: 6px;}
+
+.p_wrap{   width: 560px;border: 1px solid #ccc;margin-bottom: 20px;}
+.cf span{ display: block;float: left;text-align: center;height: 24px;}
+.cf .p_user{ width: 100px;border-right: 1px solid #ccc;}
+.cf .p_time{ width: 132px;border-right: 1px solid #ccc;}
+.cf .p_remark{ width: 60px;border-right: 1px solid #ccc;}
+.cf .p_status{ width: 100px;border-right: 1px solid #ccc;}
+.cf .p_ispass{ width: 60px;}
+.checkline textarea{ width: 367px;height: 40px;outline: none;}

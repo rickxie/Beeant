@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "";
+}
+@model Homedo.Presentation.Mvc.ComboBox.ComboBoxModel
+<input id="@Model.TextId"   type="text" name="@Model.TextName"  value="@Model.Text" ValidateName="@Model.TextValidateName" />
+<input id="@Model.ValueId" type="hidden"  name="@Model.ValueName" value="@Model.Value" ValidateName="@Model.ValueValidateName"  />
+@Scripts.Render("~/Scripts/Winner/ComboBox/winner.combobox.js")
+<script type="text/javascript">
+    $(document).ready(function () {
+        var comboBox = new Winner.ComboBox('@Model.TextId', '@Model.ValueId', { StyleFile: "" });
+        var func = function () {
+            comboBox.Initialize();
+        };
+        setTimeout(func, 800);
+        comboBox.GetEntities = function () {
+            var rev = [];
+            $.ajax({
+                type: 'POST',
+                url: '@Model.AjaxUrl',
+                async: false,
+                dataType: "json",
+                data: 'name=' + $("#@Model.TextId").val(),
+                success: function (msg) {
+                    rev = msg;
+                }
+            });
+            return rev;
+        };
+    });
+</script>

@@ -1,0 +1,78 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Extension.Mobile
+@model Beeant.Presentation.Mobile.Member.Models.Home.HomeModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "会员中心";
+}
+@section head
+{
+    @Styles.Render("~/content/site.css")
+}
+<div class="member">
+    <div class="hd">
+        <div class="mess">
+            <img id="imgHeadUrl" class="img" src="@(Model.Member == null || string.IsNullOrEmpty(Model.Member.HeadUrl) ? Html.GetNoPicture() : Model.Member.FullHeadUrl)" alt=""/>
+            <a href="/Message/Index" class="messtip">
+                <img src="/Images/icon1.png"/>
+                <span>@Model.MessageCount</span>
+            </a>
+        </div>
+    </div>
+    <div class="element">
+        <div class="til">
+            <span class="l">全部订单</span>
+            <span class="r"><a href="@Html.GetUrl("PresentationMobileOrderUrl")/Home/Index" class="black">查看全部订单</a></span>
+        </div>
+        <div class="con">
+            <span><a href="@Html.GetUrl("PresentationMobileOrderUrl")/Home/Index?status=4">待确认</a></span>
+            <span><a href="@Html.GetUrl("PresentationMobileOrderUrl")/Home/Index?status=8">待付款</a></span>
+            <span><a href="@Html.GetUrl("PresentationMobileOrderUrl")/Home/Index?status=16">待发货</a></span>
+            <span><a href="@Html.GetUrl("PresentationMobileOrderUrl")/Home/Index?status=32">待确认</a></span>
+            <span><a href="@Html.GetUrl("PresentationMobileOrderUrl")/Home/Index?status=2&IsAppraisement=true">待点评</a></span>
+        </div>
+    </div>
+
+    <div class="element">
+        <div class="til">
+            <span class="l">我的信息</span>
+        </div>
+        <div class="con">
+
+            <span><a href="/member/index">个人信息</a></span>
+            <span><a href="@Html.GetUrl("PresentationMobilePasswordUrl")/Password/Index">密码修改</a></span>
+            <span><a href="@Html.GetUrl("PresentationMobilePasswordUrl")/Mobile/Index">手机绑定</a></span>
+            <span><a href="@Html.GetUrl("PresentationMobilePasswordUrl")/Email/Index">邮箱绑定</a></span><br/>
+            <span><a href="/address/index">收货地址设置</a></span>
+        </div>
+        <div class="con" ><a  class="quit" href="@Html.GetUrl("PresentationMobileLoginUrl")/Home/Quit">退出当前账户</a></div>
+        </div>
+
+    <div id="divHeadUrl" style="display: none;">
+        <div id="divChangeHeadUrl" class="hurl">更改头像</div>
+        <div id="divCloseHeadUrl">取消</div>
+    </div>
+
+
+    <div id="divCutContainer" class="cut" style="display: none;">
+        <div class="cutimg">
+            <div class="topmask"></div>
+            <canvas class="canvas"></canvas>
+            <img ImageCutor="Image" style="display: none;"/>
+            <input type="file" name="text" style="display: none;"/>
+            <div class="bottommask"></div>
+
+        </div>
+
+        
+    </div>
+    <div class="cutbottom" style="display: none;">
+        <input type="button" id="divColseCut" style="float: left;" value="取消">
+        <input type="button" id="divSaveCut" style="float: right;" value="保存">
+    </div>
+    <div class="mask" style="display: none;"></div>
+
+</div>
+<script type="text/javascript" src="/Scripts/Plug/exif.min.js"></script>
+<script type="text/javascript" src="/Scripts/winner/ImageCutor/winner.ImageCutor.js"></script>
+<script type="text/javascript" src="/Scripts/home.js"></script>

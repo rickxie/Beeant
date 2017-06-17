@@ -1,0 +1,21 @@
+﻿.login .dl{ padding: 10px 5% 10px 5% ;}
+.login .dl dt{float: left; width: 100%;margin-top: 20px;}
+.login .dl dt .in{ width: 100%;  }
+.login .dl dt .bor{border: 1px solid #E1E1E1;}
+.login .dl dt .in .tc{ width: 100%; }
+.login .dl dt .in .text{color: #999999;border: 0;font-family: arial,"宋体";font-size: 14px;height: 30px; line-height: 100%;padding: 4px 20px 4px 3px;width: 90%;}
+.login .dl dt .in .select{color: #000; }
+.login .dl dt .code{color: #999999;float: left; width: 80px;font-family: arial,"宋体";font-size: 14px;height: 30px; line-height: 100%;padding: 2px 2px 2px 2px;}
+.login .dl dt .select{color: #000; }
+.login .dl dt .codeimg{float: left;height: 30px;margin-left: 5px;}
+.login .dl dt .codediv{height: 30px;margin-left: 5px;float: left;}
+.login .dl dt .codelink{ padding-left: 10px;}
+.login .dl dt .iname{background: url("../Images/one4.jpg") no-repeat right center;}
+.login .dl dt .ipass{background: url("../Images/one5.jpg") no-repeat right center;}
+.login .dl dt .sub{ width: 100%;text-align: center;}
+.login .dl dt .sub .input{ width: 100%;text-align: center;font-size: 16px;font-weight: bold;background: #e13b3b;height: 38px;border: 0;color: #ffffff;cursor: pointer; }
+.login .dl dt .sub:hover input{ background: #ee494d;}
+.login .pass{ border: 1px solid #7ABD54;}
+.login .error{ border: 1px solid #ff0000;}
+.login .failure{border: 1px solid #ff0000;margin-bottom: 2px;font-size: 14px; color: #ff0000;display: block;width: 100%;text-align: center;height: 25px;line-height: 25px; }
+.login a{ font-size: 14px;color: #000000;}

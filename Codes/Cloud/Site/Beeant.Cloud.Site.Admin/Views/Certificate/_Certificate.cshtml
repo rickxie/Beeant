@@ -1,0 +1,17 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@model Beeant.Cloud.Site.Admin.Models.Certificate.CertificateListModel
+@if (Model != null && Model.Certificates != null)
+{
+    foreach (var certificate in Model.Certificates)
+    {
+        <div class="element" Sequence="@certificate.Sequence" DataId="@certificate.Id">
+            <div class="up" ></div>
+            <img src="@Html.GetPreRenderPicture()" class="imgp" data-original="@(string.IsNullOrEmpty(certificate.FileName) ? Html.GetNoPicture() : certificate.FullFileName)?v=@DateTime.Now.Ticks" />
+            <div class="down" ></div>
+            <input class="remove" type="button" style="display: none;"  value="删除" />
+        </div>
+    }
+}

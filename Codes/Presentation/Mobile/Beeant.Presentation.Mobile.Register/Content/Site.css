@@ -1,0 +1,35 @@
+﻿.reg{float: left;width: 100%;position: relative;border: 1px solid #E1E1E1;font-size: 14px;}
+.reg .dl{ float: left;padding: 10px 0 10px 0;font-family: arial,"宋体";}
+.reg .dl dt{ float: left;margin-top: 10px;line-height: 30px;width: 100%;}
+.reg .dl dt label{ font-size: 14px;}
+.reg .dl dt a{ font-size:14px;}
+.reg .dl dt .con{ float: left;display: block;margin-left: 2%;width: 95%;}
+.reg .dl dt .text{float: left;display: block;font-size: 14px; color: #999999; height: 24px;min-width:150px;width: 96%;padding: 5px 2% 5px 2% ;}
+.reg .dl dt .code{color: #999999; height: 24px;width: 30%;padding: 5px 2% 5px  2% ;font-size: 16px;}
+.reg .dl dt .codeimg{float: left;height: 30px;margin-left: 5px;}
+.reg .dl dt .codediv{ float: left;padding-left: 2%;width: 32%;}
+.reg .dl dt .codediv a{ font-size: 14px;}
+.reg .dl dt .btn{width: 95%;cursor: pointer;background:#e13b3b; height: 36px;border: 0;color: #ffffff;cursor: pointer;font-size: 16px;font-weight: bold;}
+.reg .dl dt .btn:hover{background: #ee494d; }
+.reg .dl dt .iname{ background: url("../Images/one4.jpg") no-repeat 95% 8px;}
+.reg .dl dt .ipass{ background: url("../Images/one5.jpg") no-repeat 95% 8px;}
+.reg .dl dt .bor{border: 1px solid #E1E1E1;}
+.reg .dl dt .red{ color: red;font-weight: bold;line-height: 24px;padding: 8px 0 4px 0;width: 225px;}
+.reg .dl dt .select{color: #000; }
+.reg .dl dt .passstrength{float: left;margin-left: 2%; width: 105px;height: 13px;background: url("../Images/pwdstrength.gif") no-repeat;}
+.reg .dl dt .mpass{ background-position: 0 -13px;}
+.reg .dl dt .spass{ background-position: 0 -26px;}
+.reg .dl dt .validctrlerror{ border:1px solid #FF0000;color: red;}
+.reg .dl dt .validctrlsucess{ border:1px solid #00CC00;}
+.reg .dl dt .validerrormess{ float: left;display: block; color:Red; background: #FFEBEB;width: 100%; height: 34px;}
+.reg .dl dt .validsucessmess{float: left;display: block; background:url(../Scripts/Winner/Validator/Images/success.gif) no-repeat;width: 100%; height: 34px;display: none;}
+.reg .dl dt .validshowmess{float: left;display: block;color:#333333; width: 100%;  height: 34px;background: #F2F2F2;}
+.reg .dl dt .btnmobile{float: left;display: block; background: #CA9D57;color: white;width: 96%;margin-left: 2%; height: 36px;font-size: 16px;text-align: center;}
+.reg .emails{ position: absolute;z-index: 9999;background: #ffffff;border: 1px solid #999999;width: 95%; }
+.reg .emails span{ float: left;display: block;font-size: 14px; width: 100%;color:#333333;height: 34px;white-space: nowrap; text-overflow: ellipsis; word-break: keep-all;}
+.reg .emails .cur{background: #F2F2F2;}
+.reg .failure{float:left; border: 1px solid #ff0000;margin-bottom: 2px; color: #ff0000;display: block;width: 99%;margin-left: 0.5%;text-align: center;height: 34px;line-height: 34px;font-size: 14px;padding: 5px 0 5px 0;}
+.reg .protocol{ position: absolute;left: 1%;top: 250px;border: 1px solid #999999;width: 97%;}
+.reg .protocol .top{ width: 100%;height: 30px;background: #FFEBEB;font-size: 12px;}
+.reg .protocol .top .close{ float: right;display: block;cursor: pointer;width: 16px;height: 16px;background: url(../Images/bg_thickbox.gif) no-repeat;}
+.reg .protocol .detail{ width: 90%;padding: 10px;background: #ffffff;font-size: 12px;}

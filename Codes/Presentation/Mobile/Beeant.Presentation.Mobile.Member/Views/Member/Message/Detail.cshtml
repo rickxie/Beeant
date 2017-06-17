@@ -1,0 +1,20 @@
+﻿@model Beeant.Presentation.Mobile.Member.Models.Member.MessageModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = Model == null || Model.Message == null ? "" : Model.Message.Title;
+}
+@section head
+{
+    @Styles.Render("~/content/message.css")
+}
+@if (Model != null && Model.Message != null)
+{
+    <div class="message">
+        <div class="detail">
+            @(new HtmlString(Model.Message.Detail))
+        </div>
+    </div>
+}
+
+
+ 

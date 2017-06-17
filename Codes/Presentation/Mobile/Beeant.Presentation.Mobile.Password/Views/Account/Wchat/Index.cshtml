@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "绑定微信";
+}
+@model Beeant.Presentation.Mobile.Password.Models.Account.WechatModel
+@section head
+{
+    @Styles.Render("~/Content/Site.css")
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+}
+
+
+<div class="wechat">
+    <div class="list">
+        @if (Model != null && Model.AccountNumbers != null)
+        {
+            foreach (var accountNumber in Model.AccountNumbers)
+            {
+                <div class="element" DataId="@accountNumber.Id">
+                    <input name="Name" class="input" value="@accountNumber.Name" DataId="@accountNumber.Id"/>
+                    <input class="remove" style="display: none;" value="删除"/>
+                </div>
+            }
+        }
+
+    </div>
+    @if (Model != null && !string.IsNullOrEmpty(Model.Message))
+    {
+        <div class="failure">@Model.Message</div>
+    }
+    <div class="addbtn" id="btnBind"><a href="/Wechat/Bind">绑定当前微信</a></div>
+</div>
+<script type="text/javascript" src="~/Scripts/plug/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="~/Scripts/wechat.js"></script>
+ 

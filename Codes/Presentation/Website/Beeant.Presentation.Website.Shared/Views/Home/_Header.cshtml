@@ -1,0 +1,61 @@
+﻿@using Component.Extension
+@using Beeant.Basic.Services.Mvc.Extension
+<div class="toper">
+    <div class="inner center">
+        <ul>
+            <li><a href="@Html.GetB2BUrl()">首页</a></li>
+            <li><a id="hfAddToFavorite" href="javascript:void(0);">收藏</a></li>
+        </ul>
+          
+        <ul class="login">
+            <li id="unlg1"> <a href="@Html.GetLoginUrl()/home/index@(string.Format("?url={0}", Request.Url))">登录</a> </li>
+            <li id="unlg2"><a href="@Html.GetRegisterUrl()/home/Register@(string.Format("?url={0}", Request.Url))">注册</a> </li>
+            <li id="lg1" style="display: none;"> </li>
+            <li id="lg2" style="display: none;"> <a href="@Html.GetLoginUrl()/home/Quit">[退出]</a> </li>
+            <li>
+                <a href="@Html.GetOrderUrl()/home/list">我的订单</a>
+            </li>
+            <li>
+                <a href="@Html.GetCartUrl()/home/list"><span class="shopcarticon"></span>购物车</a>
+            </li>
+            <li>
+                <a href="@Html.GetAttentionUrl()/Home/list"><span class="attention"></span>关注</a>
+            </li>
+                       
+        </ul>  
+    </div>
+</div>
+<div class="header">
+<div class="center">
+    <div class="conner">
+        <div class="logo">
+            <a href="@Html.GetB2BUrl()"><img src="@Url.Content("~/Images/logo.gif")" alt="" /></a>
+        </div>
+        @Html.Action("Searcher", "Home")
+        <div class="ader"></div>
+    </div>
+          
+</div>
+</div>
+      <div class="naver">
+          <div class="nav">
+              <div class="font" id="divCategoryFont">商品类目</div>
+              <ul>
+                   @if (Model != null && Model.Floors != null)
+                   {
+                       foreach (var floor in Model.Floors)
+                       {
+                           <li>
+                                <a href="@floor.Content.Url">@floor.Content.Title</a>
+                           </li>
+                       }
+                   }
+              </ul>
+          </div>
+         
+      </div>
+<div class='conner' >
+    <div class="center" style="position: relative;">
+        @{Html.RenderAction("Partial", "Category", new RouteValueDictionary { { "viewPath", "/Views/Product/Category/_All.cshtml" } });} 
+    </div>
+</div>

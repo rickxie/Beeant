@@ -1,0 +1,71 @@
+﻿@{
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+    ViewBag.Title = Model == null ? "" : Model.GetToperName();
+    ViewBag.ToperName = Model == null ? "" : Model.GetToperName();
+}
+@using Component.Extension
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Extension.Mobile
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities
+@using Beeant.Domain.Entities.Site
+@using Winner.Persistence
+@model Beeant.Cloud.Site.Mobile.Models.Commodity.CommodityListModel
+
+
+<div class="commodity">
+
+    <div class="list" id="list" style="display: none; "></div>
+
+    <div class="ori" style="display: none;">
+        <div class="content">
+            <div class="biggroup" style="display: none;" id="biggroup" ></div>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="lianxi" style="display: none;">
+    
+</div>
+
+<div class="detailimages" style="display: none">
+    
+</div>
+<div id='divSelectItem'></div>
+
+<script type="text/javascript">
+    window.CatalogId = '@Request.QueryString["CatalogId"]';
+    window.TagId = '@Request.QueryString["TagId"]';
+    window.ShowAuthorUrl=@ViewBag.Site.IsShowAuthor.ToString().ToLower()?'@(Html.GetUrl("CloudSiteAdminUrl"))/home/about':"";
+    window.IsOpenImages=@ViewBag.Site.IsOpenImages.ToString().ToLower();
+    window.IsOpenMultiShare=@ViewBag.Site.IsOpenMultiShare.ToString().ToLower();
+    window.Language.AuthorTip = "需要电子图册制作，请点击";
+    window.Language.PriceTip = "价格";
+    window.Language.OpenDetailTip = "详情图";
+    window.Language.LinkTip = "联系我们";
+    window.Language.ImagesPasswordLockTip = "该产品需要密保查看，请输入密保才能查看细节图";
+    window.Language.SelectItemTip = "选择";
+    window.Language.CancelItemTip = "取消";
+    window.Language.SelectCountOver = "您最多只能选择6个产品";
+</script>
+<script type="text/javascript" src="~/Scripts/plug/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="~/Scripts/Winner/Slider/Winner.Slider.js"></script>
+<script type="text/javascript" src="~/Scripts/Winner/Album/Winner.Album.js"></script>
+<script type="text/javascript" src="~/Scripts/commodity.js"></script>
+@if (Model != null && Model.Wechat != null)
+{
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+    <script type="text/javascript" src="~/Scripts/wechat.js"></script>
+    <script type="text/javascript">
+        initWx({
+            appId: '@Model.Wechat.AppId' , // 必填，公众号的唯一标识
+            timestamp: '@Model.Wechat.Timestamp', // 必填，生成签名的时间戳
+            nonceStr: '@Model.Wechat.NonceStr', // 必填，生成签名的随机串
+            signature: '@Model.Wechat.Signature',
+            detailUrl:'@Html.GetUrl("CloudSiteMobileUrl")/Commodity/Detail/@ViewBag.SiteId'
+        });
+    </script>
+}
+

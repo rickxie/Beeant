@@ -1,0 +1,3 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SupplierAccountComboBox.ascx.cs" Inherits="Beeant.Presentation.Admin.Erp.Controls.Account.SupplierAccountComboBox" %>
+  <input id="txtInputText" runat="server"  type="text" class="input"   BindName="Supplier.Name"  SaveName="Supplier.Name" />
+   <input id="hfInputHidden" type="hidden"  BindName="Account.Id"  SaveName="Account.Id" runat="server"  />

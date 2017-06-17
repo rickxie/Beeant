@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title </title>
+    <link href="@Url.Content("~/Content/home.css")" rel="stylesheet" type="text/css" />
+    @RenderSection("CSSFiles", required: false)
+    <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    @RenderSection("ScriptFiles", required: false)
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <div class="top_piece">
+        <div class="header">
+            @{
+                if (ViewBag.Name == "注册")
+                {
+                <div class="kefu">
+                    客服热线：<span>021-56895623</span></div>
+                }
+            }
+            <div class="logo">
+                <h1>
+                    <a href="">
+                        <img src="~/images/logo.png" /></a></h1>
+                <h2>
+                    欢迎@(ViewBag.Name)</h2>
+            </div>
+        </div>
+    </div>
+    <div class="middle_piece clear">
+        <div class="content_wrap">
+            @RenderBody()
+        </div>
+    </div>
+    <div class="bottom_piece">
+        <div class="foot">
+            <p>
+                <a href="#">关于我们</a>|<a href="#">法律声明</a>|<a href="#">诚聘英才</a>|<a href="#">项目合作</a>|<a
+                    href="#">联系我们</a>
+            </p>
+            <p>
+                <span>COPYRIGHT © 河姆渡 homedo.com 沪ICP备 128562036号 ICP证：沪B2-20150136</span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

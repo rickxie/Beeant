@@ -1,0 +1,100 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension
+@{
+    Layout = "_Layout.cshtml";
+}
+@section head
+{
+
+    <link href="/Content/site.css" rel="stylesheet"/>
+@RenderSection("head", required: false)
+}
+<script type="text/javascript" src="/Scripts/shared.js"></script>
+<script type="text/javascript">
+
+    window.Language = {
+        LoadErrorMessage: "系统忙，请稍候再试",
+        PasswordTip: "请输入密保",
+        PasswordErrorMessage: "密保错误"
+    }
+</script>
+<div class="toper">
+    <div id="topnav" style="@(string.IsNullOrEmpty(Request.QueryString["key"]) ? "" : "display:none")">
+        <div class="contact">
+            <img src="@ViewBag.Site.LogoFullFileName" class="img"/>
+        </div>
+        <div class="name">@(ViewBag.ToperName)</div>
+        <div class="searchico"></div>
+    </div>
+    <div class="search" style="@(string.IsNullOrEmpty(Request.QueryString["key"]) ? "display:none" : "")">
+        <input id="txtTopSearch" class="searchinput" placeholder="搜索" value="@(string.IsNullOrEmpty(Request.QueryString["key"]) ? "" : Model.Key)"/>
+        <a href="javascript:void(0)" id="hfCancelSearch">取消</a>
+    </div>
+</div>
+
+<div class="naver">
+    <ul>
+        <a href="/home/index/@ViewBag.SiteId">
+            <li class="li">
+                首页
+            </li>
+        </a>
+        <a href="/certificate/index/@ViewBag.SiteId">
+            <li class="li">
+                证书
+            </li>
+        </a>
+        <a href="/Commodity/index/@ViewBag.SiteId">
+            <li class="li">
+                产品
+            </li>
+        </a>
+        <a href="/News/index/@ViewBag.SiteId">
+            <li class="li">
+                招聘
+            </li>
+        </a>
+        <a href="/inquery/index/@ViewBag.SiteId">
+            <li class="li">
+                留言
+            </li>
+        </a>
+        <a href="/Company/Index/@ViewBag.SiteId">
+            <li>
+                联系我们
+            </li>
+        </a>
+
+
+    </ul>
+</div>
+
+@RenderBody()
+<div class="footer">
+    <div class="nav">
+        <a href="/home/index/@ViewBag.SiteId" menu="true">首页</a>
+    </div>
+    <div class="nav">
+        <a href="/Catalog/index/@ViewBag.SiteId">分类</a>
+    </div>
+    <div class="nav">
+        @if (ViewBag.Site.IsPrint)
+        {
+            <a href="/Book/index/@ViewBag.SiteId">图册</a>
+        }
+        else
+        {
+            <a href="/Commodity/index/@ViewBag.SiteId">产品</a>
+        }
+    </div>
+    <div class="nav">
+        <a id="hfLinkMobile" href="javascript:void(0);">电话</a>
+    </div>
+
+</div>
+@RenderSection("bottom", required: false)
+@if (ViewBag.Site != null && ViewBag.Site.IsShowAuthor)
+{
+    <div class="authornaver">
+        <a href="@(Html.GetUrl("CloudSiteAdminUrl"))/home/about">本图册有蜂蚁图册提供，详情请点击</a>
+    </div>
+}

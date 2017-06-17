@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "~/Views/Shared/_EnDefaultLayout.cshtml";
+}
+@model Beeant.Cloud.Site.Website.Models.Company.CompanyModel
+<div class="center">
+    <div class="contact">
+        @if (Model != null && Model.Company != null)
+        {
+            <ul>
+                <li>QQ:@Model.Company.Qq</li>
+                <li>Fax:@Model.Company.Fax</li>
+                <li>Mobile:@Model.Company.Mobile</li>
+                <li>Linkman:@Model.Company.Linkman</li>
+                <li>Email:@Model.Company.Email</li>
+            </ul>
+        }
+    </div>
+</div>

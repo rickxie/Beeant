@@ -1,0 +1,52 @@
+﻿@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities.Site
+@model Beeant.Cloud.Site.Website.Models.Inquery.InqueryModel
+@using Winner.Persistence
+@{
+    Layout = "~/Views/Shared/_EnDefaultLayout.cshtml";
+
+}
+<div id="divContent" class="inquery center">
+    <div class="ele">
+        <span class="red">*</span>
+        <input type="text" id="txtLinkman" class="input" placeholder="Please enter your name" maxlength="20" ValidateName="Linkman"/>
+    </div>
+    <div class="ele">
+        <span class="red">*</span>
+        <input type="text" id="txtMobile" class="input" placeholder="Please enter your mobile phone number" maxlength="11" ValidateName="Mobile"/>
+    </div>
+    <div class="ele">
+        <span class="red">*</span>
+        <textarea maxlength="200" id="txtContent" placeholder="Please enter the information you want to consult" class="input" style="height: 150px; resize: none;" ValidateName="Content"></textarea>
+    </div>
+    <div style="@(Model.IsShowCode?"":"display:none")" id="divCode">
+        <span class="red" style="float: left;">*&nbsp;</span>
+        <input type="text" placeholder = "验证码" class="code" id="txtCode"/>
+        <img id="imgCode" src="/Inquery/Code/@ViewBag.SiteId" alt="" class="codeimg" />
+        <div class="codediv">
+            <a href="javascript:void(0);" id="aCode">看不清楚?</a>
+        </div>
+    </div>
+    <div class="ele" style="text-align: center;">
+        <input type="button" value="提交" class="btn" id="btnSave"/>
+    </div>
+</div>
+<script type="text/javascript">
+    window.Language.InputCodeTip = "Please enter the verification code";
+    window.Language.CodeError = "Verification code error";
+    window.Language.SubmitError = "The information you submitted is incorrect.";
+    window.Language.SubmitFailError = "Information submission failed";
+    window.Language.SubmitSucccessTip = "Information has been successfully submitted";
+</script>
+<script type="text/javascript" src="~/Scripts/winner/validator/winner.Validator.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        @{
+             var pis = new[] { "Content", "Mobile", "Linkman" };
+             @(Html.ScriptValidator<InqueryEntity>(SaveType.Add, pis).Initialize("divContent", ""))
+
+         }
+        window.Validator = validator;
+    });
+</script>
+<script type="text/javascript" src="~/Scripts/inquery.js"></script>

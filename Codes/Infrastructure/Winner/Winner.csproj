@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{462D6461-F2A0-4058-96E3-64677A31B1E8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Winner</RootNamespace>
+    <AssemblyName>Winner</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\CacheService.cs" />
+    <Compile Include="Mail\MailInfo.cs" />
+    <Compile Include="Mail\IMail.cs" />
+    <Compile Include="Mail\Mail.cs" />
+    <Compile Include="Base\Security.cs" />
+    <Compile Include="Base\ISecurity.cs" />
+    <Compile Include="Cache\Distributed\DistributedCache.cs" />
+    <Compile Include="Cache\Distributed\RemainderCache.cs" />
+    <Compile Include="Cache\Distributed\XmlDistributedCache.cs" />
+    <Compile Include="Cache\Distributed\XmRemainderCache.cs" />
+    <Compile Include="Cache\ICacheContract.cs" />
+    <Compile Include="Creation\AopMethodInfo.cs" />
+    <Compile Include="Creator.cs" />
+    <Compile Include="Mail\ServerInfo.cs" />
+    <Compile Include="Mail\XmlMail.cs" />
+    <Compile Include="Persistence\Compiler\Common\JoinInfo.cs" />
+    <Compile Include="Persistence\Compiler\Common\QueryCompilerInfo.cs" />
+    <Compile Include="Persistence\Compiler\Common\TableInfo.cs" />
+    <Compile Include="Persistence\Compiler\Common\WhereCompilerInfo.cs" />
+    <Compile Include="Persistence\Compiler\Common\SaveCompilerInfo.cs" />
+    <Compile Include="Persistence\Compiler\Reverse\JsonFill.cs" />
+    <Compile Include="Persistence\Compiler\SqlServer\SqlServer2005SelectCompiler.cs" />
+    <Compile Include="Persistence\Exceptions\LimitCountOverflowException.cs" />
+    <Compile Include="Persistence\Exceptions\VersionException.cs" />
+    <Compile Include="Persistence\Route\ShardingType.cs" />
+    <Compile Include="Persistence\Route\DbRouteInfo.cs" />
+    <Compile Include="Persistence\Route\TableStepType.cs" />
+    <Compile Include="Persistence\Route\ShardPropertyInfo.cs" />
+    <Compile Include="Persistence\Route\IDbRoute.cs" />
+    <Compile Include="Persistence\Route\DbRoute.cs" />
+    <Compile Include="Persistence\Route\ShardingInfo.cs" />
+    <Compile Include="Persistence\Route\RuleInfo.cs" />
+    <Compile Include="Persistence\Route\XmlDbRoute.cs" />
+    <Compile Include="Persistence\Declare\CharEnumAttribute.cs" />
+    <Compile Include="Persistence\Delay\IProxy.cs" />
+    <Compile Include="Persistence\Delay\Proxy.cs" />
+    <Compile Include="Persistence\Linq\OrderByExtension.cs" />
+    <Compile Include="Persistence\Route\RouteHelper.cs" />
+    <Compile Include="Persistence\Translation\RemoteQueryInfo.cs" />
+    <Compile Include="Persistence\Linq\QueryProvider.cs" />
+    <Compile Include="Persistence\Linq\QueryQueryable.cs" />
+    <Compile Include="Persistence\QueryInfo.cs" />
+    <Compile Include="Persistence\Linq\DistinctExpression.cs" />
+    <Compile Include="Persistence\Linq\ExpressionHelper.cs" />
+    <Compile Include="Persistence\Linq\QueryExtension.cs" />
+    <Compile Include="Persistence\Linq\GrouByExpression.cs" />
+    <Compile Include="Persistence\Linq\IExpression.cs" />
+    <Compile Include="Persistence\Linq\OrderByExpression.cs" />
+    <Compile Include="Persistence\Linq\EntityExtension.cs" />
+    <Compile Include="Persistence\Linq\EntityWhereExpression.cs" />
+    <Compile Include="Persistence\Linq\SelectExpression.cs" />
+    <Compile Include="Persistence\Linq\SelectManyExpression.cs" />
+    <Compile Include="Persistence\Linq\SkipExpression.cs" />
+    <Compile Include="Persistence\Linq\TakeExpression.cs" />
+    <Compile Include="Persistence\Linq\WhereExpression.cs" />
+    <Compile Include="Persistence\ParameterInfo.cs" />
+    <Compile Include="Persistence\Translation\QueryCacheInfo.cs" />
+    <Compile Include="Persistence\CacheInfo.cs" />
+    <Compile Include="Queue\Distributed\DistributedQueue.cs" />
+    <Compile Include="Queue\Distributed\RemainderQueue.cs" />
+    <Compile Include="Queue\Distributed\XmlDistributedQueue.cs" />
+    <Compile Include="Queue\Distributed\XmRemainderQueue.cs" />
+    <Compile Include="Queue\QueueService.cs" />
+    <Compile Include="Queue\IQueueContract.cs" />
+    <Compile Include="Queue\IQueue.cs" />
+    <Compile Include="Queue\LocalQueue.cs" />
+    <Compile Include="Reverse\IMapper.cs" />
+    <Compile Include="Dislan\ILanguage.cs" />
+    <Compile Include="Dislan\Language.cs" />
+    <Compile Include="Dislan\LanguageInfo.cs" />
+    <Compile Include="Dislan\XmlLanguage.cs" />
+    <Compile Include="Creation\FactoryInfo.cs" />
+    <Compile Include="Creation\FactoryPropertyInfo.cs" />
+    <Compile Include="Persistence\Translation\SaveInfo.cs" />
+    <Compile Include="Persistence\ContextInfo.cs" />
+    <Compile Include="Filter\ErrorInfo.cs" />
+    <Compile Include="Filter\IValidation.cs" />
+    <Compile Include="Filter\RuleInfo.cs" />
+    <Compile Include="Filter\Validation.cs" />
+    <Compile Include="Filter\ValidationInfo.cs" />
+    <Compile Include="Filter\ValidationType.cs" />
+    <Compile Include="Filter\XmlValidation.cs" />
+    <Compile Include="Search\Analysis\BinaryAnalyzer.cs" />
+    <Compile Include="Search\Analysis\IAnalyzer.cs" />
+    <Compile Include="Search\Analysis\StandardAnalyzer.cs" />
+    <Compile Include="Search\Analysis\TermInfo.cs" />
+    <Compile Include="Search\Analysis\TokenInfo.cs" />
+    <Compile Include="Search\Analysis\XmlStandardAnalyzer.cs" />
+    <Compile Include="Search\Document\DocumentInfo.cs" />
+    <Compile Include="Search\Document\Documentor.cs" />
+    <Compile Include="Search\Document\FeildInfo.cs" />
+    <Compile Include="Search\Document\IDocumentor.cs" />
+    <Compile Include="Search\FieldIndexType.cs" />
+    <Compile Include="Search\IIndexer.cs" />
+    <Compile Include="Search\Indexer.cs" />
+    <Compile Include="Search\SearchQueryInfo.cs" />
+    <Compile Include="Search\SearchResultInfo.cs" />
+    <Compile Include="Search\StoreDocumentInfo.cs" />
+    <Compile Include="Search\StoreFieldInfo.cs" />
+    <Compile Include="Search\StoreIndexInfo.cs" />
+    <Compile Include="Search\StoreSequenceInfo.cs" />
+    <Compile Include="Search\Store\CacheStorer.cs" />
+    <Compile Include="Search\Store\FileStorer.cs" />
+    <Compile Include="Search\Store\IStorer.cs" />
+    <Compile Include="Search\Word\InversionFeildInfo.cs" />
+    <Compile Include="Search\Word\InversionInfo.cs" />
+    <Compile Include="Search\Word\IWorder.cs" />
+    <Compile Include="Search\Word\Worder.cs" />
+    <Compile Include="Search\Word\WordInfo.cs" />
+    <Compile Include="Search\XmlIndexer.cs" />
+    <Compile Include="Storage\Cache\CacheInfo.cs" />
+    <Compile Include="Storage\Cache\ICache.cs" />
+    <Compile Include="Storage\Cache\LocalCache.cs" />
+    <Compile Include="Storage\Cache\XmlLocalCache.cs" />
+    <Compile Include="Storage\DataServiceInfo.cs" />
+    <Compile Include="Storage\DataServiceType.cs" />
+    <Compile Include="Storage\Address\Address.cs" />
+    <Compile Include="Storage\Address\AddressInfo.cs" />
+    <Compile Include="Storage\Address\IAddress.cs" />
+    <Compile Include="Storage\Address\XmlAddress.cs" />
+    <Compile Include="Storage\Distributed\XmlRecoveryDistributedStore.cs" />
+    <Compile Include="Storage\Distributed\XmlDistributedStore.cs" />
+    <Compile Include="Storage\Distributed\DataServiceGroupInfo.cs" />
+    <Compile Include="Storage\DocumentHandler.cs" />
+    <Compile Include="Storage\Route\FileRoute.cs" />
+    <Compile Include="Storage\Route\FileRouteInfo.cs" />
+    <Compile Include="Storage\Route\IFileRoute.cs" />
+    <Compile Include="Storage\Route\XmlFileRoute.cs" />
+    <Compile Include="Storage\Synchronization\Master.cs" />
+    <Compile Include="Storage\Synchronization\IMaster.cs" />
+    <Compile Include="Storage\ThumbnailHandler.cs" />
+    <Compile Include="Wcf\CustomClientChannel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Wcf\CustomServiceHost.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Persistence\Relation\OrmMapInfo.cs" />
+    <Compile Include="Persistence\EntityInfo.cs" />
+    <Compile Include="Persistence\Data\OrmDataBaseInfo.cs" />
+    <Compile Include="Persistence\Key\OrmKeyInfo.cs" />
+    <Compile Include="Persistence\Relation\OrmObjectInfo.cs" />
+    <Compile Include="Persistence\Relation\OrmPropertyInfo.cs" />
+    <Compile Include="Persistence\SaveType.cs" />
+    <Compile Include="Persistence\Relation\OrmMapType.cs" />
+    <Compile Include="Storage\Image\ImageThumbnailInfo.cs" />
+    <Compile Include="Wcf\EndPointInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wcf\IWcfHost.cs" />
+    <Compile Include="Wcf\WcfHost.cs" />
+    <Compile Include="Wcf\WcfService.cs" />
+    <Compile Include="Cache\ICache.cs" />
+    <Compile Include="Log\ILog.cs" />
+    <Compile Include="Cache\LocalCache.cs" />
+    <Compile Include="Wcf\IWcfService.cs" />
+    <Compile Include="Wcf\XmlWcfService.cs" />
+    <Compile Include="Persistence\Context.cs" />
+    <Compile Include="Log\FileLog.cs" />
+    <Compile Include="Base\Component.cs" />
+    <Compile Include="Persistence\IContext.cs" />
+    <Compile Include="Persistence\ContextStorage\IContextStorage.cs" />
+    <Compile Include="Persistence\Data\IDataBase.cs" />
+    <Compile Include="Base\IComponent.cs" />
+    <Compile Include="Reverse\Mapper.cs" />
+    <Compile Include="Creation\Proxy.cs" />
+    <Compile Include="Base\Property.cs" />
+    <Compile Include="Creation\XmlFactory.cs" />
+    <Compile Include="Base\IProperty.cs" />
+    <Compile Include="Creation\IProxy.cs" />
+    <Compile Include="Persistence\Compiler\Common\ICompiler.cs" />
+    <Compile Include="Persistence\Translation\IExecutor.cs" />
+    <Compile Include="Creation\IFactory.cs" />
+    <Compile Include="Persistence\Compiler\Common\CompilerBase.cs" />
+    <Compile Include="Persistence\Translation\Executor.cs" />
+    <Compile Include="Creation\Factory.cs" />
+    <Compile Include="Persistence\Relation\Orm.cs" />
+    <Compile Include="Persistence\Compiler\SqlServer\SqlServerCompiler.cs" />
+    <Compile Include="Persistence\Compiler\SqlServer\SqlServerUnitofwork.cs" />
+    <Compile Include="Persistence\Compiler\SqlServer\SqlServer2005QueryCompiler.cs" />
+    <Compile Include="Persistence\Compiler\Common\SaveCompiler.cs" />
+    <Compile Include="Persistence\Compiler\SqlServer\SqlServerSaveCompiler.cs" />
+    <Compile Include="Persistence\Compiler\Common\UnitofworkBase.cs" />
+    <Compile Include="Persistence\Relation\XmlOrm.cs" />
+    <Compile Include="Persistence\Compiler\Reverse\Fill.cs" />
+    <Compile Include="Persistence\Compiler\Common\WhereCompiler.cs" />
+    <Compile Include="Persistence\Compiler\Common\CompilerHelper.cs" />
+    <Compile Include="Persistence\Compiler\Common\OrderbyCompiler.cs" />
+    <Compile Include="Persistence\Compiler\Common\SelectCompiler.cs" />
+    <Compile Include="Persistence\Compiler\Common\GroupbyCompiler.cs" />
+    <Compile Include="Persistence\Compiler\Common\HavingCompiler.cs" />
+    <Compile Include="Persistence\Compiler\Common\QueryCompiler.cs" />
+    <Compile Include="Persistence\Key\Key.cs" />
+    <Compile Include="Persistence\Relation\IOrm.cs" />
+    <Compile Include="Persistence\Compiler\Reverse\IFill.cs" />
+    <Compile Include="Persistence\Compiler\Common\ISelectCompiler.cs" />
+    <Compile Include="Persistence\IUnitofwork.cs" />
+    <Compile Include="Persistence\Compiler\Common\ISaveCompiler.cs" />
+    <Compile Include="Persistence\Compiler\Common\IWhereCompiler.cs" />
+    <Compile Include="Persistence\Compiler\Common\IOrderbyCompiler.cs" />
+    <Compile Include="Persistence\Compiler\Common\IGroupbyCompiler.cs" />
+    <Compile Include="Persistence\Compiler\Common\IHavingCompiler.cs" />
+    <Compile Include="Persistence\Compiler\Common\IQueryCompiler.cs" />
+    <Compile Include="Persistence\Key\IKey.cs" />
+    <Compile Include="Persistence\Works\ITransaction.cs" />
+    <Compile Include="Persistence\Works\Transaction.cs" />
+    <Compile Include="Persistence\Data\DataBase.cs" />
+    <Compile Include="Persistence\Data\XmlDataBase.cs" />
+    <Compile Include="Persistence\Key\XmlKey.cs" />
+    <Compile Include="Persistence\ContextStorage\ThreadContextStorage.cs" />
+    <Compile Include="Persistence\ContextStorage\HttpContextStorage.cs" />
+    <Compile Include="Storage\IFile.cs" />
+    <Compile Include="Storage\IFileContract.cs" />
+    <Compile Include="Storage\FileService.cs" />
+    <Compile Include="Storage\FileStore.cs" />
+    <Compile Include="Storage\Image\ImageStore.cs" />
+    <Compile Include="Storage\Distributed\DistributedStore.cs" />
+    <Compile Include="Storage\Image\XmlImageStore.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Config\client.config" />
+    <None Include="Config\Config.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Config\service.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

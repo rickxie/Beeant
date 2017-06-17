@@ -1,0 +1,106 @@
+﻿*{ margin:0 0; padding:0 ;}
+ul{ list-style-type:none;}
+img{border:none;}
+em,q,cite,address { font-weight:normal; font-style:normal }
+h1, h2, h3 { font-weight:normal }
+address { display:inline }
+big,small { font-size:12px }
+img { border:none }
+li { list-style:none }
+q { quotes:none }
+strong { font-weight:bold }
+table { border-collapse:collapse }
+th { text-align:left; font-weight:normal }
+em { font-family:宋体; font-size:12px; color:#F00 }
+/* link */
+a { color:#38a2d2; outline-style:none; text-decoration:none}
+a:hover { text-decoration:none; color:#f2963d}
+/* clear float */
+.cf { zoom:1} /* for IE */
+.cf:after { content:"."; display: block; clear:both; font-size:0; height:0; visibility:hidden; overflow:hidden} /* for other */
+/* end of clear float */
+body { font-size:12px; line-height:24px; font-family:Tahoma, Arial, sans-serif, Simsun, 宋体; color:#404040; background:#FFF;  }
+.center{width: 1200px;margin: 0 auto;}
+.toper{float: left;display: inline; background:url(../Images/may-bg.png) repeat-x;width: 100%;height: 30px;line-height: 30px;}
+.toper .inner{color: #000;}
+.toper .inner a{ color: #555555;}
+.toper .inner a:hover{ color: #FF5555;text-decoration: underline;}
+.toper .login{ float: right;}
+.toper li{ float: left;margin-left: 10px;}
+.header{float: left;display: inline; width: 100%;}
+.header .conner{margin-top: 10px;}
+.header .logo{float: left; width: 375px;}
+.header .ader{float: left;margin-left: 20px; width: 200px;}
+.mainer{float: left;display: inline; width: 100%;}
+.pager{float: left;display: inline; width: 100%;font-size: 12px;}
+.pager .link{ font-size:12px;  padding-top:8px;  text-decoration:none; margin-left:10px; display:inline; }
+.pager .disable{ color: lightgray; }
+.pager .text{ margin-top:2px; margin-left:2px; display:inline; width:50px;}
+.pager .text big{color:Red; font-size:14px;}
+.pager .box{margin-top:2px; margin-left:2px; display:inline; width:50px;}
+.pager .button{width:42px; height:22px}
+.footer{float: left;display: inline; width: 100%;}
+ 
+.checkpart{filter:alpha(Opacity=50);-moz-opacity:0.5;opacity: 0.5;z-index:100; background-color:#ffffff; }
+.validctrlerror{ border:1px solid #FF0000;color: red;}
+.validctrlsucess{ border:1px solid #00CC00;}
+.validerrormess{ float: left;margin-left: 5px;text-align: left; display: block; color:Red; padding:0 20px 0 20px;background: #FFEBEB;height: 24px;}
+.validsucessmess{float: left;margin-left: 5px;display: block; background:url(../Scripts/Winner/Validator/Images/success.gif) no-repeat;height: 24px;}
+.validshowmess{float: left;margin-left: 5px;display: block;color:#333333; padding-left:20px;width: 200px; height: 24px;background: #F2F2F2;}
+.uploader {padding:2px;color:#4A3C8C;width: 600px;float: left; }
+.uploader .img{display: inline; width:120px;height:150px;float: left;}
+.uploader .img img{width:120px; height:150px;}
+.uploader .file{float: left; width:600px; margin-top:2px; display:inline; }
+.uploader .file input{ float: left;width: 150px;}
+
+.settle_content{float: left; width: 1000px;margin-left: 100px;text-align: center;position: relative;}
+.settle_content .br{float: left;text-align: left; height: 40px;font-weight: bold;line-height: 40px;font-size: 14px;width: 100%;border-bottom: 2px solid #DDDDDD;color: #000000;}
+.settle_content .logo{float: left; width: 175px;}
+.settle_content .duce{float: left; width: 1000px;text-align: center;padding: 20px 0 20px 0;}
+.settle_content .duce ul{ float: left;margin-left: 30px;margin-top: 30px;}
+.settle_content .duce ul li{padding: 0 15px 0 0; float: left;width: 135px;line-height: 23px;line-height: 23px; font-size: 14px;font-weight: bold;color: #404040;background: url("../Images/flow_steps_bg.png") no-repeat 100% 0 #e4e4e4;}
+.settle_content .duce ul .prev{background-color: #ffe6ba;color: #f60;background-position: 100% -23px !important;}
+.settle_content .duce ul .cur{background-color: #f60;color: #ffffff;}
+.settle_content .duce ul .last{background-position: 100% -138px;}
+.settle_content .addr{ float: left;width: 960px;background: #F7F7F7;padding: 20px;text-align: left;margin-top: 10px;}
+.settle_content .addr ul { float: left;width: 100%;}
+.settle_content .addr ul li{ float: left;text-align: left;line-height: 34px;height: 34px;width: 100%;}
+.settle_content .goods{ float: left;width: 100%;}
+.settle_content .goods .partner{float: left;line-height: 30px; border: 0; text-align: left;color: green;font-size: 12px;font-weight: bold;height: 30px;padding-left: 20px;}
+.settle_content .goods .table{float: left;width: 100%;border-collapse: collapse;border: 1px solid #DDDDDD;}
+.settle_content .goods .table th{font-size:13px; color:#3c8f4b;background: #F7F7F7;height: 40px; text-align: center;} 
+.settle_content .goods .table td{border-top: 1px solid #DDDDDD;}
+.settle_content .goods .table .name{ text-align: left;}
+.settle_content .goods .table .name .img{float: left; width: 60px;height: 60px;}
+.settle_content .goods .table .name .span{float: left;padding: 5px 0 0 5px;line-height: 30px;}
+.settle_content .goods .table .ck{ width: 80px;}
+.settle_content .goods .table .price{ width: 100px;color: #ff0000;font-weight: bold;}
+.settle_content .goods .table .count{ width: 150px;padding-left: 50px;}
+.settle_content .goods .table .freight{ text-align: right;padding-right: 20px;}
+.settle_content .goods .table .total{ text-align: right;padding-right: 20px;}
+.settle_content .goods .table td .countbtn{float: left; display: block;background: #EDEDED;border: 1px solid #CCCCCC;width: 26px;height: 26px;line-height: 26px;font-size: 26px;text-align: center;color: #000;}
+.settle_content .goods .table td .unclick{ color: #CCCCCC;cursor: not-allowed;}
+.settle_content .goods .table td .countinput{float: left;display: inline; width: 100%;color: #666666;border: 1px solid #CCCCCC;width: 48px; height: 26px;text-align: center;line-height: 26px;}
+.settle_content .goods .total{ float: left;text-align: right; padding: 10px 20px 10px 20px;width: 960px;}
+.settle_content .goods .total input{ float: left;}
+.settle_content .goods .order{ padding: 10px 20px 10px 20px;width: 960px;text-align: right;vertical-align:bottom;}
+.settle_content .goods .order .btn{ background: url("../Images/orderbtn.png") no-repeat;width: 128px;height: 36px;border: 0;cursor: pointer;}
+.settle_content .goods .order .code{ width: 60px;padding: 5px;}
+.settle_content .goods .order .codeimg{margin-left: 5px;margin-top: 5px;}
+.settle_content .red{ color: red;font-weight: bold;}
+.settle_address{ background: #ffffff;width: 625px;border: 1px slategray solid;}
+.settle_address ul{ float: left;}
+.settle_address ul li{ float: left;width: 570px; text-align: left;padding: 5px 0 5px 10px;}
+.settle_address ul li .span{float: left; padding-right: 10px;display: block;width: 60px;text-align: right;}
+.settle_address ul li .input{float: left; width: 100px;height: 18px; padding: 2px;border: 1px solid #E1E1E1;}
+.settle_address ul li .sel{ float: left;height: 22px; }
+.settle_address ul li .textarea{float: left; width: 260px;}
+.settle_address ul li .btn{ margin-left: 250px;}
+ 
+
+.sucessful{float: left; width: 650px;padding: 100px 0 100px 300px;margin: 20px 0 100px 0;line-height: 30px;background: #f1f1f1;}
+.sucessful .img{ float: left;}
+.sucessful .mess{ float: left;width: 400px;padding: 20px 0 0 20px;text-align: left;font-size: 14px;}
+
+
+

@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Extension.Mobile
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities
+@using Beeant.Domain.Entities.Site
+@using Winner.Persistence
+@model Beeant.Cloud.Site.Mobile.Models.Commodity.CommodityListModel
+@if (Model != null && Model.Commodities != null)
+{
+    foreach (var commodity in Model.Commodities)
+    {
+        <div class="element" DataId="@commodity.Id" DataName="@commodity.Name" DataDescription="@commodity.Description" DataPrice="@(commodity.IsShowPrice?commodity.Price.ToString():"")" IsPassword="@((!string.IsNullOrEmpty(commodity.Password)).ToString().ToLower())">
+            <img src="@Html.GetPreRenderPicture()" data-original="@(string.IsNullOrEmpty(commodity.FileName) ? Html.GetNoPicture() :Model.GetFullFileName(commodity))"  class="img" alt="" />
+            <div class="name">@commodity.Name</div>
+            <div class="select" style="display: none;"></div>
+            <div class="selectok" style="display: none;"></div>
+        </div>
+    }
+}

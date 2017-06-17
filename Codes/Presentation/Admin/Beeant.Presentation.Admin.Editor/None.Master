@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="None.master.cs" Inherits="Beeant.Presentation.Admin.Editor.None" %>
+<%@ Import Namespace="Beeant.Basic.Services.WebForm.Pages" %>
+<%@ Import Namespace="Beeant.Basic.Services.WebForm.Extension" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <%=this.GetResourcesHtml() %>
+<head runat="server">
+ 
+    <asp:ContentPlaceHolder ID="Head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<link rel="shortcut icon" href="<%=Page.GetUrl("PresentationAdminHomeUrl")%>/images/favicon.ico" type="image/x-icon" />
+  
+    <form id="form1" runat="server">
+            <asp:ScriptManager ID="ScriptManager1" runat="server" onasyncpostbackerror="ScriptManager1_AsyncPostBackError" EnableScriptGlobalization="true" EnableScriptLocalization="true">
+    </asp:ScriptManager>
+        <div class="head">
+        <div class="logo"><img alt="蜂蚁窝" src="<%=Page.GetUrl("PresentationAdminHomeUrl")%>/Images/logo.png" /></div>
+            <div class="nav" id="nav" >
+        
+        <ul class="cf">
+        	<li><a href="/Desktop/Index/List.aspx" title="桌面">桌面</a></li>
+        </ul>
+        
+        
+        </div> 
+  
+		<div class="name">登录用户：<%=((AuthorizePageBase)Page).Identity.AccountName%><a href="/Quit.aspx">退出</a></div>
+    </div>
+        <div class="main" style="position:inherit;">
+         <div id="pageTitle" class="fulltitle">
+             <script type="text/javascript">
+                 $(document).ready(function () {
+                     document.title.value = "蜂蚁窝-" + document.title.value;
+                     $("#pageTitle").html(document.getElementsByTagName("title")[0].innerHTML);
+                 });
+             </script>
+         </div>
+        
+     <asp:ContentPlaceHolder ID="Body" runat="server">
+        
+        </asp:ContentPlaceHolder>
+     
+        </div>
+    </form>
+</body>
+</html>

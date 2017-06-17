@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Extension.Mobile
+@using Beeant.Domain.Entities
+@model Beeant.Cloud.Site.Mobile.Models.Book.BookListModel
+
+ 
+
+    @if (Model != null && Model.Books != null && Model.Company != null && Model.Company.Album != null)
+    {
+        foreach (var book in Model.Books)
+        {
+            <div class="element" Updowner="Element">
+                <img src="@book.GetFullFileName(book.FileName,Model.Width,Model.Height)"/>
+            </div>
+        }
+    }

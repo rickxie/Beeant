@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "";
+}
+@model Beeant.Presentation.Website.Editor.EditorModel
+<textarea id="@(Model.Id)" cols="20" rows="2" name="@Model.Name">@Model.Value</textarea>
+@Scripts.Render("/Scripts/Winner/Editor/Winner.Editor.js")
+<script type="text/javascript">
+    $(document).ready(function() {
+        var ed@(Model.Id) = new Winner.Editor("@(Model.Id)");
+        ed@(Model.Id).Initialize(
+            {
+                ImageUploadUrl: "@Model.ImageUploadUrl",
+                ImageBrowserUrl: "@Model.ImageBrowserUrl",
+                FlashUploadUrl: "@Model.FlashUploadUrl",
+                FlashBrowserUrl: "@Model.FlashBrowserUrl",
+                TemplateUploadUrl: "@Model.TemplateUploadUrl",
+                TemplateBrowserUrl: "@Model.TemplateBrowserUrl"
+            });
+    });
+</script> 

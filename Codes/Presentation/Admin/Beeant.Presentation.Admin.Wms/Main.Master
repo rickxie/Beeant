@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Beeant.Presentation.Admin.Wms.Main" %>
+<%@ Import Namespace="Beeant.Basic.Services.WebForm.Extension" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+ <%=this.GetResourcesHtml() %>
+<head runat="server">
+     
+    <asp:ContentPlaceHolder ID="Head" runat="server">
+             <title> </title> 
+    </asp:ContentPlaceHolder>
+     
+</head>
+<body>
+
+    <form id="form1" runat="server" enctype="multipart/form-data">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" onasyncpostbackerror="ScriptManager1_AsyncPostBackError" EnableScriptGlobalization="true" EnableScriptLocalization="true">
+    </asp:ScriptManager>
+      <%= this.GetMenu()%>
+    <div class="main">
+         <div id="pageTitle" class="title">
+              
+         </div>
+         <div class="body">
+        <asp:ContentPlaceHolder ID="Body" runat="server">
+            
+        </asp:ContentPlaceHolder>
+        </div>
+    </div>
+          <%=this.InitlizeMenu() %>
+    </form>
+</body>
+</html>
+

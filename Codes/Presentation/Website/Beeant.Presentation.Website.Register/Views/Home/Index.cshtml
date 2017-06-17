@@ -1,0 +1,116 @@
+﻿@{
+    ViewBag.Title = "用户注册";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities.Account
+@using Winner.Persistence
+@model Beeant.Presentation.Website.Register.Models.Home.RegisterModel
+ @section  scripts{
+@Scripts.Render("~/Scripts/Register.js")
+@Scripts.Render("/Scripts/Winner/Validator/Winner.Validator.js")
+    }
+<div class="center">
+    <div class="home_reg">
+                @using (Html.BeginForm("Register", "Home", FormMethod.Post, new {autocomplete = "off"}))
+                {
+                    <input type="submit" style="display: none;" onclick=" return false; "/>
+                    <dl class="dl">
+                        <dt>
+                            <span class="til"><span class="red">*</span>用户名：</span>
+                            <span class="con">
+                                @Html.TextBoxFor(it => it.Name, new { @class = "text iname bor", ValidateName = "Name", id = "txtName", @Value = (Model == null || string.IsNullOrEmpty(Model.Name) ? "用户名/邮箱/手机" : Model.Name), DefaultValue = "用户名/邮箱/手机" })
+                            </span>
+                        </dt>
+                        <dt>
+                            <span class="til"><span class="red">*</span>设置密码：</span>
+                            <span class="con">
+                                @Html.PasswordFor(it => it.Password, new { @class = "text ipass bor", ValidateName = "Password", id = "txtPassword", PlaceHolder = "设置密码", DefaultValue = "设置密码" })
+                            </span>
+                            
+                        </dt>
+                        <dt>
+                            <div class="passstrength" id="divPassStrength"></div>
+                        </dt>
+                        <dt>
+                            <span class="til"><span class="red">*</span>确认密码：</span>
+                            <span class="con">
+                                @Html.PasswordFor(it => it.SurePassword, new { @class = "text ipass bor", id = "txtSurePassword", PlaceHolder = "确认密码", DefaultValue = "确认密码" })
+                            </span>
+                        </dt>
+                         <dt>
+                             <span><input type="checkbox" id="ckShowOther"/> <label for="ckShowOther">显示其它信息</label></span>
+                         </dt>
+                         <div id="divOther" style="display: none;">
+                    
+                            <dt>
+                                <span class="til">真实姓名：</span>
+                                <span class="con">
+                                    @Html.TextBoxFor(it => it.RealName, new { @class = "text iname bor", ValidateName = "RealName", id = "txtRealName", @Value = (Model == null || string.IsNullOrEmpty(Model.Name) ? "真实姓名" : Model.RealName), DefaultValue = "真实姓名" })
+                                </span>
+                            </dt>
+                            <dt>
+                                <span class="til">电子邮箱：</span>
+                                <span class="con">
+                                    @Html.TextBoxFor(it => it.Email, new { @class = "text iname bor", ValidateName = "Email", id = "txtEmail", @Value = (Model == null || string.IsNullOrEmpty(Model.Name) ? "电子邮箱" : Model.Email), DefaultValue = "电子邮箱" })
+                                </span>
+                            </dt>
+                            <dt>
+                                <span class="til">手机号码：</span>
+                                <span class="con">
+                                    @Html.TextBoxFor(it => it.Mobile, new { @class = "text iname bor", ValidateName = "Mobile", id = "txtMobile", @Value = (Model == null || string.IsNullOrEmpty(Model.Name) ? "手机号码" : Model.Mobile), DefaultValue = "手机号码" })
+                                </span>
+                            </dt>
+                                
+                        </div> 
+                        <dt>
+                            <span class="til"><span class="red">*</span>验证码：</span>
+                            <span class="con">
+                                @Html.TextBoxFor(it => it.Code, new {@class = "code bor", id = "txtCode", @Value = "验证码", DefaultValue = "验证码"})
+                            </span>
+                            <img id="imgCode" src="/Home/RegisterCode" alt="" class="codeimg"/>
+                            <div class="codediv">
+                                <a href="javascript:void(0);" id="hfCode">看不清楚?</a>
+                            </div>
+                        </dt>
+                        <dt>
+                            <span class="til">&nbsp;</span>
+                            <span>
+                                @Html.CheckBox("IsReadProtocol", true, new {id = "ckprotocol"})
+                                <label for="ckprotocol">我已阅读并同意《<a href="javascript:void(0);" id="hfProtocol">用户注册协议</a>》</label> 
+                            </span>
+                        </dt>
+                        @if (Model != null && Model.Errors != null && Model.Errors.Count > 0)
+                        {
+                            <dt>
+                                <span class="til">&nbsp;</span>
+                                <span class="failure">@Model.Errors[0].Message</span>
+                            </dt>
+                        }
+                        <dt>
+                            
+                            <span class="til">&nbsp;</span>
+                            <input id="btnSubmit" type="submit" value="" class="btn"/>
+                        </dt>
+                    </dl>
+                    @Html.HiddenFor(it => it.Url, new {@Value = (Model == null || string.IsNullOrEmpty(Model.Url) ? "" : Model.Url)})
+                }
+                <div class="emails"  id="showEmails" style="display: none;"> </div>
+                <div id="divProtocol" class="protocol" style="display: none;">
+                    <div class="top"><span id="closeProtocol" class="close"></span></div>
+                    <div class="detail">
+                        <h1>关于用户注册</h1>
+                    </div>
+                    
+                </div>
+            </div>
+        
+</div>
+   
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var reg = new Register(@(Html.ScriptValidator<AccountEntity>(SaveType.Add, new[] { "Name", "Password", "RealName", "Email", "Mobile" }).Gets()));
+                reg.Initialize();
+            });
+        </script>
+

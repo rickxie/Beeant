@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "~/Views/Shared/_EnDefaultLayout.cshtml";
+}
+@model Beeant.Cloud.Site.Website.Models.Commodity.CommodityListModel
+<div class="center">
+    <div class="catalog">
+        <div class="cleft" Slider="LeftButton">
+          <img src="~/Images/ad_prev.png"/>
+        </div>
+        <div class="view">
+            <div class="items"></div>
+        </div>
+        <div class="cright" Slider="RightButton">
+            <img src="~/Images/ad_next.png" />
+        </div>
+    </div>
+    <div class="commodity">
+        <div class="list"></div>
+    </div>
+</div>
+
+
+@Html.Partial("_Gallery")
+
+
+
+@section bottom
+{
+ <script type="text/javascript">
+        window.TagId = "@Model.TagId";
+        window.CatalogId = "@Model.CatalogId";
+</script>
+<script type="text/javascript" src="~/Scripts/Winner/Slider/Winner.Slider.js"></script>
+    <script src="/Scripts/plug/ad-gallery/jquery.ad-gallery.min.js"></script>
+    <link href="/Scripts/plug/ad-gallery/jquery.ad-gallery.css" rel="stylesheet"/>
+<script type="text/javascript" src="~/Scripts/commodity.js"></script>
+}

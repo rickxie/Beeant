@@ -1,0 +1,59 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Beeant.Basic.Services.Mvc.DrowDownList
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities.Member
+@using Winner.Persistence
+@model Beeant.Presentation.Mobile.Member.Models.Member.AddressModel
+@section head
+{
+    @Styles.Render("~/Content/edit.css")
+}
+<form id="fmSave" action="/Address/@(Model == null ? "Add" : "Update")" method="POST">
+    <input type="hidden" name="Id" value="@(Model != null && Model.AddressEntity != null ? Model.AddressEntity.Id : 0)"/>
+    <div class="edit">
+        <div class="element">
+            <input name="Recipient" class="input @(Model!=null  && Model.AddressEntity != null && !string.IsNullOrEmpty(Model.AddressEntity.Recipient)?"":"ctrlshow")" type="text" value="@(Model != null && Model.AddressEntity != null && !string.IsNullOrEmpty(Model.AddressEntity.Recipient) ? Model.AddressEntity.Recipient : "请输入联系人")" ShowValue="请输入联系人" ValidateName="Recipient" />
+        </div>
+        <div class="element">
+            <input name="Mobile" class="input @(Model!=null  && Model.AddressEntity != null && !string.IsNullOrEmpty(Model.AddressEntity.Mobile)?"":"ctrlshow")" type="text" value="@(Model != null && Model.AddressEntity != null && !string.IsNullOrEmpty(Model.AddressEntity.Mobile) ? Model.AddressEntity.Mobile : "请输入手机号码")" ShowValue="请输入手机号码" ValidateName="Mobile" />
+        </div>
+        <div class="element">
+            @Html.Partial("~/Views/Member/Basedata/_District.cshtml", new DropDownListModel { SelectValue = Model == null || Model.AddressEntity == null ? "" : Model.AddressEntity.County })
+        </div>
+        <div class="element">
+            <input name="Postcode" class="input @(Model!=null && Model.AddressEntity != null && !string.IsNullOrEmpty(Model.AddressEntity.Postcode)?"":"ctrlshow")" type="text" value="@(Model != null && Model.AddressEntity != null && !string.IsNullOrEmpty(Model.AddressEntity.Postcode) ? Model.AddressEntity.Postcode : "请输入邮编号码")" ShowValue="请输入邮编号码" ValidateName="Postcode" />
+        </div>
+        <div class="element">
+            <input name="Address" class="input @(Model!=null && Model.AddressEntity != null && !string.IsNullOrEmpty(Model.AddressEntity.Address)?"":"ctrlshow")" type="text" value="@(Model != null && Model.AddressEntity != null && !string.IsNullOrEmpty(Model.AddressEntity.Address) ? Model.AddressEntity.Address : "请输入详细地址")" ShowValue="请输入详细地址" ValidateName="Address" />
+        </div>
+        @if (Model != null && Model.AddressEntity != null && Model.AddressEntity.Errors != null && Model.AddressEntity.Errors.Count > 0)
+        {
+            <div class="element">
+                <span class="failure">@Model.AddressEntity.Errors[0].Message</span>
+            </div>
+        }
+            <input type="submit" class="save" value="保存" id="btnSave" />
+        </div>
+
+</form>
+@Scripts.Render("~/scripts/Winner/Validator/winner.validator.js")
+@Scripts.Render("~/scripts/address.js")
+<script type="text/javascript">
+    $(document).ready(function() {
+        @{
+                var pis = new[] {"Recipient", "County", "Address", "Mobile", "Postcode", "Tag"};
+                if (Model != null && Model.Address != null)
+                {
+                    @(Html.ScriptValidator<AddressEntity>(SaveType.Modify, pis).Initialize("fmSave", "btnSave"))
+
+                }
+                else
+                {
+                    @(Html.ScriptValidator<AddressEntity>(SaveType.Add, pis).Initialize("fmSave", "btnSave"))
+                }
+        }
+        initEdit();
+    });
+</script>

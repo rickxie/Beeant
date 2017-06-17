@@ -1,0 +1,297 @@
+# Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+# 102.54.94.97 rhino.acme.com # source server
+# 38.25.63.10 x.acme.com # x client host
+
+# localhost name resolution is handled within DNS itself.
+# 127.0.0.1 localhost
+# ::1 localhost
+
+
+203.208.46.146 www.google.com
+#74.125.113.121 developer.android.com
+203.208.46.146 dl.google.com
+74.125.237.1 dl-ssl.google.com
+64.233.162.84 chrome.google.com
+
+
+
+
+
+
+
+
+
+
+127.0.0.1 dev.m.login.fengyiwo.com
+127.0.0.1 dev.m.buy.fengyiwo.com
+127.0.0.1 pay.fengyiwo.com
+
+
+127.0.0.1 dev.pay.beeant.com
+127.0.0.1 dev.admin.beeant.com
+127.0.0.1 dev.configurator.admin.beeant.com
+127.0.0.1 dev.erp.admin.beeant.com
+127.0.0.1 dev.agent.admin.beeant.com
+127.0.0.1 dev.cms.admin.beeant.com
+127.0.0.1 dev.crm.admin.beeant.com
+127.0.0.1 dev.editor.admin.beeant.com
+127.0.0.1 dev.finance.admin.beeant.com
+127.0.0.1 dev.gis.admin.beeant.com
+127.0.0.1 dev.hr.admin.beeant.com
+127.0.0.1 dev.log.admin.beeant.com
+127.0.0.1 dev.member.admin.beeant.com
+127.0.0.1 dev.merchant.admin.beeant.com
+127.0.0.1 dev.oa.admin.beeant.com
+127.0.0.1 dev.report.admin.beeant.com
+127.0.0.1 dev.sales.admin.beeant.com
+127.0.0.1 dev.scm.admin.beeant.com
+127.0.0.1 dev.tms.admin.beeant.com
+127.0.0.1 dev.wms.admin.beeant.com
+127.0.0.1 dev.cloud.admin.beeant.com
+
+127.0.0.1 dev.www.beeant.com
+127.0.0.1 dev.login.beeant.com
+127.0.0.1 dev.pass.beeant.com
+127.0.0.1 dev.reg.beeant.com
+127.0.0.1 dev.shared.beeant.com
+
+127.0.0.1 dev.admin.site.beeant.com
+127.0.0.1 dev.m.site.beeant.com
+127.0.0.1 dev.site.beeant.com
+127.0.0.1 dev.m.crm.beeant.com
+127.0.0.1 dev.crm.beeant.com
+
+127.0.0.1 dev.welfare.beeant.com
+127.0.0.1 dev.admin.welfare.beeant.com
+127.0.0.1 dev.m.welfare.beeant.com
+127.0.0.1 dev.api.welfare.beeant.com
+
+127.0.0.1 dev.m.beeant.com
+127.0.0.1 dev.m.shared.beeant.com
+127.0.0.1 dev.m.postcard.beeant.com
+127.0.0.1 dev.m.detail.beeant.com
+127.0.0.1 dev.m.cart.beeant.com
+127.0.0.1 dev.m.login.beeant.com
+127.0.0.1 dev.m.reg.beeant.com
+127.0.0.1 dev.m.pass.beeant.com
+127.0.0.1 dev.m.buy.beeant.com
+127.0.0.1 dev.m.member.beeant.com
+127.0.0.1 dev.m.order.beeant.com
+127.0.0.1 dev.m.market.beeant.com
+
+
+127.0.0.1 dev.message.inside.beeant.com
+127.0.0.1 dev.reception.beeant.com
+127.0.0.1 dev.ibe.api.beeant.com
+
+127.0.0.1 dev.image.beeant.com
+127.0.0.1 dev.image01.beeant.com
+127.0.0.1 dev.image02.beeant.com
+127.0.0.1 dev.image03.beeant.com
+127.0.0.1 dev.image04.beeant.com
+127.0.0.1 dev.image05.beeant.com
+127.0.0.1 dev.image06.beeant.com
+127.0.0.1 dev.image07.beeant.com
+127.0.0.1 dev.image08.beeant.com
+127.0.0.1 dev.temp01.beeant.com
+127.0.0.1 dev.temp02.beeant.com
+127.0.0.1 dev.doc01.beeant.com
+127.0.0.1 dev.doc02.beeant.com
+127.0.0.1 dev.doc03.beeant.com
+127.0.0.1 dev.doc04.beeant.com
+127.0.0.1 dev.doc05.beeant.com
+127.0.0.1 dev.doc06.beeant.com
+127.0.0.1 dev.doc07.beeant.com
+127.0.0.1 dev.doc08.beeant.com
+
+
+
+
+#127.0.0.1 www.739393.com
+
+127.0.0.1 www.oufeiyage.com
+
+
+
+
+
+
+
+
+127.0.0.1 dev.login.ihisen.net
+127.0.0.1 dev.pass.ihisen.net
+127.0.0.1 dev.reg.ihisen.net
+127.0.0.1 dev.Shared.ihisen.net
+127.0.0.1 dev.www.ihisen.net
+127.0.0.1 dev.m.shared.ihisen.net
+127.0.0.1 dev.m.ihisen.net
+127.0.0.1 dev.m.login.ihisen.net
+127.0.0.1 dev.m.reg.ihisen.net
+127.0.0.1 dev.m.pass.ihisen.net
+127.0.0.1 dev.Api.ihisen.net
+127.0.0.1 dev.image.ihisen.net
+127.0.0.1 dev.pay.ihisen.net
+127.0.0.1 dev.reception.ihisen.net
+127.0.0.1 dev.api.inside.ihisen.net
+127.0.0.1 dev.message.inside.ihisen.net
+127.0.0.1 dev.admin.ihisen.net
+127.0.0.1 dev.Configurator.admin.ihisen.net
+127.0.0.1 dev.editor.admin.ihisen.net
+127.0.0.1 dev.erp.admin.ihisen.net
+127.0.0.1 dev.log.admin.ihisen.net
+127.0.0.1 dev.cms.admin.ihisen.net
+127.0.0.1 dev.report.admin.ihisen.net
+
+
+
+
+192.168.10.20 test.login.ihisen.net
+192.168.10.20 test.pass.ihisen.net
+192.168.10.20 test.reg.ihisen.net
+192.168.10.20 test.Shared.ihisen.net
+192.168.10.20 test.www.ihisen.net
+192.168.10.20 test.m.shared.ihisen.net
+192.168.10.20 test.m.ihisen.net
+192.168.10.20 test.m.login.ihisen.net
+192.168.10.20 test.m.reg.ihisen.net
+192.168.10.20 test.m.pass.ihisen.net
+192.168.10.20 test.Api.ihisen.net
+192.168.10.20 test.image.ihisen.net
+192.168.10.20 test.pay.ihisen.net
+192.168.10.20 test.reception.ihisen.net
+192.168.10.20 test.api.inside.ihisen.net
+192.168.10.20 test.message.inside.ihisen.net
+192.168.10.20 test.admin.ihisen.net
+192.168.10.20 test.Configurator.admin.ihisen.net
+192.168.10.20 test.editor.admin.ihisen.net
+192.168.10.20 test.erp.admin.ihisen.net
+192.168.10.20 test.log.admin.ihisen.net
+192.168.10.20 test.cms.admin.ihisen.net
+192.168.10.20 test.report.admin.ihisen.net
+192.168.10.20 test.tmc.ihisen.net
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+106.14.24.159 test.admin.shalu.com
+106.14.24.159 test.configurator.admin.shalu.com
+106.14.24.159 test.erp.admin.shalu.com
+106.14.24.159 test.agent.admin.shalu.com
+106.14.24.159 test.cms.admin.shalu.com
+106.14.24.159 test.crm.admin.shalu.com
+106.14.24.159 test.editor.admin.shalu.com
+106.14.24.159 test.finance.admin.shalu.com
+106.14.24.159 test.gis.admin.shalu.com
+106.14.24.159 test.hr.admin.shalu.com
+106.14.24.159 test.log.admin.shalu.com
+106.14.24.159 test.member.admin.shalu.com
+106.14.24.159 test.merchant.admin.shalu.com
+106.14.24.159 test.oa.admin.shalu.com
+106.14.24.159 test.report.admin.shalu.com
+106.14.24.159 test.sales.admin.shalu.com
+106.14.24.159 test.scm.admin.shalu.com
+106.14.24.159 test.tms.admin.shalu.com
+106.14.24.159 test.wms.admin.shalu.com
+106.14.24.159 test.cloud.admin.shalu.com
+
+106.14.24.159 test.www.shalu.com
+106.14.24.159 test.pass.shalu.com
+106.14.24.159 test.login.shalu.com
+106.14.24.159 test.shared.shalu.com
+
+106.14.24.159 test.admin.site.shalu.com
+106.14.24.159 test.m.site.shalu.com
+106.14.24.159 test.site.shalu.com
+106.14.24.159 test.m.crm.shalu.com
+106.14.24.159 test.crm.shalu.com
+106.14.24.159 test.welfare.shalu.com
+106.14.24.159 test.admin.welfare.shalu.com
+106.14.24.159 test.m.welfare.shalu.com
+
+
+106.14.24.159 test.m.shalu.com
+106.14.24.159 test.m.shared.shalu.com
+106.14.24.159 test.m.postcard.shalu.com
+106.14.24.159 test.m.detail.shalu.com
+106.14.24.159 test.m.cart.shalu.com
+106.14.24.159 test.m.login.shalu.com
+106.14.24.159 test.m.reg.shalu.com
+106.14.24.159 test.m.pass.shalu.com
+106.14.24.159 test.m.buy.shalu.com
+106.14.24.159 test.m.member.shalu.com
+106.14.24.159 test.m.order.shalu.com
+106.14.24.159 test.m.market.shalu.com
+
+
+106.14.24.159 test.editor.shalu.com
+
+106.14.24.159 test.message.inside.shalu.com
+106.14.24.159 test.reception.shalu.com
+
+106.14.24.159 test.image.shalu.com
+106.14.24.159 test.image01.shalu.com
+106.14.24.159 test.image02.shalu.com
+106.14.24.159 test.image03.shalu.com
+106.14.24.159 test.image04.shalu.com
+106.14.24.159 test.image05.shalu.com
+106.14.24.159 test.image06.shalu.com
+106.14.24.159 test.image07.shalu.com
+106.14.24.159 test.image08.shalu.com
+106.14.24.159 test.temp01.shalu.com
+106.14.24.159 test.temp02.shalu.com
+106.14.24.159 test.doc01.shalu.com
+106.14.24.159 test.doc02.shalu.com
+106.14.24.159 test.doc03.shalu.com
+106.14.24.159 test.doc04.shalu.com
+106.14.24.159 test.doc05.shalu.com
+106.14.24.159 test.doc06.shalu.com
+106.14.24.159 test.doc07.shalu.com
+106.14.24.159 test.doc08.shalu.com
+106.14.24.159 test.doc.shalu.com
+
+
+
+
+
+
+
+
+
+
+
+
+

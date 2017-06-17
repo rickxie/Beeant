@@ -1,0 +1,99 @@
+﻿/* focusBar */
+.focusBar{width:100%;height:200px;clear:both;position:relative;background:#242424;overflow:hidden;}
+.focusBar .focus{height:200px;position:absolute;z-index:9;width:100%; top:0;}
+.focusBar .focus img{ width: 100%;height: 200px;}
+
+
+
+.sidebar{ width: 100%;position: fixed;background: #ffffff;top: 0;z-index: 999;}
+.sidebar li.active {border-bottom-color: #fff;border-top: 2px solid #1cbfda;color:  #1cbfda; height: 46px;}
+.sidebar li { float: left;width: 33%;height: 47px;border: 1px solid #dcdcdc; text-align: center;line-height: 47px;color: #333;font-size: 16px; margin-left: -1px; list-style-type: none; vertical-align: top;}
+
+
+
+.detail{ padding-bottom: 45px;}
+.basic{ width: 100%;float: left;margin-top: 55px;margin-bottom: 40px;}
+.basic #divName{ width: 95%;font-size: 14px;color: #000000;text-align: center;padding: 10px 0 10px 5%;}
+.basic #divPrice{ font-size: 16px;color: #FF0000;font-weight: bold;}
+.basic .skuer{ width: 100%;background-color:#ffffff;padding: 10px 0 10px 0;}
+.basic .skuer table {width: 100%; }
+.basic .skuer .name{font-size: 1.0rem;width: 25%;}
+.basic .skuer .normal{ float: left;cursor: pointer;display: block;font-size: 1.0rem;min-width:40px;height: 32px;text-align: center;border: 1px solid #D1D1D1;padding: 5px;line-height: 32px;color: #000000;margin-right: 2px;margin-top: 2px; }
+.basic .skuer .select{float: left;cursor: pointer;display: block;font-size: 1.0rem;min-width:40px;height: 32px;text-align: center;border: 1px solid #1cbfda;padding: 5px;line-height: 32px;color: #000000;margin-right: 2px;margin-top: 2px; }
+.basic .skuer .unselect{color: #CCCCCC;cursor:auto; float: left;cursor: pointer;display: block;font-size: 1.0rem;min-width:40px;height: 32px;text-align: center;border: 1px solid #CCCCCC;padding: 5px;line-height: 32px;color: #000000;margin-right: 2px;margin-top: 2px; }
+
+.promotion{ float: left;width: 100%;line-height: 30px;padding: 5px 0 5px 0;}
+.promotion span{ color: #ff0000;}
+
+.content{float: left; width: 100%;margin-top: 55px;margin-bottom: 40px;}
+.content .property{ width: 100%;width: 99%;text-align: center;}
+.content .property table{ border: 1px solid #dcdcdc;width: 100%;}  
+.content .property td { height: 36px;border: 1px solid #dcdcdc;font-size: 13px;color: #333;}
+.content .incontent{ width: 100%;margin-top: 55px;margin-bottom: 40px;}
+
+.comment{float: left; width: 100%;margin-bottom: 38px;margin-top: 55px;}
+.comment .element{ float: left;width: 100%;}
+.comment .btload{ float: left;width: 100%;font-size: 14px; height: 40px;line-height: 40px;text-align: center;position: relative;}
+.comment .til{float: left;width: 100%; border-bottom: 1px solid #d4e7ff;border-top: 1px solid #d4e7ff;}
+.comment .bred{ color: #8b0000;}
+.comment .del{ line-height: 30px;padding: 10px 0 10px 0;padding-left: 2%;}
+
+.bookflow {
+    line-height: 45px;
+    border-top:1px solid  #ff9913;
+    height: 45px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+  
+}
+.bookflow a{ color: #fff;}
+.bookflow .lkshopcart {float: left;
+    line-height: 45px;
+    background-color: #1492c5;
+    height: 45px;
+    color: #fff;
+    font-size: 18px;
+    width: 25%;
+    text-align: center;
+}
+
+.bookflow .book {
+    margin: 0 0 0 0;
+    text-align: center;
+    line-height: 45px;
+    overflow: hidden;
+}
+.bookflow .book .btn {
+    text-align: center;
+    width: 49%;
+    border-radius: 2px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 1px 3px;
+}
+.bookflow .book a {
+    float: left;
+    display: block;
+    height: 45px;
+    font-size: 2.2rem;
+    color: #fff;
+    line-height: 45px;
+}
+.bookflow .book .sh {
+    background: linear-gradient(to bottom,#ff5727 0,#ff3901 100%);
+    border: 1px solid #e33300;
+    color: #fff;
+}
+.bookflow .book .od {
+    background: linear-gradient(to bottom,#ffebdc 0,#ffdbc0 100%);
+    border: 1px solid #ebc7ac;
+    color: #d93000;
+}
+
+.dispoint{float: left; width: 100%;line-height: 30px;background: #f1f1f1;text-align: center;font-size: 14px;}
+
+
+.cartconer{ border: 0;width: 100%;overflow: hidden;position: fixed;bottom: 45px;left: 0;z-index: 9999;}

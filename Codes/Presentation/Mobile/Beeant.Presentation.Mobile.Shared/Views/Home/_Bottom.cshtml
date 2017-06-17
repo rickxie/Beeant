@@ -1,0 +1,7 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Script
+function InitBottom(){
+ document.write('<script type="text/javascript" src="@Html.GetUrl("PresentationMobileSharedUrl")/Scripts/Shared.js"></script>');
+ document.write('<script type="text/javascript" src="@Html.GetUrl("PresentationMobileSharedUrl")/Scripts/Winner/ImageRecover/Winner.ImageRecover.js"></script>');
+  document.write('@Html.ImageRecover()');
+}

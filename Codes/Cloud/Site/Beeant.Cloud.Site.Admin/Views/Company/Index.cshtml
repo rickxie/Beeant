@@ -1,0 +1,44 @@
+﻿@{
+
+}
+@using Beeant.Basic.Services.Mvc.Extension.Mobile
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities
+@using Beeant.Domain.Entities.Site
+@using Winner.Persistence
+@model Beeant.Cloud.Site.Admin.Models.Company.CompanyModel
+<div class="company">
+
+ 
+    <div class="savecontent">
+        <input type="text" id="txtName" class="@(Model!=null && Model.Company!=null && !string.IsNullOrEmpty(Model.Company.Name)?"input" :"input ctrlshow")" ValidateName="Name" value="@(Model!=null && Model.Company!=null && !string.IsNullOrEmpty(Model.Company.Name)?Model.Company.Name :"企业名称")" ShowValue="企业名称" />
+        <input type="text" id="txtMobile" class="@(Model!=null &&Model.Company!=null && !string.IsNullOrEmpty(Model.Company.Mobile)?"input" :"input ctrlshow")" ValidateName="Mobile" value="@(Model!=null && Model.Company!=null && !string.IsNullOrEmpty(Model.Company.Name)?Model.Company.Mobile :"联系电话")" ShowValue="联系电话" />
+        <input type="text" id="txtEmail" class="@(Model!=null && Model.Company!=null &&!string.IsNullOrEmpty(Model.Company.Email)?"input" :"input ctrlshow")" ValidateName="Email" value="@(Model!=null && Model.Company!=null && !string.IsNullOrEmpty(Model.Company.Name)?Model.Company.Email :"电子邮箱")" ShowValue="电子邮箱" />
+        <input type="text" id="txtLinkman" class="@(Model != null && Model.Company != null && !string.IsNullOrEmpty(Model.Company.Linkman) ? "input" : "input ctrlshow")" ValidateName="Linkman" value="@(Model != null && Model.Company != null && !string.IsNullOrEmpty(Model.Company.Linkman) ? Model.Company.Linkman : "联系人")" ShowValue="联系人"/>
+        <input type="text" id="txtFax" class="@(Model!=null &&Model.Company!=null && !string.IsNullOrEmpty(Model.Company.Fax)?"input" :"input ctrlshow")" ValidateName="Fax" value="@(Model!=null && Model.Company!=null && !string.IsNullOrEmpty(Model.Company.Fax)?Model.Company.Fax :"传真")" ShowValue="传真" />
+        <input type="text" id="txtQq" class="@(Model!=null &&Model.Company!=null && !string.IsNullOrEmpty(Model.Company.Qq)?"input" :"input ctrlshow")" ValidateName="Qq" value="@(Model!=null && Model.Company!=null && !string.IsNullOrEmpty(Model.Company.Qq)?Model.Company.Qq :"QQ")" ShowValue="QQ" />
+        <input type="text" id="txtAddress" class="@(Model!=null && Model.Company!=null &&!string.IsNullOrEmpty(Model.Company.Address)?"input" :"input ctrlshow")" ValidateName="Address" value="@(Model!=null && Model.Company!=null && !string.IsNullOrEmpty(Model.Company.Name)?Model.Company.Address :"企业地址")" ShowValue="企业地址" />
+        <textarea rows="6" id="txtDetail" style="height:150px" class="@(Model!=null &&Model.Company!=null && !string.IsNullOrEmpty(Model.Company.Detail)?"input" :"input ctrlshow")" ValidateName="Detail" ShowValue="企业介绍" >@(Model != null && Model.Company != null && !string.IsNullOrEmpty(Model.Company.Detail) ? Model.Company.Detail : "企业介绍")</textarea>
+    </div>
+ 
+    <div class="mainten" >
+        <a href="/Home/Index"><div class="gohome"></div></a>
+
+        <div id="btnSave"></div>
+    </div>
+</div>
+       
+<script type="text/javascript" src="~/Scripts/plug/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="/Scripts/Plug/exif.min.js"></script>
+<script type="text/javascript" src="~/Scripts/winner/validator/winner.Validator.js"></script>
+<script type="text/javascript" src="~/Scripts/company.js"></script>
+<script type="text/javascript">
+     $(document).ready(function () {
+         @{
+             var pis = new[] { "Email", "Mobile", "Linkman", "Address", "Name","Fax","Qq","Detail" };
+             @(Html.ScriptValidator<CompanyEntity>(SaveType.Add, pis).Initialize("divContent", ""))
+
+         }
+         window.Validator = validator;
+     });
+</script>

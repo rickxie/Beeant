@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "";
+}
+
+@model Beeant.Presentation.Mobile.Detail.Models.Home.CommentListModel
+@if (Model != null)
+{
+    foreach (var comment in Model.Comments)
+    {
+        <div class="element">
+            <div class="til">
+                <span style="float: left">用户：@(comment == null ? "" : string.Format("{0}*******{1}", comment.Account.Name.Substring(0, 1), comment.Account.Name.Substring(comment.Account.Name.Length - 1, 1))) </span>
+                <span class="bred" style="margin-left: 10px;">@comment.TypeName</span>
+                <span  style="float: right;">@comment.InsertTime.ToString("yyyy-MM-dd")</span>
+            </div>
+            <div class="del">
+                @comment.Detail
+            </div>
+        </div>
+    }
+}

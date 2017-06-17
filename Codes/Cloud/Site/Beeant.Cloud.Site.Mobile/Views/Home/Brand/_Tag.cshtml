@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@model Beeant.Cloud.Site.Mobile.Models.Home.HomeModel
+@if (Model != null && Model.Tags != null)
+{
+
+    foreach (var tag in Model.Tags)
+    {
+        <a href="/Commodity/Index/@ViewBag.SiteId?tagid=@tag.Id&tagname=@(Server.UrlEncode(@tag.Name))">
+            <div class="li">
+                <img src="@(Model.GetFullFileName(tag))" class="img" />
+                <div class="name">@tag.Name</div>
+               
+            </div>
+        </a>
+
+    }
+
+}
+ 

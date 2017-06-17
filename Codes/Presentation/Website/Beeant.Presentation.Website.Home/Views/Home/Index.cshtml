@@ -1,0 +1,151 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension
+@{
+    
+    Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蜂蚁窝</title>
+    <link rel="stylesheet" href="/Content/Home/Site.css" type="text/css">
+    <link rel="stylesheet" href="/Content/Home/style.css" type="text/css">
+    <link rel="stylesheet" href="/Content/Home/jquery.fullPage.css" type="text/css">
+    <link rel="stylesheet" href="/Content/Home/animate.css" type="text/css">
+    <script src="/scripts/Plug/jquery-1.7.1.min.js"></script>
+    <script src="/scripts/Home/jquery.fullPage.min.js"></script>
+    <script src="/scripts/Home/index.js"></script>
+</head>
+<body>
+    <div class="sus">
+        <div class="sus-bd">
+            <div class="main-center head2">
+                <div class="h-logo">
+                    <img src="@Html.GetUrl("PresentationWebsiteSharedUrl")/images/logo.png">
+                </div>
+                @if (ViewBag.Identity == null)
+                {
+                    <div class="h-user">
+                        @*<a class="a1" href="@Html.GetUrl("PresentationWebsiteRegisterUrl")">注册</a>*@
+                        <a class="a2" href="@Html.GetUrl("PresentationWebsiteLoginUrl")?url=@Html.GetUrl("CloudWelfareWebsiteUrl")">登录</a>
+                    </div>
+                }
+                else
+                {
+                    <div class="h-user">
+                        <a class="a2" href="@Html.GetUrl("CloudWelfareWebsiteUrl")/Home/Quit">退出</a>
+                    </div>
+                }
+
+                    <ul class="h-menu">
+                        <li class="select"><a href="/Home/index">首 页</a></li>
+                        @*<li><a href="#">平台介绍</a></li>
+                            <li><a href="#">新闻发布</a></li>*@
+                        <li><a href="@Html.GetUrl("CloudWelfareWebsiteUrl")">产品中心</a></li>
+                        @*<li><a href="#">客服指南</a></li>*@
+                        @*<li><a href="#">我的专区</a></li>*@
+                    </ul>
+                </div>
+        </div>
+    </div>
+
+    <div id="flip">
+        <div class="section floor1">
+            <h3 class="animated pulse">“蜂蚁窝--为生活绘出更美蓝图”</h3>
+            <p class="animated rollIn"><img src="/images/Home/floor01.jpg"></p>
+        </div>
+        <div class="section floor2">
+            <h3>
+                <i></i>
+                <div class="">天合员工团险</div>
+            </h3>
+            <div class="insure-field">
+                <table>
+                    <colgroup>
+                        <col width="290px">
+                        <col>
+                        <col width="90px">
+                    </colgroup>
+                    <tr>
+                        <th>保险期限</th>
+                        <th>投保年龄</th>
+                        <th>付费方式</th>
+                    </tr>
+                    <tr>
+                        <td>一年期</td>
+                        <td>18岁至59岁</td>
+                        <td>工资代扣</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="profile clear">
+                <dl>
+                    <dt>产品简介</dt>
+                    <dd>天合按照自身的保险产品经验，设计了一系列针对不同类型员工的福利保险方案，可以帮助员工以合理的保费，实现灵活的员工福利保障组合。	</dd>
+                </dl>
+                <div class="p-phone">
+                    <span><i></i>咨询电话：8517 6021</span>
+                    <a href="javascript:void(0)">查看详情</a>
+                </div>
+            </div>
+        </div>
+        <div class="section floor2 floor3">
+            <h3>
+                <i></i>
+                <div>天合国际学校招生</div>
+            </h3>
+            <div class="profile profile3 clear">
+                <div class="profile3-img">
+                    <img src="/images/Home/fllor03.png">
+                </div>
+                <div class="profile3-r">
+                    <p>学前部采用早期教育体系（EYFS），这是由英国教学质量评审机构QCA对全球20个主要国家的早期教育课程比较研究后得出的教育成果，是评估英国所有幼儿园的国家级课程标准。EYFS提供了“以孩子为中心”的教育理论，成为目前世界上理念最先进的早期教育体系。 	</p>
+                    <div class="p-phone">
+                        <span><i></i>咨询电话：8517 6021</span>
+                        <a href="javascript:void(0)">查看详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section floor2 floor4">
+            <h3>
+                <i></i>
+                <div>天合有机田园</div>
+            </h3>
+            <div class="insure-field">
+                <table>
+                    <colgroup>
+                        <col width="290px">
+                        <col>
+                        <col width="140px">
+                    </colgroup>
+                    <tr>
+                        <th>购买期限</th>
+                        <th>配送方式</th>
+                        <th>付费方式</th>
+                    </tr>
+                    <tr>
+                        <td>一年期</td>
+                        <td>快递到家</td>
+                        <td>就餐卡&支付宝</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="profile profile3 profile4 clear">
+                <div class="profile3-img">
+                    <img src="/images/Home/floor04.png">
+                </div>
+                <div class="profile3-r">
+                    <h4>产品简介</h4>
+                    <p>天合田园农业发展有限公司致力于建造全人类的生态自然家园，新型生态农庄。公司于2016年在常州成立。天合田园秉承天合精神，结合孟河的悠久历史和中医文化，以天合农法的规划理念为核心，致力于打造全球新型化的生态农庄。</p>
+                    <div class="p-phone">
+                        <span><i></i>咨询电话：8517 6021</span>
+                        <a href="javascript:void(0)">查看详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

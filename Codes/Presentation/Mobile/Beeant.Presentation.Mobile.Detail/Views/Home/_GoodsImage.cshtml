@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Extension.Mobile
+@using Beeant.Domain.Entities
+@model IList<Beeant.Domain.Entities.Product.GoodsImageEntity>
+    <div class="focusBar">
+        <ul class="mypng">
+            @if (Model != null)
+            {
+                for (var i = 0; i < Model.Count; i++)
+                {
+                    <li Banner="element" class="focus" style="@(i == 0 ? "z-index: 99" : "");">
+                        <img src="@Html.GetNoPicture()" alt="" data-original="@Model[i].GetFullFileName(Model[i].FileName, "l")"/>
+                    </li>
+                }
+            }
+        </ul>
+    </div>

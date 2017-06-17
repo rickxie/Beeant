@@ -1,0 +1,263 @@
+﻿@{
+
+}
+@using Component.Extension
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities
+@using Beeant.Domain.Entities.Site
+@using Winner.Persistence
+@model Beeant.Cloud.Site.Admin.Models.Commodity.CommodityListModel
+<div class="commodity">
+    <div class="mainten">
+        <div class="mcp">
+            <a href="/Home/Index">
+                <div class="gohome"></div>
+            </a>
+            <div class="cata">
+                @if (Model != null && Model.Catalogs != null)
+                {
+                    <select id="selSearchCatalog" class="select">
+                        <option value="">所有分类</option>
+                        @foreach (var catalog in Model.Catalogs)
+                        {
+                            <option value="@catalog.Id">@catalog.Name</option>
+
+                        }
+                    </select>
+                }
+                &nbsp; &nbsp; &nbsp;
+                @if (Model != null && Model.Tags != null)
+                {
+                    <select id="selSearchTag" class="select">
+                        <option value="">所有标签</option>
+                        @foreach (var tag in Model.Tags)
+                        {
+                            <option value="@tag.Id">@tag.Name</option>
+
+                        }
+                    </select>
+                }
+            </div>
+            <div class="searchico"></div>
+            <div class="selectitem" id="btnSelectItemButton">编辑</div>
+        </div>
+    
+        <div class="search" style="display: none;">
+            <input class="searchinput" placeholder="搜索"/>
+            <a href="javascript:void(0)" id="hfCancelSearch">取消</a>
+        </div>
+    </div>
+    <div class="list">
+   
+    </div>
+
+   
+
+
+
+    <div class="edit" style="display: none;">
+        <div class="all" id="divSelectAll">全选</div>
+        <div class="normal" id="divNormal">上架</div>
+        <div class="unsale" id="divUnSale">下架</div>
+        <div class="move" id="divMoveCatalog">移动到</div>
+        <div class="del" id="btnRemove">删除</div>
+
+    </div>
+   
+
+</div>
+<div class="movecatalog" style="display: none;">
+    <div class="cancel"><span id="btnCancelMoveCatalog">取消</span></div>
+    <ul class="ul">
+        @if (Model != null && Model.Catalogs != null)
+        {
+            foreach (var catalog in Model.Catalogs)
+            {
+                <li class="li" DataId="@catalog.Id">@catalog.Name</li>
+            }
+        }
+    </ul>
+</div>
+
+
+
+
+<div class="addbtnc">
+    <div class="addbtn" id="btnAdd">+</div>
+</div>
+
+
+<div class="addcontent" style="display: none;">
+
+    <div class="content" id="divContent">
+        <input type="hidden" id="hfId" />
+        <img src="~/Images/upbg.png" OriginalSrc="~/Images/upbg.png" id="imgFileName" ImageCutor="ShowImager" class="img" />
+        @if (Model!=null && Model.Site!=null && Model.Site.IsOpenImages)
+        {
+            <div class="images" id="divImages">
+                <div class="div">
+                    <img src="~/Images/upbg.png" OriginalSrc="~/Images/upbg.png" id="imgFileName0" Id="" name="images" ImageCutor="ShowImager" class="img" />
+                    <div class="cl" style="display: none;"></div>
+                </div>
+                <div class="div">
+                    <img src="~/Images/upbg.png" OriginalSrc="~/Images/upbg.png" id="imgFileName1" Id="" name="images" ImageCutor="ShowImager" class="img" />
+                    <div class="cl" style="display: none;"></div>
+                </div>
+                <div class="div">
+                    <img src="~/Images/upbg.png" OriginalSrc="~/Images/upbg.png" id="imgFileName2" Id="" name="images" ImageCutor="ShowImager" class="img" />
+                    <div class="cl" style="display: none;"></div>
+                </div>
+                <div class="div">
+                    <img src="~/Images/upbg.png" OriginalSrc="~/Images/upbg.png" id="imgFileName3" Id="" name="images" ImageCutor="ShowImager" class="img" />
+                    <div class="cl" style="display: none;"></div>
+                </div>
+                <div class="div">
+                    <img src="~/Images/upbg.png" OriginalSrc="~/Images/upbg.png" id="imgFileName4" Id="" name="images" ImageCutor="ShowImager" class="img" />
+                    <div class="cl" style="display: none;"></div>
+                </div>
+            </div>
+        }
+        <div class="saveele existtags" name="existtags">
+           
+        </div>
+        <div class="saveele">
+            所属分类：
+            <select id="selCatalog" class="select" ValidateName="Catalog.Id">
+                @if (Model != null && Model.Catalogs != null)
+                {
+                    foreach (var catalog in Model.Catalogs)
+                    {
+                        <option value="@catalog.Id">@catalog.Name</option>
+
+                    }
+                }
+            </select>
+            <a id="hfAddCatalog" href="javascript:void(0);">新增分类</a>
+            &nbsp; &nbsp; 
+            <a id="hfAddTag" href="javascript:void(0);">设置标签</a>
+        </div>
+
+        <div class="saveele">
+            <input type="radio" class="mui-checkbox" group="status" name="status" checked="checked" value="@(CommodityStatusType.Normal.Convert<int>())" id="rdStatusNormal" />
+            <label for="rdStatusNormal">@CommodityStatusType.Normal.GetName()</label>
+            <input type="radio" class="mui-checkbox" group="status" name="status" value="@(CommodityStatusType.UnSale.Convert<int>())" id="rdStatusUnSale" />
+            <label for="rdStatusUnSale">@CommodityStatusType.UnSale.GetName()</label>
+            <input type="checkbox" id="ckIsShowPrice" checked="checked" class="mui-checkbox" />
+            <label for="ckIsShowPrice">是否显示销售价</label>
+        </div>
+        <div class="saveele">
+            <input type="text" id="txtName" class="input ctrlshow" style="width: 65%;" ValidateName="Name" value="产品名称或者型号(前台显示必填)" ShowValue="产品名称或者型号(前台显示必填)" maxlength="50" />
+            <span class="red">*</span>
+            <input type="text" id="txtPassword" class="input ctrlshow" style="width: 20%" ValidateName="Password" value="密保" ShowValue="密保" maxlength="6" />
+        </div>
+        <div class="saveele">
+            <input type="text" id="txtCost" class="input ctrlshow" style="width: 44%;" ValidateName="Cost" value="成本价(前台不显示)" ShowValue="成本价(前台不显示)" />
+            <input type="text" id="txtPrice" class="input ctrlshow" style="width: 44%;" ValidateName="Price" value="销售价(根据选项)" ShowValue="销售价(根据选项)" />
+        </div>
+        <div class="saveele">
+            <input type="text" id="txtDescription" class="input ctrlshow" ValidateName="Description" value="产品材质与工艺(前台显示)" ShowValue="产品材质与工艺(前台显示)" />
+        </div>
+        <div class="saveele">
+            <input type="text" id="txtVenderName" class="input ctrlshow" style="width: 35%;" ValidateName="VenderName" value="进货商货号(前台不显示)" ShowValue="进货商货号(前台不显示)" />
+            <input type="text" id="txtVenderMobile" class="input ctrlshow" style="width: 52.5%;" ValidateName="VenderMobile" value="进货商联系方式(前台不显示)" ShowValue="进货商联系方式(前台不显示)" />
+        </div>
+        <div class="saveele">
+            <input type="text" id="txtVenderLinkman" class="input ctrlshow" style="width: 35%;" ValidateName="VenderLinkman" value="进货商联系人(前台不显示)" ShowValue="进货商联系人(前台不显示)"/>
+            <input type="text" id="txtVenderAddress" class="input ctrlshow" style="width: 52.5%;" ValidateName="VenderAddress" value="进货商联系地址(前台不显示)" ShowValue="进货商联系地址(前台不显示)"/>
+
+        </div>
+        @if (ViewBag.Site != null && ViewBag.Site.IsPrint)
+        {
+            <div class="br">图册图片</div>
+            <div style="position: relative;">
+                <img src="~/Images/upbg.png" OriginalSrc="~/Images/upbg.png" id="imgAlbumFileName" ImageCutor="ShowImager" class="img"/>
+            </div>
+            <div class="saveele">
+                <input type="checkbox" class="mui-checkbox"  name="IsCreateAlbum" checked="checked" value="" id="ckIsCreateAlbum" />
+                <label for="ckIsCreateAlbum">是否生成到目录本</label>
+                
+            </div>
+        }
+    </div>
+    <div class="ope">
+        <input type="button" class="cancel" id="btnCancel" value="取消"  />
+        <input type="button" class="save" id="btnSave" value="保存" />
+    </div>
+</div>
+
+
+
+<div id="divFileName" style="display: none;" ImageCutor="ChangeContainer">
+    <div id="divChangeFileName" class="hurl" ImageCutor="ChangeButton">上传图片</div>
+    <div id="divCloseFileName" ImageCutor="CloseButton">取消</div>
+</div>
+
+<div id="divCutContainer" class="cut" style="display: none;" >
+    <div class="cutimg">
+        <div class="topmask" ImageCutor="TopMask"></div>
+        <div class="topmask" ImageCutor="LeftMask"></div>
+        <canvas class="canvas"></canvas>
+        <img ImageCutor="Image" style="display: none;" />
+        <input type="file" name="text" style="display: none;" />
+        <div class="bottommask" ImageCutor="BottomMask"></div>
+        <div class="bottommask" ImageCutor="RightMask"></div>
+    </div>
+</div>
+
+<div class="cutbottom" style="display: none;" ImageCutor="CutContainer">
+    <input type="button" class="btn" id="divColseCut" style="float: left; margin-left: 0;" value="取消" ImageCutor="ColseCutButton">
+    <input type="button" class="btn sel" name="cuttypebtn"  value="截图" ImageCutor="CutPartButton">
+    <input type="button" class="btn"  name="cuttypebtn" value="全图" ImageCutor="CutFullButton">
+
+    <input type="button"  class="btn" id="divSaveCut" style="float: right;"  value="保存" ImageCutor="SaveCutButton">
+</div>
+
+
+<div class="addcatalog" style="display: none;">
+    <input type="text" id="txtCatalog" class="input" maxlength="20"/>
+    <div class="btnc">
+        <input type="button" value="确定" id="btnSaveCatalog" class="btn"/>
+        <input type="button" value="取消" id="btnCanceAddcatalog" class="btn"/>
+    </div>
+
+</div>
+
+<div class="addtag" style="display: none;">
+    <div class="selecttag">
+        <span  name="showtag"></span>
+        <input type="text" id="txtTag" class="input" maxlength="20" placeholder="输入标签" />
+    </div>
+
+    <div class="alltag">
+        <div class="tg"  tag='true' tagid='@("@Id")' tagname=' @("@Name")' DataLoaderArray="@("@")">@("@Name")</div>
+    </div>
+    <div class="btnc">
+        <input type="button" value="确定" id="btnSaveTag" class="btn"/>
+        <input type="button" value="取消" id="btnCanceAddTag" class="btn"/>
+    </div>
+
+</div>
+
+<div class="mask" style="display: none;" ImageCutor="Mask"></div>
+
+
+
+
+<script type="text/javascript" src="~/Scripts/plug/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="/Scripts/Plug/exif.min.js"></script>
+<script type="text/javascript" src="/Scripts/winner/ImageCutor/winner.ImageCutor.js"></script>
+<script type="text/javascript" src="~/Scripts/winner/validator/winner.Validator.js"></script>
+<script type="text/javascript">
+     $(document).ready(function () {
+         @{
+             var pis = new[] { "Name","Catalog.Id", "Cost", "Price", "Password", "VenderName", "VenderLinkman", "VenderMobile", "VenderAddress", "Description" };
+             @(Html.ScriptValidator<CommodityEntity>(SaveType.Add, pis).Initialize("divContent", ""))
+
+         }
+         window.Validator = validator;
+         window.IsPassword=@(Model!=null && Model.Site!=null ?Model.Site.IsPassword.ToString().ToLower():"false");
+     });
+</script>
+<script type="text/javascript" src="~/Scripts/commodity.js"></script>
+<script type="text/javascript" src="~/Scripts/commoditytag.js"></script>

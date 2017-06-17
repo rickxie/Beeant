@@ -1,0 +1,243 @@
+*{ margin:0 0; padding:0 ;}
+ul{ list-style-type:none;}
+img{border:none;}
+em,q,cite,address { font-weight:normal; font-style:normal }
+h1, h2, h3 { font-weight:normal }
+address { display:inline }
+big,small { font-size:12px }
+img { border:none }
+li { list-style:none }
+q { quotes:none }
+strong { font-weight:bold }
+table { border-collapse:collapse }
+th { text-align:left; font-weight:normal }
+em { font-family:宋体; font-size:12px; color:#F00 }
+/* link */
+a { color:#38a2d2; outline-style:none; text-decoration:none}
+a:hover { text-decoration:none; color:#f2963d}
+/* clear float */
+.cf { zoom:1} /* for IE */
+.cf:after { content:"."; display: block; clear:both; font-size:0; height:0; visibility:hidden; overflow:hidden} /* for other */
+/* end of clear float */
+body { font-size:12px; line-height:24px; font-family:Tahoma, Arial, sans-serif, Simsun, 宋体; color:#404040; background:#FFF;  }
+
+/* IE6浏览器的特有方法 */ 
+* html .head{ position:absolute; left:expression(eval(document.documentElement.scrollLeft)); top:expression(eval(document.documentElement.scrollTop))} 
+* html .sidebar{ position:absolute; left:expression(eval(document.documentElement.scrollLeft)); top:expression(eval(document.documentElement.scrollTop))} 
+/*这个可以让IE6下滚动时无抖动*/
+html { background: url(about:black) no-repeat fixed}
+
+/* 头部样式 */ 
+.head { width:100%; height:79px; background:url(../Images/Erp_Bg_head.jpg) left top no-repeat; border-bottom:#ccc 1px solid}
+.head .logo { width:175px; position:absolute; top:0; left:0; padding:10px 0 0 10px }
+.head .nav { margin:0 270px 0 185px; padding:24px 0 0 20px; height:48px; line-height:24px; position:relative  }
+.head .nav ul { position:absolute; bottom:0}
+.head .nav li { float:left; padding:0 20px 0 0 } 
+.head .nav a { color:#404040}
+.head .nav a:hover { color:#f2963d}
+.head .nav strong { color:#f8413d; font-weight:normal}
+.head .name { width:260px; height:24px; line-height:24px; text-align:right; position:absolute; top:0; right:0; padding:48px 10px 0 0}
+.head .name a { margin-left:20px}
+
+.fulltitle{line-height: 30px;padding-left: 10px; background:url(../Images/titlebg.gif) repeat-x; height:30px; font-weight:bold;  font-size:12px; color:#FFFFFF;}
+
+.menu {bottom: 0;height: auto;left: 0;overflow-x: hidden;overflow-y: auto; position: absolute;top: 81px;width: 185px;z-index: 10;padding: 10px;background: #ffffff;}
+.menu h1{color: #3C8F4B;font-size: 14px;padding: 0;}
+.menu a{outline-style: none;text-decoration: none;}
+.menu a:hover{ color: #F2963D;}
+.menu .parent{display: block; background-image: url("../Images/Erp_Bg01.png");background-position: -285px -40px;background-repeat: no-repeat;display: block;border: 1px solid #BBD8FA;height: 26px;
+    line-height: 26px;margin: 2px 0;padding: 0 0 0 20px;vertical-align: middle;width: 134px;color: #38A2D2; }
+.menu .open{background-position: -285px -68px}
+.menu ul li ul li{ width: 134px;background: none repeat scroll 0 center transparent; border: 0 none;margin: 0;
+                     padding: 0 0 0 20px;height: 26px;line-height: 26px;vertical-align: middle;}
+.menu  ul li ul li a{color: #404040;}
+.main{position:absolute; top:81px; bottom:0; z-index:1; width:100%;  min-width:800px;margin-top: 10px;}
+
+.main .fullbody{ width: 100%;}
+.main .fullbody .search{ width: 100%;}
+.main .fullbody .search .tb{text-align:left; vertical-align:top; border:1px solid #bbd8fa;border-collapse: collapse; width:100%;  }
+.main .fullbody .search .tb .font{border:1px solid #bbd8fa;word-break: keep-all;border-collapse: collapse; text-align:center; vertical-align:middle; height:20px; width:100px;background:#f4f7fe;padding: 0;}
+.main .fullbody .search .tb .text{border:1px solid #bbd8fa;border-collapse: collapse;padding: 2px 2px 2px 2px; text-align:left; vertical-align:top;width: 100px; }
+.main .fullbody .search .tb .text label, .search .tb .mtext label{  white-space: nowrap; text-overflow: ellipsis; word-break: keep-all;}
+.main .fullbody .search .tb .mtext{border:1px solid #bbd8fa;border-collapse: collapse;padding: 2px 2px 2px 2px; text-align:left; vertical-align:top; }
+.main .fullbody .search .tb .btn{ background: url("../Images/Erp_Button01.png") 0 -22px no-repeat scroll transparent;border: medium none;color: #000000;font-size: 12px;font-weight: normal;height: 22px;width: 65px;text-align: center;}
+.main .fullbody .search .tb .seinput{width: 135px; height: 18px;line-height: 18px;padding: 1px 3px 0;border: 0;}
+.main .title{position: relative;z-index: 99; margin-left:225px;border:#e0e0e0 1px solid; border-bottom:#FFF 1px solid;background: #fff;color: #38A2D2;display: block;font-size: 14px; height: 24px;padding: 0 20px;width: 120px;}
+.search{ width: 100%;}
+.search .tb{text-align:left; vertical-align:top; border:1px solid #bbd8fa;border-collapse: collapse; width:100%;  }
+.search .tb .font{border:1px solid #bbd8fa;word-break: keep-all;border-collapse: collapse; text-align:center; vertical-align:middle; height:20px; width:10%;background:#f4f7fe;padding: 0;}
+.search .tb .text{border:1px solid #bbd8fa;border-collapse: collapse;padding: 2px 2px 2px 2px; text-align:left; vertical-align:top;width: 15%;background: #ffffff; }
+.search .tb .text label, .search .tb .mtext label{  white-space: nowrap; text-overflow: ellipsis; word-break: keep-all;}
+.search .tb .mtext{border:1px solid #bbd8fa;border-collapse: collapse;padding: 2px 2px 2px 2px; text-align:left; vertical-align:top;background: #ffffff; }
+.search .tb .btn{ background: url("../Images/Erp_Button01.png") 0 -22px no-repeat scroll transparent;border: medium none;color: #000000;font-size: 12px;font-weight: normal;height: 22px;width: 65px;text-align: center;}
+.search .tb .seinput{width: 135px; height: 18px;line-height: 18px;padding: 1px 3px 0;border: 0;}
+.main .body{margin-left:205px;border: 1px solid #E0E0E0;z-index: 2; left: 0;overflow: auto;padding: 24px;margin-top: -1px; }
+.mainten{border:#d6d6d6 1px solid; border-bottom:0;padding: 8px 0 10px 20px;margin-top: 20px;}
+.mainten a{float: left;display: block;  text-decoration: none;}
+.mainten .btn{ margin-left: 5px;background: url("../Images/Erp_Button01.png") no-repeat scroll 0 0 transparent;border: medium none;color: #000000;font-size: 12px;font-weight: normal;height: 22px;width: 44px;text-align: center;line-height: 22px;}
+.mainten .mbtn{ width: 65px;background-position: 0 -22px; }
+.mainten .lmbtn{ width: 100px;background-position: 0 -44px; }
+.list{ width: 100%; overflow-x:scroll;}
+.list .img{ width: 102px;height: 102px;}
+.list .table{border-collapse: collapse; width:100%;}
+.list .table td,.list .table th{ border:1px solid #d6d6d6;border-collapse: collapse;overflow: hidden; white-space: nowrap; text-overflow: ellipsis; word-break: keep-all;}
+.list .table th { font-size:13px; color:#3c8f4b; background:url(../Images/thbg.png) repeat-x; height:18px; text-align: center;} 
+.list .table .over{ background:lightblue;}
+.list .table .out{}
+.list .table .select{background:lightgray;}
+.list .table td{ height:16px;padding: 0 5px;}
+.list .table .center{text-align:center; vertical-align:middle;}
+.list .table .left{text-align:left; vertical-align:middle;}
+.list .table .right{text-align:right; vertical-align:middle;}
+.list .table .time{width:120px;}
+.list .table .loperate{width:80px;}
+.list .table .operate{width:40px;}
+.list .table .ckbox{width:30px;}
+.list .table .name{width:120px;}
+.list .table .sort{ width: 50px; }
+.list .table .status{ width: 60px; }
+.list .table .sequence{ width: 60px;}
+.datum .list{ width: 100%; overflow-x:hidden;}
+
+.datum{margin: 0 auto;width: 1200px;}
+.edit{ width: 100%;}
+.edit .tb{width:100%; border:1px solid #bbd8fa;border-collapse: collapse; }
+.edit .tb .long{ width: 50%;}
+.edit .tb textarea{ width:72.4%;height: 100px; }
+.edit .tb .font{border:1px solid #bbd8fa;border-collapse: collapse;text-align:left; vertical-align:middle; height:20px; width:10%;word-break: keep-all; background:#f4f7fe;}
+.edit .tb .text{border:1px solid #bbd8fa;border-collapse: collapse; background:#ffffff; text-align: left;vertical-align: middle;width: 40%; padding: 2px 0 2px 2px }
+.edit .tb .mtext{border:1px solid #bbd8fa;border-collapse: collapse; background:#ffffff; text-align: left;vertical-align: middle; padding: 2px 0 2px 2px }
+.edit .tb .center{ text-align: center;background: #ffffff;padding: 2px;}
+.edit .tb .error{background:#ffffff; width:200px; }
+.edit .tb .mul{ text-align: left;vertical-align: middle; padding: 2px 0 2px 2px }
+.edit .tb .mul .editor,.edit .tb .mul .validshowmess,
+.edit .tb .mul .validsucessmess,.edit .tb .mul .validerrormess,.edit .tb .mul .combo{ float: left;display: block;}
+.edit .tb .ckmul table, .edit .tb .ckmul span, .edit .tb .ckmul select{ float: left;}
+.edit .tb .text .intb{ width: 100%; background:transparent;border: 0;padding: 0;margin-top: 0;}
+.edit .tb .text .intb .infont{border:1px solid #bbd8fa;border-collapse: collapse; text-align:left; vertical-align:middle; height:20px; width:100px;word-break: keep-all; background:#c1e0ff;}
+.edit .tb .text .intb .intext{border:1px solid #bbd8fa;border-collapse: collapse;border-collapse: collapse; background:#ffffff; text-align: left;vertical-align: middle;padding: 2px 0 2px 2px; }
+.edit .tb .text .intb .intext .shortinput{ width: 50px;}
+.edit .btn{ background: url("../Images/Erp_Button01.png") no-repeat scroll 0 0 transparent;border: medium none;color: #000000;font-size: 12px;font-weight: normal;height: 22px;width: 44px;text-align: center;line-height: 22px;}
+.edit .btn:disabled{ color: #b2b3b3;border: 1px solid #b2b3b3}
+.dialog .search .text{ width: auto;}
+.tblist{border:1px solid #bbd8fa;border-collapse: collapse;width:100%;}
+.tblist td,.info .table th{ border:1px solid #d6d6d6;border-collapse: collapse;overflow: hidden; white-space: nowrap; text-overflow: ellipsis; word-break: keep-all;}
+.tblist th { font-size:13px; color:#3c8f4b; background:url(../Images/thbg.png) repeat-x; height:18px; text-align: center;} 
+.tblist .over{ background:lightblue;}
+.tblist .out{}
+.tblist .font{border:1px solid #bbd8fa;border-collapse: collapse;text-align:left; vertical-align:middle; height:20px; width:10%;word-break: keep-all; background:#f4f7fe;}
+.tblist .text{border:1px solid #bbd8fa;border-collapse: collapse; background:#ffffff; text-align: left;vertical-align: middle;width: 40%; padding: 2px 0 2px 2px }
+.tblist .select{background:lightgray;}
+.tblist td{ height:16px;padding: 0 5px;}
+.tblist .center{text-align:center; vertical-align:middle;}
+.tblist .left{text-align:left; vertical-align:middle;}
+.tblist .right{text-align:right; vertical-align:middle;}
+.tblist .time{width:120px;}
+.tblist .loperate{width:80px;}
+.tblist .operate{width:40px;}
+.tblist .ckbox{width:30px;}
+.tblist .name{width:120px;}
+.tblist .sort{ width: 50px; }
+.tblist .status{ width: 60px; }
+.edit .subtitle{ width: 100%;height:25px; line-height: 25px;  font-size:12px; color:#38A2D2;background: #ffffff;margin-top: 5px;margin-bottom: 5px;cursor: pointer;}
+.edit .subtitle .count{ color: #ff0000;font-size: 16px;}
+.edit .sublist { overflow-x: scroll;width: 100%;}
+
+.info{ width: 100%;}
+.info .tb1{ position: relative;}
+.info .tb{width:100%; border:1px solid #bbd8fa;border-collapse: collapse;  }
+.info .tb .font{border: 1px solid #bbd8fa;word-break: keep-all;border-collapse: collapse; text-align:left; vertical-align:middle; height:20px; width:10%;background:#f4f7fe;}
+.info .tb .center{ text-align: center;padding: 2px;  border:1px solid #bbd8fa;}
+.info .tb .text{ border:1px solid #bbd8fa;border-collapse: collapse; width: 40%; background:#ffffff; text-align: left;vertical-align: middle; padding: 2px 0 2px 2px  }
+.info .tb .mtext{ border:1px solid #bbd8fa;border-collapse: collapse;  background:#ffffff; text-align: left;vertical-align: middle; padding: 2px 0 2px 2px  }
+.info .tb .btn{background: url("../Images/Erp_Button01.png") no-repeat scroll 0 0 transparent;border: medium none;color: #000000;font-size: 12px;font-weight: normal;height: 22px;width: 44px;text-align: center;}
+.info .subtitle{ width: 100%;height:25px; line-height: 25px;  font-size:12px; color:#38A2D2;background: #ffffff;margin-top: 5px;margin-bottom: 5px;cursor: pointer;}
+.info .subtitle .count{ color: #ff0000;font-size: 16px;}
+.info .sublist { overflow-x: scroll;width: 100%;}
+.info .table{border-collapse: collapse; width:100%;}
+.info .table td,.info .table th{ border:1px solid #d6d6d6;border-collapse: collapse;overflow: hidden; white-space: nowrap; text-overflow: ellipsis; word-break: keep-all;}
+.info .table th { font-size:13px; color:#3c8f4b; background:url(../Images/thbg.png) repeat-x; height:18px; text-align: center;} 
+.info .table .over{ background:lightblue;}
+.info .table .out{}
+.info .table .select{background:lightgray;}
+.info .table td{ height:16px;padding: 0 5px;}
+.info .table .center{text-align:center; vertical-align:middle;}
+.info .table .left{text-align:left; vertical-align:middle;}
+.info .table .right{text-align:right; vertical-align:middle;}
+.info .table .time{width:120px;}
+.info .table .loperate{width:80px;}
+.info .table .operate{width:40px;}
+.info .table .ckbox{width:30px;}
+.info .table .name{width:120px;}
+.info .table .sort{ width: 50px; }
+.info .table .status{ width: 60px; }
+.info .table .sequence{ width: 60px;}
+.message{ width: 100%;text-align: center;font-size: 16px;color: #ff0000;}
+.process{position: absolute;top: 0;left: 0; width: 100%;height: 100%;line-height: 100%; }
+.process .loading{position: absolute; width: 100%;top: 50%; z-index: 1200; text-align: center;}
+.process .shelter{width: 100%;height: 100%; filter:alpha(Opacity=50);-moz-opacity:0.5;opacity: 0.5; background-color:#000000;}
+.input{width: 135px; border: 1px solid #BBBBBB;height: 18px;line-height: 18px;padding: 1px 3px 0;}
+
+.checkpart{filter:alpha(Opacity=50);-moz-opacity:0.5;opacity: 0.5;z-index:100; background-color:#ffffff; }
+
+
+.ttl03 big {color: #3C8F4B;font-size: 14px; padding: 0 5px;}
+.col06 { color: #F8413D;}
+.ttl02 {padding: 8px 20px 10px 0;}
+.win-main { width:256px; height:160px; border:2px solid #56829d;position:absolute;z-index: 9999; right: 0;bottom: 0;background: #ffffff; }
+.win-main h1 { font-size:12px; height:24px; background:#e2f3fb; border-bottom:1px solid #56829d; padding:0 0 0 6px }
+.win-main small { display:block; width:12px; height:12px; background:#fff; color:#56829d; border:1px solid #56829d; position:absolute; top:5px; right:7px; font-size:14px; font-weight:bold; line-height:12px; text-align:center }
+.win-main div { width:244px; height:248px; padding:6px; overflow:hidden; text-overflow:ellipsis; text-indent:2em }
+#ctl00_Body_ckSelectList label{ margin: 0 10px 0  3px;}
+.img{ width: 102px;height: 102px;}
+
+.freight{float: left; width: 600px; background: #ffffff;border:1px solid #56829d;position: absolute;}
+.freight .content{padding: 20px;min-height: 300px;}
+.freight .content .province{float: left; position: relative;width: 100px;line-height: 20px;}
+.freight .content .province .count{color: #ff0000;}
+.freight .content .province .city{ width: 300px;z-index: 999; position: absolute;top: 20px;padding: 20px; border:1px solid #BBBBBB;background:lightgray; }
+.freight .sure{float: left;margin-top: 20px;padding: 10px 0 10px 0; width: 100%;border-top:1px solid #56829d;height: 30px;text-align: center; }
+.ajax__calendar_container{ z-index: 9999;}
+
+.pager{ width: 100%;font-size: 12px;}
+.pager .link{ font-size:12px;  padding-top:8px;  text-decoration:none; margin-left:10px; display:inline; }
+.pager .disable{ color: lightgray; }
+.pager .text{ margin-top:2px; margin-left:2px; display:inline; width:50px;}
+.pager .text big{color:Red; font-size:14px;}
+.pager .box{margin-top:2px; margin-left:2px; display:inline; width:50px;}
+.pager .btngo{background:url(../Images/pagego.png) no-repeat; width:42px; height:22px;}
+
+
+#gpBox{float: left; width:100%; overflow: hidden;color: #404040;  }
+#gpBox ul{ padding:0; margin:0; border:1px solid #bbd8fa; padding:10px 15px 6px 10px; margin:3px 5px; float:left;}
+#gpBox li{ list-style:none; height:32px;}
+#gpBox .goodsName{ text-align:center; font-weight:bold;}
+#gpBox li span{ float:left;  line-height:20px; width:50px; text-align:center;}
+#gpBox li input{ padding:0; float:left; height:20px; text-indent:6px; line-height:20px; width:100px; border:1px solid #ccc;  }
+.clear{zoom:1;}
+.clear:after{ content:''; display:block; clear:both;}
+
+#divPrice{ border: 1px solid #bbd8fa; margin-top: 5px;   width: 1561px;   float: left;}
+
+
+.edittb{ width: 100%;}
+.edittb{width:100%; border:1px solid #bbd8fa;border-collapse: collapse; }
+.edittb .long{ width: 50%;}
+.edittb textarea{ width:72.4%;height: 100px; }
+.edittb .font{border:1px solid #bbd8fa;border-collapse: collapse;text-align:left; vertical-align:middle; height:20px; width:100px;word-break: keep-all; background:#f4f7fe;}
+.edittb .text{border:1px solid #bbd8fa;border-collapse: collapse;width: 40%; background:#ffffff; text-align: left;vertical-align: middle; padding: 2px 0 2px 2px }
+.edittb .mtext{border:1px solid #bbd8fa;border-collapse: collapse; background:#ffffff; text-align: left;vertical-align: middle; padding: 2px 0 2px 2px }
+.edittb .center{ text-align: center;background: #ffffff;padding: 2px;}
+.edittb .error{background:#ffffff; width:200px; }
+.edittb .mul{ text-align: left;vertical-align: middle; padding: 2px 0 2px 2px }
+.edittb .mul .editor,.edittb .mul .validshowmess,
+.edittb .mul .validsucessmess,.edittb .mul .validerrormess,.edittb .mul .combo{ float: left;display: block;}
+.edittb .ckmul table, .edittb .ckmul span,.edittb .ckmul select{ float: left;}
+.edittb .text .intb{ width: 100%; background:transparent;border: 0;padding: 0;margin-top: 0;}
+.edittb .text .intb .infont{border:1px solid #bbd8fa;border-collapse: collapse; text-align:left; vertical-align:middle; height:20px; width:100px;word-break: keep-all; background:#c1e0ff;}
+.edittb .text .intb .intext{border:1px solid #bbd8fa;border-collapse: collapse;border-collapse: collapse; background:#ffffff; text-align: left;vertical-align: middle;padding: 2px 0 2px 2px; }
+.edittb .text .intb .intext .shortinput{ width: 50px;}
+
+.chart{ width: 100%;height: 800px; overflow-x:scroll;margin-top: 20px;}
+
+.btn{ background: url("../Images/Erp_Button01.png") 0 -22px no-repeat scroll transparent;border: medium none;color: #000000;font-size: 12px;font-weight: normal;height: 22px;width: 65px;text-align: center;}

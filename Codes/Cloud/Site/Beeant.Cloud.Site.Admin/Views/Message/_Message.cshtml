@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "";
+}
+@model Beeant.Cloud.Site.Admin.Models.Message.MessageListModel
+@if (Model != null && Model.Messages != null)
+{
+    foreach (var es in Model.Messages)
+    {
+        <div class="element" DataId="@es.Id">
+           
+            <div class="title"> @es.Name</div>
+           
+            <input class="remove" type="button" style="display: none;" value="删除" />
+        </div>
+    }
+}

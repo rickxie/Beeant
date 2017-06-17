@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "";
+}
+@model Beeant.Cloud.Site.Admin.Models.News.NewsListModel
+@if (Model != null && Model.Newses != null)
+{
+    foreach (var es in Model.Newses)
+    {
+        <div class="element" Sequence="@es.Sequence" DataId="@es.Id">
+            <div class="up"></div>
+            <div class="title"> @es.Title</div>
+            <div class="down" onclick="downCatalog(this, '@es.Id');"></div>
+            <input class="remove" style="display: none;" value="删除" />
+        </div>
+    }
+}

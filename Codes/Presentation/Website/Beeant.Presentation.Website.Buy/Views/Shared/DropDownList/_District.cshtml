@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "";
+}
+@model Beeant.Presentation.Website.DrowDownList.DropDownListModel
+<select id="ddlProvince" class="sel"></select>
+<select id="ddlCity" class="sel" name="@Model.Name"  @(string.IsNullOrEmpty(Model.ValidateName)?"":string.Format("ValidateName={0}",Model.ValidateName))>
+    @if (!string.IsNullOrEmpty(Model.SelectValue))
+    {
+        <option selected="selected" value="@Model.SelectValue"></option>
+    }
+</select>
+ <script type="text/javascript" id="scriptDistrict">
+        $(document).ready(function() {
+            var districts = @Html.Action("GetAllDistricts", "District");
+            var selectProvince = $("#ddlProvince");
+            var selectCity = $("#ddlCity");
+            function loadDistrict(ctrl, parentId) { //加载区域
+                ctrl.empty();
+                ctrl.append("<option value=''>请选择</option>");
+                $(districts).each(function(index, value) {
+                    if (value.ParentId == parentId) {
+                        ctrl.append("<option value='" + value.Id + "'>" + value.Name + "</option>");
+                    }
+                });
+            }
+            loadDistrict(selectProvince, 0);
+            if (selectCity.val() != "") {
+                $(districts).each(function(index, value) {
+                    if (value.Id == selectCity.val()) {
+                        selectProvince.val(value.ParentId);
+                        loadDistrict(selectCity, value.ParentId);
+                        selectCity.val(value.Id);
+                    }
+                });
+            }
+            selectProvince.change(function() {
+                if ($(this).val() != "") {
+                    loadDistrict(selectCity, $(this).val());
+                } else {
+                    selectCity.empty();
+                }
+            });
+        });
+    </script>
+ 

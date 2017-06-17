@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@model Beeant.Cloud.Site.Mobile.Models.Home.HomeModel
+@if (Model != null && Model.Tags != null)
+{
+
+    {
+        var i = 7;
+        foreach (var tag in Model.Tags)
+        {
+            <a href="/Commodity/Index/@ViewBag.SiteId?tagid=@tag.Id&tagname=@(Server.UrlEncode(@tag.Name))">
+                <li class="li c@(i)">
+                    @tag.Name
+                </li>
+            </a>
+
+            if (i > 20)
+            {
+                i = 0;
+            }
+            else
+            {
+                i = i + 1;
+            }
+
+
+        }
+    }
+
+}
+ 

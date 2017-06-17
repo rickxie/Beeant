@@ -1,0 +1,76 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.ToperName = "首页";
+    ViewBag.Title = "首页";
+}
+@section head
+{
+
+    <link href="/Content/Window.css" rel="stylesheet" />
+ 
+}
+<script type="text/javascript">
+
+    window.Language = {
+        LoadErrorMessage: "系统忙，请稍候再试",
+        PasswordTip: "请输入密保",
+        PasswordErrorMessage: "密保错误"
+    }
+</script>
+<div id="divBanner" class="banner">
+
+</div>
+
+
+<div class="home">
+    <div class="naver">
+        <ul>
+
+            <a href="/certificate/index/@ViewBag.SiteId">
+                <li class="li c1">
+                    证书
+                </li>
+            </a>
+            <a href="/Catalog/index/@ViewBag.SiteId">
+                <li class="li c2">
+                    产品
+                </li>
+            </a>
+            @if (ViewBag.Site.IsPrint)
+            {
+                <a href="/Book/index/@ViewBag.SiteId">
+                    <li class="li c2">
+                        图册
+                    </li>
+                </a>
+            }
+            <a href="/News/index/@ViewBag.SiteId">
+                <li class="li c3">
+                    招聘
+                </li>
+            </a>
+            <a href="/Inquery/index/@ViewBag.SiteId">
+                <li class="li c4">
+                    留言
+                </li>
+            </a>
+            <a href="/Company/Index/@ViewBag.SiteId">
+                <li class="li c5">
+                    联系我们
+                </li>
+            </a>
+            <a id="hfLinkMobile" href="javascript:void(0);">
+                <li class="li c6">
+                    电话
+                </li>
+            </a>
+
+        </ul>
+    </div>
+ 
+
+</div>
+<script type="text/javascript" src="~/Scripts/plug/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="~/Scripts/Winner/Banner/Winner.Banner.js"></script>
+<script type="text/javascript" src="~/Scripts/Window/home.js"></script>

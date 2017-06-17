@@ -1,0 +1,29 @@
+﻿<div class="top_piece">
+    	<div class="header">
+        </div>
+    </div>
+    <div class="middle_piece no_bgcolor">
+    	<div class="content_wrap no_padding">
+           <div class="email" style="width:760px; height:526px; margin:8px auto 0;">
+           		<div class="top" style="height:48px; background:#3f9fe9; position:relative;">
+                </div>
+                <div class="mid" style="width:680px; padding:40px 30px 70px; border-left:10px solid #ebebeb; border-right:10px solid #ebebeb;">
+                	<p class="txt1" style="margin-bottom:34px; font-size:16px; color:#000;">尊敬的feishacom，您好:</p>
+                    <p class="txt2" style="padding-left:30px; color:#4d4d4d; font-size:14px;  margin-bottom:30px;">您在蜂蚁窝官网（Gobuy.com）点击了"忘记密码"按钮，故系统自动为您发送了这封邮件。</p>
+                    <p class="txt3" style="padding-left:30px; color:#4d4d4d; font-size:14px; margin-bottom:4px;">您的邮件验证码为：{0}</p>
+                    <p class="txt4" style="padding-left:30px; color:#4d4d4d; font-size:12px; margin-bottom:40px; color:#0088cc; word-wrap: break-word;　word-break: normal; line-height:22px;">请于1小时内输入，工作人员不会向您索取，请勿告诉他人。如果您不需要修改密码，或者您从未点击过"忘记密码"按钮，请忽略本邮件。</p>
+                	<p class="txt6" style="padding-left:30px; color:#4d4d4d; font-size:12px; margin-bottom:50px;">欢迎您再次到蜂蚁窝，祝您购物愉快！</p>
+                </div>
+                <div class="bot" style="height:80px; background:#ebebeb;">
+                	<p style="padding:22px 30px; color:#959595; line-height:20px;">您之所以收到这封邮件，是因为您曾经注册成为蜂蚁窝的用户。本邮件由蜂蚁窝系统自动发出，请勿直接回复！<br />
+如果您有任何疑问或建议，请联系我们，客服热线：666-888-6868.</p>
+                </div>
+           </div>  
+        </div>
+    </div>
+    <div class="bottom_piece">
+    	<div class="foot" style="padding-top:33px; padding-bottom:165px; font-size:12px;">
+        	
+        </div>
+    </div>
+

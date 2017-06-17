@@ -1,0 +1,22 @@
+﻿.goodslist_property {float: left;width: 100%;margin-top: 10px;}
+.goodslist_property table{width: 100%;border: 1px solid #F3D7BB;border-collapse: collapse;background: #cccccc;}
+.goodslist_property table td{border-bottom: 1px solid #F3D7BB;border-collapse: collapse;vertical-align:top;}
+.goodslist_property .name{  width: 100px;color: #F37C06;background: #FFF8F2;padding: 10px;}
+.goodslist_property .value{ background: #ffffff;}
+.goodslist_property .value ul li{ float: left;margin-left: 20px;margin-top: 10px;color: #cccccc;}
+.goodslist_property .value ul li a{ color: #000000;}
+.goodslist_property .value ul li a:hover{ color: #F37C06;text-decoration: underline;}
+.goodsinfo_sort {float: left;width: 100%;margin-top: 10px;}
+.goodsinfo_sort table{width: 100%;border: 1px solid #F3D7BB;border-collapse: collapse;background: #cccccc;}
+.goodsinfo_sort table td{border-bottom: 1px solid #F3D7BB;border-collapse: collapse;vertical-align:top;}
+.goodsinfo_sort .name{  width: 100px;color: #F37C06;background: #FFF8F2;padding: 10px;}
+.goodsinfo_sort .value{ background: #ffffff;}
+.goodsinfo_sort .value ul li{ float: left;margin-left: 20px;margin-top: 10px;color: #cccccc;}
+.goodsinfo_sort .value ul li a{ color: #000000;}
+.goodsinfo_sort .value ul li a:hover{ color: #F37C06;text-decoration: underline;}
+.goodslist_goods{float: left;margin-top: 10px; width: 100%;overflow: hidden;}
+.goodslist_goods .pro{float: left; width: 200px;margin-top: 5px;margin-left: 18px;   border: 1px solid #F2F2F2;}
+.goodslist_goods .pro .name{ width: 100%;text-align: center;border-top: 1px solid #F2F2F2;margin-top: 10px;height: 40px;}
+.goodslist_goods .pro .price{ width: 100%;text-align: center;border-top: 1px solid #F2F2F2;margin-top: 10px;height: 40px;line-height: 40px;color: #ff0000;font-size: 14px;font-weight: bold;}
+.goodslist_goods .pro .img{width: 100%;height: 200px;}
+.goodslist_goods .pro .img img{ max-width: 200px;max-height: 200px;}

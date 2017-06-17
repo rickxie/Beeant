@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E061610E-4903-473A-9D3E-D8E41A43A407}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Beeant.Basic.Services</RootNamespace>
+    <AssemblyName>Beeant.Basic.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\..\Packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Extension\GlobalExtension.cs" />
+    <Compile Include="Common\Extension\QueryBasicInfo.cs" />
+    <Compile Include="Mvc\Bases\ApiBaseController.cs" />
+    <Compile Include="Mvc\Bases\BaseController.cs" />
+    <Compile Include="Mvc\Bases\PartnerBaseController.cs" />
+    <Compile Include="Mvc\Bases\SharedBaseController.cs" />
+    <Compile Include="Mvc\Bases\MobileBaseController.cs" />
+    <Compile Include="Mvc\ComboBox\ComboBox.cs" />
+    <Compile Include="Mvc\ComboBox\ComboBoxExtension.cs" />
+    <Compile Include="Mvc\ComboBox\ComboBoxModel.cs" />
+    <Compile Include="Mvc\DrowDownList\DropDownList.cs" />
+    <Compile Include="Mvc\DrowDownList\DropDownListExtension.cs" />
+    <Compile Include="Mvc\DrowDownList\DropDownListModel.cs" />
+    <Compile Include="Mvc\Editor\Editor.cs" />
+    <Compile Include="Mvc\Editor\EditorExtension.cs" />
+    <Compile Include="Mvc\Editor\EditorModel.cs" />
+    <Compile Include="Common\Extension\HttpContextHelper.cs" />
+    <Compile Include="Mvc\Extension\ActionResultControllerExtension.cs" />
+    <Compile Include="Mvc\Extension\EntityControllerExtension.cs" />
+    <Compile Include="Mvc\Extension\ExcelHelperExtension.cs" />
+    <Compile Include="Mvc\Extension\LogControllerExtension.cs" />
+    <Compile Include="Mvc\Extension\Mobile\ThirtyPartyExtension.cs" />
+    <Compile Include="Mvc\Extension\Mobile\SharedHelperExtension.cs" />
+    <Compile Include="Mvc\Extension\SharedHelperExtension.cs" />
+    <Compile Include="Mvc\Extension\Website\SharedHelperExtension.cs" />
+    <Compile Include="Mvc\Extension\UrlHelperExtension.cs" />
+    <Compile Include="Mvc\FilterAttribute\AuthorizeFilterAttribute.cs" />
+    <Compile Include="Mvc\FilterAttribute\DataFilterAttribute.cs" />
+    <Compile Include="Mvc\FilterAttribute\RoleFilterAttribute.cs" />
+    <Compile Include="Mvc\FilterAttribute\TokenFilterAttribute.cs" />
+    <Compile Include="Mvc\Paging\Pager.cs" />
+    <Compile Include="Mvc\Paging\PagerExtension.cs" />
+    <Compile Include="Mvc\Paging\PagerModel.cs" />
+    <Compile Include="Mvc\Result\JsonpResult.cs" />
+    <Compile Include="Mvc\Script\ImageRecoverExtension.cs" />
+    <Compile Include="Mvc\Script\ResourceVerificationExtension.cs" />
+    <Compile Include="Mvc\Script\ScriptValidator.cs" />
+    <Compile Include="Mvc\Script\ScriptValidatorExtension.cs" />
+    <Compile Include="Mvc\Uploader\Uploader.cs" />
+    <Compile Include="Mvc\Uploader\UploaderExtension.cs" />
+    <Compile Include="Mvc\Uploader\UploaderLargeModel.cs" />
+    <Compile Include="Mvc\Uploader\UploaderModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebForm\Controls\CheckBoxListBaseControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Controls\CheckBoxListTemplateBaseControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Controls\ComboBoxControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Controls\DropDownListBaseControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Controls\DropDownListTemplateBaseControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Controls\EditorControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Controls\FileUpLoadBaseControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Controls\GridViewTemplate.cs" />
+    <Compile Include="WebForm\Controls\MessageControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Controls\PagerControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Controls\TreeViewBaseControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Controls\TreeViewTemplateBaseControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Controls\UploaderControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Controls\ZTreeBaseControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Extension\AttributeControlExtension.cs" />
+    <Compile Include="WebForm\Extension\AuthorizePageExtension.cs" />
+    <Compile Include="WebForm\Extension\BindPageExtension.cs" />
+    <Compile Include="WebForm\Extension\DefaultPropertyPageExtension.cs" />
+    <Compile Include="WebForm\Extension\DrowDownListExtension.cs" />
+    <Compile Include="WebForm\Extension\EnableControlExtension.cs" />
+    <Compile Include="WebForm\Extension\EntityPageExtension.cs" />
+    <Compile Include="WebForm\Extension\ImageRecoverExtension.cs" />
+    <Compile Include="WebForm\Extension\LogPageExtension.cs" />
+    <Compile Include="WebForm\Extension\MenuMasterPageExtension.cs" />
+    <Compile Include="Common\Extension\CodeHelper.cs" />
+    <Compile Include="WebForm\Extension\RedirectPageExtension.cs" />
+    <Compile Include="WebForm\Extension\ResetPageExtension.cs" />
+    <Compile Include="WebForm\Extension\SavePageExtension.cs" />
+    <Compile Include="WebForm\Extension\ScriptControlExtension.cs" />
+    <Compile Include="WebForm\Extension\ScriptValidationPageExtension.cs" />
+    <Compile Include="WebForm\Extension\ScriptValidatorExtension.cs" />
+    <Compile Include="WebForm\Extension\SetPageExtension.cs" />
+    <Compile Include="WebForm\Extension\UrlExtension.cs" />
+    <Compile Include="WebForm\Extension\WherePageExtension.cs" />
+    <Compile Include="WebForm\Pages\AddPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Pages\AjaxPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Pages\AuthorizePageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Pages\EventPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Pages\ChartPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Pages\DetailPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Pages\OwnerSavePageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Pages\OwnerListPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Pages\ListPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Pages\MaintenPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Pages\ReportPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Pages\DatumPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Pages\SearchPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Pages\UpdatePageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm\Pages\WorkflowPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\Beeant.Application.Services\Beeant.Application.Services.csproj">
+      <Project>{150b2973-7c54-4e2e-9b1f-29b98789e886}</Project>
+      <Name>Beeant.Application.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domain\Beeant.Domain.Entities\Beeant.Domain.Entities.csproj">
+      <Project>{c7ed9de4-7073-4dcf-9513-d9ea6e86e537}</Project>
+      <Name>Beeant.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domain\Beeant.Domain.Reports\Beeant.Domain.Reports.csproj">
+      <Project>{95e357c6-cf73-4883-8784-7aea5e364527}</Project>
+      <Name>Beeant.Domain.Reports</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Component\Component.csproj">
+      <Project>{1a1bd7ed-0cd2-46b7-b135-88a54fca33c6}</Project>
+      <Name>Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Configuration\Configuration.csproj">
+      <Project>{eb334c7b-6cf1-4ed8-abfb-a41d46566f8a}</Project>
+      <Name>Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Dependent\Dependent.csproj">
+      <Project>{33bc44cb-2427-42e2-a9da-d57d80519760}</Project>
+      <Name>Dependent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Resource\Resource.csproj">
+      <Project>{b989c9e9-64d4-42c5-a2ea-c8347a1ba723}</Project>
+      <Name>Resource</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Winner\Winner.csproj">
+      <Project>{462d6461-f2a0-4058-96e3-64677a31b1e8}</Project>
+      <Name>Winner</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Repository\Beeant.Repository.Services\Beeant.Repository.Services.csproj">
+      <Project>{d876ee31-d4e2-4a84-bb70-c30cd79de8d9}</Project>
+      <Name>Beeant.Repository.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

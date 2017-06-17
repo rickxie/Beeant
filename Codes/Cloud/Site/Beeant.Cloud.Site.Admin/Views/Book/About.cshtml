@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@model Beeant.Cloud.Site.Admin.Models.Book.BookModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <link rel="shortcut icon" href="@(ViewBag.Site==null || string.IsNullOrEmpty(ViewBag.Site.FaviconFileName) ? string.Format("{0}/images/favicon.ico", Html.GetUrl("PresentationMobileSharedUrl")): ViewBag.Site.FaviconFullFileName)" type="image/x-icon" />
+ 
+    <link href="/Content/Book/default/site.css" rel="stylesheet" />
+    <title></title>
+
+ 
+
+</head>
+<body>
+<div class="page" >
+    @if (Model != null && Model.Album != null && !string.IsNullOrEmpty(Model.Album.AboutFileName))
+    {
+        <div class="bg">
+            <img src="@Model.Album.FullAboutFileName" />
+        </div>
+    }
+    <div class="about">
+        <div class="desc">@(Model != null && Model.Company != null &&!string.IsNullOrEmpty(Model.Company.Detail) ? new HtmlString(Model.Company.Detail.Replace("\n","<br/>")) : new HtmlString("")) </div>
+      
+    </div>
+</div>
+</body>
+</html>
+ 

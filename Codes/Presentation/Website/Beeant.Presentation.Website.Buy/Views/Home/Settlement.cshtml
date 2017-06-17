@@ -1,0 +1,207 @@
+﻿@{
+    ViewBag.Title = "确认订单";
+}
+@using Beeant.Domain.Entities
+@using Beeant.Domain.Entities.Member
+@using Beeant.Presentation.Website.Script
+@using Winner.Persistence
+@model Beeant.Presentation.Website.Buy.Models.Home.SettlementModel
+@section  styles{
+    @Styles.Render("~/Content/user.css")
+}
+ 
+<div class="center">
+@using (Html.BeginForm("Order", "Home", FormMethod.Get, new { id = "fmSubmit" }))
+{
+    <div class="settle_content">
+        <div class="duce">
+                <div class="logo"><img src="@Url.Content("~/Images/logo.gif")" alt="" /></div>
+                <ul>
+                    <li class="prev">1.选中商品</li>
+                    <li class="cur">2.确认订单</li>
+                    <li>3.付款</li>
+                    <li >4.确认收货</li>
+                    <li class="last">5.评价</li>
+                </ul>
+            </div>
+            
+        @if (Model != null && Model.SettlementDto != null && Model.SettlementDto.OrderDto != null && Model.SettlementDto.SettlementOrders != null && Model.SettlementDto.SettlementProducts.Count > 0)
+        {
+            <div class="br">
+                确认收货地址
+            </div>
+            <div class="addr">
+                <ul id="ulAddress">
+                    
+                    @{
+                        int i;
+                        if (Model != null && Model.Addresses != null && Model.Addresses.Count > 0)
+                        {
+                            i = 0;
+                            foreach (var address in Model.Addresses)
+                            {
+                                <li>
+                                    <input id="address@(address.Id)" name="address" type="radio" @(Model.SettlementDto.OrderDto.SelectAddressId == address.Id || Model.SettlementDto.OrderDto.SelectAddressId == 0 && i == Model.Addresses.Count - 1 ? "checked='checked'" : "") value="@address.Id"/>
+                                    <label for="address@(address.Id)">
+                                        接收人：<span name="recipient">@address.Recipient</span>
+                                        ,手机：<span name="mobile">@address.Mobile</span> 
+                                        ,地址：<span name="address">@address.Address</span>
+                                    </label>
+                                    <a href="javascript:void(0);" name="edit">编辑</a>
+                                    <a href="javascript:void(0);" name="remove" >删除</a>
+                                </li>
+                                i = i + 1;
+                            }
+                            <input type="hidden" name="SelectAddressId" id="hfSelectAddressId" value="@Model.SettlementDto.OrderDto.SelectAddressId" />
+                        }
+                    }
+                </ul>
+                <a id="hfAddAddress" href="javascript:void(0);">使用新地址</a>
+            </div>
+            if (Model != null && Model.Coupons != null && Model.Coupons.Count > 0)
+            {
+                <div class="br">
+                    确认优惠券信息
+                </div>
+                <div class="addr">
+                    <ul id="ulCoupon">
+                        @{
+                            if (Model != null && Model.Coupons != null && Model.Coupons.Count > 0)
+                            {
+                                i = 0;
+                                foreach (var coupon in Model.Coupons)
+                                {
+                                    <li>
+                                        <input id="coupon@(coupon.Id)" name="SelectCouponId" type="radio" @(Model.SettlementDto.OrderDto.SelectCouponId == coupon.Id ? "checked='checked'" : "") value="@coupon.Id"/>
+                                        <label for="coupon@(coupon.Id)">
+                                            @coupon.Name
+                                            (<span class="red">@coupon.Amount</span>) 
+                                        </label>
+                                    </li>
+                                    i = i + 1;
+                                }
+                                <li>
+                                    <input id="coupon0" name="SelectCouponId" type="radio" value="0" @(Model.SettlementDto.OrderDto.SelectCouponId == 0 ? "checked='checked'" : "")  />
+                                    <label for="coupon0">
+                                        不使用优惠券
+                                    </label>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            }
+            <div class="br">
+                确认订单信息
+            </div>
+            <div id="divGoods" class="goods">
+                @{
+                    i = 0;
+                    var k = 0;
+                    foreach (var partner in Model.Partners)
+                    {
+
+                        <div class="partner" colspan="4">商家：@(partner.Account.Id == 0 ? "蜂蚁窝" : partner.Name)</div>
+                        <table class="table" id="tbSettlement@(i)">
+                            <tr>
+                                <th><input type="checkbox" AllCheckName="selectall@(partner.Account.Id)"/></th>
+                                <th>商品</th>  
+                                <th>价格</th>
+                                <th>数量</th>
+                            </tr>
+                            @foreach (var settlement in Model.SettlementDto.SettlementProducts.Where(it => it.Product != null && it.Product.Goods != null && it.Product.Goods.Account.Id == partner.Account.Id))
+                            {
+
+                                <tr>
+                                    <td class="ck">
+                                        <input type="checkbox"  SubCheckName="selectall@(partner.Id)"  />
+                                        <input type="hidden" name="ProductId[@k]" value="@settlement.Product.Id"/>
+                                    </td>
+                                    <td class="name">
+                                        <img class="img" alt="" src="@settlement.Product.GetFullFileName(settlement.Product.FileName, "s")">
+                                        <span class="span">@settlement.Product.Name</span> 
+
+                                    </td>
+                                    <td class="price">@settlement.Price</td>
+                                    <td class="count">
+                                        <a name="btnSubCount" href="javascript:void(0)" class="countbtn unclick" >-</a>
+                                        <input name="Count[@k]" type="text" class="countinput"  value="@settlement.SelectCount" SelectCount="@settlement.SelectCount" OrderMinCount="@settlement.Product.OrderMinCount" OrderLimitCount="@settlement.Product.OrderLimitCount" OrderStepCount="@settlement.Product.OrderStepCount" MaxCount="@settlement.Product.Count"/>
+                                        <a name="btnAddCount" href="javascript:void(0)" class="countbtn unclick" >+</a>
+                                    </td>
+                                </tr>
+                                k = k + 1;
+                            }
+                            <tr>
+                                <td class="freight" colspan="4">运费：<label class="red" id="lblFreight">@Model.SettlementDto.SettlementOrders.Where(it => it.PartnerAccountId == partner.Account.Id).Sum(it => it.FreightPrice)</label></td>
+                            </tr>
+                            <tr>
+                                <td class="freight" colspan="4">小计：<label class="red"  id="lblPartnerTotal">@Model.SettlementDto.SettlementOrders.Where(it => it.PartnerAccountId == partner.Account.Id).Sum(it => it.FactPrice)</label></td>
+                            </tr>
+                        </table>
+                        i = i + 1;
+                    }
+                    <div class="total">
+                        <input type="button" id="btnRemove" value="删除选中商品"/>
+                        @if (@Model.SettlementDto.DiscountPrice != 0)
+                        {
+                            @:代理优惠 :<span class="red">@Model.SettlementDto.DiscountPrice.ToString("f2")</span>
+                        }
+                        @if (@Model.SettlementDto.CouponPrice != 0)
+                        {
+                            @:抵用金额 :<span class="red">@Model.SettlementDto.CouponPrice.ToString("f2")</span>
+                        }
+                        总计：<span class="red">@Model.SettlementDto.FactPrice.ToString("f2")</span>
+                    </div>
+                    <div class="order">
+                        <input id="btnSubmit" type="submit" value="" class="btn"/>
+                    </div>
+                }
+            </div>
+            if (Model.SettlementDto.OrderDto.Errors != null && Model.SettlementDto.OrderDto.Errors.Count > 0)
+            {
+                <div class="failure">
+                    @foreach (var error in Model.SettlementDto.OrderDto.Errors)
+                    {
+                        <div class="errormess">@error.Message</div>
+                    }
+                </div>
+            }
+        }
+        else
+        {
+            <div class="sucessful">
+                <div class="img">
+                    <img src="~/Images/dispoint.png" alt="停售"/>
+                </div>
+                <div class="mess">
+                    很抱歉，你需要的商品已经停售或售完
+                </div>
+            </div>
+
+        }
+    </div>
+}
+
+</div>
+@section scripts
+{
+@Scripts.Render("~/Scripts/Settlement.js")
+@Scripts.Render("~/Scripts/Winner/CheckBox/Winner.CheckBox.js")
+@Scripts.Render("~/Scripts/Winner/Dialog/Winner.Dialog.js")
+@Scripts.Render("/Scripts/Winner/Validator/Winner.Validator.js")
+<script type="text/javascript">
+      $(document).ready(function () {
+          var addValidateEntities = @(Html.ScriptValidator<AddressEntity>(SaveType.Add, new[] { "Recipient", "Mobile", "Postcode", "Address", "District.Id" }).Gets());
+          var modifyValidateEntities = @(Html.ScriptValidator<AddressEntity>(SaveType.Modify, new[] { "Recipient", "Mobile", "Postcode", "Address", "District.Id" }).Gets());
+          var districts = @Html.Action("GetAllDistricts", "District");
+          var settlement = new Settlement(addValidateEntities,modifyValidateEntities,districts);
+          @if (Model != null && Model.Partners != null)
+          {
+              for (var i = 0; i < Model.Partners.Count; i++)
+              {
+                  @:settlement.Initialize(@i);
+              }
+          }
+      });
+</script>  
+}

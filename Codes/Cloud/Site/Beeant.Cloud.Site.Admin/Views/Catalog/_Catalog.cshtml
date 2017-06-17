@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@model Beeant.Cloud.Site.Admin.Models.Catalog.CatalogListModel
+@if (Model != null && Model.Catalogs != null)
+{
+    foreach (var catalog in Model.Catalogs)
+    {
+        <div class="element" Sequence="@catalog.Sequence" DataId="@catalog.Id">
+            <div class="up"></div>
+            <div class="name"> @catalog.Name</div>
+            <img src="@Html.GetPreRenderPicture()" class="imgp" data-original="@(string.IsNullOrEmpty(catalog.FileName) ? Html.GetNoPicture() : catalog.FullFileName)?v=@DateTime.Now.Ticks" />
+            <div class="down"></div>
+            <input class="remove" type="button" style="display: none;" value="删除" />
+        </div>
+    }
+}

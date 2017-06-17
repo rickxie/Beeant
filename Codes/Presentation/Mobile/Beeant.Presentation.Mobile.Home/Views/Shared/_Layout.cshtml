@@ -1,0 +1,21 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension.Mobile
+<!DOCTYPE html>
+<html>
+<head>
+    @Html.GetTop()
+    <meta name="baidu_union_verify" content="cb6d7de310313a11fe050095e04cfcc0">
+    <title>@string.Format("蜂蚁窝-{0}", ViewBag.Title ?? "")</title>
+    <meta content="@(string.Format("{0}", ViewBag.Keywords ?? "蜂蚁窝,提供技术服务"))" name="Keywords">
+    <meta content="@(string.Format("{0}", ViewBag.Description ?? "蜂蚁窝，一家专门做技术服务、商品交易等平台"))" name="description">
+    @RenderSection("head", required: false)
+  
+</head>
+<body>
+    @Html.GetHeader()
+    <div class="mainer">
+        @RenderBody()
+    </div>
+    @Html.GetFooter()
+    @Html.GetBottom()
+</body>
+</html>

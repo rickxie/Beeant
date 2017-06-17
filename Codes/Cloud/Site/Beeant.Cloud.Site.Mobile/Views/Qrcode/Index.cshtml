@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@using Component.Extension
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Extension.Mobile
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities
+@using Beeant.Domain.Entities.Site
+@using Winner.Persistence
+@model Beeant.Cloud.Site.Mobile.Models.Qrcode.QrcodeListModel
+
+@section head{
+    <link href="/Content/qrcode.css" rel="stylesheet" />
+}
+<div class="qrcode">
+    <div class="toper">
+        <select id="selType">
+            <option value="Catalog">分类</option>
+            <option value="Commodity" selected="selected">产品</option>
+        </select>
+        <input type="text" id="txtSearch"/>
+        <input type="button" id="btnSearch" value="搜索"/>
+    </div>
+    <div class="list" id="list">
+        
+    </div>
+
+ 
+</div>
+
+ 
+ 
+<script type="text/javascript" src="~/Scripts/Qrcode.js"></script>
+ 
+

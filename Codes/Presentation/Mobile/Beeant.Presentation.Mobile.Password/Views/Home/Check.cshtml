@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "找回密码";
+    ViewBag.TopName = "找回密码";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using System.ComponentModel
+@using Component.Extension
+@using Beeant.Domain.Entities.Security
+@model Beeant.Presentation.Mobile.Password.Models.Home.PasswordModel
+@section head
+{
+    @Scripts.Render("~/Scripts/home.js")
+    @Styles.Render("~/Content/Site.css")
+}
+
+
+<div class="pass">
+    @Html.Partial("_Top", Model)
+
+    @using (Html.BeginForm("CheckCode", "Home", FormMethod.Post, new { autocomplete = "off" }))
+    {
+        <input type="hidden" name="Name" value="@(Model==null?"":Model.Name)" />
+        <input type="submit" style="display: none;" onclick=" return false; " />
+                <dl class="dl">
+                    <dt>
+                 
+                        <span class="con">
+                            <select name="ValidateType" id="ddlValidateType">
+                                <option  value="@(CodeType.Email.Convert<int>().ToString())" ShowValue="@Model.AcountEmail">邮箱</option>
+                                <option value="@(CodeType.Mobile.Convert<int>().ToString())" ShowValue="@Model.AccountMobile">手机</option>
+                            </select>
+
+                            <label id="lblValidateType">
+                                @Model.AcountEmail
+                            </label>
+                           
+                        </span>
+                    </dt>
+             
+
+                    <dt>
+
+                        <span class="con">
+                        
+                            @Html.TextBoxFor(it => it.ValidateValue, new {@class = "code bor",value="请输入您收到的验证码",DefaultValue= "请输入您收到的验证码", id = "txtValidateValue"})
+                            <input type="button" id="btnSendValidateValue" value="获取验证码" class="btncode" />
+                        </span>
+
+                    </dt>
+
+                    @if (Model != null && Model.Errors != null && Model.Errors.Count > 0)
+                    {
+                        <dt>
+                     
+                            <span class="failure">@Model.Errors[0].Message</span>
+                        </dt>
+                    }
+                    <dt>
+     
+                        <a href="javascript:void;" class="btn"><input id="btnSubmit" type="submit" value="下一步" /></a>
+                    </dt>
+
+                </dl>
+
+    }
+
+</div>
+<script type="text/javascript">
+          $(document).ready(function () {
+              var pass = new Password();
+              pass.Initialize();
+          });
+</script>

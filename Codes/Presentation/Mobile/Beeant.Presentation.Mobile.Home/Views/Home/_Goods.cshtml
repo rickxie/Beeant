@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Extension.Mobile
+@using Beeant.Domain.Entities
+@model Beeant.Presentation.Mobile.Home.Models.Home.HomeModel
+    @if (Model != null && Model.Goodses !=null && Model.Goodses.Count > 0)
+    {
+        var i = 0;
+        <div class="element">
+            @foreach (var goods in Model.Goodses)
+            {
+                var className = "class=\"small bg\" shape=\"ssquare\"";
+                switch (i)
+                {
+                    case 2: className = "class=\"big bg\" shape=\"rectangle\"";break;
+                    case 5: className = "class=\"big bg\" shape=\"bsquare\""; break;
+                }
+                <div @(new HtmlString(className))>
+                    <a href="@Html.GetUrl("PresentationMobileDetailUrl")/home/index?goodsid=@goods.Id">
+                        <img src="@Html.GetNoPicture()" alt="@goods.Name" data-original="@goods.GetFullFileName(goods.FileName, "l")"/>
+                        <span class="name">@goods.Name</span>
+        
+                        @if (Model.Agent != null)
+                        {
+                            <span class="price"><span class="del">@goods.Price </span>@Model.Agent.GetPrice(goods.Price)</span>
+                          
+                        }
+                        else
+                        {
+                            <span class="price">@goods.Price</span>
+                        }
+                    </a>
+                </div>
+                i = i + 1;
+            }
+        </div>
+    }

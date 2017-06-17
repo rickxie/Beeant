@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "";
+}
+@model Beeant.Basic.Services.Mvc.DrowDownList.DropDownListModel
+<select id="ddlProvince" class="sel ctrlshow" name="Province" ValidateName = "Province" >
+</select>
+<select id="ddlCity" class="sel ctrlshow" name="City"  ValidateName = "City" >
+</select>
+<select id="ddlCounty" class="sel ctrlshow" name="County" ValidateName="County" >
+</select>
+@Scripts.Render("~/scripts/district.js")
+<script type="text/javascript" id="scriptDistrict">
+    $(document).ready(function() {
+        InitDistrict(@Html.Action("GetAllDistricts", "District"), '@Model.SelectValue');
+    });
+</script>

@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "找回密码";
+    ViewBag.TopName = "找回密码";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@model Beeant.Presentation.Mobile.Password.Models.Home.PasswordModel
+@section head
+{
+    @Scripts.Render("~/Scripts/home.js")
+    @Styles.Render("~/Content/Site.css")
+}
+ 
+<div class="pass">
+    @Html.Partial("_Top", Model)
+    <br /><br /><br /><br /><br />
+    <br /><br />
+    <div class="ful">
+        <h1 style="color: #f36b18;">恭喜你密码已经成功修改</h1>
+        <br /><br /><br /><br />
+        <h3>
+            您接下来的操作<span id="sptimes"></span>
+            <a href="@Html.GetUrl("PresentationMobileHomeUrl")">首页</a>
+            &nbsp;&nbsp;
+            <a href="@Html.GetUrl("PresentationMobileLoginUrl")">登录</a>
+            <br /><br /><br />
+            <script type="text/javascript">
+                var times = 4;
+                var func = function () {
+                    $("#sptimes").html(times);
+                    times = times - 1;
+                    if (times == 0)
+                        window.location.href = '@Html.GetUrl("PresentationMobileLoginUrl")';
+                    setTimeout(func, 1000);
+                }
+                func();
+            </script>
+        </h3>
+    </div>
+</div>
+   
+    

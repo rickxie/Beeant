@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@model Beeant.Cloud.Site.Mobile.Models.Home.HomeModel
+@if (Model != null && Model.Tags != null)
+{
+
+    {
+        var i = 0;
+        foreach (var tag in Model.Tags)
+        {
+            <div class="ct">
+                <div class="font">@tag.Name</div>
+                <div class="more"><a href="/Commodity/Index/@ViewBag.SiteId?tagid=@tag.Id&tagname=@(Server.UrlEncode(@tag.Name))">更多</a> </div>
+            </div>
+            <div class="dtl">
+                @if (tag.CommodityTags != null)
+                {
+                    foreach (var commodityTag in tag.CommodityTags)
+                    {
+                        if (commodityTag.Commodity != null  )
+                        {
+                            <a href="/Commodity/Detail/@ViewBag.SiteId?ps[0].id=@commodityTag.Commodity.Id">
+                                <div class="sqr">
+                                    <img src="@Html.GetPreRenderPicture()" data-original="@(Model.GetFullFileName(commodityTag))"  />
+                                    <div class="nm">@commodityTag.Commodity.Name</div>
+                                </div>
+                            </a>
+                        }
+                    }
+                }
+            
+            </div>
+            i = i + 1;
+        }
+    }
+
+}
+ 

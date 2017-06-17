@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "";
+}
+ 
+@using Beeant.Basic.Services.Mvc.Extension.Mobile
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="YES" name="apple-touch-fullscreen" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="-1" http-equiv="Expires" />
+    <meta content="no-cache" http-equiv="pragram" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" /> 
+    @Html.GetTop()
+    <title>蜂蚁窝</title>
+    <meta content="蜂蚁窝,提供技术服务" name="Keywords">
+    <meta content="蜂蚁窝，一家专门做技术服务、商品交易等平台" name="description">
+    <link href="/Content/site.css" rel="stylesheet"/>
+    <script type="text/javascript" src="~/Scripts/plug/jquery.mobile.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/plug/modernizr.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/Winner/Banner/Winner.Banner.js"></script>
+</head>
+<body>
+@Html.GetHeader()
+<div class="home">
+    <div id="banner" class="banner">
+       
+    </div>
+
+    <div class="nav">
+        <ul>
+            <li><a href="" class="a1">私人订制</a></li>
+            <li><a href="" class="a2">点点看</a></li>
+            <li><a href="" class="a3">每周一更</a></li>
+            <li><a href="" class="a4">历史推荐</a></li>
+        </ul>
+    </div>
+    <div class="product">
+        
+    </div>
+</div>
+@Html.GetFooter()
+@Html.GetBottom()
+    <script type="text/javascript" src="/Scripts/home.js"></script>
+</body>
+</html>

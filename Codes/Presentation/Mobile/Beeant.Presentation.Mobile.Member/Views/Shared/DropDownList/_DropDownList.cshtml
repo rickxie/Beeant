@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "";
+}
+@model Beeant.Basic.Services.Mvc.DrowDownList.DropDownListModel
+<select id="@Model.Id" class="sel" name="@Model.Name"  @(string.IsNullOrEmpty(Model.ValidateName)?"":string.Format("ValidateName={0}",Model.ValidateName))>
+    <option @(!string.IsNullOrEmpty(Model.SelectValue) ? "" : "selected=selected") value=""  >请选择</option>
+    @if (Model.Items != null)
+    {
+        foreach (var item in Model.Items)
+        {
+            <option @(Model.SelectValue == item.Value ? "selected=selected" : "") value="@item.Value">@item.Text</option>
+        }
+    }
+</select>
+ 

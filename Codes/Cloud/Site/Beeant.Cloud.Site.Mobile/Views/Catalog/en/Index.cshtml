@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/_EnDefaultLayout.cshtml";
+    ViewBag.Title = "Classification selection";
+    ViewBag.ToperName = "Classification selection";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Extension.Mobile
+@model Beeant.Cloud.Site.Mobile.Models.Catalog.CatalogListModel
+
+
+<div class="catalog">
+    <a href="/Commodity/Index/@ViewBag.SiteId?catalogname=@(Server.UrlEncode("All"))">
+        <div class="itm">
+            <img src="@ViewBag.Site.LogoFullFileName" class="img" />
+            <div class="name">All</div>
+            <div class="go">＞</div>
+        </div>
+    </a>
+
+</div>
+
+<script type="text/javascript" src="~/Scripts/catalog.js"></script>

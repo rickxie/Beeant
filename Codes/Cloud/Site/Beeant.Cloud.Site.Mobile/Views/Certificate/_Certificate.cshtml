@@ -1,0 +1,17 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension
+@{
+    Layout = "";
+}
+@model Beeant.Cloud.Site.Mobile.Models.Certificate.CertificateListModel
+@if (Model != null && Model.Certificaties != null)
+{
+
+    foreach (var certificaty in Model.Certificaties)
+    {
+        <a href="@certificaty.FullFileName">
+            <div class="sqr">
+                <img src="@Html.GetPreRenderPicture()" data-original="@certificaty.FullFileName" />
+            </div>
+        </a>
+    }
+}

@@ -1,0 +1,27 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension
+@{
+
+}
+<div class="about">
+    <div class="mainten">
+        <a href="/Home/Index">
+            <div class="gohome"></div>
+        </a>
+
+    </div>
+    <img src="@Html.GetPreRenderPicture()" data-original="/Images/about/1.png"/>
+    <img src="@Html.GetPreRenderPicture()" data-original="/Images/about/2.png"/>
+    <img src="@Html.GetPreRenderPicture()" data-original="/Images/about/3.png"/>
+    <img src="@Html.GetPreRenderPicture()" data-original="/Images/about/4.png"/>
+    <img src="@Html.GetPreRenderPicture()" data-original="/Images/about/5.png"/>
+    <img src="@Html.GetPreRenderPicture()" data-original="/Images/about/6.png"/>
+    <img src="@Html.GetPreRenderPicture()" data-original="/Images/about/7.png"/>
+    <img src="@Html.GetPreRenderPicture()" data-original="/Images/about/8.png"/>
+    <img src="@Html.GetPreRenderPicture()" data-original="/Images/about/9.png"/>
+    <img src="@Html.GetPreRenderPicture()" data-original="/Images/about/10.png"/>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        window.lazyloadImage($(".about")[0]);
+    });
+</script>

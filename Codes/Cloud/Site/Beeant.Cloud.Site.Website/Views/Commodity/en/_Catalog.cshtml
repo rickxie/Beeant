@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Extension.Website
+@model Beeant.Cloud.Site.Website.Models.Commodity.CommodityListModel
+
+    <div class="item" DataId="" DataName="All">
+        <img src="@Html.GetPreRenderPicture()" data-original="@(string.IsNullOrEmpty(Model.Logo) ? Html.GetNoPicture() : Model.Logo)" class="img" />
+        <div class="name">All</div>
+    </div>
+
+    @if (Model != null && Model.Catalogs != null)
+    {
+        foreach (var catalog in Model.Catalogs)
+        {
+            <div class="item" DataId="@catalog.Id" DataName="@catalog.Name">
+                <img src="@Html.GetPreRenderPicture()" data-original="@(string.IsNullOrEmpty(Model.CatalogFullFileName(catalog)) ? Html.GetNoPicture() :Model.CatalogFullFileName(catalog))" class="img" alt="" />
+                <div class="name">@catalog.Name</div>
+            </div>
+        }
+    }

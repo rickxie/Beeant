@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities.Site
+@using Winner.Persistence
+@model Beeant.Cloud.Site.Admin.Models.Book.BookModel
+@if (Model != null && Model.Albums != null)
+{
+    foreach (var album in Model.Albums)
+    {
+        <div class="element">
+            <div class="name">@album.Name</div>
+            <div class="op"><a href="javascript:void(0);" dataid="@album.Id" name="create">使用该模板生成</a></div>
+            <div class="desc">@(new HtmlString(album.Detail)) </div>
+           
+        </div>
+    }
+
+}

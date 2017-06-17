@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "~/Views/Shared/_EnDefaultLayout.cshtml";
+}
+@using Component.Extension
+@using Beeant.Basic.Services.Mvc.Extension
+@model Beeant.Cloud.Site.Mobile.Models.Commodity.CommodityModel
+<div class="detail">
+
+
+</div>
+<div class="detailqr">
+
+</div>
+<div class="detailqrname">
+    Long press to identify the two-dimensional code in the picture
+</div>
+<div class="lianxi" style="margin-top: 30px;"></div>
+<script type="text/javascript">
+    window.ps = @(Model==null|| Model.Params ==null? new HtmlString("null") : new HtmlString(Model.Params.SerializeJson()));
+</script>
+<script type="text/javascript" src="/Scripts/detail.js"></script>
+ 
+ 
+ 

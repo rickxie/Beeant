@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+@model Beeant.Cloud.Site.Website.Models.Home.HomeModel
+<div id="divBanner" class="banner center">
+
+</div>
+<div class="home center">
+    <div id="divTag"></div>
+   
+    <div class="ct bg9">
+        <div class="font">最新上传</div>
+    </div>
+    <div class="commodity">
+
+    </div>
+    <div id="divcompany">
+        <div class="ct bg10">
+            <div class="font">联系我们 </div>
+        </div>
+        <div class="contact">
+            <ul>
+                <li>QQ:@@Qq</li>
+                <li>传真:@@Fax</li>
+                <li>电话:@@Mobile</li>
+                <li>联系人:@@Linkman</li>
+                <li>Email:@@Email</li>
+            </ul>
+        </div>
+        <div class="ct bg11" >
+            <div class="font">关于我们 </div>
+
+        </div>
+        <div class="about"> @@Detail</div>
+    </div>
+</div>
+@Html.Partial("~/Views/Commodity/_Gallery.cshtml")
+@section bottom
+{
+<script type="text/javascript" src="~/Scripts/Winner/Banner/Winner.Banner.js"></script>
+<script src="/Scripts/plug/ad-gallery/jquery.ad-gallery.min.js"></script>
+<link href="/Scripts/plug/ad-gallery/jquery.ad-gallery.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/Home.js"></script>
+}

@@ -1,0 +1,92 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Beeant.Presentation.Admin.Configurator.Main" %>
+<%@ Import Namespace="Beeant.Basic.Services.WebForm.Extension" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <%=this.GetResourcesHtml() %>
+<head runat="server">
+     
+    
+    <asp:ContentPlaceHolder ID="Head" runat="server">
+             <title> </title> 
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+ 
+    <form id="form1" runat="server" enctype="multipart/form-data">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" onasyncpostbackerror="ScriptManager1_AsyncPostBackError" EnableScriptGlobalization="true" EnableScriptLocalization="true">
+    </asp:ScriptManager>
+   
+        <%=this.GetHeaderHtml() %>
+    <div id="menu"  class="menu">
+        <h1>蜂蚁窝系统配置</h1>
+        <ul>
+             <li >
+                <a class="parent"  title="用户维护" href="javascript:void(0);">用户维护</a>
+                <ul style="display: none;">
+                    <li><a href="/Management/User/List.aspx">用户管理</a> </li>
+                </ul>
+            </li>
+            <li >
+                <a class="parent"  title="权限管理" href="javascript:void(0);">权限管理</a>
+                <ul style="display: none;">
+                    <li><a href="/Authority/Role/List.aspx">角色管理</a> </li>
+                     <li><a href="/Authority/Subsystem/List.aspx">业务系统</a> </li>
+                     <li><a href="/Authority/Menu/List.aspx">菜单管理</a> </li>
+                    <li><a href="/Authority/Owner/List.aspx">所属人管理</a> </li>
+                </ul>
+            </li>
+             <li >
+                <a class="parent "  title="工作流管理" href="javascript:void(0);">工作流管理</a>
+                <ul style="display: none;">
+                    <li><a href="/Workflow/Flow/List.aspx">工作流</a> </li>
+                    <li><a href="/Workflow/Node/List.aspx">节点管理</a> </li>
+                    <li><a href="/Workflow/Level/List.aspx">级别管理</a> </li>
+                    <li><a href="/Workflow/Group/List.aspx">工作组</a> </li>
+                     <li><a href="/Workflow/Auditor/List.aspx">授权组</a> </li>
+                </ul>
+            </li>
+                <li >
+                <a class="parent "  title="搜索管理" href="javascript:void(0);">搜索管理</a>
+                <ul style="display: none;">
+                    <li><a href="/Search/Word/List.aspx">词库</a> </li>
+                    <li><a href="/Search/Similar/List.aspx">相关词</a> </li>
+                    <li><a href="/Search/Key/List.aspx">关键词</a> </li>
+                    <li><a href="/Search/RelateKey/List.aspx">相关关键词</a> </li>
+                </ul>
+            </li>
+            <li >
+                <a class="parent "  title="接口管理" href="javascript:void(0);">接口管理</a>
+                <ul style="display: none;">
+                    <li><a href="/Api/Protocol/List.aspx">协议配置</a> </li>
+                    <li><a href="/Api/Voucher/List.aspx">凭证管理</a> </li>
+                </ul>
+            </li>
+            <li >
+                <a class="parent "  title="系统应用" href="javascript:void(0);">系统应用</a>
+                <ul style="display: none;">
+                    <li><a href="/Sys/Event/List.aspx">系统事件</a> </li>
+                    <li><a href="/Sys/Parameter/List.aspx">系统参数</a> </li>
+                    <li><a href="/Sys/Task/List.aspx">系统服务</a> </li>
+                </ul>
+            </li>
+            <li>
+                 <a class="parent "  title="操作手册" href="javascript:void(0);">操作手册</a>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+         <div id="pageTitle" class="title">
+         </div>
+         <div class="body">
+        <asp:ContentPlaceHolder ID="Body" runat="server">
+            
+        </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    </form>
+    <%=this.InitlizeMenu() %>
+</body>
+</html>

@@ -1,0 +1,92 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Beeant.Basic.Services.Mvc.DrowDownList
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities.Member
+@using Winner.Persistence
+@model Beeant.Presentation.Mobile.Member.Models.Member.MemberModel
+@section head
+{
+    @Styles.Render("~/Content/edit.css")
+    @Styles.Render("~/scripts/Plug/mobiscroll/mobiscroll.custom-2.16.1.min.css")
+}
+<form id="fmSave" action="/Member/Save" method="POST">
+  
+    <div class="edit">
+        <div class="element">
+            <input name="Nickname" class="input @(Model != null && Model.Member != null ? "" : "ctrlshow")" type="text" value="@(Model != null && Model.Member != null && !string.IsNullOrEmpty(Model.Member.Nickname) ? Model.Member.Nickname : "请输入昵称")" ShowValue="请输入昵称" ValidateName="Nickname"/>
+        </div>
+        <div class="element">
+            <input name="Gender" id="lblGender1" class="mui-checkbox" value="男" checked="checked" group="Gender" type="radio" />
+            <label for="lblGender1">男</label>
+            <input name="Gender" id="lblGender2" class="mui-checkbox" value="女" group="Gender" type="radio"/>
+            <label for="lblGender2">女</label>
+         </div>
+        <div class="element">
+            <input name="IdCardNumber" class="input @(Model!=null && Model.Member != null && !string.IsNullOrEmpty(Model.Member.IdCardNumber) ?"":"ctrlshow")" type="text" value="@(Model != null && Model.Member != null && !string.IsNullOrEmpty(Model.Member.IdCardNumber) ? Model.Member.IdCardNumber : "请输入身份证号码")" ShowValue="请输入身份证号码" ValidateName="IdCardNumber" />
+        </div>
+        <div class="element">
+            <input id="txtBirthday" readonly="readonly" name="Birthday" class="input @(Model!=null && Model.Member != null && Model.Member.Birthday.Date!=DateTime.MinValue.Date?"":"ctrlshow")" type="text" value="@(Model != null && Model.Member != null && Model.Member.Birthday.Date!=DateTime.MinValue.Date ? Model.Member.Birthday.ToString("yyyy-MM-dd") : "1990-01-01")"  ValidateName="Birdthday" />
+        </div>
+        <div class="element">
+            <input name="Address" class="input @(Model!=null && Model.Member != null && !string.IsNullOrEmpty(Model.Member.Address)  ?"":"ctrlshow")" type="text" value="@(Model != null && Model.Member != null && !string.IsNullOrEmpty(Model.Member.Address) ? Model.Member.Address : "请输入户籍所在地")" ShowValue="请输入户籍所在地" ValidateName="Address" />
+        </div>
+        <div class="element">
+            <input name="Telephone" class="input @(Model != null && Model.Member != null && !string.IsNullOrEmpty(Model.Member.Telephone)? "" : "ctrlshow")" type="text" value="@(Model != null && Model.Member != null && !string.IsNullOrEmpty(Model.Member.Telephone) ? Model.Member.Telephone : "请输入固定电话")" ShowValue="请输入固定电话" ValidateName="Telephone"/>
+        </div>
+        <div class="element">
+            <input name="Postal" class="input @(Model != null && Model.Member != null && !string.IsNullOrEmpty(Model.Member.Postal) ? "" : "ctrlshow")" type="text" value="@(Model != null && Model.Member != null && !string.IsNullOrEmpty(Model.Member.Postal) ? Model.Member.Postal : "请输入邮政编码")" ShowValue="请输入邮政编码" ValidateName="Postal"/>
+        </div>
+        <div class="element">
+            <input name="Remark" class="input @(Model!=null && Model.Member != null && !string.IsNullOrEmpty(Model.Member.Remark)?"":"ctrlshow")" type="text" value="@(Model != null && Model.Member != null && !string.IsNullOrEmpty(Model.Member.Remark) ? Model.Member.Remark : "备注")" ShowValue="备注" ValidateName="Postal" />
+        </div>
+        @if (Model != null && Model.Member != null && Model.Member.Errors != null && Model.Member.Errors.Count > 0)
+        {
+            <div class="element">
+                <span class="failure">@Model.Member.Errors[0].Message</span>
+            </div>
+        }
+        else if (Model != null && Model.Member != null && Model.Member.SaveType != SaveType.None)
+        {
+            <div class="element">
+                <span class="success">保存成功</span>
+            </div>
+        }
+                <input type="submit" class="save" value="保存" id="btnSave" />
+            </div>
+
+</form>
+@Scripts.Render("~/scripts/Winner/Validator/winner.validator.js")
+@Scripts.Render("~/scripts/plug/jquery-1.7.1.min.js")
+@Scripts.Render("~/scripts/plug/jquery.mobile.min.js")
+@Scripts.Render("~/scripts/plug/mobiscroll/mobiscroll.custom-2.16.1.min.js")
+<script type="text/javascript">
+    $(document).ready(function () {
+        @{
+            var pis = new[] {"Nickname", "IdCardNumber", "Birthday", "Address", "Telephone", "Postal", "Remark"};
+              if (Model != null && Model.Address != null)
+                {
+                    @(Html.ScriptValidator<MemberEntity>(SaveType.Modify, pis).Initialize("fmSave", "btnSave"))
+
+                }
+                else
+                {
+                    @(Html.ScriptValidator<MemberEntity>(SaveType.Add, pis).Initialize("fmSave", "btnSave"))
+                }
+        }
+        $("#btnSave").click(function() {
+            $("input").each(function(index, sender) {
+                if ($(this).val() == $(this).attr("ShowValue"))
+                    $(this).val("");
+            });
+        });
+        $('#txtBirthday').mobiscroll().date({
+            theme: 'mobiscroll',
+            mode: 'clickpick',
+            display: 'modal',
+            dateFormat: 'yy-mm-dd',
+            lang: 'zh'
+        });
+    });
+</script>

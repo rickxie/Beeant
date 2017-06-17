@@ -1,0 +1,11 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Script
+function InitFooter(){
+var html='<div id="footer" class="footer">'+
+     '<div class="nav"><a href="@Html.GetUrl("PresentationMobileHomeUrl")" menu="true" style="background-image: url(\'@Html.GetUrl("PresentationMobileSharedUrl")/images/ico_index.png\');" curimg="@Html.GetUrl("PresentationMobileSharedUrl")/images/ico_indexcur.png">首页</a></div>'+
+     '<div class="nav"><a href="@Html.GetUrl("PresentationMobileCartUrl")" menu="true" style="background-image: url(\'@Html.GetUrl("PresentationMobileSharedUrl")/images/ico_cart.png\');" curimg="@Html.GetUrl("PresentationMobileSharedUrl")/images/ico_cartcur.png">购物车</a></div>'+
+     '<div class="nav"><a href="@Html.GetUrl("PresentationMobileMemberUrl")" menu="true"  style="background-image: url(\'@Html.GetUrl("PresentationMobileSharedUrl")/images/ico_my.png\');" curimg="@Html.GetUrl("PresentationMobileSharedUrl")/images/ico_mycur.png">我</a></div>'+
+     '</div>';
+html+='<script type="text/javascript">$("#footer").find("a").each(function (index, sender) { if (this.href!="" && window.location.href.indexOf(this.href) > -1) { $(this).css("background-image", "url(\'" + $(this).attr("curimg") + "\')") } });</script>'
+document.write(html);
+}

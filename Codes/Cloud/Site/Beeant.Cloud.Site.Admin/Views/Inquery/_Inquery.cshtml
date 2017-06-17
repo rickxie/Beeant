@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "";
+}
+@model Beeant.Cloud.Site.Admin.Models.Inquery.InqueryListModel
+@if (Model != null && Model.Inqueries != null)
+{
+    foreach (var iq in Model.Inqueries)
+    {
+        <div class="element" DataId="@iq.Id">
+            <div class="til">
+                <div class="nm">@iq.Linkman</div>
+                <div class="nm"><a href="tel:@iq.Mobile">@iq.Mobile</a></div>
+                <div class="nm">@iq.InsertTime.ToString("yyyy-mm-dd HH:mm")</div>
+               
+                <input class="remove" type="button" style="display: none;" value="删除" />
+            </div>
+            <div class="del">
+                
+                @iq.Content
+            </div>
+
+
+        </div>
+    }
+}

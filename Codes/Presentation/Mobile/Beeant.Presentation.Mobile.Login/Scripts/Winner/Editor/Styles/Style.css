@@ -1,0 +1,109 @@
+.editor{ background:url(../Images/bg.png)  repeat-x;  border:1px #000000 solid;  }
+.editor td{ text-align:left; vertical-align:top;}
+.editor .toolbar{ padding:10px; height:1px;}
+.editor .toolbar .tools { float:left; height:25px;  word-break: keep-all;white-space: nowrap;border-radius: 5px 5px 5px 5px; margin-bottom: 5px; margin-right: 6px;padding: 2px; padding-top:8px; background:url(../Images/sprites.png) 0 -500px repeat-x; }
+.editor .toolbar .tools a{text-decoration:none; padding:3px;}
+.editor .toolbar .tools a:hover{ background:#A3D700;border-radius: 3px 3px 3px 3px;}
+.editor .toolbar .tools a span{ height:16px; width:20px;display:inline-block;}
+.editor .toolbar .tools .aenable span{ filter:alpha(Opacity=20);-moz-opacity:0.2;opacity: 0.2;}
+.editor .toolbar .tools .aselect{ background:#A3D7FF;border-radius: 3px 3px 3px 3px;}
+.editor .toolbar .tools .source{background: url(../Images/icons.png) no-repeat;}
+.editor .toolbar .tools .preview{background: url(../Images/icons.png) 0 -64px  no-repeat;}
+.editor .toolbar .tools .newpage{background: url(../Images/icons.png) 0 -48px no-repeat;}
+.editor .toolbar .tools .tempalte{background: url(../Images/icons.png) 0 -80px no-repeat;}
+.editor .toolbar .tools .undo{background: url(../Images/icons.png) 0 -208px no-repeat;}
+.editor .toolbar .tools .redo{background: url(../Images/icons.png) 0 -224px no-repeat;}
+.editor .toolbar .tools .find{background: url(../Images/icons.png) 0 -240px no-repeat;}
+.editor .toolbar .tools .print{background: url(../Images/icons.png) 0 -176px no-repeat;}
+.editor .toolbar .tools .bold{background: url(../Images/icons.png) 0 -304px no-repeat;}
+.editor .toolbar .tools .italic{background: url(../Images/icons.png) 0 -320px no-repeat;}
+.editor .toolbar .tools .underline{background: url(../Images/icons.png) 0 -336px no-repeat;}
+.editor .toolbar .tools .strikethrough{background: url(../Images/icons.png) 0 -352px no-repeat;}
+.editor .toolbar .tools .superscript{background: url(../Images/icons.png) 0 -368px no-repeat;}
+.editor .toolbar .tools .subscript{background: url(../Images/icons.png) 0 -384px no-repeat;}
+.editor .toolbar .tools .removeformat{background: url(../Images/icons.png) 0 -288px no-repeat;}
+.editor .toolbar .tools .indent{background: url(../Images/icons.png) 0 -448px no-repeat;}
+.editor .toolbar .tools .outdent{background: url(../Images/icons.png) 0 -432px no-repeat;}
+.editor .toolbar .tools .justifycenter{background: url(../Images/icons.png) 0 -480px no-repeat;}
+.editor .toolbar .tools .justifyleft{background: url(../Images/icons.png) 0 -464px no-repeat;}
+.editor .toolbar .tools .justifyright{background: url(../Images/icons.png) 0 -496px no-repeat;}
+.editor .toolbar .tools .justifyfull{background: url(../Images/icons.png) 0 -512px no-repeat;}
+.editor .toolbar .tools .selectall{background: url(../Images/icons.png) 0 -272px no-repeat;}
+.editor .toolbar .tools .createlink{background: url(../Images/icons.png) 0 -528px no-repeat;}
+.editor .toolbar .tools .unlink{background: url(../Images/icons.png) 0 -544px no-repeat;}
+.editor .toolbar .tools .orderedlist{background: url(../Images/icons.png) 0 -400px no-repeat;}
+.editor .toolbar .tools .unorderedlist{background: url(../Images/icons.png) 0 -416px no-repeat;}
+.editor .toolbar .tools .horizontalrule{background: url(../Images/icons.png) 0 -624px no-repeat;}
+.editor .toolbar .tools .image{background: url(../Images/icons.png) 0 -576px no-repeat;}
+.editor .toolbar .tools .flag{background: url(../Images/icons.png) 0 -656px no-repeat;}
+.editor .toolbar .tools .table{background: url(../Images/icons.png) 0 -608px no-repeat;}
+.editor .toolbar .tools .flash{background: url(../Images/icons.png) 0 -592px no-repeat;}
+.editor .toolbar .tools .face{background: url(../Images/icons.png) 0 -640px no-repeat;}
+.editor .toolbar .tools .div{background: url(../Images/icons.png) 0 -1185px no-repeat;}
+.editor .toolbar .tools .fullscreen{background: url(../Images/icons.png) 0 -33px no-repeat;}
+.editor .toolbar .tools .fontname{ width:50px;line-height:16px;padding:0; margin:0; text-align:center; overflow:hidden; vertical-align:top; padding:0; margin:0;  color:#000000;filter:alpha(Opacity=70);-moz-opacity:0.7;opacity: 0.7;}
+.editor .toolbar .tools .fontsize{width:30px;line-height:16px; padding:0; margin:0; text-align:center; overflow:hidden; vertical-align:top;  padding:0; margin:0;color:#000000;filter:alpha(Opacity=70);-moz-opacity:0.7;opacity: 0.7; }
+.editor .toolbar .tools .backcolor{background: url(../Images/icons.png) 0 -720px no-repeat;}
+.editor .toolbar .tools .forecolor{background: url(../Images/icons.png) 0 -704px no-repeat;}
+.editor .toolbar .tools .down{padding:0;margin:0;width:8px;height: 3px;overflow: hidden;position: relative; top: -6px; background: url(../Images/sprites.png) 0 -1475px no-repeat;}
+.editor .iframe{ background:#FFFFFF; border:0; overflow:auto;border: 0 none; }
+.editor .bottom{ background:#CCCCCC; height: 25px; }
+.editor .bottom div{ float: right; width: 25px; height: 25px; cursor:se-resize;background: url(../Images/draw.png) no-repeat bottom right;}
+
+
+.editorshelter{filter:alpha(Opacity=20);-moz-opacity:0.2;opacity: 0.2; background:#000000;z-index: 9998;}
+.editordialog{ border: 3px solid #56829D;overflow: hidden;width: 680px; z-index:9999;background: #ffffff;}
+.editordialog .top{background: none repeat scroll 0 0 #E2F3FB;border-bottom: 1px solid #56829D;font-size: 14px; height: 36px;line-height: 36px;width: 100%;}
+.editordialog .top .tip{float: left; text-align:left;font-size: 14px;font-weight: bold;width: 520px;}
+.editordialog .top .close{ float:right; cursor:pointer; width:20px; height:20px; background:url("../images/sprites.png") 0 -1022px no-repeat;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../images/sprites.png"); }
+.editordialog .content{ width:100%;} 
+.editordialog .bottom{ width:100%;background:#FFFFFF; text-align:center; padding-top: 20px ;padding-bottom: 20px; border-top: 1px solid #EEEEEE; }
+.editordialog .bottom .sure{ cursor:pointer; text-align: center;padding:10px 25px 5px 25px; background:url("../images/sprites.png") 0 -1143px repeat-x; border-radius: 5px 5px 5px 5px; }
+.editordialog .bottom .cancel{cursor:pointer; margin-left:10px; text-align: center;padding:10px 25px 10px 25px; background:url("../images/sprites.png") 0 -1104px repeat-x;border-radius: 5px 5px 5px 5px; }
+.editordialog .middle{width:100%;border:1px solid #EBEBEB;border-collapse: collapse; }
+.editordialog .middle .td{border:1px solid #EBEBEB;border-collapse: collapse;text-align: left;vertical-align: middle; padding: 2px 0 2px 2px}
+.editordialog .middle .th{border:1px solid #EBEBEB;border-collapse: collapse;text-align:left; vertical-align:middle; height:20px; width:100px;background:#c1e0ff;}
+.editordialog .middle .button{cursor:pointer;border: 0; text-align: center;padding:5px 5px 5px 5px; background:url("../images/sprites.png") 0 -1143px repeat-x; border-radius: 5px 5px 5px 5px;margin: 5px;}
+.editordialog .middle .len{ width: 75%;}
+.editordialog .middle .number{ width: 40px;}
+.editordialog .middle .name{ width: 120px;}
+.editordialog .middle .center{ text-align: center;}
+.editordialog .middle .iframe{  margin:0; padding:0;border:0; height:25px;  vertical-align:top; text-align:left;overflow: hidden;}
+.editordialog .middle .preview{width: 550px;overflow:auto;max-height: 550px;}
+.editor .tablemenu { padding:10px; width:100px; background:#FFFFFF; }
+.editor .tablemenu .over{ background:#a3d7ff;}
+
+.editor .colorpanel{ border-radius: 5px 5px 5px 5px; border: 1px solid #DDDDDD; z-index:9999;width: 262px; }
+.editor .colorpanel .select{  float:left;width:180px;}
+.editor .colorpanel .view{ float:left;width:80px; background:#cccccc; height:120px;text-align: center;}
+.editor .colorpanel .view .cur{ width:77px; height:32px; border:1px solid #000000; background:#FFFFFF;}
+.editor .colorpanel .view .select{ width:77px; height:32px; border:1px solid #000000; background:#FFFFFF;}
+.editor .colorpanel .view .val{  width:77px; height:20px;}
+.editor .colorpanel span{ float:left; display:inline-block; width:10px; height:10px;overflow: hidden; cursor:pointer;}
+.editor .colorpanel .button{cursor:pointer;border: 0;width: 100%; text-align: center;padding:5px 0 0 5px;height: 26px; background:url("../images/sprites.png") 0 -1143px repeat-x; border-radius: 5px 5px 5px 5px;}
+
+.editor .facepanel{ width:160px; padding:5px; border-radius: 5px 5px 5px 5px; border: 1px solid #DDDDDD; z-index:9999;background:#FFFFFF;  }
+.editor .facepanel img{ width:20px; height:20px; margin:5px; cursor:pointer; }
+
+.editor .flagpanel{ width:280px; border-radius: 5px 5px 5px 5px; border: 1px solid #DDDDDD; z-index:9999;background:#FFFFFF;  }
+.editor .flagpanel span{ display:inline-block; width:15px; height:20px;text-align:center; vertical-align:middle; cursor:pointer; }
+.editor .flagpanel .over{ background:#FF0000;}
+.editor .flagpanel .out{ background:#FFFFFF;}
+
+
+
+.editor .fontnamepanel{ width:150px; border-radius: 5px 5px 5px 5px; border: 1px solid #DDDDDD; z-index:9999;background:#FFFFFF; height:120px;overflow-y:auto;overflow-x:hidden  }
+.editor .fontnamepanel span{ display:inline-block; width:100%;text-align:left; cursor:pointer; padding-top:8px;}
+.editor .fontnamepanel .over{ background:#FF0000;}
+.editor .fontnamepanel .out{ background:#FFFFFF;}
+.editor .fontnamepanel .top{ height:15px;width:100%; background:#cccccc;}
+
+.editor .fontsizepanel{ width:120px; border-radius: 5px 5px 5px 5px; border: 1px solid #DDDDDD; z-index:9999;background:#FFFFFF; height:120px; overflow-y:auto;overflow-x:hidden }
+.editor .fontsizepanel span{ display:inline-block; width:100%;text-align:left; cursor:pointer; padding-top:8px;}
+.editor .fontsizepanel .over{ background:#FF0000;}
+.editor .fontsizepanel .out{ background:#FFFFFF;}
+.editor .fontsizepanel .top{ height:15px;width:100%; background:#cccccc;}
+
+
+
+

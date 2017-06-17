@@ -1,0 +1,80 @@
+﻿*{ margin:0 0; padding:0 ;}
+ul{ list-style-type:none;}
+img{border:none;}
+em,q,cite,address { font-weight:normal; font-style:normal }
+h1, h2, h3 { font-weight:normal }
+address { display:inline }
+big,small { font-size:12px }
+img { border:none }
+li { list-style:none }
+q { quotes:none }
+strong { font-weight:bold }
+table { border-collapse:collapse }
+th { text-align:left; font-weight:normal }
+em { font-family:宋体; font-size:12px; color:#F00 }
+/* link */
+a { color:#38a2d2; outline-style:none; text-decoration:none}
+a:hover { text-decoration:none; color:#f2963d}
+/* clear float */
+.cf { zoom:1} /* for IE */
+.cf:after { content:"."; display: block; clear:both; font-size:0; height:0; visibility:hidden; overflow:hidden} /* for other */
+/* end of clear float */
+body { font-size:12px; line-height:24px; font-family:Tahoma, Arial, sans-serif, Simsun, 宋体; color:#404040; background:#FFF;  }
+.center{width: 1200px;margin: 0 auto;}
+.toper{float: left;display: inline; background:url(../Images/may-bg.png) repeat-x;width: 100%;height: 30px;line-height: 30px;}
+.toper .inner{color: #000;}
+.toper .inner a{ color: #555555;}
+.toper .inner a:hover{ color: #FF5555;text-decoration: underline;}
+.toper .login{ float: right;}
+.toper li{ float: left;margin-left: 10px;}
+.header{float: left;display: inline; width: 100%;}
+.header .conner{margin-top: 10px;}
+.header .logo{float: left; width: 375px;}
+.header .ader{float: left;margin-left: 20px; width: 200px;}
+.mainer{float: left;display: inline; width: 100%;}
+
+.checkpart{filter:alpha(Opacity=50);-moz-opacity:0.5;opacity: 0.5;z-index:100; background-color:#ffffff; }
+.validctrlerror{ border:1px solid #FF0000;color: red;}
+.validctrlsucess{ border:1px solid #00CC00;}
+.validerrormess{ float: left;margin-left: 5px;text-align: left; display: block; color:Red; padding:0 20px 0 20px;background: #FFEBEB;height: 24px;}
+.validsucessmess{float: left;margin-left: 5px;display: block; background:url(../Scripts/Winner/Validator/Images/success.gif) no-repeat;height: 24px;}
+.validshowmess{float: left;margin-left: 5px;display: block;color:#333333; padding-left:20px;width: 200px; height: 24px;background: #F2F2F2;}
+
+
+/*分页*/
+.page { text-align:right; margin-top:30px; }
+.page a{display:inline-block; height:23px; line-height:23px; margin-left:5px; border:solid 1px #999999; padding:0 8px; background:url(../images/page_a.png) repeat-x top center; color:#666666; float:left}
+.page a.page_prve{ background:none; margin-right:10px;}
+.page a.page_prve.page_disabled{ border:solid 1px #cccccc; cursor:default}
+.page a.page_prve.page_disabled span{background:url(../images/page_prve_not.png) no-repeat center}
+.page a.page_prve span{display:inline-block; background:url(../images/page_prve.png) no-repeat center; padding:0 5px;height:23px; line-height:23px;}
+.page a.page_next{ margin-left:10px;}
+.page a.page_next span{display:inline-block; background:url(../images/page_next.png) no-repeat right center; padding-right:15px;}
+.page a.page_next.page_disabled{ border:solid 1px #cccccc; cursor:default}
+.page a.page_next.page_disabled span{background:url(../images/page_next_not.png) no-repeat right center; color:#ccc}
+.page a.page_curr{ background:url(../images/page_curr.png) repeat-x top center; border:solid 1px #67aee0}
+.page .page_goto{ display:inline-block; float:left; margin-left:15px;}
+.page .page_goto input.page_input{width:35px; text-align:center; border:solid 1px #ccc; display:inline-block; margin:0 3px; }
+.page .page_goto input.page_ok{ height:23px; background:url(../images/page_a.png) repeat-x top center; color:#666666; border:solid 1px #999999; padding:0 5px; cursor:pointer}
+
+ .uploader {padding:2px;color:#4A3C8C; }
+.uploader .view{float: left; width: 100%;}
+.uploader .view div{float: left; width:120px;height:150px;}
+.uploader .view img{width:120px; height:150px;}
+.uploader .file{width:220px; margin-top:2px; display:inline; }
+
+
+.savemask {
+    position: fixed;
+    width: 100%;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    z-index: 9999;
+    background: #000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+}
+.savemask img{ height: 50px;width: 50px;position: absolute; }

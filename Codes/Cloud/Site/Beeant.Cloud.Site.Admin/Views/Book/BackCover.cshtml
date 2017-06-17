@@ -1,0 +1,60 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@model Beeant.Cloud.Site.Admin.Models.Book.BookModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <link rel="shortcut icon" href="@(ViewBag.Site==null || string.IsNullOrEmpty(ViewBag.Site.FaviconFileName) ? string.Format("{0}/images/favicon.ico", Html.GetUrl("PresentationMobileSharedUrl")): ViewBag.Site.FaviconFullFileName)" type="image/x-icon" />
+ 
+    <link href="/Content/Book/default/site.css" rel="stylesheet" />
+    <title></title>
+
+ 
+
+</head>
+<body>
+<div class="page" >
+    @if (Model != null && Model.Album!=null && !string.IsNullOrEmpty(Model.Album.BackFileName))
+    {
+        <div class="bg">
+            <img src="@Model.Album.FullBackFileName"/>
+        </div>
+    }
+    <div class="backcover">
+        <div class="name">@(Model != null && Model.Company != null ? string.Format("更多新品请关注{0}公众号",Model.Company.Name.Replace(" ","")) : "")</div>
+        <div class="qrcode"><img src="@(Model != null && Model.Company != null ? Model.Company.WeixinQrCodeFullFileName : "")"/>
+        </div>
+        @if (Model != null && Model.Company != null)
+        {
+            <div class="lianxi">
+                @if (!string.IsNullOrWhiteSpace(Model.Company.Mobile))
+                {
+                <div class="contact">联系电话:@Model.Company.Mobile</div>
+                }
+
+                @if (!string.IsNullOrWhiteSpace(Model.Company.Address))
+                {
+                <div class="contact">公司地址:@Model.Company.Address</div>
+                }
+            </div>
+         
+           
+        }
+        <div class="pz">
+            <div class="font">本图册有蜂蚁图册提供详情请关注右边二维码</div>
+            <div class="img">
+                <img src="~/Images/wechat.jpg"/>
+            </div>
+           
+        </div>
+        
+    </div>
+</div>
+</body>
+</html>
+ 

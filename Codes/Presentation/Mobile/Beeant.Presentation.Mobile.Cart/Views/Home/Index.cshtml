@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "购物车";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Domain.Entities
+
+@section head
+{
+    @Styles.Render("~/Content/Site.css")
+}
+@if (Model != null)
+{
+    <form action="@Html.GetUrl("PresentationMobileBuyUrl")/Home/Index" method="GET">
+        <div class="shopcart" id="divShopcart">
+            <div class="optip">
+                <a href="javascript:void(0);" id="hfEdit">编辑</a>
+            </div>
+            <div class="list">
+
+            </div>
+            <div class="order">
+                <div class="ckcon">
+                    <input type="checkbox" class="mui-checkbox"  AllCheckName="selectall" id="ckSelectAll" /><label for="ckSelectAll">全选</label>
+                </div>
+                <div class="total">
+
+                    共<span Buyer="Count" class="red">0</span>件，
+                    合计：<span class="red" Buyer='Price' style="padding-right: 10px;">0</span>
+                </div>
+                <input id="btnSubmit" type="submit" value="确认结算" class="btn" disabled="disabled" />
+            </div>
+
+        </div>
+    </form>
+}
+
+        
+<script type="text/javascript" src="/Scripts/winner/buyer/winner.buyer.js"></script>
+<script type="text/javascript" src="/Scripts/winner/CheckBox/winner.CheckBox.js"></script>
+<script type="text/javascript" src="~/Scripts/plug/jquery.mobile.min.js"></script>
+@Scripts.Render("~/Scripts/home.js")
+
+
+

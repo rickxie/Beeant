@@ -1,0 +1,3 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="StorehouseComboBox.ascx.cs" Inherits="Beeant.Presentation.Admin.Scm.Controls.Wms.StorehouseComboBox" %>
+<input id="txtInputText" runat="server"  type="text" class="input"   BindName="Storehouse.Name"  SaveName="Storehouse.Name" />
+<input id="hfInputHidden" type="hidden"  BindName="Storehouse.Id"  SaveName="Storehouse.Id" runat="server"  />

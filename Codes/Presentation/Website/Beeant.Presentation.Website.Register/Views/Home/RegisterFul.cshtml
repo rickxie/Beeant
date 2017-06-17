@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "注册成功";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Beeant.Presentation.Website.Register.Models.Home.RegisterModel
+  @section  styles{
+@Styles.Render("~/Content/Home.css")
+ }
+<div class="center" style="text-align: center;">
+ <div class="sucessful">
+            <div class="img">
+                <img src="~/Images/successful.png" alt="注册成功"/>
+            </div>
+            <div class="mess">
+                 <h1>恭喜你已经注册成功！</h1><br/>
+              您接下来的操作 
+        @if (Model != null && !string.IsNullOrEmpty(Model.Url))
+        {
+            <a href="@Model.Url">返回原来页面</a>
+        }
+        &nbsp;&nbsp;
+        @Html.ActionLink("登录", "Index")
+        <br/><br/><br/>
+        <br/><br/><br/>
+            </div>
+        </div>
+ 
+   
+   
+</div>
+   
+     
+
+
+

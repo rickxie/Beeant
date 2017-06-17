@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "";
+}
+ 
+@using Beeant.Presentation.Website.DrowDownList
+@model Beeant.Presentation.Website.Buy.Models.Member.AddressModel
+    <div class="settle_address" id="fmAddress">
+        <ul>
+            <li>
+                <span class="span">地区:</span>
+                 @Html.Partial("DropDownList/_District",new DropDownListModel { Name = "DistrictId", SelectValue = Model != null ? Model.DistrictId.ToString() : "", ValidateName = "District.Id" })
+            </li>
+            <li><span class="span">接收人:</span>@Html.TextBoxFor(it => it.Recipient, new { @class = "input", id = "txtAddressRecipient", ValidateName = "Recipient" })</li>
+            <li><span class="span">手机号码:</span>@Html.TextBoxFor(it => it.Mobile, new { @class = "input", id = "txtAddressMobile", ValidateName = "Mobile", maxlength = "11" })</li>
+            <li><span class="span">邮政编号:</span>@Html.TextBoxFor(it => it.Postcode, new { @class = "input", id = "txtAddressPostcode", ValidateName = "Postcode",maxlength="6" })</li>
+            <li><span class="span">详细地址:</span>@Html.TextAreaFor(it => it.Address, new { @class = "textarea", id = "txtAddressAddress", ValidateName = "Address" })</li>
+            <li ><input id="btnSaveAddress" type="button" class="btn" value="确定"/></li>
+        </ul>
+         @Html.HiddenFor(it => it.Id, new { id = "hfAddressId" })
+    </div>
+

@@ -1,0 +1,11 @@
+﻿.message .list{width: 98%;padding: 0 1% 5px 1%;overflow: hidden;}
+.message .list .element{ width: 100%;margin-top: 10px;position: relative;background: #F7F7F7;height: 50px;line-height: 30px;}
+.message .list .read{ color: #000;font-weight: bold;}
+.message .list a{ color: #c0c0c0;}
+.message .list .til{ float: left;width: 100%;}
+.message .list .read a{ color: #38a2d2;}
+.message .list .remove{position: absolute;right: 0;top: 0;line-height: 50px; height: 50px; width: 80px;text-align: center;background:#ff0000;color: #ffffff;font-size: 16px;font-weight: bold; border: 0;}
+
+.message .list .til{float: left;display: block;text-align:left;width: 98%;padding-left: 2%; vertical-align: middle;font-size: 16px;padding-top: 10px; }
+.message .list .del{float: left;display: block;text-align:left;width: 95%;padding-left: 5%;vertical-align: middle;font-size: 11px;line-height: 30px;padding-top: 10px; }
+.message .detail{ padding:30px 2% 30px 2%;width: 100%;padding-top: 30px;font-size: 18px;line-height: 40px;} 

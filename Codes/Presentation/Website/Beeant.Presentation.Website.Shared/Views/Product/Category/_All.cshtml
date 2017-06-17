@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "";
+}
+@using Component.Extension
+@using Beeant.Basic.Services.Mvc.Extension
+@model IList<Beeant.Presentation.Mvc.Shared.Models.Product.CategoryModel>
+
+
+@{
+    
+    <div id="category" class="categorer"   style="@string.Format(Request.QueryString["isExpand"].Convert<bool>()?"":"display: none;")" >
+        @if (Model != null)
+        {
+            int num = 0;
+            const string top = "top:{0}px;";
+            foreach (var m in Model)
+            {
+                int count = m.Contents == null ? 0 : m.Contents.Count;
+                <div class="element bg"  IsTrigger="true" CategoryId="@m.Category.Id" OverClassName="element" style="@string.Format(top, num*30)">
+                    <a href="@Html.GetListUrl()/Home/index?categoryid=@m.Category.Id">@m.Category.Name</a>
+                </div>
+                <div class="content"  style="display: none;" CategoryId="@m.Category.Id">
+                    <div class="left">
+                        @if (m.Category.Children != null)
+                        {
+                            foreach (var c in m.Category.Children)
+                            {
+                                <div class="subcon">
+                                    <div class="tip">
+                                         <a href="@Html.GetListUrl()/Home/index?categoryid=@c.Id">@c.Name</a>
+                                    </div>
+                                    <div class="detail">
+                                        <ul>
+                                            @if (c.Children != null)
+                                            {
+                                                foreach (var d in c.Children)
+                                                {
+                                                    <li>
+                                                        <a href="@Html.GetListUrl()/Home/index?categoryid=@d.Id">@d.Name</a>
+                                                    </li>
+                                                }
+                                            }  
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            }
+
+                        }
+                    </div>
+                    <div class="right">
+                        @if (m.Contents != null)
+                        {
+                            <ul>
+                                @foreach (var ad in m.Contents)
+                                {
+                                    <li><a href="@ad.Url"><img src="@ad.FullFileName" alt="@ad.Title"/></a></li>
+                                } 
+                            </ul>
+                        }
+                    </div>
+                </div>
+                num = num + 1;
+            }
+        }
+    </div>
+}
+<script type="text/javascript" src="@Html.GetSharedUrl()/Scripts/Winner/Category/Winner.Category.js"></script>
+<script type="text/javascript">
+    InitCategory(@(Request.QueryString["isExpand"].Convert<bool>().ToString().ToLower()))
+</script>
+
+

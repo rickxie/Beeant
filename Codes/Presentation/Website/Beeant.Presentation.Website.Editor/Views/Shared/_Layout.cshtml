@@ -1,0 +1,36 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@string.Format("{0}", ViewBag.Title ?? "")</title>
+    <link rel="shortcut icon" href="@Html.GetUrl("PresentationWebsiteSharedUrl")/images/favicon.ico" type="image/x-icon" />
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/Site.css")
+    @Scripts.Render("~/Scripts/Plug/jquery-1.7.1.min.js")
+    @Scripts.Render("~/Scripts/Winner/Winner.ClassBase.js")
+    @Scripts.Render("~/Scripts/shared.js")
+    @RenderSection("head", required: false)
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    <div class="toper">
+        <div class="inner center">
+            <ul>
+                <li> <a href="@Html.GetUrl("PresentationWebsiteHomeUrl")">蜂蚁窝</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main" >
+        @RenderBody()
+   
+
+    </div>
+
+@RenderSection("scripts", required: false)
+    <div class="savemask" style="display: none;">
+        <img src="/Images/loading.gif" alt="" />
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿@{
+
+}
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities.Site
+@using Winner.Persistence
+@model Beeant.Cloud.Site.Admin.Models.Book.BookModel
+<div class="book">
+    <div class="mainten">
+        <a href="/Home/Index"><div class="gohome"></div></a>
+
+    </div>
+    @if (Model != null && Model.Company != null && Model.Company.Album != null && Model.Company.Album.Id > 0)
+    {
+        <div class="top" style="text-align: right;">
+            <a href="javascript:void(0);" dataid="@Model.Company.Album.Id" name="create">重新生成图册</a>
+        </div>
+    }
+    <div id="list" class="list">
+
+    </div>
+
+</div>
+<script type="text/javascript" src="~/Scripts/Book.js"></script>
+ 

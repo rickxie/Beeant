@@ -1,0 +1,71 @@
+﻿@{
+
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities
+@using Beeant.Domain.Entities.Crm
+@using Winner.Persistence
+@model Beeant.Cloud.Crm.Mobile.Models.Staff.StaffListModel
+<div class="staff">
+    <div class="mainten">
+        <a href="/Home/Index">
+            <div class="gohome"></div></a>
+
+    </div>
+    <div class="list">
+
+    </div>
+
+
+</div>
+
+<div class="addcontent" style="display: none;">
+
+    <div class="content" id="divContent">
+        <input type="hidden" id="hfId"/>
+        <div class="saveele">
+            <input type="text" id="txtName" class="input ctrlshow" ValidateName="Name" PlaceHolder="姓名" value=""/>
+        </div>
+        <div class="saveele" id="divDepartment">
+
+        </div>
+        <div class="saveele">
+            <input type="radio" name="ReadCustomerType" id="rdReadCustomerTypeAll" value="@((int) ReadCustomerType.All)"/>
+            <label for="rdReadCustomerTypeAll">@(ReadCustomerType.All.GetName())</label>
+            <input type="radio" name="ReadCustomerType" id="rdReadCustomerTypeDepartment" value="@((int) ReadCustomerType.Department)" />
+            <label for="rdReadCustomerTypeDepartment">@(ReadCustomerType.Department.GetName())</label>
+            <input type="radio" name="ReadCustomerType" id="rdReadCustomerTypeSelf" value="@((int) ReadCustomerType.Self)" checked="checked" />
+            <label for="rdReadCustomerTypeSelf">@(ReadCustomerType.Self.GetName())</label>
+        </div>
+        <div class="saveele">
+            <input type="text" id="txtLoginName" class="input ctrlshow" PlaceHolder="绑定蜂蚁用户的登入名" />
+        </div>
+        <div class="saveele">
+            <input type="password" id="txtLoginPassword" class="input ctrlshow" PlaceHolder="绑定蜂蚁用户的登入密码" />
+        </div>
+        没有蜂蚁用户<a href="@Html.GetUrl("PresentationMobileRegisterUrl")?url=@(Request.Url)">请注册</a>
+      </div>
+    <div class="ope">
+        <input type="button" class="cancel" id="btnCancel" value="取消" />
+        <input type="button" class="save" id="btnSave" value="保存" />
+    </div>
+</div>
+<div class="addbtnc">
+    <div class="addbtn" id="btnAdd">+</div>
+</div>
+
+
+<script type="text/javascript" src="~/Scripts/plug/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="~/Scripts/winner/validator/winner.Validator.js"></script>
+<script type="text/javascript" src="~/Scripts/staff.js"></script>
+<script type="text/javascript">
+     $(document).ready(function () {
+         @{
+            var pis = new[] { "Name"};
+             @(Html.ScriptValidator<StaffEntity>(SaveType.Add, pis).Initialize("divContent", ""))
+
+         }
+         window.Validator = validator;
+     });
+</script>

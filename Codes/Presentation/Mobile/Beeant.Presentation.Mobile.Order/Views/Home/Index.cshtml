@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "订单列表";
+}
+@using Beeant.Domain.Entities
+@model Beeant.Presentation.Mobile.Order.Models.Home.HomeModel
+
+<div class="order">
+    <div class="search">
+
+    </div>
+    <div class="list" Url="/Home/List?status=@(HttpContext.Current.Request["status"])&IsAppraisement=@(HttpContext.Current.Request["IsAppraisement"])">
+        <ul class="sub">
+            <li class="wd1">商品</li>
+            <li class="wd2">单价(元)</li>
+            <li class="wd3">数量</li>
+        </ul>
+    </div>
+    <div id="divPayTypes" class="paycon" style="display: none;">
+        <form action="" target="frPayType" id="fmPayType" method="GET">
+            <input type="hidden" name="ChannelType" value="@((int) ChannelType.Mobile)"/>
+            <input type="hidden" name="OrderIds" value=""/>
+            <input type="hidden" name="trade_type" value=""/>
+            <input type="hidden" name="seccess" value="parent.seccess"/>
+            <input type="hidden" name="fail" value="parent.fail"/>
+
+            <div class="closecon">
+                <div class="close" id="divClose"></div>
+            </div>
+            <div class="paytype">
+                支付方式:
+                <select id="selPayTypes" class="select">
+                    @if (Model != null && Model.PayTypes != null)
+                    {
+                        foreach (var payType in Model.PayTypes)
+                        {
+                            <option value="@payType.Url">@payType.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="tip">需要支付:<span class="red">$</span><span Buyer='Price' style="padding-right: 10px;" class="red"></span></div>
+            <div class="btncon"><input id="btnPay" type="submit" value="确认付款" class="btn"/>
+            </div>
+        </form>
+
+    </div>
+    <iframe name="frPayType" id="frPayType" style="display: none;"></iframe>
+    <div class="buymask" style="display: none;"></div>
+    <input type="hidden" id="hfPaytype" value="@Model.PayTypesJson"/>
+</div>
+<script type="text/javascript">
+    document.domain = '@(Configuration.ConfigurationManager.GetSetting<string>("Domain"))';
+</script>
+<script type="text/javascript" src="~/Scripts/home.js"></script>

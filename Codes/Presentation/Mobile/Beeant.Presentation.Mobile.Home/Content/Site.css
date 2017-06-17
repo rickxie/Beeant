@@ -1,0 +1,26 @@
+﻿.home{ width: 100%;height: 100%;background: #333333;}
+
+.home .banner {width:100%; height:200px; clear:both;position:relative;overflow:hidden;background: #ffffff; }
+.home .banner .focus{height:200px;position:absolute;z-index:9;width:100%; top:0;}
+.home .banner .focus img{ width: 100%;height: 200px;}
+
+ 
+
+.home .nav{ width: 100%;}
+.home li{float: left;padding: 10px 2.5% 0 2.5%;  width: 20%;text-align: center;}
+.home li a{display: block; color: #BEBEBE;line-height: 40px;background: no-repeat center top;background-size: 40px 40px;padding-top: 40px;}
+.home li .a1{ background-image: url("../images/ico_nav1.png");}
+.home li .a2{ background-image: url("../images/ico_nav2.png");}
+.home li .a3{ background-image: url("../images/ico_nav3.png");}
+.home li .a4{ background-image: url("../images/ico_nav4.png");}
+
+.home .product{ float: left;width: 100%;background: #333333;padding-bottom: 40px; }
+.home .element{ float: left;width: 100%;background: #333333;}
+.home .element .bg{float: left;margin: 0.5%;position: relative;}
+.home .element .bg1{float: right;margin: 0.5%;}
+.home .element .small{width: 48.5%;}
+.home .element .big{ width:98%;}
+.home .element img{ height: 100%;width: 100%;}
+.home .element .name{position: absolute;top: 30%; display: block;width: 100%;text-align: center;color: #ff8c00;word-wrap:break-word }
+.home .element .price{ position: absolute;top: 50%;display: block;width: 100%;color: #ff0000;text-align: center; }
+.home .element .del{ text-decoration: line-through #ff0000;}

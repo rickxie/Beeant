@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "收货地址";
+}
+@model Beeant.Presentation.Mobile.Member.Models.Member.AddressModel
+@section head
+{
+    @Styles.Render("~/Content/address.css")
+}
+<div class="address">
+    <div class="list">
+        @if (Model != null && Model.Addresses != null)
+        {
+            foreach (var address in Model.Addresses)
+            {
+                <div class="element">
+                    <div class="tone">
+                        <div class="recipient">@address.Recipient</div>
+                        <div class="mobile">@address.Mobile</div>
+                    </div>
+                    <div class="ttow">
+                        @address.Address
+                    </div>
+                    <div class="tthree">
+                        <div class="rd">
+                            <input type="radio" class="mui-checkbox" onclick="updateDefault(@address.Id)" name="IsDefault" id="rd@(address.Id)" @(address.IsDefault ? "checked=checked" : "")/>
+                            <label for="rd@(address.Id)">设置成默认</label>
+                        </div>
+                        <div class="ed">
+                            <a href="/address/Update?id=@address.Id">编辑</a>
+                        </div>
+                        <div class="rem" onclick="remove(this,@address.Id);">
+                            删除
+                        </div>
+                    </div>
+                </div>
+            }
+
+        }
+        <div class="add">
+            <a href="/address/Add">增加新地址</a>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/scripts/address.js")

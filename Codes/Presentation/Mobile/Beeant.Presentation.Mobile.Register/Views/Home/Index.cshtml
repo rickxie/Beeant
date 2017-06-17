@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "用户注册";
+    ViewBag.TopName = "用户注册";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities.Account
+@using Winner.Persistence
+@model Beeant.Presentation.Mobile.Register.Models.Home.RegisterModel
+ 
+@section head{
+    @Styles.Render("~/Content/site.css")
+}
+<div class="reg">
+    @using (Html.BeginForm("Register", "Home", FormMethod.Post, new { autocomplete = "off" }))
+    {
+        <input type="submit" style="display: none;" onclick=" return false; " />
+                    <dl class="dl">
+                        <dt>
+                            <span class="con">
+                                @Html.TextBoxFor(it => it.Mobile, new { @class = "text iname bor", ValidateName = "Mobile", id = "txtMobile", @Value = (Model == null || string.IsNullOrEmpty(Model.Mobile) ? "手机号码" : Model.Mobile), DefaultValue = "手机号码",maxlength="11" })
+                            </span>
+                        </dt>
+                   
+                
+
+                        <dt>
+                            <span class="con">
+                                <input  id = "txtCode" type="text" class="code bor" style = "float: left; -webkit-appearance: none;" maxlength="4" value="验证码" DefaultValue = "验证码" />
+                                <img id="imgCode" src="/Home/Code" alt="" class="codeimg" />
+                                <div class="codediv">
+                                    <a href="javascript:void(0);" id="hfCode">看不清楚?</a>
+                                </div>
+                            </span>
+                        </dt>
+                        <dt>
+                            <span class="con">
+                                <input id="txtMobileCode" type="text" class="code bor" name="MobileCode" style="float:left;" maxlength="6" value="手机验证码" DefaultValue="手机验证码" />
+                            
+                                <input type="button" id="btnMobileCode" class="btnmobile" value="获取手机验证码" />
+                            </span>
+                        </dt>
+                        <dt>
+                            <span class="con">
+                                @if (string.IsNullOrEmpty(@Model.Password))
+                                {
+                                    @Html.TextBoxFor(it => it.Password, new {@class = "text ipass bor", ValidateName = "Password", id = "txtPassword", @Value = "设置密码", DefaultValue = "设置密码"})
+                                }
+                                else
+                                {
+                                    @Html.PasswordFor(it => it.Password, new {@class = "text ipass bor", ValidateName = "Password", id = "txtPassword", @Value = Model.Password, DefaultValue = "设置密码"})
+                                }
+                            </span>
+                        </dt>
+                        <dt>
+                            <span class="con">
+                                @if (string.IsNullOrEmpty(@Model.SurePassword))
+                                {
+                                    @Html.TextBoxFor(it => it.SurePassword, new { @class = "text ipass bor", ValidateName = "Password", id = "txtSurePassword", @Value = "确认密码", DefaultValue = "确认密码" })
+                                }
+                                else
+                                {
+                                    @Html.PasswordFor(it => it.SurePassword, new { @class = "text ipass bor", ValidateName = "Password", id = "txtSurePassword", @Value = Model.SurePassword, DefaultValue = "确认密码" })
+                                }
+                            </span>
+                        </dt>
+                        @if (Model != null && Model.Errors != null && Model.Errors.Count > 0)
+                        {
+                            <dt>
+                                <span class="failure">@Model.Errors[0].Message</span>
+                            </dt>
+                        }
+                        <dt style="text-align: center;">
+
+
+                            <input id="btnSubmit" type="submit" value="注册" class="btn"/>
+                        </dt>
+                        <dt>
+                            <span class="til">&nbsp;</span>
+                            <span>
+                                <input checked="checked" name="IsReadProtocol" id="ckprotocol" type="checkbox" />
+
+                                <label for="ckprotocol">我已阅读并同意《<a href="javascript:void(0);" id="hfProtocol">用户注册协议</a>》</label>
+                            </span>
+                        </dt>
+                    </dl>
+                    @Html.HiddenFor(it => it.Url, new { @Value = (Model == null || string.IsNullOrEmpty(Model.Url) ? "" : Model.Url) })
+    }
+    <div class="emails" id="showEmails" style="display: none;"> </div>
+    <div id="divProtocol" class="protocol" style="display: none;">
+        <div class="top">关于用户注册<span id="closeProtocol" class="close"></span></div>
+        <div class="detail">
+            ddddd
+        </div>
+
+    </div>
+</div>
+
+@Scripts.Render("~/Scripts/home.js")
+@Scripts.Render("/Scripts/Winner/Validator/Winner.Validator.js")
+<script type="text/javascript">
+            $(document).ready(function () {
+                var reg = new Register(@(Html.ScriptValidator<AccountEntity>(SaveType.Add, new[] { "Password", "Mobile" }).Gets()));
+                reg.Initialize();
+            });
+</script>
+

@@ -1,0 +1,18 @@
+.wintable{border-collapse: collapse; width:100%;}
+.wintable td,.wintable th{ border:1px solid #d6d6d6;border-collapse: collapse;overflow: hidden; white-space: nowrap; text-overflow: ellipsis; word-break: keep-all;}
+.wintable th { font-size:13px; color:#3c8f4b; background:url(../Images/thbg.png) repeat-x; height:18px; text-align: center;} 
+.wintable .over{ background:lightblue;}
+.wintable .out{}
+.wintable .select{background:lightgray;}
+.wintable td{ height:16px;padding: 0 5px;}
+.wintable .center{text-align:center; vertical-align:middle;}
+.wintable .left{text-align:left; vertical-align:middle;}
+.wintable .right{text-align:right; vertical-align:middle;}
+.wintable .time{width:120px;}
+.wintable .loperate{width:80px;}
+.wintable .operate{width:40px;}
+.wintable .ckbox{width:30px;}
+.wintable .name{width:120px;}
+.wintable .sort{ width: 50px; }
+.wintable .status{ width: 60px; }
+.wintable .sequence{ width: 60px;}

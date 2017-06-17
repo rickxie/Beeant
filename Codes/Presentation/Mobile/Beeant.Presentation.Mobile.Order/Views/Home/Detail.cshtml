@@ -1,0 +1,77 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Extension.Mobile
+@using Beeant.Domain.Entities.Order
+@model Beeant.Presentation.Mobile.Order.Models.Home.HomeModel
+<div class="order">
+    <div class="detail">
+        @if (Model != null && Model.Order != null)
+        {
+            if (Model.Order.OrderExpresses != null)
+            {
+                foreach (var express in Model.Order.OrderExpresses)
+                {
+                    <div class="addrress">
+                        @if (express != null)
+                        {
+                            <div class="recipient">
+                                @express.Recipient
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                @express.Mobile
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                @express.Postcode
+                            </div>
+                            <div class="add">
+                                @express.Address
+                            </div>
+                        }
+                    </div>
+                }
+            }
+            if (Model.Order.OrderProducts != null)
+            {
+                foreach (var orderPrdouct in Model.Order.OrderProducts)
+                {
+                    if (orderPrdouct.Product != null)
+                    {
+
+                        <div class="row">
+                            <div class="left wd1">
+                            <a href="@Html.GetUrl("PresentationMobileDetailUrl")/Home/Index?productId=@orderPrdouct.Product.Id">
+                                    <img class="img" src="@(Html.GetNoPicture(orderPrdouct.FullFileName))" alt="" />
+                                    <span class="name">
+                                        @orderPrdouct.Name
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="red wd2 lineh">
+                                @orderPrdouct.Price
+                            </div>
+                            <div class="wd3 lineh">@orderPrdouct.Count</div>
+
+
+                        </div>
+
+
+                    }
+                }
+                <div class="til" style="border: 0; background: #F7F7F7;">
+                    <span style="float: left">订单编号：@Model.Order.Id</span>
+                    <span name="status" class="bred" style="float: right;">@Model.Order.StatusName</span>
+
+                    <br />
+                    合计:<span class="red">￥@Model.Order.TotalAmount（含运费￥@Model.GetExpressAmount(Model.Order)）</span>
+                    付款金额:<span class="red">@Model.Order.PayAmount</span>
+                    <br />
+                    下单时间：@Model.Order.InsertTime.ToString("yyyy-MM-dd HH:mm")
+
+                </div>
+
+            }
+        }
+  
+    </div>
+</div>
+

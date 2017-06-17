@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "修改登录名";
+    ViewBag.TopName = "修改登录名";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities.Account
+@using Winner.Persistence
+@model Beeant.Presentation.Website.Password.Models.Account.NameModel
+@section head
+{
+
+    @Styles.Render("~/Content/Site.css")
+    @Scripts.Render("/Scripts/Winner/Validator/Winner.Validator.js")
+}
+
+
+<div class="pass">
+
+    @using (Html.BeginForm("Modify", "Name", FormMethod.Post, new {autocomplete = "off"}))
+    {
+
+        <input type="submit" style="display: none;" onclick=" return false; "/>
+        <dl class="dl" style="padding-top: 10px;">
+         
+            <dt>
+
+                <span class="con">
+                    <input id="txtName" type="text"  ValidateName="Name" value="" />
+                    </span>
+            </dt>
+            @if (Model != null && (Model.Errors == null || Model.Errors.Count == 0))
+            {
+                <dt>
+
+                    <span class="success">保存成功</span>
+                </dt>
+            }
+            @if (Model != null && Model.Errors != null && Model.Errors.Count > 0)
+            {
+                <dt>
+
+                    <span class="failure">@Model.Errors[0].Message</span>
+                </dt>
+            }
+            <dt>
+
+
+                <a href="javascript:void;" class="btn"><input id="btnSubmit" type="submit" value="保存"/></a>
+            </dt>
+        </dl>
+
+    }
+
+</div>
+<script type="text/javascript">
+       window.ValidateInfos= @(Html.ScriptValidator<AccountEntity>(SaveType.Add, new[] { "Name"}).Gets())
+</script>
+@Scripts.Render("~/Scripts/Name.js")
+
+
+    

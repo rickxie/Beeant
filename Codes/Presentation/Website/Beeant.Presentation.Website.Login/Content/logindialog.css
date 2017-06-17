@@ -1,0 +1,42 @@
+﻿*{ margin:0 0; padding:0 ;}
+ul{ list-style-type:none;}
+img{border:none;}
+em,q,cite,address { font-weight:normal; font-style:normal }
+h1, h2, h3 { font-weight:normal }
+address { display:inline }
+big,small { font-size:12px }
+img { border:none }
+li { list-style:none }
+q { quotes:none }
+strong { font-weight:bold }
+table { border-collapse:collapse }
+th { text-align:left; font-weight:normal }
+em { font-family:宋体; font-size:12px; color:#F00 }
+/* link */
+a { color:#38a2d2; outline-style:none; text-decoration:none}
+a:hover { text-decoration:none; color:#f2963d}
+/* clear float */
+.cf { zoom:1} /* for IE */
+.cf:after { content:"."; display: block; clear:both; font-size:0; height:0; visibility:hidden; overflow:hidden} /* for other */
+/* end of clear float */
+body { font-size:12px; line-height:24px; font-family:Tahoma, Arial, sans-serif, Simsun, 宋体; color:#404040; background:#FFF;  }
+.login{width: 400px;}
+.login .dl{ float: left;padding: 10px;}
+.login .dl dt{ float: left;width: 300px;padding-left: 20px;margin-top: 10px;}
+.login .dl dt .in{float: left; width: 270px;  }
+.login .dl dt .bor{border: 1px solid #E1E1E1;}
+.login .dl dt .in .tc{ float: left;}
+.login .dl dt .in .text{color: #999999;border: 0;font-family: arial,"宋体";font-size: 14px;height: 24px; line-height: 24px;padding: 4px 20px 4px 3px;width: 225px;}
+.login .dl dt .in .select{color: #000;outline:none }
+.login .dl dt .code{color: #999999;float: left; width: 50px;font-family: arial,"宋体";font-size: 14px;height: 24px; line-height: 24px;padding: 2px 2px 2px 2px;}
+.login .dl dt .select{color: #000; }
+.login .dl dt .codeimg{float: left;height: 30px;margin-left: 5px;}
+.login .dl dt .codediv{ float: left;padding-left: 10px;}
+.login .dl dt .iname{float: left;display: block; background: url("../Images/one4.jpg") no-repeat;height: 16px;margin-top: 8px;width: 16px;}
+.login .dl dt .ipass{float: left;display: block; background: url("../Images/one5.jpg") no-repeat;height: 16px;margin-top: 8px;width: 16px;}
+.login .dl dt .sub{ width: 270px;}
+.login .dl dt .sub .input{ width: 270px;border: 1px solid #ff0000; height: 36px;background: url("../Images/login-img.png") no-repeat;}
+.login .dl dt .sub:hover input{ background-position: 0 -36px;}
+.login .pass{ border: 1px solid #7ABD54;}
+.login .error{ border: 1px solid #ff0000;}
+.login .failure{border: 1px solid #ff0000;margin-bottom: 2px; color: #ff0000;display: block;width: 268px;text-align: center;height: 20px;line-height: 20px; }

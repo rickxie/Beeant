@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "";
+}
+@model Beeant.Presentation.Website.Paging.PagerModel
+@if (Model.PageCount > 0)
+{
+    <div id="divPager" class="pager" >
+        <a href="@(Model.IsAjax?"javascript:void(0);": Model.FirstUrl)" @(new HtmlString(Model.IsAjax && Model.PageIndex!=0 ? string.Format("onclick=\"{0}(0)\"", Model.AjaxFunction) : "")) Pager="first" @string.Format("{0}", Model.PageIndex == 0 ? "disabled=disabled class=disable" : "")>首页</a>
+        <a href="@(Model.IsAjax?"javascript:void(0);":@Model.PreviousUrl)" @(new HtmlString(Model.IsAjax && Model.PageIndex != 0 ? string.Format("onclick=\"{0}({1})\"", Model.AjaxFunction, Model.PageIndex - 1) : "")) Pager="previous" @string.Format("{0}", Model.PageIndex == 0 ? "disabled=disabled class=disable" : "")>上一页</a>
+        @foreach (var link in Model.Links)
+        {
+            <a href="@(Model.IsAjax?"javascript:void(0);":@link.Value)" Pager="link" @(new HtmlString(Model.IsAjax && Model.PageIndex!= link.Key - 1 ? string.Format("onclick=\"{0}({1})\"", Model.AjaxFunction, link.Key - 1) : ""))  @string.Format("{0}", Model.PageIndex == link.Key - 1 ? "disabled=disabled class=disable" : "")>@link.Key</a>
+
+        }
+        <a href="@(Model.IsAjax?"javascript:void(0);":Model.NextUrl)" Pager="next" @(new HtmlString(Model.IsAjax && Model.PageIndex != Model.PageCount - 1 ? string.Format("onclick=\"{0}({1})\"", Model.AjaxFunction, Model.PageIndex + 1) : "")) @string.Format("{0}", Model.PageIndex == Model.PageCount - 1 ? "disabled=disabled class=disable" : "")>下一页</a>
+        <a href="@(Model.IsAjax?"javascript:void(0);":Model.LastUrl)" Pager="last" @(new HtmlString(Model.IsAjax && Model.PageIndex != Model.PageCount - 1 ? string.Format("onclick=\"{0}({1})\"", Model.AjaxFunction, Model.PageCount - 1) : "")) @string.Format("{0}", Model.PageIndex == Model.PageCount - 1 ? "disabled=disabled class=disable" : "")>最后一页</a>
+    </div>
+
+    @Scripts.Render("/Scripts/Winner/Pager/Winner.Pager.js")
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var pager = new Winner.Pager('divPager', @Model.PageIndex, @Model.PageCount);
+             pager.Initialize();
+        });
+    </script>
+}
+

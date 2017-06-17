@@ -1,0 +1,223 @@
+﻿@using Beeant.Domain.Entities
+@using Beeant.Presentation.Website.Paging
+@model Beeant.Presentation.Website.Search.Models.Home.GoodsListModel
+
+@{
+    ViewBag.Title = "商品搜索";
+    ViewBag.Keywords = "蜂蚁窝-" + (Model == null ? Model.SearchKey : "") + "搜索结果";
+    ViewBag.Description = "蜂蚁窝-" + (Model == null ? Model.SearchKey : "") + "搜索结果";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="center">
+    <div class="goodslist_property">
+         @if (Model.SearchProperties != null && Model.SearchProperties.Count > 0)
+         {
+            <table>
+              
+                @foreach (var sp in Model.SearchProperties)
+                {
+                    <tr>
+                        <td class="name">@sp.Name</td>
+                        <td class="value">
+                            <ul>  
+                                @if (sp.ValueArray != null)
+                                {
+                                    foreach (var value in sp.ValueArray)
+                                    {
+                                        var url = Model.GetPropertyUrl(sp.Id, sp.Name, value);
+                                        if (string.IsNullOrEmpty(url))
+                                        {
+                                            <li>@value</li>
+                                        }
+                                        else
+                                        {
+                                            <li>
+                                                @Html.ActionLink(value, Model.ActionName, "Home", new RouteValueDictionary { { "searchkey", Model.SearchKey }, { "oname", null }, { "ps", Server.UrlEncode(url) }, { "page", null } }, null)
+                                            </li>
+                                        }
+                                    }
+                                }
+                            </ul>
+                        </td>
+                    </tr>
+                }
+            </table>
+         }
+       
+    </div>
+  
+    <div class="goodsinfo_sort">
+        @if (Model != null)
+        {
+            <table>
+            <tr>
+                <td class="name">排序</td>
+                <td class="value">
+                    <ul>
+                        <li>
+                            @if (string.IsNullOrEmpty(Model.OrderbyName))
+                            {
+                                @:默认
+                            }
+                            else
+                            {
+                                 @Html.ActionLink("默认", Model.ActionName, "Home", new RouteValueDictionary { { "searchkey", Model.SearchKey }, { "ps", Model.PropertyName }, { "oname", null }, { "page", null } }, null)
+                            }
+                          
+                        </li>
+                        <li>
+                                @if ("ptasc".Equals(Model.OrderbyName))
+                                {
+                                    @:最新升序
+                                }
+                                else
+                                {
+                                    @Html.ActionLink("最新升序", Model.ActionName, "Home", new RouteValueDictionary { { "searchkey", Model.SearchKey }, { "ps", Model.PropertyName }, { "oname", "ptasc" }, { "page", null } }, null) 
+                                }
+                        </li>
+                        <li>
+                             @if ("ptdesc".Equals(Model.OrderbyName))
+                             {
+                                 @:最新降序
+                             }
+                             else
+                             {
+                                 @Html.ActionLink("最新降序", Model.ActionName, "Home", new RouteValueDictionary { { "searchkey", Model.SearchKey }, { "ps", Model.PropertyName }, { "oname", "ptdesc" }, { "page", null } }, null)
+                             }
+                             
+                        </li>
+                        <li>
+                             @if ("vcasc".Equals(Model.OrderbyName))
+                             {
+                                 @:访问量升序
+                             }
+                             else
+                             {
+                                  @Html.ActionLink("访问量升序", Model.ActionName, "Home", new RouteValueDictionary { { "searchkey", Model.SearchKey }, { "ps", Model.PropertyName }, { "oname", "vcasc" }, { "page", null } }, null)
+                             }
+                             
+                        </li>
+                        <li>
+                               @if ("vcdesc".Equals(Model.OrderbyName))
+                               {
+                                   @:访问量降序
+                               }
+                               else
+                               {
+                                   @Html.ActionLink("访问量降序", Model.ActionName, "Home", new RouteValueDictionary { { "searchkey", Model.SearchKey }, { "ps", Model.PropertyName }, { "oname", "vcdesc" }, { "page", null } }, null)
+                               }
+                        </li>
+                        <li>
+                             @if ("acasc".Equals(Model.OrderbyName))
+                             {
+                                 @:收藏量升序
+                             }
+                             else
+                             {
+                                  @Html.ActionLink("收藏量升序", Model.ActionName, "Home", new RouteValueDictionary { { "searchkey", Model.SearchKey }, { "ps", Model.PropertyName }, { "oname", "acasc" }, { "page", null } }, null)
+                             }
+                        </li>
+                        <li>
+                            @if ("acdesc".Equals(Model.OrderbyName))
+                            {
+                                 @:收藏量降序
+                             }
+                            else 
+                            {
+                               @Html.ActionLink("收藏量降序", Model.ActionName, "Home", new RouteValueDictionary { { "searchkey", Model.SearchKey }, { "ps", Model.PropertyName }, { "oname", "acdesc" }, { "page", null } }, null)
+                            }
+                            
+                        </li>
+                        <li>
+                             @if ("scasc".Equals(Model.OrderbyName))
+                             {
+                                 @:销售量升序
+                             }
+                             else 
+                             {
+                                 @Html.ActionLink("销售量升序", Model.ActionName, "Home", new RouteValueDictionary { { "searchkey", Model.SearchKey }, { "ps", Model.PropertyName }, { "oname", "scasc" }, { "page", null } }, null)
+                             }
+                             
+                        </li>
+                        <li>
+                             @if ("scdesc".Equals(Model.OrderbyName))
+                             {
+                                 @:销售量降序
+                             }
+                             else  
+                             {
+                                @Html.ActionLink("销售量降序", Model.ActionName, "Home", new RouteValueDictionary { { "searchkey", Model.SearchKey }, { "ps", Model.PropertyName }, { "oname", "scdesc" }, { "page", null } }, null)
+                             }
+                             
+                        </li>
+                        <li>
+                            @if ("prasc".Equals(Model.OrderbyName))
+                            {
+                                @:价格升序
+                            }
+                            else
+                            {
+                                @Html.ActionLink("价格升序", Model.ActionName, "Home", new RouteValueDictionary { { "searchkey", Model.SearchKey }, { "ps", Model.PropertyName }, { "oname", "prasc" }, { "page", null } }, null)
+                            }
+                        </li>
+                        <li>
+                              @if ("prdesc".Equals(Model.OrderbyName))
+                              {
+                                  @:价格降序
+                              }
+                              else
+                              {
+                                  @Html.ActionLink("价格降序", Model.ActionName, "Home", new RouteValueDictionary { { "searchkey", Model.SearchKey }, { "ps", Model.PropertyName }, { "oname", "prdesc" }, { "page", null } }, null)
+                              }
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        }
+    </div>
+ 
+    <div class="goodslist_goods">
+        @if (Model.GoodsList != null)
+        {
+            foreach (var goods in Model.GoodsList)
+            {
+                <div class="pro">
+                    @if (goods != null && goods.IsSales)
+                    {
+                        <div class="img">
+                            <a href="@string.Format("{0}", string.IsNullOrEmpty(goods.Url) ? "/Goods/Detail/" + goods.Id : goods.Url)" target="_blank">
+                                <img src='@string.Format("{0}", string.IsNullOrEmpty(goods.FileName) ? "/Images/Nopic.jpg" : goods.GetFullFileName(goods.FileName, "i"))'/>
+                            </a>
+                        </div>
+                        <div class="name">
+                            <a href="@string.Format("{0}", string.IsNullOrEmpty(goods.Url) ? "/Goods/Detail/" + goods.Id : goods.Url)" target="_blank">
+                                @goods.Name
+                            </a>
+                        </div>
+                        <div class="price">
+                            @string.Format("{0}", goods.Price < 0 ? "面议" : goods.Price.ToString())
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="img">
+                             <img src='/Images/Nopic.jpg'/>
+                        </div>
+                        <div class="name">
+                               停止销售
+                        </div>
+                        <div class="price">
+                            停止销售
+                        </div>
+                    }
+                    
+                </div>
+            }
+                   @Html.Page(Model).Partial("/views/Shared/_Pager.cshtml") 
+        }
+    </div>
+</div>
+
+

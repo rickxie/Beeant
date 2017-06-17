@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Extension.Mobile
+@model Beeant.Presentation.Mobile.Detail.Models.Home.GoodsModel
+ 
+    @if (Model != null && Model.Goods != null && Model.Goods.Products != null && Model.Product != null)
+    {
+        for (var i = 0; i < Model.Goods.Products.Count; i++)
+        {
+            <div id="divImage@(Model.Goods.Products[i].Id)" class="cd-slider-wrapper" @(i > 0 ? "style='display:none'" : "")>
+
+            </div>
+            <div id="divPromotion@(Model.Goods.Products[i].Id)"  class="promotion" @(i > 0 ? "style='display:none'" : "")></div>
+        }
+        <table>
+            <tr>
+                <td colspan="4" id="divName">@Model.Product.Name</td>
+            </tr>
+            <tr>
+                <td>单价:</td>
+                <td id="divPrice">@Model.Product.Price</td>
+                <td>月销售:</td>
+                <td id="divSalesCount">@Model.Product.SalesCount</td>
+            </tr>
+        </table>
+        <div class="skuer" id="divSkuer">
+            <table>
+                @if (Model.SkuProperties != null && Model.SkuProperties.Count > 0)
+                {
+                    foreach (var sku in Model.SkuProperties)
+                    {
+                        <tr>
+                            <td class="name">
+                                @sku.Name
+                            </td>
+                            <td>
+                                @foreach (var value in sku.Values)
+                                {
+                                    if (!string.IsNullOrEmpty(value))
+                                    {
+                                        <div  SkuId="@sku.Id" SkuValue="@value" class="normal" >@value</div>
+                                    }
+                                }
+                            </td>
+                        </tr>
+                    }
+
+                }
+            </table>
+        </div>
+    }
+ 

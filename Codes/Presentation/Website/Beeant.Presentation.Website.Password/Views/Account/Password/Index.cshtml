@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "修改密码";
+    ViewBag.TopName = "修改密码";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities.Account
+@using Winner.Persistence
+@model Beeant.Presentation.Website.Password.Models.Account.PasswordModel
+@section head
+{
+
+    @Styles.Render("~/Content/Site.css")
+    @Scripts.Render("/Scripts/Winner/Validator/Winner.Validator.js")
+}
+
+ 
+<div class="pass">
+
+    @using (Html.BeginForm("Modify", "Password", FormMethod.Post, new { autocomplete = "off" }))
+    {
+      
+        <input type="submit" style="display: none;" onclick=" return false; " />
+        <dl class="dl" style="padding-top: 10px;">
+            <dt>
+
+                <span class="con">
+                    <input id="txtOldPassword" type="@(Model!=null && !string.IsNullOrEmpty(Model.OldPassword) && !string.IsNullOrEmpty(Model.OldPassword) && Model.Errors != null && Model.Errors.Count > 0?"password":"text")" name="OldPassword" class="text ipass bor" Value="@(Model!=null && !string.IsNullOrEmpty(Model.OldPassword) && Model.Errors != null && Model.Errors.Count > 0? Model.OldPassword:"输入原始密码")" DefaultValue="输入原始密码" />
+                </span>
+            </dt>
+            <dt>
+
+                <span class="con">
+                    <input id="txtNewPassword" type="@(Model != null && !string.IsNullOrEmpty(Model.NewPassword) && !string.IsNullOrEmpty(Model.OldPassword) && Model.Errors != null && Model.Errors.Count > 0? "password" : "text")" name="NewPassword" class="text ipass bor"  Value = "@(Model != null && !string.IsNullOrEmpty(Model.NewPassword) && Model.Errors != null && Model.Errors.Count > 0 ? Model.NewPassword : "设置密码")"  DefaultValue = "设置密码" ValidateName="Password"/>
+                    </span>
+            </dt>
+            <dt>
+
+                <div class="passstrength" id="divPassStrength"></div>
+            </dt>
+            <dt>
+
+                <span class="con">
+                    <input id="txtSurePassword" type="@(Model != null && !string.IsNullOrEmpty(Model.SurePassword) && !string.IsNullOrEmpty(Model.OldPassword) && Model.Errors != null && Model.Errors.Count > 0? "password" : "text")" name="SurePassword" class="text ipass bor" Value="@(Model != null && !string.IsNullOrEmpty(Model.SurePassword) && Model.Errors != null && Model.Errors.Count > 0 ? Model.NewPassword : "确认密码")" DefaultValue="确认密码" />
+                    </span>
+            </dt>
+            @if (Model != null && (Model.Errors == null || Model.Errors.Count == 0))
+            {
+                <dt>
+
+                    <span class="success">保存成功</span>
+                </dt>
+            }
+            @if (Model != null && Model.Errors != null && Model.Errors.Count > 0)
+            {
+                <dt>
+         
+                    <span class="failure">@Model.Errors[0].Message</span>
+                </dt>
+            }
+            <dt>
+
+     
+                <a href="javascript:void;" class="btn"><input id="btnSubmit" type="submit" value="保存"/></a>
+            </dt>
+        </dl>
+
+    }
+
+</div>
+@Scripts.Render("~/Scripts/password.js")
+   <script type="text/javascript">
+       $(document).ready(function() {
+           intiPassword(@(Html.ScriptValidator<AccountEntity>(SaveType.Modify, new[] {"Password"}).Gets()));
+       });
+</script>
+
+    

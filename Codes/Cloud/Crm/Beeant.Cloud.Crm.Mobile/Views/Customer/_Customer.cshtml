@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "";
+}
+@model Beeant.Cloud.Crm.Mobile.Models.Customer.CustomerListModel
+@if (Model != null && Model.Customers != null)
+{
+    foreach (var customer in Model.Customers)
+    {
+        <div class="element"  DataId="@customer.Id" StaffId="@(customer.Staff==null?"":customer.Staff.Id.ToString())">
+            <div class="name"> @customer.Name</div>
+            @*<div class="mobile"><a href="tel:@customer.Mobile">@customer.Mobile</a>
+            </div>*@
+            <div class="det"><a href="/Note/Index?customerId=@customer.Id">跟踪记录</a></div>
+            <div class="det" name="loadmore"><a href="javascript:void(0);">详情</a></div>
+            <input class="remove" type="button" style="display: none;" value="删除"/>
+            <div class="more" style="display: none;">
+
+            </div>
+            <div class="select" style="display: none;">
+
+            </div>
+            <div class="selectok" style="display: none;"></div>
+        </div>
+    }
+}

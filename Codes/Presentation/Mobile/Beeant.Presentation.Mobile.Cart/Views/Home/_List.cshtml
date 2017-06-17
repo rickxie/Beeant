@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Extension.Mobile
+@using Beeant.Domain.Entities
+@using Beeant.Domain.Entities.Order
+
+@model Beeant.Presentation.Mobile.Cart.Models.Home.HomeModel
+@if (Model != null && Model.Shopcarts != null)
+{
+    var i = Model.PageIndex * Model.PageSize;
+    foreach (var shopcart in Model.Shopcarts)
+    {
+        if (shopcart != null && shopcart.Product!=null)
+        {
+            <div class="element" >
+               
+                    <div class="ck">
+                        <input id="ck@(shopcart.Id)" type="checkbox" SubCheckName="selectall" class="mui-checkbox" />
+                        <input type="hidden" name="Products[@i].ProductId" value="@shopcart.Product.Id" />
+                    <label for="ck@(shopcart.Id)">选择</label>
+                    </div>
+               
+                <div class="img">
+                    <a href="@Html.GetUrl("PresentationMobileDetailUrl")/Home/Index?productId=@shopcart.Product.Id">
+                        <img src="@Html.GetNoPicture()" alt="" data-original="@shopcart.Product.GetFullFileName(shopcart.Product.FileName, "i")" />
+                    </a>
+                </div>
+                <div class="bcon">
+                    <span class="til">
+                        @shopcart.Product.Name
+                    </span>
+                    @if (shopcart.Product.Promotion != null)
+                    {
+                        <img src="/Images/hdicon.png" alt="" class="promotion"/>
+                    }
+                    <span class="price">
+                        @if (shopcart.Product.Price > shopcart.Product.GetOrderPrice())
+                        {
+                            <span class="unprice">@shopcart.Product.Price</span>
+                        }
+                        <span class="red">@shopcart.Product.GetOrderPrice()</span>
+                        <span>@shopcart.Count</span>
+                    </span>
+                    <span class="op" style="display: none;">
+                        <a name="btnSubCount" href="javascript:void(0)" class="normal" Buyer="Down" ProductId="@shopcart.Product.Id">-</a>
+                        <input ShopcartId="@shopcart.Id" IsCalculate="false" name="Products[@i].Count" type="text" class="countinput" value="@shopcart.Count" Buyer="Count" SaleId="@shopcart.Product.Id" Price="@shopcart.Product.GetOrderPrice()" ProductId="@shopcart.Product.Id" MaxCount="@shopcart.Product.Count" OrderMinCount="@shopcart.Product.OrderMinCount" OrderLimitCount="@(shopcart.Product.Promotion == null ? 0 : shopcart.Product.Promotion.OrderLimitCount)" OrderStepCount="@shopcart.Product.OrderStepCount" />
+                        <a name="btnAddCount" href="javascript:void(0)" class="normal" Buyer="Up" ProductId="@shopcart.Product.Id">+</a>
+                    </span>
+                    <input type="button" value="删除" class="remove" style="display: none;" onclick="removeCart(this,@shopcart.Id)">
+                </div>
+            </div>
+
+        }
+        i = i + 1;
+    }
+}

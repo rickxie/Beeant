@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@model Beeant.Cloud.Site.Website.Models.Commodity.CommodityModel
+<div class="center">
+    <div class="detail">
+        @if (Model != null && Model.FileNames != null)
+        {
+            foreach (var fileName in Model.FileNames)
+            {
+                <img src="@Html.GetPreRenderPicture()" data-original="@fileName"/><br/>
+            }
+        }
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        window.lazyloadImage($(".detail")[0]);
+    })
+  
+</script>
+
+ 

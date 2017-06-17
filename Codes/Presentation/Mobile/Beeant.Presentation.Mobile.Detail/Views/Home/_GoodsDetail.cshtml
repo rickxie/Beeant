@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension.Mobile
+@using Beeant.Domain.Entities
+@model Beeant.Presentation.Mobile.Detail.Models.Home.GoodsDetailModel
+@if (Model != null)
+{
+    <div class="property">
+        <table>
+            <tbody >
+                @if (Model.GoodsProperties != null)
+                {
+                    var i = 0;
+                    foreach (var sku in Model.GoodsProperties)
+                    {
+                        if (sku.Property != null)
+                        {
+                            if (i%2 == 0)
+                            {
+                                @: <tr>
+                            }
+                            <td>
+                                <span>@sku.Property.Name</span>
+                            </td>
+                            <td @(i == Model.GoodsProperties.Count - 1 && i%2 == 0 ? "colspan='3'" : "")>
+                                <span>
+                                    @(new HtmlString(sku.Value))
+                                </span>
+                            </td>
+                            if (i%2 != 0 || i == Model.GoodsProperties.Count - 1)
+                            {
+                                @:</tr>
+                            }
+                            i = i + 1;
+                        }
+
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="incontent">
+       
+        @(new HtmlString(Model.GoodsDetail != null ? Model.GoodsDetail.Detail : ""))
+    </div>
+
+
+}

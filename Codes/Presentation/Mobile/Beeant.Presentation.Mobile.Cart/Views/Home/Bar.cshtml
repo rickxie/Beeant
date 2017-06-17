@@ -1,0 +1,23 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension
+@{
+
+    Layout = "";
+}
+function InitShopcartBar() {
+var html = '<script type="text/javascript">window.SharedUrl = "@Html.GetUrl("PresentationWebsiteSharedUrl")";</script>';
+    html += '<script type="text/javascript">window.ShopcartUrl = "@Html.GetUrl("PresentationMobileCartUrl")";</script>';
+    html += '<script type="text/javascript">window.LoginUrl = "@Html.GetUrl("PresentationMobileLoginUrl")";</script>';
+    html += '<script type="text/javascript" src="@Html.GetUrl("PresentationMobileCartUrl")/Scripts/Winner/Buyer/Winner.Buyer.js"></script>';
+    html += '<script type="text/javascript" src="@Html.GetUrl("PresentationMobileCartUrl")/Scripts/Winner/Shopcart/Winner.Shopcart.js"></script>';
+    html += '<link rel="stylesheet" type="text/css" href="@Html.GetUrl("PresentationMobileCartUrl")/Content/Bar.css" />';
+    html += '<div id="divShopcart" class="shopcart" style="display: none;">';
+    html += '<table>';
+    html += '<tr><td><div id="closeShopcart" class="close"></div></td></tr>';
+    html += '<tr><td class="cart">';
+    html += '<div id="divShopcartContent" style="display: none;"></div>';
+    html += '<div id="divShopcartLoading" style="display: none;" class="loading"><img src="@Html.GetUrl("PresentationMobileShardUrl")/Images/loading.gif" style="width:50px;height:50px;" /></div>';        
+    html += '</td></tr></table></div>';
+    html += '<div class="shopcartmask" style="display: none;" id="divShopcartMask"></div>';
+    html += '<script type="text/javascript" src="@Html.GetUrl("PresentationMobileCartUrl")/Scripts/bar.js"></script>';
+    return html;
+   }

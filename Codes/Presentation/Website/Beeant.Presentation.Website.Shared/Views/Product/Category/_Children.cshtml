@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@model IList<Beeant.Domain.Entities.Product.CategoryEntity>
+
+
+@{
+    if (Model != null)
+    {
+        <div class="children">
+            <div class="element">
+                <div class="all" onmouseover=" $('#category').show(); " onmouseout=" $('#category').hide(); ">所有类目</div>
+                @foreach (var category in Model)
+                {
+                    if (category != null)
+                    {
+                         <a href="@Html.GetListUrl()/Home/index?categoryid=@category.Id">@category.Name</a>
+                    }
+
+                }
+                
+            </div>
+        </div>
+    }
+
+}
+ 
+
+

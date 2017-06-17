@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension.Mobile
+@using Beeant.Domain.Entities
+@model Beeant.Domain.Entities.Promotion.PromotionEntity
+@if (Model != null)
+{
+    @:活动结束时间：<span id="spDay@(Model.Id)"></span>天<span id="spHour@(Model.Id)"></span>小时<span id="spMinute@(Model.Id)"></span>分<span id="spSecond@(Model.Id)"></span>秒
+    if (Model.OrderLimitCount > 0)
+    {
+        @:,每人限购<span>@(Model.OrderLimitCount)</span>件
+    }
+    <script type="text/javascript">
+        var timer@(Model.Id) = new Winner.Timer({
+            BeginTime: "@Model.BeginDate.ToString("yyyy-MM-dd") @Model.BeginTime.ToString("HH:mm:ss")",
+            NowTime: "@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")",
+            EndTime:"@Model.EndDate.ToString("yyyy-MM-dd") @Model.EndTime.ToString("HH:mm:ss")",
+            Invterval: 1000,
+            DayId: "spDay@(Model.Id)",
+            HourId: "spHour@(Model.Id)",
+            MinuteId: "spMinute@(Model.Id)",
+            SecondId: "spSecond@(Model.Id)",
+            BeginFunction: null,
+            RunFunction: null,
+            EndFuntion: function() {
+                window.reload();
+            }
+        });
+        timer@(Model.Id).Initialize();
+        $("#hfCurrentProductId").attr("ProductPrice", @Model.Price);
+        $("#divPrice").html("@Model.Price");
+    </script>
+}

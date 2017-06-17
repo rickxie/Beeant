@@ -1,0 +1,25 @@
+﻿
+.shopcart{position: fixed;bottom: 45px;left: 0; width: 100%;overflow: hidden;z-index: 99999;background: #ffffff;}
+.shopcart table{float: right; width: 100%;  border-collapse: collapse;min-height: 88px;  }
+.shopcart td{ text-align: left;vertical-align: top;background: #ffffff;border-collapse: collapse; }
+.shopcart .cart{border:  #DDDDDD solid 1px; overflow: visible;width:auto;position:relative;padding: 5px 0 5px 0;}
+.shopcart .close{background: url("../images/closebg.png") no-repeat;height:28px;width: 16px;float: right; margin: 10px 5% 10px 0; }
+.shopcart .title{float: left; padding-left: 10%;width: 90%; height: 40px;line-height: 40px;font-size: 14px;color: #333333;background: #F7F7F7;}
+.shopcart .info{position: relative;float: left; width: 98%;border-bottom: 1px solid #DDDDDD;margin: 5px 0 5px 1%;padding-bottom: 5px;font-size: 14px;}
+.shopcart .info .file{float: left; width: 30%;min-width: 60px;}
+.shopcart .info .con{float: left; width: 70%;}
+.shopcart .info .con .name{ width: 100%;}
+.shopcart .info img{ width: 60px;height: 60px;}
+.shopcart .info .od{ width: 100%;}
+.shopcart .info .normal{float: left; display: block;background: #EDEDED;border: 1px solid #CCCCCC;width: 30px;height: 30px;line-height: 30px;font-size: 26px;text-align: center;color: #000;}
+.shopcart .info .unclick{float: left; display: block;background: #EDEDED;border: 1px solid #CCCCCC;width: 30px;height: 30px;line-height: 30px;font-size: 26px;text-align: center; color: #CCCCCC;cursor: not-allowed;}
+.shopcart .info .countinput{float: left;display: inline; width: 100%;color: #666666;border: 1px solid #CCCCCC;width: 48px; height: 30px;text-align: center;line-height: 26px;-webkit-appearance: none;}
+
+
+.shopcart .red{ color: red;font-weight: bold;}
+.shopcart .sum{float: left;  width: 100%;background: #f7f7f7;padding: 10px 0 10px 0; text-align: center}
+.shopcart .sum span{ display: block;float: left;margin-left: 5px;}
+.shopcart .sum .jsbtn{float: right;cursor: pointer; margin-right: 10px; background:url(../Images/jsbg.png) no-repeat;width: 65px;height: 28px;margin-left: 20px; }
+.frm{ border: 0;width: 100%;overflow: hidden;}
+.loading{position: absolute;background: #ffffff;text-align:center;vertical-align:middle;width:100%;bottom: 50%;} 
+.shopcartmask{ position: fixed;opacity: 0.3;filter: alpha(opacity=30);z-index: 9998;background: #000;bottom: 0;width: 100%;height: 100%;}

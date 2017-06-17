@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Extension.Mobile
+@using Beeant.Domain.Entities
+@model Beeant.Presentation.Mobile.Home.Models.Home.HomeModel
+
+        @if (Model != null && Model.Contents!=null)
+        {
+            foreach (var entity in Model.Contents)
+            {
+                <a href="@entity.Url" Banner="element" class="focus">
+                    <img src="@Html.GetNoPicture()" alt="@entity.Title" data-original="@entity.FullFileName" />
+                </a>
+            }
+        }
+
+ 
+

@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "";
+}
+@model Beeant.Cloud.Crm.Mobile.Models.Department.DepartmentListModel
+<select id="selDepartment">
+
+
+    @if (Model != null && Model.Departments != null)
+    {
+        foreach (var department in Model.Departments)
+        {
+            <option value="@department.Id">@department.Name</option>
+        }
+    }
+</select>

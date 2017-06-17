@@ -1,0 +1,135 @@
+﻿@{
+    ViewBag.Title = "图片管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Beeant.Basic.Services.Mvc.Paging
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Basic.Services.Mvc.Uploader
+@using Beeant.Domain.Entities.Editor
+@using Configuration
+@using Winner.Persistence
+@model Beeant.Presentation.Website.Editor.Models.Editor.ImageListModel
+ 
+  
+            <div id="finder" class="finder">
+                <div class="top">
+
+                   
+                    <div Finder="UploaderContent" class="uploadercontent" style="height: 250px;">
+                        <form id="fmFile" name="fmFile" method="POST" action="/Image/Add?path=@Request["Path"]&function=@Request["function"]&FolderId=@Request["FolderId"]" enctype="multipart/form-data">
+                            <table>
+                                <tr>
+                                    <td>
+
+                                        @Html.Uploader().Partial("~/Views/Shared/_Uploader.cshtml", new UploaderModel {Accept = "image/jpg,image/gif,image/png,image/bmp,image/jpeg", FileByteValidateName = "FileByte", FileNameValidateName = "FileName", Id = "upImages"})
+                                    </td>
+                                   
+                                </tr>
+                                <tr>
+                                    <td style="padding-top: 10px; ">
+                                        <input id="btnSave" type="button" value="保存" class="button" />
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                        <div class="message">
+                           @(Model!=null?Model.ErrorMessage:"")
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="mainten">
+                    <table>
+                        <tr>
+                            <td><a href="/Folder/index" target="_blank">目录管理</a></td>
+
+
+                            <td>
+                                <input id="Button1" type="button" value="上传" Finder="UploadSwitch" class="button" />
+                                <input type="button" id="btnRemvoe" value="删除" class="button" ConfirmBoxSuccessHanlde="remove" ConfirmBox="Remove" ConfirmMessage="您确定要删除吗" ComfirmCheckBoxMessage="请选择要删除的图片"/>
+
+                                <input id="ckSelectAll" type="checkbox" AllCheckName="selectall"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="content">
+                    <div class="left">
+                        <ul class="sidebar" id="sidebar">
+                            <li><a href='/Image/Index?path=@Request["path"]&function=@Request["function"]'>所有</a></li>
+                            @if (Model != null && Model.Folders != null)
+                            {
+                                foreach (var folder in Model.Folders)
+                                {
+                                    <li><a href='/Image/Index?FolderId=@folder.Id&path=@Request["path"]&function=@Request["function"]' value='@folder.Id'>@folder.Name</a></li>
+                                }
+                            }
+                           
+
+                        </ul>
+                    </div> 
+                    <div class="right">
+                        <div class="images" id="divRight">
+                            @if (Model != null && Model.Images != null)
+                            {
+                                foreach (var image in Model.Images)
+                                {
+                                    <div class="element short">
+                                        <input value='@image.Id' id="ckSelect" type="checkbox" SubCheckName="selectall" ComfirmValidate="Remove" />
+                                        <div class="out" Finder="Element" Url='@image.FullFileName'>
+
+                                            <img src='@image.FullFileName' alt='@image.Name' />
+                                            <div class="font">@image.Name</div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                        @Html.Page(Model).Partial("~/views/Shared/_Pager.cshtml")
+                    </div>
+                </div>
+                <div Finder="RightMenu" class="rightmenu" >
+                    <div Finder="Select" class="selectbtn"><a href="javascript:void(0);">选择</a>
+                    </div>
+                    <div Finder="Browse" class="browsebtn"><a href="javascript:void(0);">浏览</a>
+                    </div>
+                    <div>
+                        <a href="javascript:void(0);" class="browsebtn" style="float: left;" id="hfMoveSwitcher">移动</a>
+                        <ul id="hfMoveContainer" style="float: left; background: #ffe4e1; width: 130px; padding-left: 20px; display: none;">
+                            @if (Model != null && Model.Folders != null)
+                            {
+                                foreach (var folder in Model.Folders)
+                                {
+                                    <li><a href='javascript:void(0);' value='@folder.Id'>@folder.Name</a></li>
+                                }
+                            }
+                        </ul>
+
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    document.domain = '@(ConfigurationManager.GetSetting<string>("Domain"))';
+                
+                </script>
+                <script type="text/javascript" src="/Scripts/Winner/CheckBox/Winner.CheckBox.js"></script>
+                <script type="text/javascript" src="/Scripts/Winner/ConfirmBox/Winner.ConfirmBox.js"></script>
+                <script type="text/javascript" src="/Scripts/Winner/CheckBox/Winner.CheckBox.js"></script>
+                <script type="text/javascript" src="/Scripts/Winner/Editor/Finder/Finder.js"></script>
+                <script type="text/javascript" src="~/Scripts/Editor/FolderSelector.js"></script>
+                <script type="text/javascript" src="~/Scripts/Editor/Image.js"></script>
+
+                <script type="text/javascript" src="~/Scripts/winner/validator/winner.Validator.js"></script>
+                <!--弹出窗口 end-->
+                <script type="text/javascript">
+                 @{
+                    var pis = new[] {"FileName", "FileByte" };
+                    @(Html.ScriptValidator<ImageEntity>(SaveType.Add, pis).Initialize("divContent", "btnSave"))
+                }
+                    window.Validator = validator;
+                </script>
+
+            </div>
+ 

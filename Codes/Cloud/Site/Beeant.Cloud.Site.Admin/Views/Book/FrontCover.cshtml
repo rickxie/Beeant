@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@model Beeant.Cloud.Site.Admin.Models.Book.BookModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <link rel="shortcut icon" href="@(ViewBag.Site==null || string.IsNullOrEmpty(ViewBag.Site.FaviconFileName) ? string.Format("{0}/images/favicon.ico", Html.GetUrl("PresentationMobileSharedUrl")): ViewBag.Site.FaviconFullFileName)" type="image/x-icon" />
+ 
+    <link href="/Content/Book/default/site.css" rel="stylesheet" />
+    <title></title>
+
+ 
+
+</head>
+<body>
+<div class="page" >
+    @if (Model != null && Model.Album != null && !string.IsNullOrEmpty(Model.Album.FrontFileName))
+    {
+        <div class="bg">
+            <img src="@Model.Album.FullFrontFileName" />
+        </div>
+    }
+    <div class="fontcover">
+        <div class="domain">
+            @(Model != null && Model.Site != null &&!string.IsNullOrEmpty(Model.Site.Domain) ? string.Format("www.{0}", Model.Site.Domain) : "")
+        </div>
+        <div class="logo"><img src="@(Model != null && Model.Site != null ? Model.Site.LogoFullFileName : "")"/>
+        </div>
+        <div class="name">@(Model != null && Model.Company != null ? Model.Company.Name : "")</div>
+    </div>
+</div>
+</body>
+</html>
+ 

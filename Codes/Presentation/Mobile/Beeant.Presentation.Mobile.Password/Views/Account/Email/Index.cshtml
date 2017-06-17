@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "邮箱身份验证";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Beeant.Presentation.Mobile.Password.Models.Account.EmailModel
+@section head
+{
+
+    @Styles.Render("~/Content/site.css")
+}
+
+
+<div class="pass">
+    @Html.Partial("~/Views/Account/Email/_Top.cshtml", Model)
+    <form action="/Email/Action" method="POST">
+
+        <input type="submit" style="display: none;" onclick=" return false; " />
+        <dl class="dl">
+
+            <dt>
+    
+                <span class="con">
+                    <input type="text" name="ClientCode" class="code bor" style="float:left;" maxlength="6"  id="txtClientCode" value="请输入右边验证码" DefaultValue="请输入右边验证码" />
+                    <img id="imgCode" src="/Email/Code" alt="" class="codeimg" />
+                    <div class="codediv">
+                        <a href="javascript:void(0);" id="hfCode" url="/Email/Code">看不清楚?</a>
+                    </div>
+                </span>
+
+            </dt>
+        
+
+            <dt>
+     
+                <span class="con">
+                    <input type="text" name="Code" id="txtCode" class="code bor" maxlength="6" value="请输入收到的验证码" DefaultValue="请输入收到的验证码"  />
+                    <input type="button" id="btnCode" value="获取验证码" class="btncode" url="/email/Sendcode" />
+                </span>
+
+            </dt>
+
+            @if (Model != null && !Model.Result)
+            {
+                <dt>
+
+                    <span class="failure">验证码错误</span>
+                </dt>
+            }
+            else if (Model != null && Model.Errors != null && Model.Errors.Count > 0)
+            {
+                <dt>
+                    <span class="til">&nbsp;</span>
+                    <span class="failure">@Model.Errors[0].Message</span>
+                </dt>
+            }
+            <dt>
+            
+                <input type="hidden" id="hfAction" name="Action" value="@Model.Action" />
+                <a href="javascript:void;" class="btn"><input id="btnSubmit" type="submit" value="下一步" /></a>
+            </dt>
+
+        </dl>
+    </form>
+
+</div>
+@Scripts.Render("~/Scripts/account.js")

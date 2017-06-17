@@ -1,0 +1,62 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "目录本";
+
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Extension.Mobile
+@model Beeant.Cloud.Site.Mobile.Models.Book.BookListModel
+@section head
+{
+    <meta name="keyword" content="目录本" />
+    <meta name="description" content="目录本" />
+    <meta charset="utf-8" />
+    <meta content="YES" name="apple-touch-fullscreen" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="-1" http-equiv="Expires" />
+    <meta content="no-cache" http-equiv="pragram" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <link href="/Content/book.css" rel="stylesheet" />
+}
+<div class="book">
+    <img id="icon" Updowner="Icon" src="/Images/up.png" alt="" class="icon" />
+    @if (Model != null && Model.Company != null && Model.Company.Album != null && !string.IsNullOrWhiteSpace(Model.Company.Album.MusicUrl))
+    {
+        <div Updowner="Music" class="music rotate">
+            <audio loop=""  id="media" autoplay="" preload="auto">
+                <source src="@Model.Company.Album.MusicUrl"/>
+            </audio>
+        </div>
+       @* <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript">
+        (function() {
+            wx.config({
+                // 配置信息, 即使不正确也能使用 wx.ready
+                debug: false,
+                appId: '',
+                timestamp: 1,
+                nonceStr: '',
+                signature: '',
+                jsApiList: []
+            });
+            wx.ready(function () {
+                document.getElementById('media').src = "@Model.Company.Album.MusicUrl";
+
+                document.getElementById('media').play();
+            });
+        })();
+    </script>*@
+    }
+    <div id="divBook" class="con">
+
+
+    </div>
+</div>
+
+
+<script type="text/javascript" src="~/Scripts/winner/Updowner/Winner.Updowner.js"></script>
+<script type="text/javascript" src="~/Scripts/book.js"></script>
+
+ 

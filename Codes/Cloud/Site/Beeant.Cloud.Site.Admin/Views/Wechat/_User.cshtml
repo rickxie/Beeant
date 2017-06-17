@@ -1,0 +1,28 @@
+﻿@{
+}
+@model Beeant.Cloud.Site.Admin.Models.Wechat.WechatUserListModel
+
+@if (Model != null && Model.Users != null)
+{
+    foreach (var user in Model.Users)
+    {
+        <div class="element">
+            <div class="hd">
+                <img src="@user.Headimgurl"/>
+            </div>
+            <div class="right">
+                <div class="nkn">@user.Nickname</div>
+
+                <div class="add">@user.SubscribeTime.ToString("yyyy-MM-dd HH-mm")</div>
+
+                <div class="add">@user.Country &nbsp;@user.Province &nbsp;@user.City &nbsp;@user.Sex</div>
+                <div class="rk">备注：<input type="text" name="remark" value="@user.Remark" OriValue="@user.Remark" class="inp" openid="@user.OpenId" maxlength="29" /></div>
+            </div>
+     
+        </div>
+    }
+    <script type="text/javascript">
+        window.setWeixinUserInfo(@Model.TotalUserCount,"@Model.NextOpenId");
+    </script>
+}
+

@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Datum.Master.cs" Inherits="Beeant.Presentation.Admin.Wms.Datum" %>
+<%@ Import Namespace="Beeant.Basic.Services.WebForm.Extension" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <%=this.GetResourcesHtml() %>
+<head runat="server">
+ 
+    <asp:ContentPlaceHolder ID="Head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<link rel="shortcut icon" href="<%=Page.GetUrl("PresentationAdminHomeUrl")%>/images/favicon.ico" type="image/x-icon" />
+  
+    <form id="form1" runat="server">
+            <asp:ScriptManager ID="ScriptManager1" runat="server" onasyncpostbackerror="ScriptManager1_AsyncPostBackError" EnableScriptGlobalization="true" EnableScriptLocalization="true">
+    </asp:ScriptManager>
+      
+        <div class="datum" style="position:inherit;">
+         <div id="pageTitle" class="fulltitle">
+             <script type="text/javascript">
+                 $(document).ready(function () {
+                     document.title.value = "蜂蚁窝-" + document.title.value;
+                     $("#pageTitle").html(document.getElementsByTagName("title")[0].innerHTML);
+                 });
+             </script>
+         </div>
+        
+     <asp:ContentPlaceHolder ID="Body" runat="server">
+        
+        </asp:ContentPlaceHolder>
+     
+        </div>
+    </form>
+</body>
+</html>

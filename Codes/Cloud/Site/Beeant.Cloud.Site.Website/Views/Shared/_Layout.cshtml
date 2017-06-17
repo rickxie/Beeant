@@ -1,0 +1,36 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Script
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <link rel="shortcut icon" href="@(ViewBag.Site==null || string.IsNullOrEmpty(ViewBag.Site.FaviconFileName) ? string.Format("{0}/images/favicon.ico", Html.GetUrl("PresentationMobileSharedUrl")): ViewBag.Site.FaviconFullFileName)" type="image/x-icon" />
+    <script type="text/javascript" src="/Scripts/Plug/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/Winner/Winner.ClassBase.js"></script>
+    <script type="text/javascript" src="/Scripts/Winner/DataLoader/Winner.DataLoader.js"></script>
+    <script type="text/javascript" src="/Scripts/Plug/jquery.lazyload.min.js"></script>
+
+    <title></title>
+
+    @RenderSection("head", required: false)
+    <script type="text/javascript">
+        window.SiteId = '@ViewBag.SiteId';
+    </script>
+</head>
+<body>
+    @RenderBody()
+    @Html.ImageRecover()
+    <script type="text/javascript">
+        window.lazyloadImage = function(container) {
+            var imgs =(container == null ? $("img") :$(container).find("img"));
+            imgs.lazyload({
+                placeholder:
+                    "@(ViewBag.Site==null || string.IsNullOrEmpty(ViewBag.Site.LogoFileName) ? string.Format("{0}/images/logo.png", Html.GetUrl("PresentationMobileSharedUrl")): ViewBag.Site.LogoFullFileName)",
+                effect: "fadeIn", failurelimit: 10, threshold: 200
+            });
+        };
+    </script>
+</body>
+</html>

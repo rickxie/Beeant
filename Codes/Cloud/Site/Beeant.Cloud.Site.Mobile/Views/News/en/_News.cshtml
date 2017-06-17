@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "";
+}
+@model Beeant.Cloud.Site.Mobile.Models.News.NewsListModel
+@if (Model != null && Model.Newses != null)
+{
+    foreach (var es in Model.Newses)
+    {
+        <div class="element">
+            <div class="til">@es.Title</div>
+            <div class="del">@es.Content</div>
+        </div>
+    }
+}

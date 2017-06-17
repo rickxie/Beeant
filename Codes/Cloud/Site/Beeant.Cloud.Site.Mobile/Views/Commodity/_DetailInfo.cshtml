@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@model Beeant.Cloud.Site.Mobile.Models.Commodity.CommodityModel
+
+@{
+    if (Model != null && Model.Commodities != null)
+    {
+        var i = 0;
+        foreach (var commodity in Model.Commodities)
+        {
+
+            <div class="ele bg@(i)">
+                <div class="name">@commodity.Name @(commodity.IsShowPrice ? new HtmlString(string.Format("单价:<span class='red'>{0}</span>", commodity.Price)) : new HtmlString(""))</div>
+                <div class="desc">@commodity.Description</div>
+                <a href="@(string.IsNullOrEmpty(commodity.FileName) ? Html.GetNoPicture() : commodity.FullFileName)"><img src="@Html.GetPreRenderPicture()" data-original="@(string.IsNullOrEmpty(commodity.FileName) ? Html.GetNoPicture() : commodity.FullFileName)" class="img" alt=""/></a>
+                @if (commodity.CommodityImages != null)
+                {
+                    foreach (var commodityImage in commodity.CommodityImages)
+                    {
+                        <a href="@(string.IsNullOrEmpty(commodity.FileName) ? Html.GetNoPicture() : commodity.FullFileName)">
+                            <img src="@Html.GetPreRenderPicture()" data-original="@(string.IsNullOrEmpty(commodityImage.FileName) ? Html.GetNoPicture() : commodityImage.FullFileName)" class="img" alt=""/>
+                        </a>
+                    }
+                }
+            </div>
+            i = i + 1;
+        }
+    }
+
+}
+  
+ 
+ 
+ 

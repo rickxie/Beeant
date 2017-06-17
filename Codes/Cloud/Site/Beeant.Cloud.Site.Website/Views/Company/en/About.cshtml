@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Shared/_EnDefaultLayout.cshtml";
+}
+@model Beeant.Cloud.Site.Website.Models.Company.CompanyModel
+<div class="center">
+    <div class="about">
+        @if (Model != null && Model.Company != null)
+        {
+            @(new HtmlString(Model.Company.Detail))
+        }
+    </div>
+</div>

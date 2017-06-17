@@ -1,0 +1,193 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*reset*/
+body,h1,h2,h5,h6,p,dl,dd,ul,ol,form,input,textarea,th,td,select{ margin:0; padding:0;}
+em{ font-style:normal;}
+li{ list-style:none;}
+a{ text-decoration:none;}
+img{ border:none; vertical-align:top;}
+table{ border-collapse:collapse;}
+input,textarea{ outline:none;}
+textarea{ resize:none; overflow:auto;}
+body{ font-size:12px; font-family:"微软雅黑";}
+/*reset*/
+
+/*public*/
+.clear{zoom:1;}
+.clear:after{ content:''; display:block; clear:both;}
+.sub_btn{ height:34px;  border:none; border-radius:3px; line-height:34px; background:#ffae00; text-align:center; color:#fff;}
+
+.top_piece,.middle_piece,.bottom_piece{ width:100%;}
+.top_piece{ height:81px;}
+.middle_piece{ background:#3698db;padding-bottom: 40px;}
+.bottom_piece{ }
+/*end public*/
+.header,.content_wrap,.foot{ width:983px; margin:0 auto;}
+h1,h2{*display:inline; *zoom:1; display:inline-block; float:left;}
+h1{ padding-top:14px; margin-right:38px;}
+h1 a img{ width:46px; height:54px;}
+h2{ font-size:24px; color:#383838; line-height:80px;font-weight: normal;}
+.content_wrap{ padding-bottom:80px; padding-top:58px;}
+.content_login{ width:850px; margin:0 auto;}
+.extend{ width:496px; float:left; }
+.login{ width:350px; float:right; }
+
+.extend ul{ padding-top:56px; color:#fff; }
+.extend ul li{ height:55px; padding-left:72px; margin-bottom:51px;}
+.extend li p{ font-size:19px; margin-bottom:8px; }
+.extend li em{ font-size:14px;}
+.extend .fair,.extend .quality,.extend .nofree{ background:url(../images/extend_pic.png) no-repeat;}
+.extend .fair{ background-position: 0 0;}
+.extend .quality{ background-position: 0 -106px;}
+.extend .nofree{ background-position: 0 -212px;}
+
+.login_box{ padding:0 20px; width:310px; background:#fff;}
+.login_title{ padding-top:4px; height:67px; line-height:67px;}
+.login_title h3{ font-weight:normal; font-size:18px; color:#373737;}
+.login_title p{ font-size:14px; color:#383838; float:right;}
+.login_title p a{ color:#006ebe;}
+.login .line{ height:61px; vertical-align:top; position:relative;}
+.login .line input{ height:34px; border:1px solid #dfdfdf; float:left;}
+.login .line span{ height:40px; border:1px solid #dfdfdf; float:left;}
+.login .line em{ position:absolute; top:13px; right:10px; }
+.login .line .hint{ height:24px;}
+/*输入错误正确时的状态*/
+.msg-error{ width:308px; height:23px; line-height:23px; border:1px solid #e12f32; background:#ffebeb; color:#e12f32; text-indent:40px; position:relative; margin-bottom:12px;}
+.userpw_error_ico{ position:absolute; width:14px; height:14px; background:url(../images/user_lock_close.png) no-repeat; top:4px; left:13px; }
+.warn,.yanzheng_state,.pw_hint,.confirm_hint{ color:#606060; height:24px; line-height:24px;}
+.login .line .warn{ }
+.login .line .em_reg_right{ background:url(../images/user_lock_close.png) -60px 0;}
+.login .line .em_reg_error{ background:url(../images/user_lock_close.png) -84px 0;}
+/*默认提示语*/
+.msg-prompt{ width:308px; height:23px; line-height:23px; border:1px solid #ffdda2; background:#fdf3e2; color:#666666; text-indent:40px; position:relative; margin-bottom:12px;}
+.userpw_prompt_ico{ position:absolute; width:14px; height:14px; background:url(../images/user_lock_close.png) no-repeat -60px -114px; top:4px; left:13px; }
+/*end*/
+/*发送验证码状态，发送时的状态*/
+.verifi_bg{ background:#d1d1d1;}
+.yanzheng_state{ position:relative; text-indent:18px;}
+.yanzheng_state .st1{ width:13px; height:13px; font-weight:normal; background:url(../images/user_lock_close.png) no-repeat -187px -68px; position:absolute; top:6px; left:0; }
+.yanzheng{ position:relative;}
+.error_ico{ width:18px; height:18px; position:absolute; top:12px; left:118px; background:url(../images/user_lock_close.png) no-repeat -84px 0;}
+/*end*/
+/*密码状态*/
+.state_hint{ height:24px;padding-top:4px;color:#666;}
+.state_hint label{ float: left;}
+.state_hint strong{ width:82px; height:16px; margin-right:1px;*display:inline; *zoom:1; text-align:center; color:#fff; display:inline-block; background:#ddd; font-weight:normal;}
+.right_hint { margin-top:6px;}
+.state_hint .st{ background:#f2a003;}
+.txt_hint,.error_hint{ line-height:24px; color:#666;}
+
+/*end 密码状态*/
+.login .line span{ width:40px;  background-color:#f5f5f5; }
+.login .line .user_ico{ background-position: -44px -23px;}
+.login .line .user_pw{ background-position: -44px -68px;}
+.login .line input{ width:308px; margin-left:-1px; text-indent:10px; line-height:34px; font-size:15px; color:#bbb;}
+input:-webkit-autofill{-webkit-box-shadow: 0 0 0px 1000px white inset;}
+.login .aboutpw{ padding-top:7px; height:36px; vertical-align:top; font-size:14px;}
+.login .aboutpw .chk{ float:left; color:#727272;}
+.login .aboutpw .chk input{ position:relative; top:3px; margin-right:10px;} 
+.login .aboutpw p{ float:right; color:#0067b2;}
+.login .aboutpw p a{ color:#0067b2;}
+.login .btn{ width:310px; height:36px;}
+.login .btn input{ width:310px; height:36px; border:none; line-height:36px; font-size:18px; text-align:center; color:#fff; background:#006ebe; letter-spacing:10px;}
+.login  .pad_bottom{ padding-bottom:50px;}
+.login .other_login{ height:75px;}
+.login .other_login .txt{ height:16px; font-size:14px; color:#727272; margin-bottom:14px;}
+.login .other_login .img_ico{ height:19px;}
+.login .img_ico a{ display:inline-block; width:22px; height:19px; margin-right:14px; background:url(../images/user_lock_close.png) no-repeat;}
+.login .img_ico .weibo{ background-position:0 0;}
+.login .img_ico .baidu{ background-position:0 -25px;}
+.login .img_ico .qq{ background-position:0 -52px;}
+.login .line .user,.login .line .password{ width: 267px;}
+.foot{ padding-top:55px; padding-bottom:165px; font-size:12px;}
+.foot p{ margin-bottom:10px; text-align:center;}
+.foot p a{ margin:0 8px; color:#000;}
+
+/*登陆页面状态控制*/
+/*.msg-error{ height:23px; border:1px solid #e12f32; margin-bottom:12px; line-height:23px; position:relative; background:#ffebeb; text-indent:41px; }
+.msg-error .error_ico{ width:14px; height:14px; position:absolute; left:13px; top:5px; background:url(../images/user_lock_close.png);}
+/*验证码和密码错误的状态*/
+.login .line em{ position:absolute; top:13px; right:10px; }
+.login .line .em_close_ico{  width:14px; height:14px; background:url(../images/user_lock_close.png) no-repeat -40px 0;}/*按键按下的时候出现的消除按钮*/
+.yanzheng{ height:34px;}
+.yanzheng .txt{ width:97px; height:38px; border:1px solid #dfdfdf; margin-right:7px; float:left;text-indent: 10px; color: #bbb;}
+.yanzheng span{ width:99px; height:40px;  margin-right:7px;}
+.yanzheng a{ display:inline-block; line-height:40px; color:#4a4a4a; }
+/*结束登陆页面状态控制*/
+
+/*注册页*/
+.content_register{ width:929px; margin:0 auto;}
+.login .line  .extend{ padding-top:29px;}
+.login .line .extend img{ width:497px; height:426px;}
+.login .line .validctrlerror{ border:1px solid #df3c3d;color: red;}
+
+.login .line .validctrlsucess{border: 1px solid #7abd54; }
+
+.login .line .validerrormess{  display: block;border: none; width: 310px; height: 24px;line-height: 24px;background: none; color: #e03e3c;}
+.login .line .validsucessmess{ display: block; width: 310px;height: 24px;line-height: 24px;background: none;border: none;}
+.login .line .validshowmess{display: block; color:#333333; width: 267px; height: 24px;/*background: #F2F2F2;*/line-height: 24px;background: none;border: none;}
+.login .line .select{ background: none;border: 1px solid #7ecbff;}
+
+.kefu{ float:right; display:inline-block; line-height:80px; font-size:18px; color:#242424;}
+.login .line .phone{ width:308px; border:1px solid #dfdfdf; margin-left:0; }
+.login .line .em_reg_right{ width:18px; height:18px; background:url(../images/user_lock_close.png) no-repeat -60px 0;}
+.login .line .em_reg_error{ width:18px; height:18px; background:url(../images/user_lock_close.png) no-repeat -84px 0;}
+.login .line .mes_verifi{ width:153px; margin-right:16px; margin-left:0; }
+.login .line .get_mes_verifi{ display:inline-block; width:136px; text-align:center; font-size:14px;height:34px; line-height:34px; color:#1a1a1a;border:1px solid #dfdfdf;}
+.login .line .get_mes_verifi strong{ font-weight:normal;}
+.login .line .reg_pw,.login .line .reg_pw_confirm{ width:308px; margin-left:0; }
+
+
+.yanzheng{}
+.login .yanzheng .txt2{ width:139px; height:34px; border:1px solid #dfdfdf; margin-right:18px; float:left;}
+.login .yanzheng span{ width:99px; height:34px; display:inline-block;  margin-right:7px; float:left;}
+.login .yanzheng span img{ width:99px; height:34px;}
+
+.login .yanzheng a{ display:inline-block; line-height:34px; color:#4a4a4a; float:left; }
+.login .btn .no_space{ letter-spacing:0; font-size:18px;}
+.login .protocal{ height:58px; line-height:57px; font-size:13px;}
+.login .protocal a{ color:#006bba;}
+
+.reg_suc{ width:412px; height:170px; background:#fff; border:6px solid #b8b8b8; position:relative;}
+.reg_suc .close{ width:12px; height:12px; background:url(../images/user_lock_close.png) no-repeat -89px -23px; position:absolute; top:10px; right:12px;}
+.reg_suc p{  height:20px;  font-size:18px; color:#000; margin:62px 0 36px 0;  text-align:center;}
+.reg_suc p span{ width:26px; height:20px; display:inline-block; background:url(../images/user_lock_close.png) no-repeat -111px 0;}
+.reg_suc em{ display:block; font-size:12px; color:#888888; text-align:center;}
+
+ 
+ /*注册*/
+ .successdiv
+    {
+        color: #666666;
+     padding-bottom: 22px;
+     padding-top: 0px;
+    }
+    .messagediv
+    {
+        background: url(/Images/user_lock_close.png) no-repeat -157px -81px;
+        padding-left: 52px;
+        padding-bottom: 10px;
+    }
+    .shopbut
+    {
+        width: 84px;
+        text-align: center;
+        border: 1px solid #dddddd;
+        padding: 6px 20px;
+        border-radius: 4px;
+        font-size: 14px;
+        margin-left: 55px;
+        color: #666666;
+    }
+    h3
+    {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+    h4
+    {
+        margin-top: 0;
+        font-weight: normal;
+        font-size: 16px;
+    }

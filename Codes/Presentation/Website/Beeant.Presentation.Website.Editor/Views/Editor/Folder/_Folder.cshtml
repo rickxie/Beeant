@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Paging
+@using Beeant.Domain.Entities.Welfare
+@model Beeant.Presentation.Website.Editor.Models.Editor.FolderListModel
+@if (Model != null && Model.Folders != null)
+{
+    <table class="table" style="width: 100%;" id="tbList">
+        <thead>
+            <tr>
+                <td class="td1"><input type="checkbox"  class="check_all" AllCheckName="selectall" /></td>
+                <td class="td2">名称</td>
+                <td class="td3">类型</td>
+                <td class="td4">排序</td>
+                <td class="td7">操作</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var folder in Model.Folders)
+            {
+                <tr>
+                    <td class="td1"><input type="checkbox" value="@folder.Id" class="check" SubCheckName="selectall" ComfirmValidate="Remove"  /></td>
+                    <td class="td2">@folder.Name</td>
+                    <td class="td3">@(folder.TypeName)</td>
+                    <td class="td4">@(folder.Sequence)</td>
+                    <td class="td7">
+                        <a name="edit" DataId="@folder.Id" href="javascript:void(0);">修改</a>
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+
+    <div class="bar_bottm clearfix" style="width: 100%;">
+        <a href="javascript:void(0);" class="backTop">回到顶端</a>
+        <a href="javascript:void(0);" class="newAdd">新建</a>
+        <a href="javascript:void(0);" class="newRemove" ConfirmBoxSuccessHanlde="remove" ConfirmBox="Remove" ConfirmMessage="您确定要删除吗" ComfirmCheckBoxMessage="请选择要删除的文件夹">删除</a>
+    </div>
+    @Html.Page(Model).Partial("~/views/Shared/_Pager.cshtml")
+}

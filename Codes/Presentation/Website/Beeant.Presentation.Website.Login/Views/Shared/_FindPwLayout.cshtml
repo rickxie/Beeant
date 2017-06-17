@@ -1,0 +1,53 @@
+﻿@using Homedo.Presentation.Mvc.Extension
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@string.Format("河姆渡-{0}", ViewBag.Title ?? "")</title>
+    @RenderSection("head", required: false)
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/FindPW/login_password.css")
+    @Scripts.Render("~/Scripts/jquery-1.7.1.min.js")
+    @Scripts.Render("~/Scripts/Findpassword/js/DD_belatedPNG_0.0.8a.js")
+    @Scripts.Render("~/Scripts/Findpassword/js/jquery-1.11.2.js")
+    @Scripts.Render("~/Scripts/Findpassword/js/FocusBlur.js")
+    @Scripts.Render("~/Scripts/Winner/Winner.ClassBase.js")
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    <div class="top_piece">
+        <div class="header">
+            <div class="logo">
+                <h1>
+                    <a href="">
+                        <img src="/Images/FindPassword/logo.png" alt="" /></a></h1>
+                <h2>
+                    欢迎登录</h2>
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+    <div class="bottom_piece">
+        <div class="foot">
+            <p>
+                <a href="#">关于我们</a>|<a href="#">法律声明</a>|<a href="#">诚聘英才</a>|<a href="#">项目合作</a>|<a
+                    href="#">联系我们</a>
+            </p>
+            <p>
+                <span>COPYRIGHT © 河姆渡 homedo.com 沪ICP备 128562036号 ICP证：沪B2-20150136</span>
+            </p>
+        </div>
+    </div>
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?641b19ddd7314e3b4257668452d46a28";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>

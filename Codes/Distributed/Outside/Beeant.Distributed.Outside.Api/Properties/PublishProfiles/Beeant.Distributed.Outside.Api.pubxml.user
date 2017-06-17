@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>G:\Program\Beeant\Publish\Websites\Beeant.Distributed.Outside.Api</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>05/03/2016 21:27:25</publishTime>
+    </File>
+    <File Include="bin/ChnCharInfo.dll">
+      <publishTime>05/03/2016 21:27:39</publishTime>
+    </File>
+    <File Include="bin/Component.dll">
+      <publishTime>08/27/2016 18:09:15</publishTime>
+    </File>
+    <File Include="bin/Config/Aop/Log.config">
+      <publishTime>08/27/2016 17:39:30</publishTime>
+    </File>
+    <File Include="bin/Config/App.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Cache.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/client.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Config.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/DataBase.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/DbRoute.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/DbRoute/Account.config">
+      <publishTime>08/27/2016 17:39:30</publishTime>
+    </File>
+    <File Include="bin/Config/DbRoute/Operationlog.config">
+      <publishTime>08/27/2016 17:39:30</publishTime>
+    </File>
+    <File Include="bin/Config/DbRoute/Site.config">
+      <publishTime>08/27/2016 17:39:30</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Account.config">
+      <publishTime>08/27/2016 17:39:30</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Agent.config">
+      <publishTime>08/27/2016 17:39:30</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Api.config">
+      <publishTime>08/27/2016 17:39:30</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Authority.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Basedata.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Cart.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Cms.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Crm.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Datacube.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Editor.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Finance.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Gis.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Hr.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Log.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Member.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Merchant.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Oa.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Order.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Product.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Promotion.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Purchase.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Sales.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Search.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Security.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Setting.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Site.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Supplier.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Sys.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Tms.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/User.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Wms.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Entitity/Workflow.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Account.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Agent.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Api.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Authority.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Basedata.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Cart.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Cms.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Crm.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Datacube.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Editor.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Finance.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Gis.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Hr.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Log.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Member.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Merchant.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Oa.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Order.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Payline.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Platform.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Product.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Promotion.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Purchase.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Sales.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Search.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Security.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Site.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Supplier.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Sys.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Tms.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/User.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Utility.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Wms.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Ioc/Workflow.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Language.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Language/Account.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Language/Authority.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Language/Base.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Language/Basedata.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Language/Editor.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Language/Finance.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Language/Hr.config">
+      <publishTime>08/27/2016 17:39:31</publishTime>
+    </File>
+    <File Include="bin/Config/Language/Order.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Language/Product.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Language/Purchase.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Language/Security.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Language/Site.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Language/Supplier.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Language/Wms.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Language/Workflow.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Mail.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Orm.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Queue.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Rule.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Search.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Storage.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/ThirdParty.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Url.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Account.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Agent.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Api.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Authority.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Basedata.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Cart.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Cms.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Crm.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Datacube.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Editor.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Finance.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Gis.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Hr.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Log.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Member.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Merchant.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Oa.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Order.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Product.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Promotion.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Purchase.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Sales.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Search.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Security.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Setting.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Site.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Supplier.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Sys.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Tms.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/User.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Utility.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Wms.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Validation/Workflow.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Config/Wcf.config">
+      <publishTime>08/27/2016 17:39:32</publishTime>
+    </File>
+    <File Include="bin/Configuration.dll">
+      <publishTime>08/27/2016 18:09:16</publishTime>
+    </File>
+    <File Include="bin/Dependent.dll">
+      <publishTime>08/27/2016 18:09:16</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.AspNet.dll">
+      <publishTime>05/03/2016 21:27:35</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.Core.dll">
+      <publishTime>05/03/2016 21:28:28</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.Consumer.dll">
+      <publishTime>05/03/2016 21:22:30</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.dll">
+      <publishTime>05/03/2016 21:22:29</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.dll">
+      <publishTime>05/03/2016 21:27:44</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.RelyingParty.dll">
+      <publishTime>05/03/2016 21:22:28</publishTime>
+    </File>
+    <File Include="bin/EcmaScript.NET.dll">
+      <publishTime>05/03/2016 21:28:35</publishTime>
+    </File>
+    <File Include="bin/Emgu.CV.dll">
+      <publishTime>05/03/2016 21:25:12</publishTime>
+    </File>
+    <File Include="bin/Emgu.Util.dll">
+      <publishTime>05/03/2016 21:25:12</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>05/03/2016 21:22:46</publishTime>
+    </File>
+    <File Include="bin/EPPlus.dll">
+      <publishTime>05/03/2016 21:28:33</publishTime>
+    </File>
+    <File Include="bin/Gma.QrCodeNet.Encoding.dll">
+      <publishTime>05/03/2016 21:28:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Office.Interop.Excel.dll">
+      <publishTime>05/03/2016 21:23:06</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>05/03/2016 21:23:01</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.WebPages.OAuth.dll">
+      <publishTime>05/03/2016 21:28:41</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>05/03/2016 21:22:32</publishTime>
+    </File>
+    <File Include="bin/office.dll">
+      <publishTime>05/03/2016 21:23:06</publishTime>
+    </File>
+    <File Include="bin/Resource.dll">
+      <publishTime>08/27/2016 17:47:17</publishTime>
+    </File>
+    <File Include="bin/Beeant.Application.Dtos.dll">
+      <publishTime>08/27/2016 18:09:34</publishTime>
+    </File>
+    <File Include="bin/Beeant.Application.Services.dll">
+      <publishTime>08/27/2016 18:09:37</publishTime>
+    </File>
+    <File Include="bin/Beeant.Basic.Services.dll">
+      <publishTime>08/27/2016 18:26:47</publishTime>
+    </File>
+    <File Include="bin/Beeant.Distributed.Outside.Api.dll">
+      <publishTime>08/27/2016 18:49:20</publishTime>
+    </File>
+    <File Include="bin/Beeant.Domain.Entities.dll">
+      <publishTime>08/27/2016 18:09:20</publishTime>
+    </File>
+    <File Include="bin/Beeant.Domain.Services.dll">
+      <publishTime>08/27/2016 18:09:23</publishTime>
+    </File>
+    <File Include="bin/Beeant.Repository.Services.dll">
+      <publishTime>08/27/2016 18:09:25</publishTime>
+    </File>
+    <File Include="bin/stdole.dll">
+      <publishTime>05/26/2015 13:37:34</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.dll">
+      <publishTime>05/03/2016 21:28:41</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>05/03/2016 21:27:49</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.WebRequest.dll">
+      <publishTime>05/03/2016 21:28:41</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>05/03/2016 21:27:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>05/03/2016 21:28:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>05/03/2016 21:27:48</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>05/03/2016 21:27:55</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>05/03/2016 21:27:59</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>05/03/2016 21:27:05</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>05/03/2016 21:27:01</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>05/03/2016 21:27:01</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>05/03/2016 21:27:01</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>05/03/2016 21:27:25</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.Data.dll">
+      <publishTime>05/03/2016 21:27:39</publishTime>
+    </File>
+    <File Include="bin/WebMatrix.WebData.dll">
+      <publishTime>05/03/2016 21:28:29</publishTime>
+    </File>
+    <File Include="bin/Winner.dll">
+      <publishTime>08/27/2016 18:09:15</publishTime>
+    </File>
+    <File Include="bin/Yahoo.Yui.Compressor.dll">
+      <publishTime>05/03/2016 21:28:30</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/EntityFramework.resources.dll">
+      <publishTime>05/03/2016 21:22:46</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Web.WebPages.OAuth.resources.dll">
+      <publishTime>05/03/2016 21:28:41</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Net.Http.Formatting.resources.dll">
+      <publishTime>05/03/2016 21:27:49</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Net.Http.resources.dll">
+      <publishTime>05/03/2016 21:28:41</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Net.Http.WebRequest.resources.dll">
+      <publishTime>05/03/2016 21:28:41</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Helpers.resources.dll">
+      <publishTime>05/03/2016 21:27:01</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.resources.dll">
+      <publishTime>05/03/2016 21:28:24</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.WebHost.resources.dll">
+      <publishTime>05/03/2016 21:27:48</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Mvc.resources.dll">
+      <publishTime>05/03/2016 21:27:53</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Optimization.resources.dll">
+      <publishTime>05/03/2016 21:27:59</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Razor.resources.dll">
+      <publishTime>05/03/2016 21:27:05</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>05/03/2016 21:27:01</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>05/03/2016 21:27:01</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.resources.dll">
+      <publishTime>05/03/2016 21:27:01</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/WebMatrix.Data.resources.dll">
+      <publishTime>05/03/2016 21:27:39</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/WebMatrix.WebData.resources.dll">
+      <publishTime>05/03/2016 21:28:29</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>05/03/2016 21:21:24</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>05/03/2016 21:21:24</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>05/03/2016 21:21:24</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>05/03/2016 21:21:24</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>05/03/2016 21:21:24</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/27/2016 18:49:22</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

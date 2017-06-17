@@ -1,0 +1,73 @@
+﻿@{
+
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities.Site
+@using Winner.Persistence
+@model Beeant.Cloud.Site.Admin.Models.Certificate.CertificateListModel
+<div class="certificate">
+    <div class="mainten">
+        <a href="/Home/Index"><div class="gohome"></div></a>
+       
+    </div>
+    <div class="list">
+    
+    </div>
+
+ 
+</div>
+
+
+
+<div class="addbtnc">
+    <div class="addbtn" id="btnAdd">+</div>
+</div>
+
+<div id="divContent" class="addcontent" style="display: none;">
+    <input type="hidden" id="hfId" />
+    <img src="~/Images/upbg.png" OriginalSrc="~/Images/upbg.png" id="imgFileName" ImageCutor="ShowImager" class="img"/>
+    <div class="saveele">
+        <input type="checkbox" id="ckIsShow" checked="checked" class="mui-checkbox"/>
+        <label for="ckIsShow">是否显示</label>
+    </div>
+
+
+
+    <div class="ope">
+        <input type="button" class="cancel" id="btnCancel" value="取消"/>
+        <input type="button" class="save" id="btnSave" value="保存"/>
+    </div>
+</div>
+
+<div id="divFileName" style="display: none;" ImageCutor="ChangeContainer">
+    <div id="divChangeFileName" class="hurl" ImageCutor="ChangeButton">上传图片</div>
+    <div id="divCloseFileName" ImageCutor="CloseButton">取消</div>
+</div>
+
+<div id="divCutContainer" class="cut" style="display: none;">
+    <div class="cutimg">
+        <div class="topmask" ImageCutor="TopMask"></div>
+        <div class="topmask" ImageCutor="LeftMask"></div>
+        <canvas class="canvas"></canvas>
+        <img ImageCutor="Image" style="display: none;" />
+        <input type="file" name="text" style="display: none;" />
+        <div class="bottommask" ImageCutor="BottomMask"></div>
+        <div class="bottommask" ImageCutor="RightMask"></div>
+    </div>
+</div>
+<div class="mask" style="display: none;" ImageCutor="Mask"></div>
+
+<div class="cutbottom" style="display: none;" ImageCutor="CutContainer">
+    <input type="button" class="btn" id="divColseCut" style="float: left; margin-left: 0;" value="取消" ImageCutor="ColseCutButton">
+    <input type="button" class="btn sel" name="cuttypebtn" value="截图" ImageCutor="CutPartButton">
+    <input type="button" class="btn" name="cuttypebtn" value="全图" ImageCutor="CutFullButton">
+
+    <input type="button" class="btn" id="divSaveCut" style="float: right;" value="保存" ImageCutor="SaveCutButton">
+</div>
+
+
+<script type="text/javascript" src="~/Scripts/plug/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="/Scripts/Plug/exif.min.js"></script>
+<script type="text/javascript" src="/Scripts/winner/ImageCutor/winner.ImageCutor.js"></script>
+<script type="text/javascript" src="~/Scripts/Certificate.js"></script>

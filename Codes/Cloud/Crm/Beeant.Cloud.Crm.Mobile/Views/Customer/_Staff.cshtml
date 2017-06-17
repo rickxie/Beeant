@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities.Crm
+@using Winner.Persistence
+@model Beeant.Cloud.Crm.Mobile.Models.Staff.StaffListModel
+@if (Model != null && Model.Staffs != null)
+{
+    foreach (var staff in Model.Staffs)
+    {
+        <li class="li" DataId="@staff.Id">@staff.Name</li>
+    }
+}

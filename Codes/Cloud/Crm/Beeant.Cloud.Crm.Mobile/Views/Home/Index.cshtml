@@ -1,0 +1,70 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Cloud.Crm
+@using Beeant.Domain.Entities.Crm
+@{
+
+}
+<div class="home">
+    <div class="element">
+        <div class="til">
+            <span class="l">操作导航</span>
+        </div>
+        <div class="con">
+            <span><a href="/Customer/Index?isreadself=true">我的客户</a></span>
+            <span><a href="/Order/Index">我的订单</a></span>
+            <span><a href="/Customer/Index">跟踪提醒</a></span>
+            @*<span><a href="/Contract/Index">合同维护</a></span>
+            <span><a href="/Order/Index">发货提醒</a></span>*@
+            @if (ViewBag.IsAssignCustomer)
+            {
+                <span><a href="/Customer/Index">客户维护</a></span>
+            }
+           
+        </div>
+    </div>
+    @if (ViewBag.IsMainAccount==true)
+    {
+        <div class="element">
+            <div class="til">
+                <span class="l">管理员</span>
+            </div>
+            <div class="con">
+                <span><a href="/Staff/Index">员工维护</a></span>
+                <span><a href="/CustomerType/Index">客户类型</a></span>
+                <span><a href="/CustomerChannel/Index">客户渠道</a></span>
+                <span><a href="/Department/Index">部门维护</a></span>
+                @*<span><a href="/OrderStatus/Index">订单流程</a></span>*@
+                <span><a href="/Note/All">跟踪记录</a></span>
+            </div>
+        </div>
+    }
+        <div class="element">
+            <div class="til">
+                <span class="l">我的信息</span>
+            </div>
+            <div class="con">
+                <span><a href="@Html.GetUrl("PresentationMobilePasswordUrl")/Password/Index">密码修改</a></span>
+                <span><a href="@Html.GetUrl("PresentationMobilePasswordUrl")/Mobile/Index">手机绑定</a></span>
+                <span><a href="@Html.GetUrl("PresentationMobilePasswordUrl")/Email/Index">邮箱绑定</a></span>
+                <span><a href="@Html.GetUrl("PresentationMobilePasswordUrl")/Wechat/Index">微信绑定</a></span><br />
+            </div>
+          
+        </div>
+    <div class="element">
+        <div class="til">
+            <span class="l">联系我们</span>
+        </div>
+        <div class="con">
+            <span>电话:<a href="tel:18806871573" class="a">18806871573</a></span>
+            <span>QQ:1339805380</span><br/>
+            <span>地址：上海嘉定区江桥万达广场11号楼308室</span>
+            <span>备案号：沪ICP备16038631号</span>
+        </div>
+    </div>
+    @if (ViewBag.Identity != null)
+    {
+        <div class="element">
+            <div class="con"><a class="quit" href="/Home/Quit?url=@(Server.UrlEncode(Html.GetUrl("CloudCrmMobileUrl")))" onclick="$(this).parent().parent().remove();">退出当前账户</a></div>
+        </div>
+    }
+</div>

@@ -1,0 +1,33 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@(string.Format("蜂蚁窝-{0}", ViewBag.Title ?? ""))</title>
+    <meta content="@(string.Format("{0}", ViewBag.Keywords ?? "蜂蚁窝,生活用品，家居批发，卫浴挂件"))" name="Keywords">
+    <meta content="@(string.Format("{0}", ViewBag.Description ?? "蜂蚁窝 - 网上直销平台，提供各类生活用品、家居批发、卫浴挂件、生活服务、…优质特价商品，让你全面安心享受网上购物乐趣！"))" name="description">
+    <link rel="shortcut icon" href="@Html.GetUrl("PresentationWebsiteSharedUrl")/images/favicon.ico" type="image/x-icon" />
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/Scripts/Plug/jquery-1.7.1.min.js")
+    @Scripts.Render("~/Scripts/Winner/Winner.ClassBase.js")
+    @Scripts.Render("~/Scripts/Shared.js")
+    @RenderSection("styles", required: false)
+</head>
+    <body>
+        @Html.GetHeader()
+        <div class="header">
+                @RenderSection("hearder", required: false)
+        </div>
+        <div class="mainer">
+            @RenderBody()
+        </div>
+        <div class="footer">
+            @RenderSection("footer", required: false)
+        </div>
+        @Html.GetFooter()
+        @RenderSection("scripts", required: false)
+        
+    </body>
+</html>

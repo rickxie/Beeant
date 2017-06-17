@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "";
+}
+@model Beeant.Cloud.Site.Mobile.Models.Company.CompanyModel
+<div class="company">
+    @if (Model != null && Model.Company != null)
+    {
+        <div class="ctop">
+            <div class="lg">
+                @if (!string.IsNullOrEmpty(Model.Company.WeixinQrCodeFileName))
+                {
+                    <img src="@Model.Company.WeixinQrCodeFullFileName"/>
+                }
+                else
+                {
+                    <img src="/home/GetQrCode/@ViewBag.SiteId" />
+                }
+            </div>
+          
+        </div>
+       
+        <div class="info">
+            @if (!string.IsNullOrEmpty(Model.Company.Linkman))
+            {
+            <span class="span">联系人：@Model.Company.Linkman</span><br />
+            }
+            @if (!string.IsNullOrEmpty(Model.Company.Mobile))
+            {
+            <span class="span" >联系电话：<a href="tel:@Model.Company.Mobile" >@Model.Company.Mobile</a></span><br />
+            }
+            @if (!string.IsNullOrEmpty(Model.Company.Email))
+            {
+            <span class="span">电子邮箱：@Model.Company.Email</span><br />
+            }
+            @if (!string.IsNullOrEmpty(Model.Company.Qq))
+            {
+            <span class="span">QQ：@Model.Company.Qq</span><br />
+            }
+            @if (!string.IsNullOrEmpty(Model.Company.Fax))
+            {
+            <span class="span">传真：@Model.Company.Fax</span><br/>
+            }
+            @if (!string.IsNullOrEmpty(Model.Company.Address))
+            {
+            <span class="address">地址：@Model.Company.Address</span>
+            }
+        </div>
+      
+        if (!string.IsNullOrEmpty(Model.Company.Detail))
+        {
+            <div class="del">@Model.Company.Detail</div>
+        }
+    }
+</div>

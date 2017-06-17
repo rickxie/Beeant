@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "";
+}
+
+@model Beeant.Presentation.Mobile.Buy.Models.Member.CouponModel
+
+@if (Model != null && Model.Coupons!=null && Model.Coupons.Count>0)
+{
+    <select name="CouponId">
+        @foreach (var coupon in Model.Coupons)
+        {
+            <option value="@coupon.Id">@(String.Format("{0}({1})", coupon.Name, coupon.Amount))</option>
+        }
+        <option value="">不使用</option>
+    </select>
+}

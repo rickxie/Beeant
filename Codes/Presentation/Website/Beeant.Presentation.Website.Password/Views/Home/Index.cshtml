@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "找回密码";
+    ViewBag.TopName = "找回密码";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Beeant.Presentation.Website.Password.Models.Home.PasswordModel
+@section head
+{
+    @Scripts.Render("~/Scripts/home.js")
+    @Styles.Render("~/Content/Site.css")
+}
+<script type="text/javascript">
+          $(document).ready(function () {
+              var pass = new Password();
+              pass.Initialize();
+          });
+      </script>
+ 
+<div class="pass">
+    @Html.Partial("_Top", Model)
+    @using (Html.BeginForm("Check", "Home", FormMethod.Post, new { autocomplete = "off" }))
+    {
+        <input type="submit" style="display: none;" onclick=" return false; " />
+            <dl class="dl">
+                <dt>
+             
+                    <span class="con">
+                        @Html.TextBoxFor(it => it.Name, new { @class = "text iname bor", id = "txtName", @Value = (Model == null || string.IsNullOrEmpty(Model.Name) ? "用户名/已验证邮箱/已验证手机" : Model.Name), DefaultValue = "用户名/已验证邮箱/已验证手机" })
+                    </span>
+                </dt>
+
+                <dt>
+                
+                    <span class="con">
+                        @Html.TextBoxFor(it => it.Code, new { @class = "code bor", style = "float:left;", id = "txtCode", @Value = "请输入右边验证码", DefaultValue = "请输入右边验证码" })
+                        <img id="imgCode" src="/Home/Code" alt="" class="codeimg" />
+                        <div class="codediv">
+                            <a href="javascript:void(0);" id="hfCode">看不清楚?</a>
+                        </div>
+                    </span>
+
+                </dt>
+
+                @if (Model != null && Model.Errors != null && Model.Errors.Count > 0)
+                {
+                    <dt>
+                     
+                        <span class="failure">@Model.Errors[0].Message</span>
+                    </dt>
+                }
+                <dt>
+
+                   
+                    <a href="javascript:void;" class="btn"><input id="btnSubmit" type="submit" value="下一步" /></a>
+                </dt>
+            </dl>
+
+    }
+
+</div>
+
+
+
+   
+    

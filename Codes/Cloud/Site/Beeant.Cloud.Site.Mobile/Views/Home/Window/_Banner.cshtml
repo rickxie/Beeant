@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@model Beeant.Cloud.Site.Mobile.Models.Home.HomeModel
+@if (Model != null && Model.Banners != null)
+{
+    <ul>
+        @foreach (var banner in Model.Banners)
+        {
+            <li Banner="element">
+                <a href="@(string.IsNullOrEmpty(banner.Url) ? "javascript:void(0);" : banner.Url)">
+                    <img src="@Html.GetPreRenderPicture()" data-original="@banner.FullFileName?v=@(DateTime.Now.Ticks)"/>
+                </a>
+            </li>
+        }
+    </ul>
+}

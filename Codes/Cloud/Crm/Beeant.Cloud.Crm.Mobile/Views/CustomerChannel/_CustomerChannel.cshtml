@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "";
+}
+@model Beeant.Cloud.Crm.Mobile.Models.CustomerChannel.CustomerChannelListModel
+@if (Model != null && Model.CustomerChannels != null)
+{
+    foreach (var es in Model.CustomerChannels)
+    {
+        <div class="element" Sequence="@es.Sequence" DataId="@es.Id">
+            <div class="up"></div>
+            <div class="name"> @es.Name</div>
+            <div class="down" ></div>
+            <input class="remove" type="button" style="display: none;" value="删除" />
+        </div>
+    }
+}

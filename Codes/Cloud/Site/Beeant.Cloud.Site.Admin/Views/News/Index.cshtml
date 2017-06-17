@@ -1,0 +1,52 @@
+﻿@{
+
+}
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities.Site
+@using Winner.Persistence
+@model Beeant.Cloud.Site.Admin.Models.News.NewsListModel
+<div class="news">
+    <div class="mainten">
+        <a href="/Home/Index">
+            <div class="gohome"></div></a>
+
+    </div>
+    <div class="list">
+
+    </div>
+
+
+</div>
+
+<div class="addcontent" style="display: none;">
+
+    <div class="content" id="divContent">
+        <input type="hidden" id="hfId" />
+        <input type="text" id="txtTitle" class="input ctrlshow" ValidateName="Title" value="标题" ShowValue="标题"/>
+        <input type="checkbox" id="ckIsShow" checked="checked" class="mui-checkbox" />
+        <label for="ckIsShow">是否显示</label>
+        <textarea rows="6" id="txtContent" style="height: 150px; " class="input ctrlshow" ValidateName="Content" ShowValue="内容">内容</textarea>
+    </div>
+    <div class="ope">
+        <input type="button" class="cancel" id="btnCancel" value="取消" />
+        <input type="button" class="save" id="btnSave" value="保存" />
+    </div>
+</div>
+<div class="addbtnc">
+    <div class="addbtn" id="btnAdd">+</div>
+</div>
+
+
+<script type="text/javascript" src="~/Scripts/plug/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="~/Scripts/winner/validator/winner.Validator.js"></script>
+<script type="text/javascript" src="~/Scripts/news.js"></script>
+<script type="text/javascript">
+     $(document).ready(function () {
+         @{
+            var pis = new[] { "Title","Content"};
+             @(Html.ScriptValidator<NewsEntity>(SaveType.Add, pis).Initialize("divContent", ""))
+
+         }
+         window.Validator = validator;
+     });
+</script>

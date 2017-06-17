@@ -1,0 +1,57 @@
+﻿@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>蜂蚁窝-登录</title>
+    @Styles.Render("~/Content/logindialog.css")
+    @Scripts.Render("~/Scripts/jquery-1.7.1.min.js")
+</head>
+@model Beeant.Presentation.Website.Login.Models.Home.LoginModel
+<body>
+    <div class="login">
+        @using (Html.BeginForm("LoginDialog", "Home", FormMethod.Post, new { autocomplete = "off" }))
+        {
+            <dl class="dl">
+                <dt>
+                    <div class="in bor">
+                        <div class="tc">
+                            @Html.TextBoxFor(it => it.Name, new { @class = "text", id = "loginName", @Value = (Model == null || string.IsNullOrEmpty(Model.Name) ? "" : Model.Name), PlaceHolder = "用户名/已验证邮箱/已验证手机" })
+                        </div>
+                        <i class="iname"></i>
+                    </div>
+                </dt>
+                <dt>
+                    <div class="in bor">
+                        <div class="tc">
+                            @Html.TextBoxFor(it => it.Password, new { @class = "text", id = "loginPass", PlaceHolder = "登录密码" })
+                        </div>
+                        <i class="ipass"></i>
+                    </div>
+                </dt>
+                 @if (Model != null && Model.IsShowCode)
+                 {
+                     <dt>
+                             @Html.TextBoxFor(it => it.Code, new { @class = "code bor", id = "loginCode", maxlength = "4", PlaceHolder = "验证码" })
+                         <img id="imgCode" src="/Home/LoginCode" alt="" class="codeimg"/>
+                         <div class="codediv">
+                             <a href="javascript:void(0);" id="aCode">看不清楚?</a>
+                         </div>
+                     </dt>
+                 }
+                <dt>
+                    @if (Model != null && Model.Errors != null && Model.Errors.Count > 0)
+                    {
+                        <span class="failure">@Model.Errors[0].Message</span>
+                    }
+                    <a href="javascript:void(0);" class="sub"><input id="loginSubimt" type="submit" value="" class="input"/></a> 
+                </dt>
+            </dl>
+        }
+    </div>
+@Scripts.Render("~/Scripts/Login.js")
+</body>
+</html>

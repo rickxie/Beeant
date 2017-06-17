@@ -1,0 +1,24 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@string.Format("蜂蚁窝-{0}", ViewBag.Title ?? "")</title>
+     <meta content="@(string.Format("{0}", ViewBag.Keywords ?? "蜂蚁窝"))" name="Keywords">
+    <meta content="@(string.Format("{0}", ViewBag.Description ?? "蜂蚁窝 "))" name="description">
+    <link rel="shortcut icon" href="@Html.GetUrl("PresentationWebsiteSharedUrl")/images/favicon.ico" type="image/x-icon" />
+     @RenderSection("head", required: false)
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/Scripts/Plug/jquery-1.7.1.min.js")
+    @Scripts.Render("~/Scripts/Winner/Winner.ClassBase.js")
+    @RenderSection("styles", required: false)
+</head>
+    <body>
+        @RenderBody()
+        @RenderSection("scripts", required: false)
+       
+
+    </body>
+</html>

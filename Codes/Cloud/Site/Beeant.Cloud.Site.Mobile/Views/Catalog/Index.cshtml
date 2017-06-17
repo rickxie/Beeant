@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+    ViewBag.Title = "分类选择";
+    ViewBag.ToperName = "分类选择";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Extension.Mobile
+@model Beeant.Cloud.Site.Mobile.Models.Catalog.CatalogListModel
+
+
+<div class="catalog">
+    <a href="/Commodity/Index/@ViewBag.SiteId?catalogname=@(Server.UrlEncode("所以分类"))">
+        <div class="itm" >
+            <img src="@ViewBag.Site.LogoFullFileName"   class="img" />
+            <div class="name">所有分类</div>
+            <div class="go">＞</div>
+        </div>
+    </a>
+
+</div>
+   
+<script type="text/javascript" src="~/Scripts/catalog.js"></script>

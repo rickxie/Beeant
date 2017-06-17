@@ -1,0 +1,73 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension
+@{
+
+}
+@model Beeant.Cloud.Site.Admin.Models.Home.HomeModel
+@if (Model != null && Model.Site != null)
+{
+    <div class="tip">您将于<span class="red">@(Model.Site.ExpireDate.ToString("yyyy-MM-dd"))</span>到期</div>
+}
+<div class="home">
+        <div class="element">
+            <div class="til">
+                <span class="l">操作导航</span>
+            </div>
+            <div class="con">
+                <span><a href="/Catalog/Index">类目维护</a></span>
+                <span><a href="/Commodity/Index">产品维护</a></span>
+                <span><a href="/Company/Index">企业信息</a></span>
+                <span><a href="/News/Index">人才招聘</a></span>
+            </div>
+            <div class="con">
+                <span><a href="/Tag/Index">标签维护</a></span>
+                <span><a href="/Banner/Index">横幅维护</a></span>
+                <span><a href="/Certificate/Index">证书维护</a></span>
+                <span><a href="/Inquery/Index">在线询盘</a></span>
+            </div>
+            <div class="con">
+                <span><a href="/Wechat/Index">粉丝用户</a></span>
+                <span><a href="/Message/Subscribe">欢迎词设置</a></span>
+                <span><a href="/Message/Index">消息机器人</a></span>
+                <span><a href="/Book/Index">生成目录本</a></span>
+            </div>
+        </div>
+
+        <div class="element">
+            <div class="til">
+                <span class="l">我的信息</span>
+            </div>
+            <div class="con">
+                <span><a href="@Html.GetUrl("PresentationMobilePasswordUrl")/Password/Index">密码修改</a></span>
+                <span><a href="@Html.GetUrl("PresentationMobilePasswordUrl")/Mobile/Index">手机绑定</a></span>
+                <span><a href="@Html.GetUrl("PresentationMobilePasswordUrl")/Email/Index">邮箱绑定</a></span>
+                <span><a href="@Html.GetUrl("PresentationMobilePasswordUrl")/Wechat/Index">微信绑定</a></span><br />
+            </div>
+         
+        </div>
+    <div class="element">
+        <div class="til">
+            <span class="l">联系我们</span>
+        </div>
+        <div class="con">
+            <span>电话:<a href="tel:18806871573" class="a">18806871573</a></span>
+            <span>QQ:1339805380</span><br/>
+            <span>地址：上海嘉定区江桥万达广场11号楼308室</span>
+            <span>备案号：沪ICP备16038631号</span>
+            <span>微信:<img src="~/Images/wechat.jpg" style="width: 100px; height: 100px;" /></span><br />
+        </div>
+
+    </div>
+    @if (ViewBag.Identity != null)
+    {
+        <div class="element">
+        <div class="con"><a class="quit" href="/Shared/Quit?url=@(Server.UrlEncode(Html.GetUrl("CloudSiteAdminUrl")))" onclick="$(this).parent().parent().remove();">退出当前账户</a></div>
+        </div>
+    }
+    else
+    {
+        <div class="element">
+            <div class="con"><a class="quit" href="@Html.GetUrl("PresentationMobileLoginUrl")/Home/Index?url=@(Server.UrlEncode(Html.GetUrl("CloudSiteAdminUrl")))" onclick="$(this).parent().parent().remove();">登陆</a></div>
+        </div>
+    }
+   
+</div>

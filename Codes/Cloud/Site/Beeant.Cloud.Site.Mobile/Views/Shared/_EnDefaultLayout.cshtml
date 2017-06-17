@@ -1,0 +1,85 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension
+@{
+    Layout = "_Layout.cshtml";
+}
+@section head
+{
+
+
+    <link href="/Content/site.css" rel="stylesheet" />
+    @RenderSection("head", required: false)
+}
+<script type="text/javascript" src="/Scripts/shared.js"></script>
+<script type="text/javascript">
+
+    window.Language = {
+        LoadErrorMessage: "The system is busy, please try again later",
+        PasswordTip: "Please enter the password",
+        PasswordErrorMessage: "password error"
+    }
+</script>
+<div class="toper">
+    <div id="topnav" style="@(string.IsNullOrEmpty(Request.QueryString["key"]) ? "" : "display:none")">
+        <div class="contact">
+            <img src="@ViewBag.Site.LogoFullFileName" class="img"/>
+        </div>
+        <div class="name">@(ViewBag.ToperName)</div>
+        <div class="searchico"></div>
+    </div>
+    <div class="search" style="@(string.IsNullOrEmpty(Request.QueryString["key"]) ? "display:none" : "")">
+        <input id="txtTopSearch" class="searchinput" placeholder="搜索" value="@(string.IsNullOrEmpty(Request.QueryString["key"]) ? "" : Model.Key)"/>
+        <a href="javascript:void(0)" id="hfCancelSearch">取消</a>
+    </div>
+</div>
+
+<div class="naver">
+    <ul>
+      
+        <a href="/certificate/index/@ViewBag.SiteId">
+            <li class="li" style="width: 33%;">
+                Certificates
+            </li>
+        </a>
+
+        <a href="/News/index/@ViewBag.SiteId">
+            <li class="li" style="width: 33%;">
+                Recruitment
+            </li>
+        </a>
+   
+        <a href="/Company/Index/@ViewBag.SiteId">
+            <li class="li"  style="width: 33%;">
+                ContactUs
+            </liclass="li">
+        </a>
+
+
+    </ul>
+</div>
+@RenderBody()
+<div class="footer">
+    <div class="nav">
+        <a href="/home/index/@ViewBag.SiteId" menu="true">Home</a>
+    </div>
+    <div class="nav">
+        <a href="/Catalog/index/@ViewBag.SiteId">Products</a>
+    </div>
+    @if (ViewBag.Site.IsPrint)
+    {
+        <a href="/Book/index/@ViewBag.SiteId" menu="true">Album</a>
+    }
+    <div class="nav">
+        <a href="/Inquery/index/@ViewBag.SiteId">Message</a>
+    </div>
+    <div class="nav">
+        <a id="hfLinkMobile" href="javascript:void(0);">Mobile</a>
+    </div>
+
+</div>
+@RenderSection("bottom", required: false)
+@if (ViewBag.Site != null && ViewBag.Site.IsShowAuthor)
+{
+    <div class="authornaver">
+        <a href="@(Html.GetUrl("CloudSiteAdminUrl"))/home/about">Electronic atlas, please click here</a>
+    </div>
+}

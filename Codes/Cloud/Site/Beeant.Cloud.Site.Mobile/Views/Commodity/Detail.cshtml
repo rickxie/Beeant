@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+@using Component.Extension
+@using Beeant.Basic.Services.Mvc.Extension
+@model Beeant.Cloud.Site.Mobile.Models.Commodity.CommodityModel
+<div class="detail">
+
+
+</div>
+<div class="detailqr">
+
+</div>
+<div class="detailqrname">
+    长按识别图片中的二维码
+</div>
+
+<script type="text/javascript">
+    window.ps = @(Model==null|| Model.Params ==null? new HtmlString("null") : new HtmlString(Model.Params.SerializeJson()));
+</script>
+<script type="text/javascript" src="/Scripts/detail.js"></script>
+ 
+ 
+ 

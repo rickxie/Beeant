@@ -1,0 +1,50 @@
+﻿@{
+
+}
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities.Crm
+@using Winner.Persistence
+@model Beeant.Cloud.Crm.Mobile.Models.CustomerChannel.CustomerChannelListModel
+<div class="customerchannel">
+    <div class="mainten">
+        <a href="/Home/Index">
+            <div class="gohome"></div></a>
+
+    </div>
+    <div class="list">
+
+    </div>
+
+
+</div>
+
+<div class="addcontent" style="display: none;">
+
+    <div class="content" id="divContent">
+        <input type="hidden" id="hfId" />
+        <input type="text" id="txtName" class="input ctrlshow" ValidateName="Name" value="渠道名称" ShowValue="渠道名称"/>
+ 
+    </div>
+    <div class="ope">
+        <input type="button" class="cancel" id="btnCancel" value="取消" />
+        <input type="button" class="save" id="btnSave" value="保存" />
+    </div>
+</div>
+<div class="addbtnc">
+    <div class="addbtn" id="btnAdd">+</div>
+</div>
+
+
+<script type="text/javascript" src="~/Scripts/plug/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="~/Scripts/winner/validator/winner.Validator.js"></script>
+<script type="text/javascript" src="~/Scripts/CustomerChannel.js"></script>
+<script type="text/javascript">
+     $(document).ready(function () {
+         @{
+            var pis = new[] { "Name"};
+             @(Html.ScriptValidator<CustomerChannelEntity>(SaveType.Add, pis).Initialize("divContent", ""))
+
+         }
+         window.Validator = validator;
+     });
+</script>

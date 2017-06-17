@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B6C7EE5C-B100-4718-9AEE-C06DE5275D08}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Beeant.Application.Dtos</RootNamespace>
+    <AssemblyName>Beeant.Application.Dtos</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\MobileDto.cs" />
+    <Compile Include="Account\EmailDto.cs" />
+    <Compile Include="Account\PasswordDto.cs" />
+    <Compile Include="Order\SettlementDto.cs" />
+    <Compile Include="Order\OrderProductDto.cs" />
+    <Compile Include="Order\OrderDto.cs" />
+    <Compile Include="Order\OrderReturnDto.cs" />
+    <Compile Include="Order\OrderInsuranceDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\Beeant.Domain.Entities\Beeant.Domain.Entities.csproj">
+      <Project>{c7ed9de4-7073-4dcf-9513-d9ea6e86e537}</Project>
+      <Name>Beeant.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domain\Beeant.Domain.Reports\Beeant.Domain.Reports.csproj">
+      <Project>{95e357c6-cf73-4883-8784-7aea5e364527}</Project>
+      <Name>Beeant.Domain.Reports</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Component\Component.csproj">
+      <Project>{1a1bd7ed-0cd2-46b7-b135-88a54fca33c6}</Project>
+      <Name>Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Configuration\Configuration.csproj">
+      <Project>{eb334c7b-6cf1-4ed8-abfb-a41d46566f8a}</Project>
+      <Name>Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Dependent\Dependent.csproj">
+      <Project>{33bc44cb-2427-42e2-a9da-d57d80519760}</Project>
+      <Name>Dependent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Winner\Winner.csproj">
+      <Project>{462d6461-f2a0-4058-96e3-64677a31b1e8}</Project>
+      <Name>Winner</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

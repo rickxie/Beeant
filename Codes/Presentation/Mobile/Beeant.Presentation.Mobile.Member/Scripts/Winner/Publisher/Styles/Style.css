@@ -1,0 +1,76 @@
+.category{position:relative; width:900px; height:500px; background:#f5f9ff; }
+.category .loading{position:absolute; background:url(../Images/loading.gif) no-repeat; left:500px; top:100px; width:32px; height:32px;}
+.category .button{ float:left; margin-top:85px; display:inline; cursor:pointer; width:20px; height:45px;background:url(../Images/buttonbg.gif) no-repeat; }
+.category .btnleft1{ background-position: 0 0;}
+.category .btnleft2{background-position: 0 -45px;}
+.category .btnleft3{background-position: 0 -90px;}
+.category .btnright1{background-position: 0 -135px;}
+.category .btnright2{background-position: 0 -180px;}
+.category .btnright3{background-position: 0 -225px;}
+.category .container{ float:left; width:860px;overflow:hidden;}
+.category .container .content{float:left;}
+.category .container .content .node{float:left; overflow-y:auto; width:215px;height:500px; line-height:23px;}
+.category .container .content .node .fillter{width:188px; height:19px;background:url(../Images/input.gif) no-repeat; padding-left:22px; padding-top:2px;}
+.category .container .content .node .info{float:left;cursor: pointer;}
+.category .container .content .node .over{background:#68c0fb;border:1px solid #99bad0;}
+.category .container .content .node .select{ background:#d9e6f2; border:1px solid #99bad0; }
+.category .container .content .node .info .font{float:left;width: 190px;}
+.category .container .content .node .match{color:Red; }
+.category .container .content .node .hasimg{float: left;margin-top: 5px; background:url(../Images/haschild.gif) no-repeat;width: 4px;height: 7px;}
+.property{width:870px; background:#f5f9ff; }
+.property .element{float: left; border: solid 1px silver;margin-top: 2px; margin-left: 20px;display: inline;padding: 5px;max-width: 700px;width: 100%;}
+.property .nickname{ float: left;}
+.property .info { float: left;}
+.property .info .ckparent{ float: left;}
+.property .info .errormess{float: left;display: block; background:url(../Images/error.gif) no-repeat; color:Red; padding-left:20px;}
+.property .info .sucessmess{float: left;display: block; background:url(../Images/success.gif) no-repeat;}
+.property .info .showmess{float: left;display: block;color:#c0c0c0; padding-left:20px;}
+.property .info .control{float: left; display: block;min-width: 140px;}
+.property .info .ctrlerror{ border:1px solid #FF0000;}
+.property .info .ctrlsucess{ border:1px solid #00CC00;}
+.property .info span{ padding-left: 5px;}
+.property .info .custom{ padding-left: 5px;float: left;width: 100%;}
+.property .info .number{ width: 60px;}
+.property .cbparent{ position: relative;padding: 0;margin: 0;width: 143px;}
+.property .cbparent .cbinput{position: absolute;top: 0;left: 0; border: 1px solid #BBBBBB; height: 18px; line-height: 18px; width: 141px;}
+.property .cbparent .down{position: absolute;top: 0;left: 127px;   height:19px; width:15px;margin-top: 1px; background:url(../Images/down.jpg) no-repeat;}
+.property .cbparent .listbody{ top:21px; left:0;border:1px solid #BBBBBB;padding: 0;min-width: 140px; background: #ffffff;background: lightblue;line-height: 25px;z-index: 99999; }
+.property .cbparent .listbody .out{ height:25px; }
+.property .cbparent .listbody .over{ background:dodgerblue; height:25px;  cursor:pointer;}
+.property .cbparent .listbody .ditem{display: block;padding: 0; white-space: nowrap; text-overflow: ellipsis; word-break: keep-all;}
+.images{width:100%; background:#f5f9ff; }
+.images .image{ float: left;width: 120px;height: 155px; margin: 5px;border: 1px #ffffff solid;position: relative;}
+.images .image div{width: 120px;height: 120px;}
+.images .image .remove{background:url(../Images/error.gif) no-repeat;width: 16px;height: 16px;position: absolute;top: 0;left: 104px;z-index: 9999;cursor: pointer;}
+.images .image img{width: 120px;height: 120px;}
+.images .image input{ width: 120px;overflow: hidden;}
+.images .ctrlerror{ border:1px solid #FF0000;}
+.images .ctrlsucess{ border:1px solid #00CC00;}
+.images .image .movebtn{background: #CACACA; display: block; filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity: 0.5;opacity: 0.5; cursor: pointer; position: absolute;font-size: 20px;line-height: 25px;text-align: center; width: 40px;height: 40px;right: 50%;top: 50%; }
+.images .image .movebtn:hover{background:#000000;}
+.images .image .movebtn span{margin-left: 8px; display: block;width: 22px; height: 24px;margin-top: 8px; background: url("../Images/icon.png") no-repeat;}
+.images .image .prevbtn{left: 0;}
+.images .image .nextbtn{ right: 0;}
+.images .image .nextbtn span{ background-position: 0 -24px;}
+.sku{float: left;width:870px; background:#f5f9ff; }
+.sku .element{float: left; border: solid 1px silver;margin-top: 2px; margin-left: 20px;display: inline;padding: 5px;max-width: 700px;width: 100%;}
+.sku .nickname{ float: left;}
+.sku .info { float: left;}
+.sku .info .ckparent{ float: left;padding-right: 5px;}
+.sku .info .control{float: left; display: block;min-width: 140px;}
+.sku .info .input{ width: 80px;height: 20px;}
+.sku .info .lable{ padding-left: 2px;}
+.skuimage{float: left;width:100%;margin-top: 5px; }
+.skuimage .tb{ width: 100%;}
+.skuimage .tb .per{ width: 10%;text-align: center;}
+.skuimage .tb .img{ text-align: center;}
+.skuimage .tb th { font-size:13px; color:#3c8f4b;  height:18px; text-align: center;background: #f5f9ff; } 
+.skuimage .tb td,.skuimage .tb th{ border:1px solid #bbd8fa;border-collapse: collapse;overflow: hidden; white-space: nowrap; text-overflow: ellipsis; word-break: keep-all;}
+.skuimage .tb td{ text-align: center;vertical-align: middle;}
+.skuproduct{float: left;width:100%; background:#f5f9ff;margin-top: 5px; }
+.skuproduct .tb{width:100%;  }
+.skuproduct .tb .per{ width: 10%;text-align: center;}
+.skuproduct .tb th { font-size:13px; color:#3c8f4b;  height:18px; text-align: center;background: #f5f9ff; } 
+.skuproduct .tb td,.skuproduct .tb th{ border:1px solid #bbd8fa;border-collapse: collapse;overflow: hidden; white-space: nowrap; text-overflow: ellipsis; word-break: keep-all;}
+.skuproduct .tb td{ text-align:left;padding-left: 2px; vertical-align:middle;}
+.skuproduct .tb td input{ width: 80px;height: 20px;}

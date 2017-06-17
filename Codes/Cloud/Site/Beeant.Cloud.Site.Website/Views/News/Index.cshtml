@@ -1,0 +1,17 @@
+﻿@{
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+@model Beeant.Cloud.Site.Website.Models.News.NewsListModel
+<div class="center">
+    <div class="news">
+        <div class="list"></div>
+    </div>
+</div>
+
+@section bottom
+{
+    <script type="text/javascript">
+        window.Language.MoreTip = "详情";
+    </script>
+    <script type="text/javascript" src="~/Scripts/News.js"></script>
+}

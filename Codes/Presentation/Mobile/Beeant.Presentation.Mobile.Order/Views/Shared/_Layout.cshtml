@@ -1,0 +1,41 @@
+﻿@using Beeant.Basic.Services.Mvc.Extension.Mobile
+@using Beeant.Basic.Services.Mvc.Script
+ 
+<!DOCTYPE html>
+<html>
+<head>
+    @Html.GetTop()
+    <title>@string.Format("蜂蚁窝-{0}", ViewBag.Title ?? "")</title>
+    <meta content="@(string.Format("{0}", ViewBag.Keywords ?? "蜂蚁窝,提供技术服务"))" name="Keywords">
+    <meta content="@(string.Format("{0}", ViewBag.Description ?? "蜂蚁窝，一家专门做技术服务、商品交易等平台"))" name="description">
+    @RenderSection("head", required: false)
+    @Styles.Render("~/Content/Site.css")
+    <script type="text/javascript" src="/Scripts/Plug/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/Winner/Winner.ClassBase.js"></script>
+    <script type="text/javascript" src="/Scripts/Winner/DataLoader/Winner.DataLoader.js"></script>
+    <script type="text/javascript" src="/Scripts/Plug/jquery.lazyload.min.js"></script>
+</head>
+<body>
+    @Html.GetHeader()
+    <div class="mainer">
+        @RenderBody()
+    </div>
+    @Html.GetFooter()
+    @Html.GetBottom()
+    @Html.ImageRecover()
+
+
+    <script type="text/javascript">
+    window.lazyloadImage = function(container) {
+        var imgs = (container == null ? $("img") : $(container).find("img"));
+        imgs.lazyload({
+            placeholder:
+                "@(ViewBag.Site == null || string.IsNullOrEmpty(ViewBag.Site.LogoFileName) ? string.Format("{0}/images/logo.png", Beeant.Basic.Services.Mvc.Extension.UrlHelperExtension.GetUrl(Html,"PresentationMobileSharedUrl")) : ViewBag.Site.LogoFullFileName)",
+            effect: "fadeIn",
+            failurelimit: 10,
+            threshold: 200
+        });
+    };
+    </script>
+</body>
+</html>

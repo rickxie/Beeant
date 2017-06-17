@@ -1,0 +1,17 @@
+﻿@{
+    Layout = "";
+}
+@model Beeant.Presentation.Mobile.Member.Models.Member.MessageModel
+@if (Model != null && Model.Messages != null)
+{
+    foreach (var message in Model.Messages)
+    {
+        <div class="element@(message.IsRead?"":" read")" >
+            <a href="/Message/Detail?id=@message.Id" > <div class="til">@message.Title</div></a>
+            <div class="remove" onclick="removeMessage(this, @message.Id)" style="display: none;">
+                删除
+            </div>
+        </div>
+    }
+
+}

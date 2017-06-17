@@ -1,0 +1,83 @@
+﻿ 
+
+*{ margin:0 0;padding: 0;outline: none;font-size: 14px;}
+ul{ list-style-type:none;}
+img{border:none;}
+em,q,cite,address { font-weight:normal; font-style:normal }
+h1, h2, h3 { font-weight:normal }
+address { display:inline }
+big,small { font-size:12px }
+img { border:none }
+li { list-style:none }
+q { quotes:none }
+strong { font-weight:bold }
+table { border-collapse:collapse }
+th { text-align:left; font-weight:normal }
+em { font-family:宋体; font-size:12px; color:#F00 }
+ 
+.book {width: 100%;height: 100%;overflow: hidden;position: relative;}
+.book .con{width: 100%;height: 100%;overflow: hidden;}
+.book .element {width: 100%;height: 100%;position: absolute;}
+.book .element div {width: 100%;height: 100%;background: no-repeat;background-size: 100% 100%; }
+.book .element img {width: 100%;height: 100%;cursor: move;  }
+.book .icon {position: fixed;bottom: 10px;z-index: 9999;  animation: start 1.5s infinite ease-in-out;}
+.book .music { position: absolute;
+               display: block;
+    right: 20px;
+    top: 60px;
+    z-index: 200;
+    width: 40px;
+    height: 40px;
+    background-image: url(../images/normalmusic.svg);
+    background-size: contain;
+}
+    .book .rotate {
+        -webkit-animation: rotating 1.2s linear infinite;
+        -moz-animation: rotating 1.2s linear infinite;
+        -o-animation: rotating 1.2s linear infinite;
+        animation: rotating 1.2s linear infinite;
+    }
+
+@-webkit-keyframes rotating {
+from {
+-webkit-transform: rotate(0)
+}
+to {
+-webkit-transform: rotate(360deg)
+}
+}
+
+@keyframes rotating {
+from {
+transform: rotate(0)
+}
+to {
+transform: rotate(360deg)
+}
+}
+
+@-moz-keyframes rotating {
+    from {
+        -moz-transform: rotate(0);
+    }
+
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+@keyframes start {
+    0%,30% {
+        opacity: 0;
+        transform: translate(0,10px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translate(0,0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(0,-8px);
+    }
+}

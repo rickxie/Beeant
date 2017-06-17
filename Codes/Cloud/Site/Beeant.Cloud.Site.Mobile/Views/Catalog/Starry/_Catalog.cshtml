@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Extension.Mobile
+@model Beeant.Cloud.Site.Mobile.Models.Catalog.CatalogListModel
+
+ 
+
+    @if (Model != null && Model.Catalogs != null)
+    {
+        foreach (var catalog in Model.Catalogs)
+        {
+            <a href="/Commodity/Index/@ViewBag.SiteId?catalogid=@catalog.Id&catalogname=@(Server.UrlEncode(@catalog.Name))">
+                <div class="itm">
+                    <img src="@(string.IsNullOrEmpty(Model.CatalogFullFileName(catalog)) ? Html.GetNoPicture() : Model.CatalogFullFileName(catalog))" class="img" alt="" /> 
+        
+                    <div class="name">@catalog.Name</div>
+
+                </div>
+            </a>
+        }
+    }

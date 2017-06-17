@@ -1,0 +1,19 @@
+﻿@{
+
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Domain.Entities
+function InitShopcart() {
+ var html = '<div class="title">我的购物车</div><div class="content">';
+ html+='<form id="fmShopcart" action="@Html.GetUrl("PresentationMobileBuyUrl")/Home/Index" name="order">';
+ html+='</form>';
+ html += '</div><div class="sum">';
+ html += '<span>已选<big class="red" Buyer="Count">0</big>件</span>';
+ html += '<span><big class="red" Buyer="Price">0</big></span>';
+ html += ' <a href="javascript:void(0);" id="hfSettle"><span class="jsbtn"></span></a></div>';
+ return html;}
+
+
+
+

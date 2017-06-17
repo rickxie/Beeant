@@ -1,0 +1,62 @@
+﻿@{
+    Layout = "_Layout.cshtml";
+}
+@section head
+{
+
+    <link href="/Content/site.css" rel="stylesheet"/>
+<script type="text/javascript">
+    window.IsOpenImages=@ViewBag.Site.IsOpenImages.ToString().ToLower();
+    window.Language = {
+        PasswordErrorMessage: "秘钥错误",
+        LoadErrorMessage: "系统忙，请稍后再试",
+        DetailTip:"详情图"
+    };
+</script>
+@RenderSection("head", required: false)
+}
+ 
+<div class="top">
+    <div class="con center">
+        <div class="lk">
+            <a href="/home/index/@ViewBag.SiteId">首页</a>|<a href="/Company/Contact/@ViewBag.SiteId">联系我们</a>
+        </div>
+    </div>
+</div>
+<div class="header center">
+    <div class="headertop">
+        <div class="logo">
+            <img src="@ViewBag.Site.LogoFullFileName" alt="@ViewBag.Site.Name" />
+        </div>
+        <div class="search">
+            <form action="/Commodity/Index/@ViewBag.SiteId">
+                <input class="sinput" type="text" name="key" placeholder="请输入您想查找的产品" value="@ViewBag.SearchKey"/>
+                <input class="btn" type="submit" value="搜索"/>
+            </form>
+        </div>
+       
+    </div>
+    <div class="nav">
+        <ul>
+            <li ><a href="/home/index/@ViewBag.SiteId">首页</a></li>
+            <li ><a href="/Company/about/@ViewBag.SiteId">关于我们</a></li>
+            <li><a href="/Certificate/index/@ViewBag.SiteId">证书介绍</a></li>
+            <li ><a href="/Commodity/index/@ViewBag.SiteId">产品展示</a></li>
+            <li ><a href="/News/index/@ViewBag.SiteId">人才招聘</a></li>
+            <li><a href="/Inquery/index/@ViewBag.SiteId">在线留言</a></li>
+            <li ><a href="/Company/Contact/@ViewBag.SiteId">联系我们</a></li>
+        </ul>
+    </div>
+</div>
+@RenderBody()
+<div class="bottom">
+    <div class="font">版权所属 @@Name 备案号 <a href="http://www.miitbeian.gov.cn">@@RecordNumber</a>
+
+</div>
+    <div class="font">QQ:@@Qq,传真:@@Fax,电话: @@Mobile,联系人:@@Linkman, Email:<a href="mailto:@("@Email")">@@Email</a>
+    </div>
+
+</div>
+
+    <script type="text/javascript" src="~/Scripts/Shared.js"></script>
+@RenderSection("bottom", required: false)

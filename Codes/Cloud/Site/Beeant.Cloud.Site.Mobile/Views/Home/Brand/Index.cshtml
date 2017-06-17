@@ -1,0 +1,83 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "首页";
+    ViewBag.ToperName = "首页";
+
+}
+
+@section head
+{
+
+    <link href="/Content/Brand.css" rel="stylesheet" />
+
+}
+<script type="text/javascript">
+
+    window.Language = {
+        LoadErrorMessage: "系统忙，请稍候再试",
+        PasswordTip: "请输入密保",
+        PasswordErrorMessage: "密保错误"
+    }
+</script>
+
+<div class="home">
+    <div id="divBanner" class="banner">
+
+    </div>
+
+    <div class="naver">
+        <div class="ul">
+
+
+
+            <a href="/Catalog/index/@ViewBag.SiteId">
+                <div class="li">
+                    <img src="~/Images/Brand/1.png" class="img"/>
+                    <div class="name">产品</div>
+                </div>
+            </a>
+            @if (ViewBag.Site.IsPrint)
+            {
+                <a href="/Book/index/@ViewBag.SiteId">
+                    <div class="li">
+                        <img src="~/Images/Brand/1.png" class="img" />
+                        <div class="name">图册</div>
+                    </div>
+                </a>
+            }
+           
+            <div id="divTag"></div>
+            <a href="/News/index/@ViewBag.SiteId">
+                <div class="li">
+                    <img src="~/Images/Brand/21.png" class="img"/>
+                    <div class="name">招聘</div>
+                </div>
+            </a>
+            <a href="/inquery/index/@ViewBag.SiteId">
+                <div class="li">
+                    <img src="~/Images/Brand/17.png" class="img"/>
+                    <div class="name">留言</div>
+                </div>
+            </a>
+            <a href="/Certificate/index/@ViewBag.SiteId">
+                <div class="li">
+                    <img src="~/Images/Brand/22.png" class="img"/>
+                    <div class="name">证书</div>
+                    
+                </div>
+            </a>
+            <a href="/Company/Index/@ViewBag.SiteId">
+                <div class="li">
+                    <img src="~/Images/Brand/15.png" class="img"/>
+                    <div class="name">联系我们</div>
+                    
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src="~/Scripts/plug/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="~/Scripts/Winner/Banner/Winner.Banner.js"></script>
+<script type="text/javascript" src="~/Scripts/Winner/Slider/Winner.Slider.js"></script>
+<script type="text/javascript" src="~/Scripts/Brand/home.js"></script>

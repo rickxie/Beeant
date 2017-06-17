@@ -1,0 +1,79 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Domain.Entities.Order
+
+@model Beeant.Presentation.Mobile.Order.Models.Home.HomeModel
+@if (Model != null && Model.Orders != null)
+{
+    foreach (var order in Model.Orders)
+    {
+        if (order.OrderProducts != null)
+        {
+
+            <div class="element">
+                <div class="til">
+                    <span style="float: left">订单编号：@order.Id</span> 
+                    <span name="status" class="bred" style="float: right;">@order.StatusName</span>
+
+                    <br/>
+                    合计:<span class="red">￥@order.TotalAmount（含运费￥@Model.GetExpressAmount(order)）</span> 
+                    付款金额:<span class="red">@order.PayAmount</span>
+                
+
+                </div>
+                @foreach (var orderProduct in order.OrderProducts)
+                {
+                    if (orderProduct.Product != null)
+                    {
+
+                        <div class="row" onclick="window.location.href = '/Home/Detail?id=@order.Id'">
+                            <div class="left wd1">
+                                <img src="@Html.GetNoPicture(orderProduct.FullFileName)"  class="img"  alt=""/>
+                                <span class="name">
+                                @orderProduct.Name
+                                        @if (!orderProduct.IsAppraisement && order.Status == OrderStatusType.Finish)
+                                        {
+                                            <span class="appraisement">
+                                                <a href="/Comment/index?productid=@orderProduct.Product.Id&orderid=@order.Id">点评</a>
+                                            </span>
+                                        }
+                            
+                            </span>
+                           
+                            </div>
+                            <div class="red wd2 lineh">
+                                @orderProduct.Price
+                            </div>
+                            <div class="wd3 lineh">@orderProduct.Count</div>
+
+
+                        </div>
+
+
+                    }
+                }
+                <div class="bom">
+                    @if (order.Status == OrderStatusType.WaitPay)
+                    {
+                        if (order.TotalAmount > order.PayAmount)
+                        {
+                            <input name="lkpayment" type="button" onclick="return payment(@order.Id, @(order.TotalAmount - order.PayAmount), '@order.PayTypes')" value="付款"/>
+                        }
+                        <input type="button" name="lkcancel" onclick="return cancel(@order.Id, this)" value="取消订单"/>
+                    }
+                    else if (order.Status == OrderStatusType.WaitSign)
+                    {
+                        <input type="button" name="lksure"  onclick="return sure(@order.Id, this)" value="确认收货"/>
+                        if (order.PayAmount > 0)
+                        {
+                            <input type="button" name="lkwait"  onclick="return wait(@order.Id, this)" value="申请退款"/>
+                        }
+                    }
+                </div>
+            </div>
+        }
+
+    }
+}

@@ -1,0 +1,95 @@
+﻿*{ margin:0 0; padding:0 ;}
+ul{ list-style-type:none;}
+img{border:none;}
+em,q,cite,address { font-weight:normal; font-style:normal }
+h1, h2, h3 { font-weight:normal }
+address { display:inline }
+big,small { font-size:12px }
+img { border:none }
+li { list-style:none }
+q { quotes:none }
+strong { font-weight:bold }
+table { border-collapse:collapse }
+th { text-align:left; font-weight:normal }
+em { font-family:宋体; font-size:12px; color:#F00 }
+/* link */
+a { color:#38a2d2; outline-style:none; text-decoration:none}
+a:hover { text-decoration:none; color:#f2963d}
+/* clear float */
+.cf { zoom:1} /* for IE */
+.cf:after { content:"."; display: block; clear:both; font-size:0; height:0; visibility:hidden; overflow:hidden} /* for other */
+/* end of clear float */
+body { font-size:12px; line-height:24px; font-family:Tahoma, Arial, sans-serif, Simsun, 宋体; color:#404040; background:#FFF;  }
+.center{width: 1200px;margin: 0 auto;}
+.toper{float: left;display: inline; background:url(../Images/may-bg.png) repeat-x;width: 100%;height: 30px;line-height: 30px;}
+.toper .inner{color: #000;}
+.toper .inner a{ color: #555555;}
+.toper .inner a:hover{ color: #FF5555;text-decoration: underline;}
+.toper .login{ float: right;}
+.toper li{ float: left;margin-left: 10px;}
+.header{float: left;display: inline; width: 100%;}
+.header .conner{margin-top: 10px;}
+.header .logo{float: left; width: 375px;}
+.header .ader{float: left;margin-left: 20px; width: 200px;}
+.mainer{float: left;display: inline; width: 100%;}
+
+.checkpart{filter:alpha(Opacity=50);-moz-opacity:0.5;opacity: 0.5;z-index:100; background-color:#ffffff; }
+.validctrlerror{ border:1px solid #FF0000;color: red;}
+.validctrlsucess{ border:1px solid #00CC00;}
+.validerrormess{ float: left;margin-left: 5px;text-align: left; display: block; color:Red; padding:0 20px 0 20px;background: #FFEBEB;height: 24px;}
+.validsucessmess{float: left;margin-left: 5px;display: block; background:url(../Scripts/Winner/Validator/Images/success.gif) no-repeat;height: 24px;}
+.validshowmess{float: left;margin-left: 5px;display: block;color:#333333; padding-left:20px;width: 200px; height: 24px;background: #F2F2F2;}
+
+.home_login{float: left; padding: 0 20px; }
+.home_login .left{float: left; width: 700px;margin-left: 10px;}
+.home_login .left .rotetor{float: left; width: 100%;height:280px;position: relative;overflow: hidden;}
+.home_login .left .rotetor .con{ float: left;height: 350px;position: absolute;top: 0; }
+.home_login .left .rotetor .con img{float: left;height: 350px;}
+.home_login .left .rotetor .btn{background: #CACACA; display: block; filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity: 0.5;opacity: 0.5; cursor: pointer; position: absolute;font-size: 20px;line-height: 25px;text-align: center; width: 40px;height: 40px;right: 50%;top: 50%; }
+.home_login .left .rotetor .btn:hover{background:#000000;}
+.home_login .left .rotetor .btn span{margin-left: 8px; display: block;width: 22px; height: 24px;margin-top: 8px; background: url("../Images/icon.png") no-repeat;}
+.home_login .left .rotetor .prevbtn{left: 0;}
+.home_login .left .rotetor .nextbtn{ right: 0;}
+.home_login .left .rotetor .nextbtn span{ background-position: 0 -24px;}
+.home_login .left .rotetor .viewcon{ position: absolute;right: 50%;top: 50%; height: 20px;background: #cacaca;padding-right: 5px; filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity: 0.5;opacity: 0.5;}
+.home_login .left .rotetor .viewcon div{ float: left;width: 10px;height: 10px;margin-left: 5px;margin-top: 5px; border-radius: 10px;background: #7A83A5;cursor: pointer;}
+.home_login .left .rotetor .viewcon .select{ background: #f36b18;}
+.home_login .login{float: left;width: 400px;margin-top: 0px;}
+.home_login .login .dl{ float: left;}
+.home_login .login .dl dt{ float: left;width: 360px;padding-left: 20px;margin-top: 20px;}
+.home_login .login .dl dt .in{float: left; width: 308px;  }
+.home_login .login .dl dt .bor{border: 1px solid #E1E1E1;}
+.home_login .login .dl dt .in .tc{ float: left;}
+.home_login .login .dl dt .in .text{color: #999999;border: 0;font-family: arial,"宋体";font-size: 14px;height: 32px; line-height: 32px;padding: 4px 20px 4px 3px;width: 255px;text-indent: 8px;outline: none}
+.home_login .login .dl dt .in .select{color: #000;outline:none }
+.home_login .login .dl dt .code{color: #999999;float: left; width: 100px;font-family: arial,"宋体";font-size: 14px;height: 32px; line-height: 32px;padding: 2px 2px 2px 2px;}
+.home_login .login .dl dt .select{color: #000; }
+.home_login .login .dl dt .codeimg{float: left;height: 38px;margin-left: 5px;}
+.home_login .login .dl dt .codediv{ float: left;padding-left: 10px;}
+.home_login .login .dl dt .iname{float: left;display: block; background: url("../Images/one4.jpg") no-repeat;height: 16px;margin-top: 12px;width: 16px;margin-left: 6px;}
+.home_login .login .dl dt .ipass{float: left;display: block; background: url("../Images/one5.jpg") no-repeat;height: 16px;margin-top: 12px;width: 16px;margin-left: 6px;}
+.home_login .login .dl dt .sub{ width: 270px;}
+.home_login .login .dl dt .sub .input{ width: 308px;border: 1px solid #1ba4e3; height: 36px;background: #1ba4e3;color: #fff;font-size: 14px}
+.home_login .login .dl dt .sub:hover input{ background-position: 0 -36px;}
+.home_login .login .pass{ border: 1px solid #7ABD54;}
+.home_login .login .error{ border: 1px solid #ff0000;}
+.home_login .login .failure{border: 0px solid #ff0000;margin-bottom: 2px; color: #ff0000;display: block;width: 268px;height: 20px;line-height: 20px; }
+
+
+.login-bg{ float: left;width: 1600px;height: 816px; }
+.login-bd{position: fixed;background: #fff;width: 390px;height: 360px;left: 50%;top:50%;margin-left: -195px;margin-top: -200px;
+    box-shadow:0px 6px 8px #969696;-moz-box-shadow: 0px 6px 8px #969696;-webkit-box-shadow: 0px 6px 8px #969696
+}
+.login-logo{position: absolute;top:-70px;left: 100px}
+.login-bd h2{text-align: center;font-size: 18px;color: #000;padding-top: 28px;}
+
+
+
+
+/*login*/
+.login-bg2{position: fixed;left: 0;right: 0;bottom: 0;top: 0;}
+.login-bg2 img{vertical-align: middle;width: 100%;height: 100%}
+.coagent{padding-top: 0px;font-size: 12px;margin-top: -10px;}
+.coagent .coage-l{float: left}
+.coagent .coage-l input[type=checkbox]{vertical-align: middle;margin-top: -2px;margin-right: 3px}
+.coagent .coage-r{float: right;color: #1ba4e3;padding-right: 50px;}

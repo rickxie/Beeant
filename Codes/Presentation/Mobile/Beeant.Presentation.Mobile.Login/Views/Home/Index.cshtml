@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "用户登录";
+    ViewBag.TopName = "用户登录";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head
+{
+    @Styles.Render("~/Content/Site.css")
+    @Scripts.Render("/Scripts/home.js")
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@model Beeant.Presentation.Mobile.Login.Models.Home.LoginModel
+<div class="login">
+    @using (Html.BeginForm("FormLogin", "Home", FormMethod.Post, new { autocomplete = "off" }))
+    {
+        @Html.HiddenFor(it=>it.Url)
+        <dl class="dl">
+            <dt>
+                <div class="in bor">
+                    <div class="tc">
+                        @Html.TextBoxFor(it => it.Name, new { @class = "text", id = "loginName", @Value = (Model == null || string.IsNullOrEmpty(Model.Name) ? "用户名/已验证邮箱/已验证手机" : Model.Name), DefaultValue = "用户名/已验证邮箱/已验证手机" })
+                    </div>
+                    <i class="iname"></i>
+                </div>
+            </dt>
+            <dt>
+                <div class="in bor">
+                    <div class="tc">
+                        @Html.TextBoxFor(it => it.Password, new { @class = "text", id = "loginPass", @Value = "登录密码" })
+                    </div>
+                    <i class="ipass"></i>
+                </div>
+            </dt>
+            <dt style="@(Model.IsShowCode?"":"display:none;")">
+                    @Html.TextBoxFor(it => it.Code, new { @class = "code bor", id = "loginCode", maxlength = "4", @Value = "验证码",IsShowCode=Model.IsShowCode.ToString().ToLower() })
+                    <img id="imgCode" src="/Home/Code" alt="" class="codeimg" />
+                    <div class="codediv">
+                        <a href="javascript:void(0);" id="aCode">看不清楚?</a>
+                    </div>
+                </dt>
+            @*<dt>
+                <a href="@Html.GetUrl("PresentationMobilePasswordUrl")">忘记密码?</a>
+                <a href="@Html.GetUrl("PresentationMobileRegisterUrl")">注册</a>
+            </dt>*@
+            <dt>
+                @if (Model != null && Model.Errors != null && Model.Errors.Count > 0)
+                {
+                    <span class="failure">@Model.Errors[0].Message</span>
+                }
+                <a href="javascript:void(0);" class="sub"><input id="loginSubimt" type="submit" value="登录" class="input" /></a>
+            </dt>
+        </dl>
+    }
+</div>
+
+
+
+ 

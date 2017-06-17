@@ -1,0 +1,144 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "结算中心";
+}
+@using Component.Extension
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities
+@using Beeant.Domain.Entities.Member
+@using Winner.Persistence
+@model Beeant.Presentation.Mobile.Buy.Models.Home.BuyModel
+
+
+<div class="buy">
+    @if (Model != null && Model.Products != null && Model.Products.Count > 0)
+    {
+
+        <div class="addrress" Url="@Html.GetUrl("PresentationMobileMemberUrl")/Address/Index">
+                @if (Model.Address != null)
+                {
+                    <div class="recipient">
+                        @Model.Address.Recipient
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        @Model.Address.Mobile
+                    </div>
+                    <div class="detail">
+                        @Model.Address.Address
+                    </div>
+                    <input type="hidden" name="AddressId" value="@(Model.Address==null?0:Model.Address.Id)"/>
+                }
+            </div>
+
+        <div id="divGoods" class="goods">
+            @{
+                var i = 0;
+                var k = 0;
+                foreach (var order in Model.Orders)
+                {
+
+                    <div class="partner" colspan="4">@(order.SaleAccount.Id == 0 ? "" : order.SaleAccount.RealName)</div>
+                    <table class="table" id="tbSettlement@(i)">
+                        <tr>
+                            <th>商品</th>
+                            <th>价格</th>
+                            <th>数量</th>
+                        </tr>
+                        @foreach (var product in order.Products)
+                        {
+                            if (product.Product != null)
+                            {
+                                <tr>
+                                    <td class="name">
+                                        <input type="hidden" name="ProductId" value="@product.ProductId" />
+                                        <img class="img" alt="" src="@product.Product.GetFullFileName(product.Product.FileName, "s")">
+                                        <span class="span">@product.Product.Name</span>
+                                        @if (product.Product.Promotion != null)
+                                        {
+                                            <img src="/Images/hdicon.png" alt="" class="promotion" />
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (product.Product.Price > product.Price)
+                                        {
+                                            <span class="unprice">@product.Product.Price</span>
+                                        }
+                                        <span class="price">@product.Price</span>
+                                    </td>
+                                    <td class="count">
+                                        <a name="btnSubCount" href="javascript:void(0)" class="normal" Buyer="Down" ProductId="@product.ProductId">-</a>
+                                        <input name="Count" type="text" class="countinput" value="@product.Count" Price="@product.Price" DiscountPrice="@product.DiscountPrice" Buyer="Count" SaleId="@order.SaleAccount.Id" ProductId="@product.ProductId" OriginCount="@product.Count" MaxCount="@product.Product.Count" OrderMinCount="@product.OrderMinCount" OrderLimitCount="@product.OrderLimitCount" OrderStepCount="@product.OrderStepCount"/>
+                                        <a name="btnAddCount" href="javascript:void(0)" class="normal" Buyer="Up" ProductId="@product.ProductId">+</a>
+                                    </td>
+                                </tr>
+                                k = k + 1;
+                            }
+                        }
+                    </table>
+                    i = i + 1;
+                }
+
+                <div class="order">
+                    <div class="total">
+                        共<span Buyer="Count" class="red">@(Model.Products.Sum(it => it.Count))</span>件
+                        @if (Model.DiscountPrice != 0)
+                        {
+                            @:优惠
+                            @: <span class="red" Buyer="DiscountPrice">@((Model.DiscountPrice).ToString("f2"))</span>
+                        }
+                        @if (Model.CouponPrice!=0 )
+                        {
+                            @:抵扣
+                            @: <span class="red" >@((Model.CouponPrice).ToString("f2"))</span>
+                        }
+                        @if (@Model.FreightPrice != 0)
+                        {
+                            @:运费
+                            @: <span class="red">@Model.FreightPrice.ToString("f2")</span>
+                        }
+                      
+                        合计<span class="red" Buyer='Price' style="padding-right: 10px;">@Model.FactPrice.ToString("f2")</span>
+                    </div>
+                    <input id="btnSubmit" type="button" value="确认结算" class="btn"/>
+                </div>
+                <div class="loading" style="display: none;"><img src='@Html.GetUrl("PresentationMobileSharedUrl")/Images/loading.gif' style='width:50px;height:50px;' /></div>
+            }
+        </div>
+    }
+    <div id="divPayTypes" style="display: none;" class="paycon" >
+        <form action="" target="frPayType" id="fmPayType" method="GET" >
+            <input type="hidden" name="ChannelType" value="@((int) ChannelType.Mobile)" />
+            <input type="hidden"  name="OrderIds" value="" />
+            <input type="hidden" name="trade_type" value=""/>
+            <input type="hidden" id="hfseccesshandle" name="seccesshandle" value="parent.seccess"/>
+            <input type="hidden" id="hffailhandle"  name="failhandle" value="parent.fail"/>
+            <input type="hidden" id="hfcreatehandle" name="createhandle" value="parent.create" />
+            <div class="closecon"><div class="close" id="divClose"></div></div>
+            <div class="paytype">
+                支付方式:
+                <select id="selPayTypes" class="select" NopayUrl="@Html.GetUrl("PresentationMobileOrderUrl")/home/index">
+                    @if (Model != null && Model.PayTypes != null)
+                    {
+                        foreach (var payType in Model.PayTypes)
+                        {
+                            <option value="@payType.Url">@payType.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div class="tip">需要支付:$<span Buyer='Price' style="padding-right: 10px;">@Model.FactPrice.ToString("f2")</span></div>
+            <div class="btncon"><input id="btnPay" type="submit" value="确认付款" class="btn" /></div>
+        </form>
+
+    </div>
+    <div class="buymask" style="display: none;"></div>
+</div>
+<iframe name="frPayType" id="frPayType" class="frame" style="display: none;"></iframe>
+<script type="text/javascript">
+    document.domain = '@(Configuration.ConfigurationManager.GetSetting<string>("Domain"))';
+    window.PayUrl = '@Html.GetUrl("PresentationMobileOrderUrl")';
+</script>
+@Scripts.Render("~/Scripts/Winner/Buyer/Winner.Buyer.js")
+@Scripts.Render("~/Scripts/Winner/Dialog/Winner.Dialog.js")
+@Scripts.Render("/Scripts/Winner/Validator/Winner.Validator.js")
+@Scripts.Render("~/Scripts/home.js")

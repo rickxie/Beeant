@@ -1,0 +1,73 @@
+﻿body{ margin: 0;padding: 0;}
+@font-face {
+    font-family: 'titlefamily';
+    src: url('../fonts/方正行楷简体.eot');
+    src: local('☺'),
+         url('方正行楷简体.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'aboutfamily';
+    src: url('../fonts/兰亭黑GBK.eot');
+    src: local('☺'),url('兰亭黑GBK.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'tipfamily';
+    src: url('../fonts/方正小标宋.eot');
+    src: local('☺'),url('方正小标宋.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+.page{ float: left;width: 2468px;height: 3508px}
+.page .bg{width: 2468px;height: 3508px}
+.page .bg img{ width: 100%;height: 100%;}
+
+.page .fontcover{position: absolute; width: 100%;top: 0;}
+.page .fontcover .domain{ float: left;width: 1500px; font-size: 40px;font-family: "aboutfamily";padding: 200px 0 0 150px;}
+.page .fontcover .name{float: left;padding-left: 500px;width: 1500px; color: #4a4b4d;text-align: center;font-size: 200px;line-height: 200px;font-family: "titlefamily";padding-top: 300px;}
+.page .fontcover .logo{float: left; width: 500px; margin: 150px 0 0 0;}
+.page .fontcover .logo img{ width: 400px;height: 400px;}
+
+.page .about{position: absolute; width: 2468px;top: 0;}
+.page .about .desc{padding: 500px 200px 20px 300px;line-height: 110px;font-size: 50px;font-family: "aboutfamily";color: #4a4b4d;margin-top: 292px;}
+
+.page .backcover{position: absolute; width: 2468px;top: 0;}
+.page .backcover .name{ width: 100%;text-align: center;color: #4a4b4d;font-size: 50px;line-height: 100px;font-family: "aboutfamily";margin-top: 700px;}
+.page .backcover .qrcode{ width: 100%;text-align: center;margin-bottom: 400px;}
+.page .backcover .qrcode img{width: 800px;height: 800px;}
+.page .backcover .lianxi{float: left;width: 2000px; padding: 700px 0 0 100px; }
+.page .backcover .contact{ text-align: left;line-height: 100px;font-size: 50px;font-family: "tipfamily";}
+.page .backcover .pz{ float: left;width: 100%;padding: 100px 0 0 0; }
+.page .backcover .pz .font{ float: left;text-align: right;font-family: "aboutfamily";line-height: 40px;width: 1800px;padding-top: 320px;font-size: 40px;}
+.page .backcover .pz .img{float: left;padding-left: 100px; float: left;}
+.page .backcover .pz .img img{ width: 400px;height: 400px;}
+
+.page .catalog{float: left; width: 100%;margin-top: 50px;}
+.page .catalog .name{float: left;padding-left: 200px;width: 1000px;height: 350px;line-height: 350px;background: #5c90c4;color: #ffffff; text-align: left;font-size: 150px;font-family: "tipfamily"}
+.page .catalog .qr{float: right;font-size: 20px; text-align: center;width: 300px;height: 300px;margin-right: 86px;}
+.page .catalog .qr .font{ line-height: 50px;overflow: hidden;font-size: 20px;}
+.page .catalog .qr img{width: 300px;height: 300px;}
+
+.page .commodity{ float: left;width: 100%;}
+.page .commodity .element{ float: left;width: 700px;height: 900px;margin: 50px 0 0 100px;}
+.page .commodity .element .img{ float: left;width: 100%;height: 700px;text-align: left;}
+.page .commodity .element .img img{width: 700px;height: 700px;}
+.page .commodity .element .left{ float: left;width: 500px;height: 250px;}
+.page .commodity .element .name{float: left;border-bottom: #363d49 solid 2px; width: 100%;text-align: left;font-family: "aboutfamily";height: 200px; line-height: 300px;font-size: 35px;}
+.page .commodity .element .tip{float: left; width: 100%; font-size: 20px;padding-top: 10px;}
+.page .commodity .element .qr { float: left;width: 200px;margin-top: 50px;text-align: right;}
+.page .commodity .element .qr img{width: 200px;height: 200px;}
+
+
+.page .allcommodity{ float: left;width: 100%;}
+.page .allcommodity .element{ float: left;width: 700px;height: 1000px;margin: 130px 0 0 100px;}
+.page .allcommodity .element .img{ float: left;width: 100%;height: 700px;text-align: left;}
+.page .allcommodity .element .img img{width: 700px;height: 700px;}
+.page .allcommodity .element .left{ float: left;width: 400px;height: 300px;}
+.page .allcommodity .element .name{float: left;border-bottom: #363d49 solid 2px; width: 100%;text-align: left;font-family: "aboutfamily";height: 200px; line-height: 300px;font-size: 40px;}
+.page .allcommodity .element .tip{float: left; width: 100%; font-size: 20px;padding-top: 10px;}
+.page .allcommodity .element .qr { float: left;width: 300px;margin-top: 50px;text-align: right;}
+.page .allcommodity .element .qr img{width: 250px;height: 250px;}

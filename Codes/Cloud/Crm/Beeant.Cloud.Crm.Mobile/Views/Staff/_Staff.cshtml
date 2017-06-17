@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "";
+}
+@model Beeant.Cloud.Crm.Mobile.Models.Staff.StaffListModel
+@if (Model != null && Model.Staffs != null)
+{
+    foreach (var staff in Model.Staffs)
+    {
+        <div class="element" DataId="@staff.Id">
+            <div class="name"> @staff.Name</div>
+            <input class="edit" name="unbind" type="button" value="取消绑定" style="@(staff.Account==null || staff.Account.Id==0?"display: none;":"")" />
+            <input class="remove" style="display: none;" style="display: none;" value="删除" />'
+        </div>
+    }
+}

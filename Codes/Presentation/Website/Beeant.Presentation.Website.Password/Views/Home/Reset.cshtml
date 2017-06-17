@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "找回密码";
+    ViewBag.TopName = "找回密码";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities.Account
+@using Winner.Persistence
+@model Beeant.Presentation.Website.Password.Models.Home.PasswordModel
+@section head
+{
+    @Scripts.Render("~/Scripts/home.js")
+    @Styles.Render("~/Content/Site.css")
+    @Scripts.Render("/Scripts/Winner/Validator/Winner.Validator.js")
+}
+<script type="text/javascript">
+    $(document).ready(function() {
+        var pass = new Password({
+            ValidateEntities: @(Html.ScriptValidator<AccountEntity>(SaveType.Modify, new[] {"Password"}).Gets())
+          });
+          pass.Initialize();
+         });
+</script>
+
+ 
+<div class="pass">
+    @Html.Partial("_Top", Model)
+    @using (Html.BeginForm("Reset", "Home", FormMethod.Post, new { autocomplete = "off" }))
+    {
+        <input type="hidden" name="Name" value="@(Model==null?"":Model.Name)" />
+        <input type="submit" style="display: none;" onclick=" return false; " />
+            <dl class="dl">
+                <dt>
+           
+                    <span class="con">
+                        @Html.TextBoxFor(it => it.Password, new { @class = "text ipass bor", id = "txtPassword", @Value = "设置密码", DefaultValue = "设置密码" })
+                    </span>
+
+                </dt>
+                <dt>
+        
+                    <div class="passstrength" id="divPassStrength"></div>
+                </dt>
+                <dt>
+            
+                    <span class="con">
+                        @Html.TextBoxFor(it => it.SurePassword, new { @class = "text ipass bor", id = "txtSurePassword", @Value = "确认密码", DefaultValue = "确认密码" })
+                    </span>
+                </dt>
+
+                @if (Model != null && Model.Errors != null && Model.Errors.Count > 0)
+                {
+                    <dt>
+                 
+                        <span class="failure">@Model.Errors[0].Message</span>
+                    </dt>
+                }
+                <dt>
+
+                
+                    <a href="javascript:void;" class="btn"><input id="btnSubmit" type="submit" value="下一步" /></a>
+                </dt>
+            </dl>
+
+    }
+
+</div>
+
+   
+    

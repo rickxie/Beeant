@@ -1,0 +1,9 @@
+G:\Program\Beeant\Codes\Infrastructure\Dependent\bin\Release\Dependent.dll
+G:\Program\Beeant\Codes\Infrastructure\Dependent\bin\Release\Dependent.pdb
+G:\Program\Beeant\Codes\Infrastructure\Dependent\bin\Release\Winner.dll
+G:\Program\Beeant\Codes\Infrastructure\Dependent\bin\Release\Newtonsoft.Json.dll
+G:\Program\Beeant\Codes\Infrastructure\Dependent\bin\Release\Winner.pdb
+G:\Program\Beeant\Codes\Infrastructure\Dependent\bin\Release\Newtonsoft.Json.xml
+G:\Program\Beeant\Codes\Infrastructure\Dependent\obj\Release\Dependent.csprojResolveAssemblyReference.cache
+G:\Program\Beeant\Codes\Infrastructure\Dependent\obj\Release\Dependent.dll
+G:\Program\Beeant\Codes\Infrastructure\Dependent\obj\Release\Dependent.pdb

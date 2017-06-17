@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@using Beeant.Domain.Entities
+@model Beeant.Cloud.Site.Admin.Models.Commodity.CommodityListModel
+@if (Model != null && Model.Commodities != null)
+{
+    foreach (var commodity in Model.Commodities)
+    {
+        <div class="element" DataId="@commodity.Id" Sequence="@commodity.Sequence">
+            <div class="content">
+                <img src="@Html.GetPreRenderPicture()"  data-original="@(string.IsNullOrEmpty(commodity.FileName) ? Html.GetNoPicture() : commodity.GetFullFileName(commodity.FileName, "i"))?v=@DateTime.Now.Ticks"   class="img" alt="" />
+                <div class="name">@commodity.Name</div>
+               
+            </div>
+            <div class="select" style="display: none;">
+
+            </div>
+            <div class="selectok" style="display: none;"></div>
+        </div>
+    }
+}

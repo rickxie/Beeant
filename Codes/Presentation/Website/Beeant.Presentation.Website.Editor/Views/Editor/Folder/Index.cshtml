@@ -1,0 +1,114 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.NavIndex = 3;
+}
+@using Component.Extension
+@using Beeant.Basic.Services.Mvc.ComboBox
+@using Beeant.Basic.Services.Mvc.DrowDownList
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities.Account
+@using Beeant.Domain.Entities.Basedata
+@using Beeant.Domain.Entities.Member
+@using Winner.Persistence
+@using Winner.Persistence.Linq
+@using System.Linq;
+@using Beeant.Domain.Entities.Editor
+@using Beeant.Domain.Entities.Welfare
+@model Beeant.Presentation.Website.Editor.Models.Editor.FolderListModel
+@section head
+{
+    <link href="/Content/Folder.css" rel="stylesheet" />
+    <link href="/Scripts/tip-yellow/tip-yellow.css" rel="stylesheet" type="text/css" />
+    <script src="/Scripts/backTop.js" type="text/javascript"></script>
+    <script src="/Scripts/code.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery.poshytip.min.js" type="text/javascript"></script>
+
+}
+<div class="w1065 clearfix">
+    <div class="RightBar">
+
+        <div class="searchWarp">
+            <form action="/Folder/Index" method="GET">
+                <div class="search_dl clearfix">
+                    <dl>
+                        <dt>名称</dt>
+                        <dd><input name="Name" type="text" value="@(Model==null?"":Model.Name)"></dd>
+                    </dl>
+
+                    <dl>
+                        <dd><input class="s_btn" value="查询" type="submit"></dd>
+                    </dl>
+                </div>
+            </form>
+        </div>
+        @Html.Partial("~/Views/Editor/Folder/_Folder.cshtml")
+
+        <!--弹出窗口 start-->
+        <div class="win_popup" id="divContent">
+            <div class="win_popup_box" style="width: 800px; height: 700px; margin: -150px 0 0 -225px; top:150px; ">
+                <div class="win_popup_box_title">
+                    <h2>增加文件夹</h2><span class="close"></span>
+                </div>
+                <input type="hidden" id="hfId" />
+                <div class="win_popup_box_main" style="overflow: auto; height: 600px;">
+                    <p>&nbsp;</p>
+
+                    <input type="hidden" id="txtId" />
+                    <div class="info_box">
+                        <div class="info_box_list">
+                            <h2>基本信息</h2>
+                            <div class="dls">
+                                <dl class="clearfix">
+                                    <dt>名称<i>*</i></dt>
+                                    <dd>
+                                        <input id="txtName" ValidateName="Name" class="input_text" type="text">
+
+                                    </dd>
+                                </dl>
+
+                                <dl class="clearfix">
+                                    <dt>类型<i>*</i></dt>
+                                    <dd>
+                                        @(Html.DropDownList().EnumPartial<FolderType>("~/Views/Shared/_DropDownList.cshtml", new DropDownListModel { Id = "ddlType", Name = "Type", SelectValue = "" }))
+
+
+                                    </dd>
+                                </dl>
+                                <dl class="clearfix">
+                                    <dt>排序<i>*</i></dt>
+                                    <dd>
+                                        <input id="txtSequence" ValidateName="Sequence" class="input_text" type="text">
+
+                                    </dd>
+                                </dl>
+
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="btn_box">
+                        <input type="button" id="btnSave" class="btn_ok" value="确定" />
+                        <input type="button" class="btn_clear" value="取消" name="close" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="~/Scripts/winner/validator/winner.Validator.js"></script>
+<!--弹出窗口 end-->
+<script type="text/javascript">
+    @{
+        var pis = new[] {"Name", "Sequence", "Type"};
+        @(Html.ScriptValidator<FolderEntity>(SaveType.Add, pis).Initialize("divContent", "btnSave"))
+
+    }
+    window.Validator = validator;
+</script>
+<script type="text/javascript" src="~/Scripts/Plug/WdatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="~/Scripts/Winner/CheckBox/Winner.CheckBox.js"></script>
+<script type="text/javascript" src="~/Scripts/Winner/ConfirmBox/Winner.ConfirmBox.js"></script>
+<script type="text/javascript" src="~/Scripts/Editor/Folder.js"></script>

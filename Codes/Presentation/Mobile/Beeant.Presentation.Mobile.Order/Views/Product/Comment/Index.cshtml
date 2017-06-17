@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "商品点评";
+}
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities
+@using Beeant.Domain.Entities.Product
+@using Winner.Persistence
+@model Beeant.Presentation.Mobile.Order.Models.Product.CommentModel
+@section head
+{
+    @Styles.Render("~/Content/site.css")
+}
+<form id="fmSave" action="/Comment/Add" method="POST">
+    @Html.HiddenFor(it => it.ProductId)
+    @Html.HiddenFor(it => it.OrderId)
+    <div class="comment">
+        <div class="edit">
+            <div class="element" >
+                <textarea name="Detail" class="input @(Model != null ? "" : "ctrlshow")" type="text" ShowValue="请输入评价内容" ValidateName="Detail" style="height: 300px;">@(Model != null && !string.IsNullOrEmpty(Model.Detail) ? Model.Detail : "请输入评价内容")</textarea>
+            </div>
+            <div class="element" style="text-align: center;">
+                <input type="radio" class="mui-checkbox" id="rdType1" name="Type" value="@((int) CommentType.Good)" checked="checked"/>
+                <label for="rdType1">@(CommentType.Good.GetName())</label>
+                <input  type="radio" style="margin-left: 25%;" class="mui-checkbox" id="rdType2" name="Type" value="@((int) CommentType.General)"/>
+                <label for="rdType2">@(CommentType.General.GetName())</label>
+                <input type="radio" style="margin-left: 25%;"  class="mui-checkbox" id="rdType3" name="Type" value="@((int) CommentType.Bad)"/>
+                <label for="rdType3">@(CommentType.Bad.GetName())</label>
+            </div>
+            @if (Model != null && !string.IsNullOrEmpty(Model.Message))
+            {
+                <div class="element">
+                    <span class="@(Model.Result ? "success" : "failure")">@Model.Message</span>
+                </div>
+            }
+                <input type="submit" class="save" value="保存" id="btnSave" />
+            </div>
+    </div>
+</form>
+
+@Scripts.Render("~/scripts/Winner/Validator/winner.validator.js")
+@Scripts.Render("~/scripts/address.js")
+<script type="text/javascript">
+    $(document).ready(function () {
+        @{
+                var pis = new[] {"Detail"};
+                @(Html.ScriptValidator<CommentEntity>(SaveType.Add, pis).Initialize("fmSave", "btnSave"))
+        }
+    });
+</script>

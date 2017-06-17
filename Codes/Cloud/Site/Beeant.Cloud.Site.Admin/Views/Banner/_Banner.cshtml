@@ -1,0 +1,17 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Extension
+@model Beeant.Cloud.Site.Admin.Models.Banner.BannerListModel
+@if (Model != null && Model.Banners != null)
+{
+    foreach (var banner in Model.Banners)
+    {
+        <div class="element" Sequence="@banner.Sequence" DataId="@banner.Id">
+            <div class="up" ></div>
+            <img src="@Html.GetPreRenderPicture()" class="imgp" data-original="@(string.IsNullOrEmpty(banner.FileName) ? Html.GetNoPicture() : banner.FullFileName)?v=@DateTime.Now.Ticks" />
+            <div class="down" ></div>
+            <input class="remove" type="button" style="display: none;"  value="删除" />
+        </div>
+    }
+}

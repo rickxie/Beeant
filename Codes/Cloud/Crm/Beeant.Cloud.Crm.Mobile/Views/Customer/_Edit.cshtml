@@ -1,0 +1,88 @@
+﻿@{
+    Layout = "";
+}
+@using Beeant.Basic.Services.Mvc.Script
+@using Beeant.Domain.Entities.Crm
+@using Winner.Persistence
+@model Beeant.Cloud.Crm.Mobile.Models.Customer.CustomerListModel
+<div class="addcontent" style="display: none;">
+
+    <div class="content" id="divContent">
+        <input type="hidden" id="hfId"/>
+        <div class="saveele">
+            <input type="text" id="txtName" class="input ctrlshow" ValidateName="Name" value="客户名称" ShowValue="客户名称"/>
+        </div>
+
+        <div class="saveele">
+            <select id="selCustomerType">
+
+
+                @if (Model != null && Model.CustomerTypes != null)
+                {
+                    foreach (var customerType in Model.CustomerTypes)
+                    {
+                        <option value="@customerType.Id">@customerType.Name</option>
+                    }
+                }
+            </select>
+            <select id="selCustomerChannel">
+
+
+                @if (Model != null && Model.CustomerChannels != null)
+                {
+                    foreach (var customerChannel in Model.CustomerChannels)
+                    {
+                        <option value="@customerChannel.Id">@customerChannel.Name</option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="saveele">
+            <input type="text" id="txtLinkman" class="input ctrlshow" ValidateName="Linkman" value="联系人" ShowValue="联系人"/>
+        </div>
+        <div class="saveele">
+            <input type="text" id="txtMobile" class="input ctrlshow" ValidateName="Mobile"  value="客户手机号码" ShowValue="客户手机号码"/>
+        </div>
+        <div class="saveele">
+            <input type="text" id="txtTelephone" class="input ctrlshow" ValidateName="Telephone" value="客户固定电话" ShowValue="客户固定电话"/>
+        </div>
+        <div class="saveele">
+            <input type="text" id="txtWeixin" class="input ctrlshow" ValidateName="Weixin" value="客户微信" ShowValue="客户微信" />
+        </div>
+        <div class="saveele">
+            <input type="text" id="txtQq" class="input ctrlshow" ValidateName="Qq" value="客户QQ" ShowValue="客户QQ"/>
+        </div>
+        <div class="saveele">
+            <input type="text" id="txtEmail" class="input ctrlshow" ValidateName="Email" value="客户邮箱" ShowValue="客户邮箱"/>
+        </div>
+        <div class="saveele">
+            <input type="text" id="txtAddress" class="input ctrlshow" ValidateName="Address" value="客户地址" ShowValue="客户地址" />
+        </div>
+        <div class="saveele">
+            <input name="gender" value="男" checked="checked" type="radio" group="gender" id="rdMan"/>
+            <label for="rdMan">男</label>
+            <input name="gender" value="女" group="gender" type="radio"  id="rdFemale"/>
+            <label for="rdFemale">女</label>
+            <input name="gender" value="未知" group="gender" type="radio"  id="rdUnknow"/>
+            <label for="rdUnknow">未知</label>
+        </div>
+        <div class="saveele">
+            <input type="text" id="txtRemark" class="input ctrlshow" ValidateName="Remark" value="备注" ShowValue="备注" />
+        </div>
+       
+    </div>
+    <div class="ope">
+        <input type="button" class="cancel" id="btnCancel" value="取消"/>
+        <input type="button" class="save" id="btnSave" value="保存"/>
+    </div>
+</div>
+<script type="text/javascript">
+     $(document).ready(function () {
+         @{
+             var pis = new[] { "Name", "Linkman", "Mobile", "Telephone", "Weixin", "Qq", "Email", "Address", "Remark" };
+             @(Html.ScriptValidator<CustomerEntity>(SaveType.Add, pis).Initialize("divContent", ""))
+
+         }
+         window.Validator = validator;
+     });
+</script>

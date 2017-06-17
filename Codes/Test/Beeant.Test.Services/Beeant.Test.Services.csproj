@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CCDA7221-CD6B-4153-B6AD-A591F91DA25E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Beeant.Test.Services</RootNamespace>
+    <AssemblyName>Beeant.Test.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Finance\WechatTestService.cs" />
+    <Compile Include="Order\OrderTestService.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\MobileRepositoryTest.cs" />
+    <Compile Include="TestBase.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\Beeant.Application.Dtos\Beeant.Application.Dtos.csproj">
+      <Project>{b6c7ee5c-b100-4718-9aee-c06de5275d08}</Project>
+      <Name>Beeant.Application.Dtos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Application\Beeant.Application.Services\Beeant.Application.Services.csproj">
+      <Project>{150B2973-7C54-4E2E-9B1F-29B98789E886}</Project>
+      <Name>Beeant.Application.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domain\Beeant.Domain.Entities\Beeant.Domain.Entities.csproj">
+      <Project>{C7ED9DE4-7073-4DCF-9513-D9EA6E86E537}</Project>
+      <Name>Beeant.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domain\Beeant.Domain.Services\Beeant.Domain.Services.csproj">
+      <Project>{5C59D27E-2F1E-4AA9-88BC-789ABF93281D}</Project>
+      <Name>Beeant.Domain.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Component\Component.csproj">
+      <Project>{1A1BD7ED-0CD2-46B7-B135-88A54FCA33C6}</Project>
+      <Name>Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Configuration\Configuration.csproj">
+      <Project>{EB334C7B-6CF1-4ED8-ABFB-A41D46566F8A}</Project>
+      <Name>Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Dependent\Dependent.csproj">
+      <Project>{33BC44CB-2427-42E2-A9DA-D57D80519760}</Project>
+      <Name>Dependent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Winner\Winner.csproj">
+      <Project>{462D6461-F2A0-4058-96E3-64677A31B1E8}</Project>
+      <Name>Winner</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Repository\Beeant.Repository.Services\Beeant.Repository.Services.csproj">
+      <Project>{D876EE31-D4E2-4A84-BB70-C30CD79DE8D9}</Project>
+      <Name>Beeant.Repository.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

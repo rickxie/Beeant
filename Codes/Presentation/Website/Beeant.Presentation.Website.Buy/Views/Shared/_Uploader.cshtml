@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "";
+}
+@model Beeant.Presentation.Website.Uploader.UploaderModel
+<div id="container@(Model.Id)" class="uploader">
+    @if (!Model.IsHideImage)
+    {
+        <div Uploader="View" class="view" >
+            <img id="img@(Model.Id)"   alt="" @(!string.IsNullOrEmpty(Model.FileName) ? "src=" + Model.FileName + "?vesion=" + DateTime.Now.Ticks : "")/>
+        </div>
+    }
+    <div class="file">
+        <input type="file" id="file@(Model.Id)" name="file" @(Model.IsMultiple?"multiple=true":"") @(string.IsNullOrEmpty(Model.Accept)?"":Model.Accept) Uploader="File"  ValidateName = "@(string.Format("{0},{1}",Model.FileNameValidateName,Model.FileByteValidateName))"></input>
+    </div>
+                     
+</div>
+@Scripts.Render("/Scripts/Winner/Uploader/Winner.Uploader.js")
+<script type="text/javascript">
+    $(document).ready(function () {
+        var uploader = new Winner.Uploader("container@(Model.Id)", { StyleFile: "" });
+        uploader.Initialize();
+    });
+</script> 

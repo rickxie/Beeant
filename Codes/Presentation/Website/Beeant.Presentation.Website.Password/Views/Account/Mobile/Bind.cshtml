@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "绑定手机";
+}
+@model Beeant.Presentation.Website.Password.Models.Account.MobileModel
+@section head
+{
+    @Styles.Render("~/Content/Site.css")
+}
+
+
+<div class="pass">
+    @Html.Partial("~/Views/Account/Mobile/_Top.cshtml", Model)
+
+    <form action="/Mobile/Action" method="POST">
+
+        <input type="submit" style="display: none;" onclick=" return false; "/>
+        <dl class="dl">
+            <dt>
+                <span class="con">
+                    <input type="text" name="Mobile" class="text ipass bor" id = "txtValue"  DefaultValue = "设置手机号码" value="@(!string.IsNullOrWhiteSpace(Model.Mobile)?Model.Mobile: Model.Account!=null && !string.IsNullOrEmpty(Model.Account.Mobile) && !Model.Account.IsActiveMobile?Model.Account.Mobile:"设置手机号码")"/>
+                </span>
+
+            </dt>
+            <dt>
+   
+                <span class="con">
+                    <input type="text" name="ClientCode" class="code bor" style="float: left;" id="txtClientCode" value="请输入右边验证码" DefaultValue="请输入右边验证码" />
+                    <img id="imgCode" src="/Mobile/Code" alt="" class="codeimg" />
+                    <div class="codediv">
+                        <a href="javascript:void(0);" id="hfCode" url="/Mobile/Code">看不清楚?</a>
+                    </div>
+                </span>
+
+            </dt>
+
+            <dt>
+    
+                <span class="con">
+                    <input type="text" name="Code" id="txtCode" class="code bor" maxlength="6" value="请输入收到的验证码" DefaultValue="请输入收到的验证码"  />
+                    <input type="button" id="btnCode" value="获取验证码" class="btncode" url="/Mobile/SendCode" />
+                </span>
+
+            </dt>
+            @if (Model != null && !Model.Result)
+            {
+                <dt>
+
+                    <span class="failure">手机验证码错误</span>
+                </dt>
+            }
+            else if (Model != null && Model.Errors != null && Model.Errors.Count > 0)
+            {
+                <dt>
+           
+                    <span class="failure">@Model.Errors[0].Message</span>
+                </dt>
+            }
+            <dt>
+  
+                <input type="hidden" id="hfAction" name="Action" value="@Model.Action"/>
+                <a href="javascript:void;" class="btn"><input id="btnSubmit" type="submit" value="下一步"/></a>
+            </dt>
+
+        </dl>
+    </form>
+
+</div>
+
+@Scripts.Render("~/Scripts/account.js")

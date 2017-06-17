@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "";
+}
+@model Beeant.Cloud.Site.Admin.Models.Tag.TagListModel
+@if (Model != null && Model.Tags != null)
+{
+    foreach (var tag in Model.Tags)
+    {
+        <div class="element" Sequence="@tag.Sequence" DataId="@tag.Id">
+            <div class="up" ></div>
+            <input name="Name" type="text" class="input" value="@tag.Name" placeholder="@tag.Name"  DefaultValue="@tag.Name" />
+            <div class="down" ></div>
+            <input class="remove" type="button" style="display: none;"  value="删除" />
+        </div>
+    }
+}
