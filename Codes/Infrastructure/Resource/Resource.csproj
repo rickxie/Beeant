@@ -50,649 +50,223 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Scripts\Plug\Echarts\.editorconfig">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Scripts\Plug\Echarts\.gitignore">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Scripts\Plug\Echarts\.jshintignore">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Scripts\Plug\Echarts\.jshintrc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Scripts\Plug\Echarts\.npmignore">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Scripts\Plug\Echarts\bower.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Scripts\Plug\Echarts\package.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\vssver2.scc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Scripts\Plug\ZTree\zTreeStyle\img\vssver2.scc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Scripts\Plug\ZTree\zTreeStyle\vssver2.scc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="Scripts\Plug\Echarts\.editorconfig" />
+    <None Include="Scripts\Plug\Echarts\.gitignore" />
+    <None Include="Scripts\Plug\Echarts\.jshintignore" />
+    <None Include="Scripts\Plug\Echarts\.jshintrc" />
+    <None Include="Scripts\Plug\Echarts\.npmignore" />
+    <None Include="Scripts\Plug\Echarts\bower.json" />
+    <None Include="Scripts\Plug\Echarts\package.json" />
+    <None Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\vssver2.scc" />
+    <None Include="Scripts\Plug\ZTree\zTreeStyle\img\vssver2.scc" />
+    <None Include="Scripts\Plug\ZTree\zTreeStyle\vssver2.scc" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\Plug\ad-gallery\loader.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ad-gallery\opa75.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Calendar.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\DateTimePicker.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\dist\chart\bar.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\dist\chart\chord.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\dist\chart\eventRiver.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\dist\chart\force.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\dist\chart\funnel.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\dist\chart\gauge.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\dist\chart\k.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\dist\chart\line.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\dist\chart\map.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\dist\chart\pie.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\dist\chart\radar.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\dist\chart\scatter.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\dist\chart\tree.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\dist\chart\treemap.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\dist\chart\venn.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\dist\chart\wordCloud.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\dist\echarts-all.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\dist\echarts.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\echarts-optimize-conf.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\source\chart\bar.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\source\chart\chord.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\source\chart\eventRiver.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\source\chart\force.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\source\chart\funnel.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\source\chart\gauge.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\source\chart\k.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\source\chart\line.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\source\chart\map.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\source\chart\pie.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\source\chart\radar.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\source\chart\scatter.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\source\chart\tree.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\source\chart\treemap.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\source\chart\venn.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\source\chart\wordCloud.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\source\echarts-all.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\build\source\echarts.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\index-en.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\Echarts\index.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\exif.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Scripts\Plug\ad-gallery\loader.gif" />
+    <Content Include="Scripts\Plug\ad-gallery\opa75.png" />
+    <Content Include="Scripts\Plug\Calendar.js" />
+    <Content Include="Scripts\Plug\DateTimePicker.js" />
+    <Content Include="Scripts\Plug\Echarts\build\dist\chart\bar.js" />
+    <Content Include="Scripts\Plug\Echarts\build\dist\chart\chord.js" />
+    <Content Include="Scripts\Plug\Echarts\build\dist\chart\eventRiver.js" />
+    <Content Include="Scripts\Plug\Echarts\build\dist\chart\force.js" />
+    <Content Include="Scripts\Plug\Echarts\build\dist\chart\funnel.js" />
+    <Content Include="Scripts\Plug\Echarts\build\dist\chart\gauge.js" />
+    <Content Include="Scripts\Plug\Echarts\build\dist\chart\k.js" />
+    <Content Include="Scripts\Plug\Echarts\build\dist\chart\line.js" />
+    <Content Include="Scripts\Plug\Echarts\build\dist\chart\map.js" />
+    <Content Include="Scripts\Plug\Echarts\build\dist\chart\pie.js" />
+    <Content Include="Scripts\Plug\Echarts\build\dist\chart\radar.js" />
+    <Content Include="Scripts\Plug\Echarts\build\dist\chart\scatter.js" />
+    <Content Include="Scripts\Plug\Echarts\build\dist\chart\tree.js" />
+    <Content Include="Scripts\Plug\Echarts\build\dist\chart\treemap.js" />
+    <Content Include="Scripts\Plug\Echarts\build\dist\chart\venn.js" />
+    <Content Include="Scripts\Plug\Echarts\build\dist\chart\wordCloud.js" />
+    <Content Include="Scripts\Plug\Echarts\build\dist\echarts-all.js" />
+    <Content Include="Scripts\Plug\Echarts\build\dist\echarts.js" />
+    <Content Include="Scripts\Plug\Echarts\build\echarts-optimize-conf.js" />
+    <Content Include="Scripts\Plug\Echarts\build\source\chart\bar.js" />
+    <Content Include="Scripts\Plug\Echarts\build\source\chart\chord.js" />
+    <Content Include="Scripts\Plug\Echarts\build\source\chart\eventRiver.js" />
+    <Content Include="Scripts\Plug\Echarts\build\source\chart\force.js" />
+    <Content Include="Scripts\Plug\Echarts\build\source\chart\funnel.js" />
+    <Content Include="Scripts\Plug\Echarts\build\source\chart\gauge.js" />
+    <Content Include="Scripts\Plug\Echarts\build\source\chart\k.js" />
+    <Content Include="Scripts\Plug\Echarts\build\source\chart\line.js" />
+    <Content Include="Scripts\Plug\Echarts\build\source\chart\map.js" />
+    <Content Include="Scripts\Plug\Echarts\build\source\chart\pie.js" />
+    <Content Include="Scripts\Plug\Echarts\build\source\chart\radar.js" />
+    <Content Include="Scripts\Plug\Echarts\build\source\chart\scatter.js" />
+    <Content Include="Scripts\Plug\Echarts\build\source\chart\tree.js" />
+    <Content Include="Scripts\Plug\Echarts\build\source\chart\treemap.js" />
+    <Content Include="Scripts\Plug\Echarts\build\source\chart\venn.js" />
+    <Content Include="Scripts\Plug\Echarts\build\source\chart\wordCloud.js" />
+    <Content Include="Scripts\Plug\Echarts\build\source\echarts-all.js" />
+    <Content Include="Scripts\Plug\Echarts\build\source\echarts.js" />
+    <Content Include="Scripts\Plug\Echarts\index-en.html" />
+    <Content Include="Scripts\Plug\Echarts\index.html" />
+    <Content Include="Scripts\Plug\exif.min.js" />
     <Content Include="Scripts\Plug\iColor\iColor-min.js" />
     <Content Include="Scripts\Plug\iColor\iColor.css" />
-    <Content Include="Scripts\Plug\jquery-1.7.1.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ad-gallery\ad_next.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ad-gallery\ad_prev.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ad-gallery\ad_scroll_back.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ad-gallery\ad_scroll_forward.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ad-gallery\jquery.ad-gallery.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ad-gallery\jquery.ad-gallery.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\jquery.easing.1.3.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\jquery.lazyload.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\jquery.mobile.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\JqueryUI\images\animated-overlay.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\JqueryUI\images\ui-bg_diagonals-thick_18_b81900_40x40.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\JqueryUI\images\ui-bg_diagonals-thick_20_666666_40x40.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\JqueryUI\images\ui-bg_flat_10_000000_40x100.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\JqueryUI\images\ui-bg_glass_100_f6f6f6_1x400.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\JqueryUI\images\ui-bg_glass_100_fdf5ce_1x400.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\JqueryUI\images\ui-bg_glass_65_ffffff_1x400.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\JqueryUI\images\ui-bg_gloss-wave_35_f6a828_500x100.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\JqueryUI\images\ui-bg_highlight-soft_100_eeeeee_1x100.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\JqueryUI\images\ui-bg_highlight-soft_75_ffe45c_1x100.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\JqueryUI\images\ui-icons_222222_256x240.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\JqueryUI\images\ui-icons_228ef1_256x240.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\JqueryUI\images\ui-icons_ef8c08_256x240.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\JqueryUI\images\ui-icons_ffd27a_256x240.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\JqueryUI\images\ui-icons_ffffff_256x240.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\JqueryUI\jquery-ui-1.10.3.custom.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\JqueryUI\jquery-ui-1.10.3.custom.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\mobiscroll\mobiscroll.custom-2.16.1.min.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\mobiscroll\mobiscroll.custom-2.16.1.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\modernizr.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\resumable\resumable.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\resumable\resumable.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\vue.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\WdatePicker\calendar.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\WdatePicker\config.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\WdatePicker\lang\en.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\WdatePicker\lang\zh-cn.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\WdatePicker\lang\zh-tw.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\WdatePicker\skin\datePicker.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\WdatePicker\skin\default\datepicker.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\WdatePicker\skin\default\img.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\WdatePicker\skin\WdatePicker.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\WdatePicker\skin\whyGreen\bg.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\WdatePicker\skin\whyGreen\datepicker.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\WdatePicker\skin\whyGreen\img.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\WdatePicker\WdatePicker.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ZTree\jquery.ztree.core-3.5.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ZTree\jquery.ztree.excheck-3.5.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ZTree\jquery.ztree.exedit-3.5.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\1_close.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\1_open.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\2.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\3.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\4.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\5.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\6.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\7.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\8.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\9.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\line_conn.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\loading.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\zTreeStandard.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\zTreeStandard.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Plug\ZTree\zTreeStyle\zTreeStyle.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Album\Winner.Album.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Buyer\Winner.Buyer.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Banner\Winner.Banner.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Category\Winner.Category.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\CheckBox\Styles\Style.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\CheckBox\Winner.CheckBox.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\ComboBox\Images\down.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\ComboBox\Styles\Style.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\ComboBox\Winner.ComboBox.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\ConfirmBox\Winner.ConfirmBox.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\DataLoader\Images\loading.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\DataLoader\Winner.DataLoader.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Dialog\Images\close.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Dialog\Images\sure.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Dialog\Styles\Style.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Dialog\Winner.Dialog.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Config.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Finder\Finder.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Finder\Images\button.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Finder\Styles\Style.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Htmls\Preview.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\anchor.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\bg.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\draw.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\Face\angel_smile.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\Face\angry_smile.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\Face\broken_heart.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\Face\confused_smile.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\Face\cry_smile.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\Face\devil_smile.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\Face\embaressed_smile.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\Face\envelope.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\Face\heart.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\Face\kiss.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\Face\lightbulb.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\Face\omg_smile.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\Face\regular_smile.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\Face\sad_smile.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\Face\shades_smile.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\Face\teeth_smile.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\Face\thumbs_down.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\Face\tounge_smile.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\Face\whatchutalkingabout_smile.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\Face\wink_smile.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\flash.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\icons.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Images\sprites.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Languages\cn.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Styles\Style.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Editor\Winner.Editor.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\ImageCutor\Winner.ImageCutor.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\ImageRecover\Winner.ImageRecover.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Imager\Winner.Imager.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\LineChart\Flashs\chart.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\LineChart\Flashs\DynamicLineChart.swf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\LineChart\Styles\Style.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\LineChart\Winner.LineChart.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Message\Styles\Style.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Message\Winner.Message.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Note\Images\close.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Note\Styles\Style.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Note\Winner.Note.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Pager\Winner.Pager.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Publisher\Images\btnpublish.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Publisher\Images\buttonbg.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Publisher\Images\down.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Publisher\Images\error.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Publisher\Images\haschild.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Publisher\Images\icon.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Publisher\Images\input.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Publisher\Images\loading.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Publisher\Images\Nopic.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Publisher\Images\success.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Publisher\Styles\Style.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Publisher\Winner.Publisher.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Shopcart\Winner.Shopcart.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Skuer\Styles\Style.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Skuer\Winner.Skuer.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Slider\Winner.Slider.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Table\Images\thbg.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Table\Styles\Style.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Table\Winner.Table.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Timer\Winner.Timer.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\TreeView\Styles\Style.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\TreeView\Winner.TreeView.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Updowner\Winner.Updowner.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Uploader\Images\doc.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Uploader\Images\none.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Uploader\Styles\Style.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Uploader\Winner.Uploader.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Validator\Images\error.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Validator\Images\success.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Validator\Styles\Style.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Validator\Winner.Validator.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Scripts\Winner\Winner.ClassBase.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Scripts\Plug\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\Plug\ad-gallery\ad_next.png" />
+    <Content Include="Scripts\Plug\ad-gallery\ad_prev.png" />
+    <Content Include="Scripts\Plug\ad-gallery\ad_scroll_back.png" />
+    <Content Include="Scripts\Plug\ad-gallery\ad_scroll_forward.png" />
+    <Content Include="Scripts\Plug\ad-gallery\jquery.ad-gallery.css" />
+    <Content Include="Scripts\Plug\ad-gallery\jquery.ad-gallery.min.js" />
+    <Content Include="Scripts\Plug\jquery.easing.1.3.js" />
+    <Content Include="Scripts\Plug\jquery.lazyload.min.js" />
+    <Content Include="Scripts\Plug\jquery.mobile.min.js" />
+    <Content Include="Scripts\Plug\JqueryUI\images\animated-overlay.gif" />
+    <Content Include="Scripts\Plug\JqueryUI\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Scripts\Plug\JqueryUI\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Scripts\Plug\JqueryUI\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Scripts\Plug\JqueryUI\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Scripts\Plug\JqueryUI\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Scripts\Plug\JqueryUI\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Scripts\Plug\JqueryUI\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Scripts\Plug\JqueryUI\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Scripts\Plug\JqueryUI\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Scripts\Plug\JqueryUI\images\ui-icons_222222_256x240.png" />
+    <Content Include="Scripts\Plug\JqueryUI\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Scripts\Plug\JqueryUI\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Scripts\Plug\JqueryUI\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Scripts\Plug\JqueryUI\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Scripts\Plug\JqueryUI\jquery-ui-1.10.3.custom.css" />
+    <Content Include="Scripts\Plug\JqueryUI\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Scripts\Plug\mobiscroll\mobiscroll.custom-2.16.1.min.css" />
+    <Content Include="Scripts\Plug\mobiscroll\mobiscroll.custom-2.16.1.min.js" />
+    <Content Include="Scripts\Plug\modernizr.min.js" />
+    <Content Include="Scripts\Plug\resumable\resumable.css" />
+    <Content Include="Scripts\Plug\resumable\resumable.js" />
+    <Content Include="Scripts\Plug\vue.min.js" />
+    <Content Include="Scripts\Plug\WdatePicker\calendar.js" />
+    <Content Include="Scripts\Plug\WdatePicker\config.js" />
+    <Content Include="Scripts\Plug\WdatePicker\lang\en.js" />
+    <Content Include="Scripts\Plug\WdatePicker\lang\zh-cn.js" />
+    <Content Include="Scripts\Plug\WdatePicker\lang\zh-tw.js" />
+    <Content Include="Scripts\Plug\WdatePicker\skin\datePicker.gif" />
+    <Content Include="Scripts\Plug\WdatePicker\skin\default\datepicker.css" />
+    <Content Include="Scripts\Plug\WdatePicker\skin\default\img.gif" />
+    <Content Include="Scripts\Plug\WdatePicker\skin\WdatePicker.css" />
+    <Content Include="Scripts\Plug\WdatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Scripts\Plug\WdatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Scripts\Plug\WdatePicker\skin\whyGreen\img.gif" />
+    <Content Include="Scripts\Plug\WdatePicker\WdatePicker.js" />
+    <Content Include="Scripts\Plug\ZTree\jquery.ztree.core-3.5.min.js" />
+    <Content Include="Scripts\Plug\ZTree\jquery.ztree.excheck-3.5.min.js" />
+    <Content Include="Scripts\Plug\ZTree\jquery.ztree.exedit-3.5.min.js" />
+    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\2.png" />
+    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\3.png" />
+    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\4.png" />
+    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\5.png" />
+    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\6.png" />
+    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\7.png" />
+    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\8.png" />
+    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\diy\9.png" />
+    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\line_conn.gif" />
+    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\loading.gif" />
+    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="Scripts\Plug\ZTree\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="Scripts\Plug\ZTree\zTreeStyle\zTreeStyle.css" />
+    <Content Include="Scripts\Winner\Album\Winner.Album.js" />
+    <Content Include="Scripts\Winner\Buyer\Winner.Buyer.js" />
+    <Content Include="Scripts\Winner\Banner\Winner.Banner.js" />
+    <Content Include="Scripts\Winner\Category\Winner.Category.js" />
+    <Content Include="Scripts\Winner\CheckBox\Styles\Style.css" />
+    <Content Include="Scripts\Winner\CheckBox\Winner.CheckBox.js" />
+    <Content Include="Scripts\Winner\ComboBox\Images\down.jpg" />
+    <Content Include="Scripts\Winner\ComboBox\Styles\Style.css" />
+    <Content Include="Scripts\Winner\ComboBox\Winner.ComboBox.js" />
+    <Content Include="Scripts\Winner\ConfirmBox\Winner.ConfirmBox.js" />
+    <Content Include="Scripts\Winner\DataLoader\Images\loading.gif" />
+    <Content Include="Scripts\Winner\DataLoader\Winner.DataLoader.js" />
+    <Content Include="Scripts\Winner\Dialog\Images\close.png" />
+    <Content Include="Scripts\Winner\Dialog\Images\sure.png" />
+    <Content Include="Scripts\Winner\Dialog\Styles\Style.css" />
+    <Content Include="Scripts\Winner\Dialog\Winner.Dialog.js" />
+    <Content Include="Scripts\Winner\Editor\Config.js" />
+    <Content Include="Scripts\Winner\Editor\Finder\Finder.js" />
+    <Content Include="Scripts\Winner\Editor\Finder\Images\button.png" />
+    <Content Include="Scripts\Winner\Editor\Finder\Styles\Style.css" />
+    <Content Include="Scripts\Winner\Editor\Htmls\Preview.html" />
+    <Content Include="Scripts\Winner\Editor\Images\anchor.png" />
+    <Content Include="Scripts\Winner\Editor\Images\bg.png" />
+    <Content Include="Scripts\Winner\Editor\Images\draw.png" />
+    <Content Include="Scripts\Winner\Editor\Images\Face\angel_smile.gif" />
+    <Content Include="Scripts\Winner\Editor\Images\Face\angry_smile.gif" />
+    <Content Include="Scripts\Winner\Editor\Images\Face\broken_heart.gif" />
+    <Content Include="Scripts\Winner\Editor\Images\Face\confused_smile.gif" />
+    <Content Include="Scripts\Winner\Editor\Images\Face\cry_smile.gif" />
+    <Content Include="Scripts\Winner\Editor\Images\Face\devil_smile.gif" />
+    <Content Include="Scripts\Winner\Editor\Images\Face\embaressed_smile.gif" />
+    <Content Include="Scripts\Winner\Editor\Images\Face\envelope.gif" />
+    <Content Include="Scripts\Winner\Editor\Images\Face\heart.gif" />
+    <Content Include="Scripts\Winner\Editor\Images\Face\kiss.gif" />
+    <Content Include="Scripts\Winner\Editor\Images\Face\lightbulb.gif" />
+    <Content Include="Scripts\Winner\Editor\Images\Face\omg_smile.gif" />
+    <Content Include="Scripts\Winner\Editor\Images\Face\regular_smile.gif" />
+    <Content Include="Scripts\Winner\Editor\Images\Face\sad_smile.gif" />
+    <Content Include="Scripts\Winner\Editor\Images\Face\shades_smile.gif" />
+    <Content Include="Scripts\Winner\Editor\Images\Face\teeth_smile.gif" />
+    <Content Include="Scripts\Winner\Editor\Images\Face\thumbs_down.gif" />
+    <Content Include="Scripts\Winner\Editor\Images\Face\tounge_smile.gif" />
+    <Content Include="Scripts\Winner\Editor\Images\Face\whatchutalkingabout_smile.gif" />
+    <Content Include="Scripts\Winner\Editor\Images\Face\wink_smile.gif" />
+    <Content Include="Scripts\Winner\Editor\Images\flash.png" />
+    <Content Include="Scripts\Winner\Editor\Images\icons.png" />
+    <Content Include="Scripts\Winner\Editor\Images\sprites.png" />
+    <Content Include="Scripts\Winner\Editor\Languages\cn.js" />
+    <Content Include="Scripts\Winner\Editor\Styles\Style.css" />
+    <Content Include="Scripts\Winner\Editor\Winner.Editor.js" />
+    <Content Include="Scripts\Winner\ImageCutor\Winner.ImageCutor.js" />
+    <Content Include="Scripts\Winner\ImageRecover\Winner.ImageRecover.js" />
+    <Content Include="Scripts\Winner\Imager\Winner.Imager.js" />
+    <Content Include="Scripts\Winner\LineChart\Flashs\chart.xml" />
+    <Content Include="Scripts\Winner\LineChart\Flashs\DynamicLineChart.swf" />
+    <Content Include="Scripts\Winner\LineChart\Styles\Style.css" />
+    <Content Include="Scripts\Winner\LineChart\Winner.LineChart.js" />
+    <Content Include="Scripts\Winner\Message\Styles\Style.css" />
+    <Content Include="Scripts\Winner\Message\Winner.Message.js" />
+    <Content Include="Scripts\Winner\Note\Images\close.png" />
+    <Content Include="Scripts\Winner\Note\Styles\Style.css" />
+    <Content Include="Scripts\Winner\Note\Winner.Note.js" />
+    <Content Include="Scripts\Winner\Pager\Winner.Pager.js" />
+    <Content Include="Scripts\Winner\Publisher\Images\btnpublish.gif" />
+    <Content Include="Scripts\Winner\Publisher\Images\buttonbg.gif" />
+    <Content Include="Scripts\Winner\Publisher\Images\down.jpg" />
+    <Content Include="Scripts\Winner\Publisher\Images\error.gif" />
+    <Content Include="Scripts\Winner\Publisher\Images\haschild.gif" />
+    <Content Include="Scripts\Winner\Publisher\Images\icon.png" />
+    <Content Include="Scripts\Winner\Publisher\Images\input.gif" />
+    <Content Include="Scripts\Winner\Publisher\Images\loading.gif" />
+    <Content Include="Scripts\Winner\Publisher\Images\Nopic.jpg" />
+    <Content Include="Scripts\Winner\Publisher\Images\success.gif" />
+    <Content Include="Scripts\Winner\Publisher\Styles\Style.css" />
+    <Content Include="Scripts\Winner\Publisher\Winner.Publisher.js" />
+    <Content Include="Scripts\Winner\Shopcart\Winner.Shopcart.js" />
+    <Content Include="Scripts\Winner\Skuer\Styles\Style.css" />
+    <Content Include="Scripts\Winner\Skuer\Winner.Skuer.js" />
+    <Content Include="Scripts\Winner\Slider\Winner.Slider.js" />
+    <Content Include="Scripts\Winner\Table\Images\thbg.png" />
+    <Content Include="Scripts\Winner\Table\Styles\Style.css" />
+    <Content Include="Scripts\Winner\Table\Winner.Table.js" />
+    <Content Include="Scripts\Winner\Timer\Winner.Timer.js" />
+    <Content Include="Scripts\Winner\TreeView\Styles\Style.css" />
+    <Content Include="Scripts\Winner\TreeView\Winner.TreeView.js" />
+    <Content Include="Scripts\Winner\Updowner\Winner.Updowner.js" />
+    <Content Include="Scripts\Winner\Uploader\Images\doc.gif" />
+    <Content Include="Scripts\Winner\Uploader\Images\none.png" />
+    <Content Include="Scripts\Winner\Uploader\Styles\Style.css" />
+    <Content Include="Scripts\Winner\Uploader\Winner.Uploader.js" />
+    <Content Include="Scripts\Winner\Validator\Images\error.gif" />
+    <Content Include="Scripts\Winner\Validator\Images\success.gif" />
+    <Content Include="Scripts\Winner\Validator\Styles\Style.css" />
+    <Content Include="Scripts\Winner\Validator\Winner.Validator.js" />
+    <Content Include="Scripts\Winner\Winner.ClassBase.js" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

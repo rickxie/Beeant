@@ -775,10 +775,7 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>xcopy /Y /S /V /E /I "$(ProjectDir)bin\Config" "$(ProjectDir)Config"
-RD /Q /S "$(ProjectDir)bin\Config" 
-xcopy /Y /S /V /E /I "$(ProjectDir)bin\Scripts" "$(ProjectDir)Scripts"
-RD /Q /S "$(ProjectDir)bin\Scripts"</PostBuildEvent>
+    <PostBuildEvent>start  $(ProjectDir)..\..\..\Tool\Beeant.Tool.Copy\bin\Debug\Beeant.Tool.Copy.exe $(ProjectDir)</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
