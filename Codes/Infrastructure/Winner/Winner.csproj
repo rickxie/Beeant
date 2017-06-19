@@ -52,6 +52,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cache\CacheService.cs" />
+    <Compile Include="Cluster\Cluster.cs" />
+    <Compile Include="Cluster\ClusterArgsInfo.cs" />
+    <Compile Include="Cluster\ClusterInfo.cs" />
+    <Compile Include="Cluster\ClusterService.cs" />
+    <Compile Include="Cluster\IClusterContract.cs" />
+    <Compile Include="Cluster\ICluster.cs" />
+    <Compile Include="Cluster\XmlClusterService.cs" />
     <Compile Include="Mail\MailInfo.cs" />
     <Compile Include="Mail\IMail.cs" />
     <Compile Include="Mail\Mail.cs" />

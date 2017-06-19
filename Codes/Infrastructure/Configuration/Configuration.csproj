@@ -275,6 +275,9 @@
     <Content Include="Config\App.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Config\Cluster.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Config\DbRoute\Account.config" />
     <Content Include="Config\Entity\Cart.config">
       <SubType>Designer</SubType>
@@ -355,6 +358,7 @@
     <None Include="Config\Validation\Management.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Config\Cluster\" />
     <Folder Include="Config\Report\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
