@@ -19,14 +19,15 @@ namespace Beeant.Tool.Copy
         /// 得到文件
         /// </summary>
         /// <param name="path"></param>
+        /// <param name="isCreateScripts"></param>
         private static void Replace(string path, bool isCreateScripts)
         {
             var rootPath = GetRootPath();
-            ReplaceFiles(string.Format(@"{0}\Infrastructure\Configuration\Config", rootPath),
+            ReplaceFiles(string.Format(@"{0}Infrastructure\Configuration\Config", rootPath),
                 string.Format(@"{0}Config", path));
             if (isCreateScripts)
             {
-                ReplaceFiles(string.Format(@"{0}\Infrastructure\Resource\Scripts", rootPath),
+                ReplaceFiles(string.Format(@"{0}Infrastructure\Resource\Scripts", rootPath),
                     string.Format(@"{0}Scripts", path));
             }
         }
@@ -37,9 +38,9 @@ namespace Beeant.Tool.Copy
         /// <returns></returns>
         private static string GetRootPath()
         {
-            var tag = @"\Beeant\Codes";
+            var tag = @"\Codes\";
             var path = Directory.GetCurrentDirectory();
-           var index= path.IndexOf(tag);
+            var index= path.IndexOf(tag);
             if (index == -1)
                 return null;
             return path.Substring(0, index + tag.Length);
