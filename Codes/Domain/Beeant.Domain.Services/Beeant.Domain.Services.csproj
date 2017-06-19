@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\AccountIdentityDomainService.cs" />
-    <Compile Include="Account\CardDomainService.cs" />
+    <Compile Include="Account\AccountCardDomainService.cs" />
     <Compile Include="Account\IAccountIdentityContract.cs" />
     <Compile Include="Account\AccountNumberDomainService.cs" />
     <Compile Include="Agent\AgentDomainService.cs" />

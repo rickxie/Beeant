@@ -7,7 +7,7 @@ using Winner.Persistence.Linq;
 
 namespace Beeant.Domain.Services.Account
 {
-    public class CardDomainService : RealizeDomainService<CardEntity>
+    public class AccountCardDomainService : RealizeDomainService<AccountCardEntity>
     {
 
         #region 重写验证
@@ -17,7 +17,7 @@ namespace Beeant.Domain.Services.Account
         /// </summary>
         /// <param name="infos"></param>
         /// <returns></returns>
-        protected override bool ValidateBatch(IList<CardEntity> infos)
+        protected override bool ValidateBatch(IList<AccountCardEntity> infos)
         {
             var temps =
                 infos.Where(it => it.SaveType == SaveType.Add)
@@ -39,7 +39,7 @@ namespace Beeant.Domain.Services.Account
         /// </summary>
         /// <param name="info"></param>
         /// <returns></returns>
-        protected override bool ValidateAdd(CardEntity info)
+        protected override bool ValidateAdd(AccountCardEntity info)
         {
             var rev = ValidateExist(info) && ValidateAccount(info);
             return rev;
@@ -50,12 +50,12 @@ namespace Beeant.Domain.Services.Account
         /// </summary>
         /// <param name="info"></param>
         /// <returns></returns>
-        protected virtual bool ValidateExist(CardEntity info)
+        protected virtual bool ValidateExist(AccountCardEntity info)
         {
             var query = new QueryInfo();
-            query.Query<CardEntity>().Where(it => it.Tag == info.Tag && it.Number == info.Number)
+            query.Query<AccountCardEntity>().Where(it => it.Tag == info.Tag && it.Number == info.Number)
                 .Select(it => new object[] { it.Id });
-            var infos= Repository.GetEntities<CardEntity>(query);
+            var infos= Repository.GetEntities<AccountCardEntity>(query);
             if (infos == null || infos.Count == 0) return true;
             info.AddError("Exist");
             return info.Errors == null || info.Errors.Count == 0;
@@ -66,7 +66,7 @@ namespace Beeant.Domain.Services.Account
         /// </summary>
         /// <param name="info"></param>
         /// <returns></returns>
-        protected virtual bool ValidateAccount(CardEntity info)
+        protected virtual bool ValidateAccount(AccountCardEntity info)
         {
            var account = info.Account==null|| info.Account.SaveType == SaveType.Add
                                  ? info.Account

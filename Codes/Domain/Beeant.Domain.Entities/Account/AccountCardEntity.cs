@@ -3,7 +3,7 @@
 namespace Beeant.Domain.Entities.Account
 {
     [Serializable]
-    public class CardEntity : BaseEntity<CardEntity>
+    public class AccountCardEntity : BaseEntity<AccountCardEntity>
     {
         /// <summary>
         /// 账户信息 
