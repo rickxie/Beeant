@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="Account\AccountNumberEntity.cs" />
     <Compile Include="Account\AccountItemStatusType.cs" />
-    <Compile Include="Account\CardEntity.cs" />
+    <Compile Include="Account\AccountCardEntity.cs" />
     <Compile Include="Api\ApiArgsEntity.cs" />
     <Compile Include="Api\ApiEnginEntity.cs" />
     <Compile Include="Basedata\CountryEntity.cs" />
