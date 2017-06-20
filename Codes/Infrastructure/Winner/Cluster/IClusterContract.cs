@@ -11,6 +11,7 @@
         /// 设置缓存
         /// </summary>
         /// <param name="name"></param>
+        /// <param name="count"></param>
         /// <param name="index"></param>
         /// <param name="value"></param>
         /// <returns></returns>
