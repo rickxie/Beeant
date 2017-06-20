@@ -10,7 +10,7 @@ namespace Winner.Cluster
         /// </summary>
         public IDictionary<string, Action<ClusterArgsInfo>> Handles { get; set; } = new Dictionary<string, Action<ClusterArgsInfo>>();
       
-        public void Execute(string name, int index, object value)
+        public void Execute(string name, int count, int index, object value)
         {
             if(!Handles.ContainsKey(name))
                 return;
@@ -18,6 +18,7 @@ namespace Winner.Cluster
             {
                 Name = name,
                 Index = index,
+                Count=count,
                 Value = value
             };
             Handles[name].BeginInvoke(args, null, null);

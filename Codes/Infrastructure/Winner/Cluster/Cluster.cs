@@ -8,23 +8,19 @@ namespace Winner.Cluster
     {
    
 
-        /// <summary>
-        /// 虚拟节点名称和值
-        /// </summary>
-        protected IDictionary<string, IList<EndPointInfo>> Nodes { get; set; } = new SortedList<string, IList<EndPointInfo>>();
-
+     
         public virtual bool Execute(ClusterInfo info)
         {
-            if (!Nodes.ContainsKey(info.Name) || Nodes[info.Name] == null || Nodes[info.Name].Count == 0)
+            if (info == null || info.WcfService==null || info.WcfService.EndPoints==null || info.WcfService.EndPoints.Count==0)
                 return false;
             object value=info.Value;
             if (value != null && (value.GetType().IsValueType || value.GetType() != typeof (string)))
             {
                 value = SerializeJson(value);
             }
-            for (int i = 0; i < Nodes[info.Name].Count; i++)
+            for (int i = 0; i < info.WcfService.EndPoints.Count; i++)
             {
-                Action<ClusterInfo, int, object> action = BeginExecute;
+                Action<ClusterInfo, int,  object> action = BeginExecute;
                 action.BeginInvoke(info, i, value, null, null);
             }
             return true;
@@ -33,13 +29,15 @@ namespace Winner.Cluster
         /// <summary>
         /// 开始执行
         /// </summary>
+        /// <param name="info"></param>
+        /// <param name="count"></param>
         /// <param name="index"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        protected virtual void BeginExecute(ClusterInfo info, int index, object value)
+        protected virtual void BeginExecute(ClusterInfo info,int index, object value)
         {
 
-            info.WcfService.Invoke<IClusterContract>(new List<EndPointInfo> { Nodes[info.Name][index] }, Tigger, info.Name, index,value);
+            info.WcfService.Invoke<IClusterContract>(new List<EndPointInfo> { info.WcfService.EndPoints[index] }, Tigger, info.Name, info.WcfService.EndPoints.Count, index, value);
         }
 
         /// <summary>
@@ -50,7 +48,7 @@ namespace Winner.Cluster
         /// <returns></returns>
         protected virtual object Tigger(IClusterContract clusterService, params object[] paramters)
         {
-            clusterService.Execute(paramters[0] as string, (int) paramters[1], paramters[3]);
+            clusterService.Execute(paramters[0] as string, (int) paramters[1], (int)paramters[1], paramters[3]);
             return null;
         }
 

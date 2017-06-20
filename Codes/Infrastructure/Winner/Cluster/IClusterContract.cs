@@ -15,7 +15,7 @@
         /// <param name="value"></param>
         /// <returns></returns>
         [System.ServiceModel.OperationContractAttribute(Action = "http://Winner.Cluster.IClusterContract/Execute", ReplyAction = "http://Winner.Cluster.IClusterContract/Execute")]
-        void Execute(string name,int index,object value);
+        void Execute(string name,int count,int index,object value);
       
     }
 }

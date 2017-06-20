@@ -11,6 +11,10 @@
         /// </summary>
         public object Value { get; set; }
         /// <summary>
+        /// 数量
+        /// </summary>
+        public int Count { get; set; }
+        /// <summary>
         /// 
         /// </summary>
         public int Index { get; set; }
