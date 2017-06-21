@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Xml;
 using Winner.Base;
 using Winner.Cache;
+using Winner.Cluster;
 using Winner.Creation;
 using Winner.Dislan;
 using Winner.Filter;
@@ -155,6 +156,14 @@ namespace Winner
             LoadInstatnce(instances, typeof(ICacheContract).FullName, new CacheService());
         }
         /// <summary>
+        /// 加载Base模块
+        /// </summary>
+        private static void LoadClusterInstance(IDictionary<string, object> instances)
+        {
+            LoadInstatnce(instances, typeof(ICluster).FullName, new Cluster.Cluster());
+            LoadInstatnce(instances, typeof(IClusterContract).FullName, new ClusterService());
+        }
+        /// <summary>
         /// 加载Creation模块
         /// </summary>
         private static void LoadCreationInstance(IDictionary<string, object> instances)
@@ -253,6 +262,7 @@ namespace Winner
            LoadQueueInstance(instances);
            LoadMailInstance(instances);
            LoadCacheInstance(instances);
+           LoadClusterInstance(instances);
            LoadCreationInstance(instances);
            LoadDislanInstance(instances);
            LoadFilterInstance(instances);

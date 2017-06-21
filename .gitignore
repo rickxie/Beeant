@@ -335,5 +335,9 @@
 /Codes/.vs/Beeant/v14/.suo
 /Codes/Beeant.sln.DotSettings
 /Codes/.vs
-/Codes/Tool/Beeant.Tool.Copy/bin
 /Codes/Tool/Beeant.Tool.Copy/obj
+/Codes/Tool/Beeant.Tool.Copy/bin
+/Codes/Tool/Beeant.Tool.Deployment/obj
+/Codes/Tool/Beeant.Tool.Deployment/bin
+/Codes/Tool/Beeant.Tool.Generator/bin
+/Codes/Tool/Beeant.Tool.Generator/obj
